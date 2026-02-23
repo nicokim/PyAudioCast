@@ -149,7 +149,7 @@ impl AudioPlayer {
 
     /// Write raw audio bytes (int16 little-endian) to the player.
     fn write(&mut self, py: Python<'_>, data: &[u8]) -> PyResult<()> {
-        if data.len() % 2 != 0 {
+        if !data.len().is_multiple_of(2) {
             return Err(pyo3::exceptions::PyValueError::new_err(
                 "Data length must be even (int16 samples are 2 bytes each)",
             ));

@@ -56,7 +56,7 @@ fn suppress_backend_noise() {
     // Save the original stderr so Python/log can still write to it.
     unsafe {
         let devnull = libc::open(
-            b"/dev/null\0".as_ptr() as *const libc::c_char,
+            c"/dev/null".as_ptr(),
             libc::O_WRONLY,
         );
         if devnull >= 0 {
