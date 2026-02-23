@@ -52,12 +52,44 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Create virtualenv and install dependencies
+        run: |
+          python -m venv .venv
+
       - name: Install dependencies
         run: |
-          pip install maturin numpy pytest
+          .venv/bin/pip install maturin numpy pytest
+        shell: bash
+        if: runner.os != 'Windows'
+
+      - name: Install dependencies (Windows)
+        run: |
+          .venv\Scripts\pip install maturin numpy pytest
+        shell: cmd
+        if: runner.os == 'Windows'
 
       - name: Build and install
-        run: maturin develop
+        run: |
+          source .venv/bin/activate
+          maturin develop
+        shell: bash
+        if: runner.os != 'Windows'
+
+      - name: Build and install (Windows)
+        run: |
+          .venv\Scripts\activate && maturin develop
+        shell: cmd
+        if: runner.os == 'Windows'
 
       - name: Run tests
-        run: pytest tests/ -v --tb=short || echo "::warning::Some tests failed (expected in CI without audio hardware)"
+        run: |
+          source .venv/bin/activate
+          pytest tests/ -v --tb=short || echo "::warning::Some tests failed (expected in CI without audio hardware)"
+        shell: bash
+        if: runner.os != 'Windows'
+
+      - name: Run tests (Windows)
+        run: |
+          .venv\Scripts\activate && pytest tests/ -v --tb=short
+        shell: cmd
+        if: runner.os == 'Windows'
