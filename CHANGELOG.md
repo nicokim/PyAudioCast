@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.4...pyaudiocast-v0.1.5) (2026-02-23)
+
+
+### Bug Fixes
+
+* remove Linux aarch64 build (ALSA cross-compilation unsupported) ([#11](https://github.com/nicokim/PyAudioCast/issues/11)) ([d942291](https://github.com/nicokim/PyAudioCast/commit/d9422915a4f8e5fbdd203bc73d28f8eda44be81a))
+
 ## [0.1.4](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.3...pyaudiocast-v0.1.4) (2026-02-23)
 
 
