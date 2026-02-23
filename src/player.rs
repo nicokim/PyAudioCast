@@ -352,10 +352,7 @@ impl AudioPlayer {
                 let arr: PyReadonlyArray1<i32> = data.extract()?;
                 let slice = arr.as_slice()?;
                 debug!("extract_samples: numpy int32, {} samples", slice.len());
-                return Ok(slice
-                    .iter()
-                    .map(|&s| s as f32 / 2147483648.0)
-                    .collect());
+                return Ok(slice.iter().map(|&s| s as f32 / 2147483648.0).collect());
             } else {
                 return Err(pyo3::exceptions::PyTypeError::new_err(format!(
                     "Unsupported numpy dtype: {}. Expected float32, float64, int16, or int32",
