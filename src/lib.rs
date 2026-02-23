@@ -55,10 +55,7 @@ fn suppress_backend_noise() {
     // Redirect fd 2 (stderr) to /dev/null to suppress JACK connection messages.
     // Save the original stderr so Python/log can still write to it.
     unsafe {
-        let devnull = libc::open(
-            c"/dev/null".as_ptr(),
-            libc::O_WRONLY,
-        );
+        let devnull = libc::open(c"/dev/null".as_ptr(), libc::O_WRONLY);
         if devnull >= 0 {
             // Save original stderr to a new fd
             let saved = libc::dup(2);
