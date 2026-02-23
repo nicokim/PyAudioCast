@@ -6,8 +6,25 @@ build-backend = "maturin"
 name = "pyaudiocast"
 dynamic = ["version"]
 description = "Cross-platform audio output for Python, powered by Rust and CPAL"
-requires-python = ">=3.8"
+readme = "README.md"
+requires-python = ">=3.9"
 license = { text = "MIT" }
+keywords = ["audio", "speaker", "cpal", "pipewire", "pulseaudio", "tts", "streaming"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Rust",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Operating System :: OS Independent",
+]
 
 [project.optional-dependencies]
 numpy = ["numpy"]
