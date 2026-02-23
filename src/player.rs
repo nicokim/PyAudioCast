@@ -5,7 +5,7 @@ use std::time::Duration;
 use cpal::traits::{DeviceTrait, StreamTrait};
 use cpal::{SampleFormat, SampleRate, StreamConfig};
 use log::{debug, info};
-use numpy::{PyArrayMethods, PyReadonlyArray1, PyUntypedArrayMethods};
+use numpy::{PyReadonlyArray1, PyUntypedArrayMethods};
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 use ringbuf::{
