@@ -1,5 +1,10 @@
 # PyAudioCast
 
+[![CI](https://github.com/nicokim/PyAudioCast/actions/workflows/ci.yml/badge.svg)](https://github.com/nicokim/PyAudioCast/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/pyaudiocast)](https://pypi.org/project/pyaudiocast/)
+[![codecov](https://codecov.io/gh/nicokim/PyAudioCast/graph/badge.svg)](https://codecov.io/gh/nicokim/PyAudioCast)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Cross-platform audio output library for Python, powered by Rust and [CPAL](https://github.com/RustAudio/cpal).
 
 Stream audio to any output device — including PipeWire/PulseAudio virtual sinks on Linux — with a simple Python API backed by a high-performance Rust core.

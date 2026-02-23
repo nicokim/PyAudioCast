@@ -168,7 +168,11 @@ impl AudioPlayer {
         }
 
         let num_samples = data.len() / 2;
-        debug!("write: {} bytes ({} int16 samples)", data.len(), num_samples);
+        debug!(
+            "write: {} bytes ({} int16 samples)",
+            data.len(),
+            num_samples
+        );
 
         let samples: Vec<f32> = data
             .chunks_exact(2)
