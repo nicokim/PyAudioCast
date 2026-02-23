@@ -18,7 +18,7 @@ samples = [
 print(f"Playing {FREQUENCY}Hz sine wave for {DURATION}s...")
 
 with pyspeaker.AudioPlayer(sample_rate=SAMPLE_RATE, channels=1) as player:
-    player.write_f32(samples)
+    player.write(samples)
     player.drain()
 
 print("Done.")
