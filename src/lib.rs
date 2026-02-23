@@ -125,7 +125,7 @@ fn play_file(py: Python<'_>, path: &str, device: Option<&str>) -> PyResult<()> {
 
     let config = cpal::StreamConfig {
         channels,
-        sample_rate: cpal::SampleRate(sample_rate),
+        sample_rate,
         buffer_size: cpal::BufferSize::Default,
     };
 
@@ -162,7 +162,7 @@ fn play_file(py: Python<'_>, path: &str, device: Option<&str>) -> PyResult<()> {
     stream.play().map_err(SpeakerError::from)?;
     info!("Playback started");
 
-    py.allow_threads(|| {
+    py.detach(|| {
         while !finished.load(std::sync::atomic::Ordering::Relaxed) {
             std::thread::sleep(std::time::Duration::from_millis(10));
         }

@@ -8,9 +8,9 @@ name = "_pyaudiocast"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.23", features = ["extension-module"] }
-numpy = "0.23"
-cpal = "0.15"
+pyo3 = { version = "0.28", features = ["extension-module"] }
+numpy = "0.28"
+cpal = "0.17"
 ringbuf = "0.4"
 hound = "3.5"
 log = "0.4"

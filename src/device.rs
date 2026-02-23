@@ -5,6 +5,11 @@ use pyo3::types::PyDict;
 
 use crate::error::SpeakerError;
 
+/// Get the device name via description().
+fn device_name(device: &cpal::Device) -> Option<String> {
+    device.description().ok().map(|d| d.name().to_string())
+}
+
 /// List PipeWire/PulseAudio sinks via pactl (Linux only).
 #[cfg(target_os = "linux")]
 fn list_pipewire_sinks() -> Vec<String> {
@@ -50,9 +55,7 @@ pub fn list_output_devices_impl(py: Python<'_>) -> PyResult<Vec<Py<PyDict>>> {
 
     // Add cpal devices
     for device in devices {
-        let name = device
-            .name()
-            .unwrap_or_else(|_| format!("Unknown-{}", index));
+        let name = device_name(&device).unwrap_or_else(|| format!("Unknown-{}", index));
         debug!("cpal device [{}]: {}", index, name);
         let dict = PyDict::new(py);
         dict.set_item("name", &name)?;
@@ -87,10 +90,10 @@ fn is_pipewire_sink(name: &str) -> bool {
 
 /// Find a device by name (substring match) or return default.
 /// On Linux, PipeWire/PulseAudio sinks are routed via PULSE_SINK + the "pulse" ALSA device.
-pub fn find_device(device_name: Option<&str>) -> Result<cpal::Device, SpeakerError> {
+pub fn find_device(device_name_query: Option<&str>) -> Result<cpal::Device, SpeakerError> {
     let host = cpal::default_host();
 
-    match device_name {
+    match device_name_query {
         Some(name) => {
             // On Linux, check if it's a PipeWire/PulseAudio sink first
             if is_pipewire_sink(name) {
@@ -98,7 +101,7 @@ pub fn find_device(device_name: Option<&str>) -> Result<cpal::Device, SpeakerErr
                 std::env::set_var("PULSE_SINK", name);
                 let devices = host.output_devices()?;
                 for device in devices {
-                    if let Ok(dev_name) = device.name() {
+                    if let Some(dev_name) = device_name(&device) {
                         if dev_name == "pulse" {
                             debug!("Found 'pulse' ALSA device for routing");
                             return Ok(device);
@@ -114,7 +117,7 @@ pub fn find_device(device_name: Option<&str>) -> Result<cpal::Device, SpeakerErr
             debug!("Searching cpal devices for '{}'", name);
             let devices = host.output_devices()?;
             for device in devices {
-                if let Ok(dev_name) = device.name() {
+                if let Some(dev_name) = device_name(&device) {
                     if dev_name.contains(name) {
                         info!("Found device: {}", dev_name);
                         return Ok(device);
