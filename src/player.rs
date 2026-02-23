@@ -5,8 +5,9 @@ use std::time::Duration;
 use cpal::traits::{DeviceTrait, StreamTrait};
 use cpal::{SampleFormat, SampleRate, StreamConfig};
 use log::{debug, info};
-use numpy::PyReadonlyArray1;
+use numpy::{PyArrayMethods, PyReadonlyArray1, PyUntypedArrayMethods};
 use pyo3::prelude::*;
+use pyo3::types::PyList;
 use ringbuf::{
     traits::{Consumer, Observer, Producer, Split},
     HeapRb,
@@ -43,19 +44,39 @@ impl AudioPlayer {
     ///
     /// Args:
     ///     device: Device name (substring match) or None for default.
-    ///     sample_rate: Sample rate in Hz (default: 22050).
-    ///     channels: Number of channels (default: 1).
+    ///     sample_rate: Sample rate in Hz, or None to auto-detect from device.
+    ///     channels: Number of channels, or None to auto-detect from device.
     #[new]
-    #[pyo3(signature = (device=None, sample_rate=22050, channels=1))]
-    fn new(device: Option<&str>, sample_rate: u32, channels: u16) -> PyResult<Self> {
+    #[pyo3(signature = (device=None, sample_rate=None, channels=None))]
+    fn new(
+        device: Option<&str>,
+        sample_rate: Option<u32>,
+        channels: Option<u16>,
+    ) -> PyResult<Self> {
         crate::init_logging();
 
         info!(
-            "AudioPlayer::new(device={:?}, sample_rate={}, channels={})",
+            "AudioPlayer::new(device={:?}, sample_rate={:?}, channels={:?})",
             device, sample_rate, channels
         );
 
         let cpal_device = find_device(device)?;
+
+        // Auto-detect from device default config if not specified
+        let default_config = cpal_device
+            .default_output_config()
+            .map_err(SpeakerError::from)?;
+
+        let sample_rate = sample_rate.unwrap_or(default_config.sample_rate().0);
+        let channels = channels.unwrap_or(default_config.channels());
+
+        info!(
+            "Using config: {}Hz, {}ch (device default: {}Hz, {}ch)",
+            sample_rate,
+            channels,
+            default_config.sample_rate().0,
+            default_config.channels()
+        );
 
         let desired_config = StreamConfig {
             channels,
@@ -161,14 +182,13 @@ impl AudioPlayer {
         })
     }
 
-    /// Write raw audio bytes (int16 little-endian) to the player.
-    fn write(&mut self, py: Python<'_>, data: &[u8]) -> PyResult<()> {
-        if !data.len().is_multiple_of(2) {
-            return Err(pyo3::exceptions::PyValueError::new_err(
-                "Data length must be even (int16 samples are 2 bytes each)",
-            ));
-        }
-
+    /// Write audio data to the player.
+    ///
+    /// Accepts:
+    ///   - `bytes`: Raw int16 little-endian PCM data
+    ///   - `numpy.ndarray`: int16, int32, float32, or float64 array
+    ///   - `list[float]`: Float samples in -1.0..1.0 range
+    fn write(&mut self, py: Python<'_>, data: &Bound<'_, pyo3::PyAny>) -> PyResult<()> {
         let producer = self
             .producer
             .as_mut()
@@ -182,20 +202,8 @@ impl AudioPlayer {
             }
         }
 
-        let num_samples = data.len() / 2;
-        debug!(
-            "write: {} bytes ({} int16 samples)",
-            data.len(),
-            num_samples
-        );
-
-        let samples: Vec<f32> = data
-            .chunks_exact(2)
-            .map(|chunk| {
-                let sample = i16::from_le_bytes([chunk[0], chunk[1]]);
-                sample as f32 / 32768.0
-            })
-            .collect();
+        let samples = Self::extract_samples(data)?;
+        debug!("write: {} f32 samples", samples.len());
 
         py.allow_threads(|| {
             let mut offset = 0;
@@ -203,71 +211,6 @@ impl AudioPlayer {
                 let pushed = producer.push_slice(&samples[offset..]);
                 offset += pushed;
                 if offset < samples.len() {
-                    std::thread::sleep(Duration::from_millis(5));
-                }
-            }
-        });
-
-        Ok(())
-    }
-
-    /// Write a numpy int16 array to the player.
-    fn write_array(&mut self, py: Python<'_>, data: PyReadonlyArray1<i16>) -> PyResult<()> {
-        let producer = self
-            .producer
-            .as_mut()
-            .ok_or_else(|| SpeakerError::StreamError("Player is closed".to_string()))?;
-
-        self.interrupted.store(false, Ordering::SeqCst);
-        {
-            let (lock, _) = &*self.drain_signal;
-            if let Ok(mut drained) = lock.lock() {
-                *drained = false;
-            }
-        }
-
-        let slice = data.as_slice()?;
-        debug!("write_array: {} int16 samples", slice.len());
-
-        let samples: Vec<f32> = slice.iter().map(|&s| s as f32 / 32768.0).collect();
-
-        py.allow_threads(|| {
-            let mut offset = 0;
-            while offset < samples.len() {
-                let pushed = producer.push_slice(&samples[offset..]);
-                offset += pushed;
-                if offset < samples.len() {
-                    std::thread::sleep(Duration::from_millis(5));
-                }
-            }
-        });
-
-        Ok(())
-    }
-
-    /// Write f32 samples directly (values should be in -1.0..1.0 range).
-    fn write_f32(&mut self, py: Python<'_>, data: Vec<f32>) -> PyResult<()> {
-        let producer = self
-            .producer
-            .as_mut()
-            .ok_or_else(|| SpeakerError::StreamError("Player is closed".to_string()))?;
-
-        self.interrupted.store(false, Ordering::SeqCst);
-        {
-            let (lock, _) = &*self.drain_signal;
-            if let Ok(mut drained) = lock.lock() {
-                *drained = false;
-            }
-        }
-
-        debug!("write_f32: {} samples", data.len());
-
-        py.allow_threads(|| {
-            let mut offset = 0;
-            while offset < data.len() {
-                let pushed = producer.push_slice(&data[offset..]);
-                offset += pushed;
-                if offset < data.len() {
                     std::thread::sleep(Duration::from_millis(5));
                 }
             }
@@ -362,5 +305,74 @@ impl AudioPlayer {
     ) -> PyResult<bool> {
         self.stop()?;
         Ok(false)
+    }
+}
+
+impl AudioPlayer {
+    /// Convert any supported Python audio data to Vec<f32>.
+    fn extract_samples(data: &Bound<'_, pyo3::PyAny>) -> PyResult<Vec<f32>> {
+        // bytes → int16 LE PCM
+        if let Ok(bytes) = data.extract::<Vec<u8>>() {
+            if !bytes.len().is_multiple_of(2) {
+                return Err(pyo3::exceptions::PyValueError::new_err(
+                    "Data length must be even (int16 samples are 2 bytes each)",
+                ));
+            }
+            debug!("extract_samples: {} bytes as int16 LE", bytes.len());
+            return Ok(bytes
+                .chunks_exact(2)
+                .map(|chunk| {
+                    let sample = i16::from_le_bytes([chunk[0], chunk[1]]);
+                    sample as f32 / 32768.0
+                })
+                .collect());
+        }
+
+        // numpy array
+        if let Ok(arr) = data.downcast::<numpy::PyUntypedArray>() {
+            let dtype = arr.dtype();
+            let dtype_str = dtype.to_string();
+
+            if dtype_str.contains("float32") {
+                let arr: PyReadonlyArray1<f32> = data.extract()?;
+                let slice = arr.as_slice()?;
+                debug!("extract_samples: numpy float32, {} samples", slice.len());
+                return Ok(slice.to_vec());
+            } else if dtype_str.contains("int16") {
+                let arr: PyReadonlyArray1<i16> = data.extract()?;
+                let slice = arr.as_slice()?;
+                debug!("extract_samples: numpy int16, {} samples", slice.len());
+                return Ok(slice.iter().map(|&s| s as f32 / 32768.0).collect());
+            } else if dtype_str.contains("float64") {
+                let arr: PyReadonlyArray1<f64> = data.extract()?;
+                let slice = arr.as_slice()?;
+                debug!("extract_samples: numpy float64, {} samples", slice.len());
+                return Ok(slice.iter().map(|&s| s as f32).collect());
+            } else if dtype_str.contains("int32") {
+                let arr: PyReadonlyArray1<i32> = data.extract()?;
+                let slice = arr.as_slice()?;
+                debug!("extract_samples: numpy int32, {} samples", slice.len());
+                return Ok(slice
+                    .iter()
+                    .map(|&s| s as f32 / 2147483648.0)
+                    .collect());
+            } else {
+                return Err(pyo3::exceptions::PyTypeError::new_err(format!(
+                    "Unsupported numpy dtype: {}. Expected float32, float64, int16, or int32",
+                    dtype_str
+                )));
+            }
+        }
+
+        // list[float]
+        if let Ok(list) = data.downcast::<PyList>() {
+            let samples: Vec<f32> = list.extract()?;
+            debug!("extract_samples: list[float], {} samples", samples.len());
+            return Ok(samples);
+        }
+
+        Err(pyo3::exceptions::PyTypeError::new_err(
+            "Expected bytes, numpy array (int16/int32/float32/float64), or list[float]",
+        ))
     }
 }

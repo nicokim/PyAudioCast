@@ -1,7 +1,5 @@
 """Tests for AudioPlayer."""
 
-import struct
-
 import numpy as np
 import pytest
 
@@ -13,11 +11,11 @@ class TestAudioPlayerInit:
     """Test AudioPlayer creation."""
 
     @requires_audio
-    def test_create_default_device(self):
-        """Should create a player with default device."""
+    def test_create_auto_detect(self):
+        """Should auto-detect sample_rate and channels from device."""
         player = pyspeaker.AudioPlayer()
-        assert player.sample_rate == 22050
-        assert player.channels == 1
+        assert player.sample_rate > 0
+        assert player.channels > 0
         assert player.is_active is True
         player.stop()
         assert player.is_active is False
@@ -27,6 +25,15 @@ class TestAudioPlayerInit:
         """Should create a player with custom sample rate."""
         player = pyspeaker.AudioPlayer(sample_rate=44100, channels=1)
         assert player.sample_rate == 44100
+        assert player.channels == 1
+        player.stop()
+
+    @requires_audio
+    def test_create_partial_override(self):
+        """Should allow overriding only sample_rate or only channels."""
+        player = pyspeaker.AudioPlayer(sample_rate=22050)
+        assert player.sample_rate == 22050
+        assert player.channels > 0  # auto-detected
         player.stop()
 
     def test_create_nonexistent_device_raises(self):
@@ -49,7 +56,6 @@ class TestAudioPlayerWrite:
     def test_write_bytes(self):
         """Should accept int16 LE bytes."""
         with pyspeaker.AudioPlayer(sample_rate=22050) as player:
-            # 100 samples of silence as int16 LE
             silence = b"\x00\x00" * 100
             player.write(silence)
 
@@ -61,18 +67,46 @@ class TestAudioPlayerWrite:
                 player.write(b"\x00\x00\x00")
 
     @requires_audio
-    def test_write_numpy_array(self):
+    def test_write_numpy_int16(self):
         """Should accept numpy int16 array."""
         with pyspeaker.AudioPlayer(sample_rate=22050) as player:
             data = np.zeros(100, dtype=np.int16)
-            player.write_array(data)
+            player.write(data)
 
     @requires_audio
-    def test_write_f32(self):
-        """Should accept list of f32 samples."""
+    def test_write_numpy_float32(self):
+        """Should accept numpy float32 array."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            data = np.zeros(100, dtype=np.float32)
+            player.write(data)
+
+    @requires_audio
+    def test_write_numpy_float64(self):
+        """Should accept numpy float64 array."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            data = np.zeros(100, dtype=np.float64)
+            player.write(data)
+
+    @requires_audio
+    def test_write_numpy_int32(self):
+        """Should accept numpy int32 array."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            data = np.zeros(100, dtype=np.int32)
+            player.write(data)
+
+    @requires_audio
+    def test_write_list_float(self):
+        """Should accept list of floats."""
         with pyspeaker.AudioPlayer(sample_rate=22050) as player:
             data = [0.0] * 100
-            player.write_f32(data)
+            player.write(data)
+
+    @requires_audio
+    def test_write_unsupported_type_raises(self):
+        """Should reject unsupported types."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            with pytest.raises((TypeError, ValueError)):
+                player.write("not audio data")
 
     @requires_audio
     def test_drain_empty_buffer(self):
