@@ -89,6 +89,38 @@ class TestAudioPlayerWrite:
             player.write(b"\x00\x00" * 10)
 
 
+class TestAudioPlayerClear:
+    """Test clear/interrupt functionality."""
+
+    @requires_audio
+    def test_clear_returns_without_error(self):
+        """Clear on a player should not raise."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            player.write(b"\x00\x00" * 1000)
+            player.clear()
+
+    @requires_audio
+    def test_clear_then_drain_returns_immediately(self):
+        """Drain after clear should return immediately, not block."""
+        import time
+
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            player.write(b"\x00\x00" * 22050)  # ~1 second of audio
+            player.clear()
+            start = time.monotonic()
+            player.drain()
+            elapsed = time.monotonic() - start
+            assert elapsed < 0.5, f"drain() took {elapsed:.2f}s after clear (should be instant)"
+
+    @requires_audio
+    def test_write_after_clear_works(self):
+        """Should be able to write new data after clear."""
+        with pyspeaker.AudioPlayer(sample_rate=22050) as player:
+            player.write(b"\x00\x00" * 1000)
+            player.clear()
+            player.write(b"\x00\x00" * 100)  # should not raise
+
+
 class TestPlayFile:
     """Test play_file function."""
 

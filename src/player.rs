@@ -27,6 +27,8 @@ pub struct AudioPlayer {
     _stream: Option<cpal::Stream>,
     /// Signal for drain: notified when buffer is empty
     drain_signal: Arc<(Mutex<bool>, Condvar)>,
+    /// Whether the player has been interrupted (clear was called)
+    interrupted: Arc<AtomicBool>,
     /// Whether the stream is active
     active: Arc<AtomicBool>,
     /// Configured sample rate
@@ -100,14 +102,25 @@ impl AudioPlayer {
         debug!("Ring buffer created: {} samples", RING_BUFFER_SIZE);
 
         let drain_signal = Arc::new((Mutex::new(false), Condvar::new()));
+        let interrupted = Arc::new(AtomicBool::new(false));
         let active = Arc::new(AtomicBool::new(false));
         let drain_signal_clone = drain_signal.clone();
+        let interrupted_clone = interrupted.clone();
 
         // Build output stream
         let stream = cpal_device
             .build_output_stream(
                 &desired_config,
                 move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
+                    // If interrupted, discard all buffered samples and output silence
+                    if interrupted_clone.load(Ordering::SeqCst) {
+                        while consumer.try_pop().is_some() {}
+                        for sample in data.iter_mut() {
+                            *sample = 0.0;
+                        }
+                        return;
+                    }
+
                     let mut all_silence = true;
                     for sample in data.iter_mut() {
                         if let Some(s) = consumer.try_pop() {
@@ -141,6 +154,7 @@ impl AudioPlayer {
             producer: Some(producer),
             _stream: Some(stream),
             drain_signal,
+            interrupted,
             active,
             sample_rate,
             channels,
@@ -160,6 +174,7 @@ impl AudioPlayer {
             .as_mut()
             .ok_or_else(|| SpeakerError::StreamError("Player is closed".to_string()))?;
 
+        self.interrupted.store(false, Ordering::SeqCst);
         {
             let (lock, _) = &*self.drain_signal;
             if let Ok(mut drained) = lock.lock() {
@@ -203,6 +218,7 @@ impl AudioPlayer {
             .as_mut()
             .ok_or_else(|| SpeakerError::StreamError("Player is closed".to_string()))?;
 
+        self.interrupted.store(false, Ordering::SeqCst);
         {
             let (lock, _) = &*self.drain_signal;
             if let Ok(mut drained) = lock.lock() {
@@ -236,6 +252,7 @@ impl AudioPlayer {
             .as_mut()
             .ok_or_else(|| SpeakerError::StreamError("Player is closed".to_string()))?;
 
+        self.interrupted.store(false, Ordering::SeqCst);
         {
             let (lock, _) = &*self.drain_signal;
             if let Ok(mut drained) = lock.lock() {
@@ -260,14 +277,20 @@ impl AudioPlayer {
     }
 
     /// Block until all buffered audio has been played.
+    /// Returns immediately if the player has been interrupted via `clear()`.
     fn drain(&self, py: Python<'_>) -> PyResult<()> {
         debug!("drain: waiting for buffer to empty");
         let drain_signal = self.drain_signal.clone();
+        let interrupted = self.interrupted.clone();
 
         py.allow_threads(move || {
             let (lock, cvar) = &*drain_signal;
             let mut drained = lock.lock().unwrap();
             while !*drained {
+                if interrupted.load(Ordering::SeqCst) {
+                    debug!("drain: interrupted");
+                    return;
+                }
                 let result = cvar
                     .wait_timeout(drained, Duration::from_millis(100))
                     .unwrap();
@@ -276,6 +299,25 @@ impl AudioPlayer {
         });
 
         debug!("drain: complete");
+        Ok(())
+    }
+
+    /// Clear the audio buffer, stopping playback immediately.
+    /// Any in-progress `drain()` call will return immediately.
+    /// The audio callback will discard remaining samples and output silence.
+    /// Call `write()` again to resume normal playback.
+    fn clear(&self) -> PyResult<()> {
+        debug!("clear: discarding buffered audio");
+        self.interrupted.store(true, Ordering::SeqCst);
+
+        // Wake up any blocked drain()
+        let (lock, cvar) = &*self.drain_signal;
+        if let Ok(mut drained) = lock.lock() {
+            *drained = true;
+            cvar.notify_all();
+        }
+
+        info!("Buffer cleared");
         Ok(())
     }
 
