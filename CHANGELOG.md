@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.2...pyaudiocast-v0.1.3) (2026-02-23)
+
+
+### Bug Fixes
+
+* use PAT for release-please to trigger release workflow ([#6](https://github.com/nicokim/PyAudioCast/issues/6)) ([672c5ae](https://github.com/nicokim/PyAudioCast/commit/672c5ae1b2b12e4fc3cf121f7aec37717ac9d314))
+
 ## [0.1.2](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.1...pyaudiocast-v0.1.2) (2026-02-23)
 
 
