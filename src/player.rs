@@ -3,7 +3,7 @@ use std::sync::{Arc, Condvar, Mutex};
 use std::time::Duration;
 
 use cpal::traits::{DeviceTrait, StreamTrait};
-use cpal::{SampleFormat, SampleRate, StreamConfig};
+use cpal::{SampleFormat, StreamConfig};
 use log::{debug, info};
 use numpy::{PyReadonlyArray1, PyUntypedArrayMethods};
 use pyo3::prelude::*;
@@ -67,20 +67,20 @@ impl AudioPlayer {
             .default_output_config()
             .map_err(SpeakerError::from)?;
 
-        let sample_rate = sample_rate.unwrap_or(default_config.sample_rate().0);
+        let sample_rate = sample_rate.unwrap_or(default_config.sample_rate());
         let channels = channels.unwrap_or(default_config.channels());
 
         info!(
             "Using config: {}Hz, {}ch (device default: {}Hz, {}ch)",
             sample_rate,
             channels,
-            default_config.sample_rate().0,
+            default_config.sample_rate(),
             default_config.channels()
         );
 
         let desired_config = StreamConfig {
             channels,
-            sample_rate: SampleRate(sample_rate),
+            sample_rate,
             buffer_size: cpal::BufferSize::Default,
         };
 
@@ -92,8 +92,8 @@ impl AudioPlayer {
         let mut supports_f32 = false;
         let mut supports_i16 = false;
         for config in supported_configs {
-            if config.min_sample_rate().0 <= sample_rate
-                && config.max_sample_rate().0 >= sample_rate
+            if config.min_sample_rate() <= sample_rate
+                && config.max_sample_rate() >= sample_rate
                 && config.channels() >= channels
             {
                 match config.sample_format() {
@@ -205,7 +205,7 @@ impl AudioPlayer {
         let samples = Self::extract_samples(data)?;
         debug!("write: {} f32 samples", samples.len());
 
-        py.allow_threads(|| {
+        py.detach(|| {
             let mut offset = 0;
             while offset < samples.len() {
                 let pushed = producer.push_slice(&samples[offset..]);
@@ -226,7 +226,7 @@ impl AudioPlayer {
         let drain_signal = self.drain_signal.clone();
         let interrupted = self.interrupted.clone();
 
-        py.allow_threads(move || {
+        py.detach(move || {
             let (lock, cvar) = &*drain_signal;
             let mut drained = lock.lock().unwrap();
             while !*drained {
@@ -329,7 +329,7 @@ impl AudioPlayer {
         }
 
         // numpy array
-        if let Ok(arr) = data.downcast::<numpy::PyUntypedArray>() {
+        if let Ok(arr) = data.cast::<numpy::PyUntypedArray>() {
             let dtype = arr.dtype();
             let dtype_str = dtype.to_string();
 
@@ -362,7 +362,7 @@ impl AudioPlayer {
         }
 
         // list[float]
-        if let Ok(list) = data.downcast::<PyList>() {
+        if let Ok(list) = data.cast::<PyList>() {
             let samples: Vec<f32> = list.extract()?;
             debug!("extract_samples: list[float], {} samples", samples.len());
             return Ok(samples);
