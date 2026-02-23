@@ -50,7 +50,9 @@ pub fn list_output_devices_impl(py: Python<'_>) -> PyResult<Vec<Py<PyDict>>> {
 
     // Add cpal devices
     for device in devices {
-        let name = device.name().unwrap_or_else(|_| format!("Unknown-{}", index));
+        let name = device
+            .name()
+            .unwrap_or_else(|_| format!("Unknown-{}", index));
         debug!("cpal device [{}]: {}", index, name);
         let dict = PyDict::new(py);
         dict.set_item("name", &name)?;

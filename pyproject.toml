@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "pyaudiocast"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Cross-platform audio output for Python, powered by Rust and CPAL"
 requires-python = ">=3.8"
 license = { text = "MIT" }
