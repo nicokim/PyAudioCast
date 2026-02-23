@@ -4,14 +4,7 @@
     ".": {
       "release-type": "rust",
       "bump-minor-pre-major": true,
-      "bump-patch-for-minor-pre-major": true,
-      "extra-files": [
-        {
-          "type": "toml",
-          "path": "pyproject.toml",
-          "glob": true
-        }
-      ]
+      "bump-patch-for-minor-pre-major": true
     }
   }
 }
