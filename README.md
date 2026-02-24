@@ -13,6 +13,7 @@ Stream audio to any output device — including PipeWire/PulseAudio virtual sink
 
 - **Cross-platform**: Linux (ALSA/PipeWire/PulseAudio), Windows (WASAPI), macOS (CoreAudio)
 - **Auto-detect**: Sample rate and channels are detected from the device — zero config needed
+- **Auto-negotiate**: If the device doesn't support your sample rate, it automatically resamples and upmixes (e.g. 22050Hz mono TTS → 48000Hz stereo device)
 - **Device selection**: List and select output devices by name, including PipeWire virtual sinks
 - **Streaming audio**: Write audio data in chunks via a lock-free ring buffer — ideal for real-time TTS, generative audio, live effects, etc.
 - **Unified `write()`**: Accepts `bytes`, `numpy` arrays (int16/int32/float32/float64), or `list[float]` — format is detected automatically
@@ -24,13 +25,25 @@ Stream audio to any output device — including PipeWire/PulseAudio virtual sink
 
 ## Installation
 
+### From PyPI
+
+```bash
+pip install pyaudiocast
+```
+
+> **Note (Linux):** Pre-built wheels require ALSA. Install `libasound2` if not already present:
+> ```bash
+> sudo apt install libasound2  # Debian/Ubuntu
+> sudo dnf install alsa-lib    # Fedora
+> ```
+
 ### From source (requires Rust toolchain)
 
 ```bash
 # Install Rust if needed
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Linux: install ALSA headers
+# Linux: install ALSA development headers
 sudo apt install libasound2-dev  # Debian/Ubuntu
 sudo dnf install alsa-lib-devel  # Fedora
 
@@ -64,7 +77,7 @@ with pyaudiocast.AudioPlayer() as player:
     player.write(audio_bytes)   # bytes, numpy array, or list[float]
     player.drain()              # wait for playback to finish
 
-# Override sample rate if your source requires it
+# Override sample rate if your source requires it (auto-resampled to device)
 with pyaudiocast.AudioPlayer(sample_rate=22050) as player:
     player.write(tts_audio)
     player.drain()
@@ -117,7 +130,7 @@ def on_user_speech_detected(player):
 ```python
 import numpy as np
 
-with pyaudiocast.AudioPlayer(sample_rate=44100) as player:
+with pyaudiocast.AudioPlayer() as player:
     # All of these work with the same write() method
     player.write(b"\x00\x00" * 100)                    # bytes (int16 LE)
     player.write(np.zeros(100, dtype=np.int16))         # numpy int16
@@ -146,6 +159,8 @@ Streaming audio player with ring buffer.
 | `sample_rate` | `int \| None` | `None`  | Sample rate in Hz, or None to auto-detect         |
 | `channels`    | `int \| None` | `None`  | Number of audio channels, or None to auto-detect  |
 
+If `sample_rate` or `channels` don't match the device natively, pyaudiocast automatically resamples and/or upmixes to the device's supported configuration.
+
 **Methods:**
 
 | Method          | Description                                           |
@@ -155,7 +170,15 @@ Streaming audio player with ring buffer.
 | `clear()`       | Discard buffer and unblock drain() immediately        |
 | `stop()`        | Stop playback and release resources                   |
 
-**Properties:** `sample_rate`, `channels`, `is_active`
+**Properties:**
+
+| Property              | Type   | Description                                  |
+|-----------------------|--------|----------------------------------------------|
+| `sample_rate`         | `int`  | Requested sample rate (what you send)        |
+| `channels`            | `int`  | Requested channel count (what you send)      |
+| `device_sample_rate`  | `int`  | Actual device sample rate (what plays)       |
+| `device_channels`     | `int`  | Actual device channel count (what plays)     |
+| `is_active`           | `bool` | Whether the player is active                 |
 
 **Context manager:** Supports `with` statement (calls `stop()` on exit).
 
@@ -217,22 +240,27 @@ The audio engine (`cpal`) is fully cross-platform. PipeWire/PulseAudio virtual s
 
 ```
 Python (pyaudiocast)
-  │
-  ├─ write(data)  →  auto-detect format  →  convert to f32
-  │     │
-  │     ▼
-  │  Lock-free Ring Buffer (ringbuf crate)
-  │     │
-  │     ▼
-  │  cpal audio callback (OS audio thread)
-  │     │                          ▲
-  │     ▼                          │
-  └─ Speaker / Virtual Sink    clear() → discard + silence
+  |
+  +- write(data)  ->  auto-detect format  ->  convert to f32
+  |     |
+  |     v
+  |  [resample + upmix if needed]
+  |     |
+  |     v
+  |  Lock-free Ring Buffer (ringbuf crate)
+  |     |
+  |     v
+  |  cpal audio callback (OS audio thread)
+  |     |                          ^
+  |     v                          |
+  +- Speaker / Virtual Sink    clear() -> discard + silence
 ```
 
 - **Ring buffer**: Lock-free producer/consumer. Python pushes samples, the OS audio callback pulls them — no locks in the audio path.
 - **GIL release**: `write()` and `drain()` release the Python GIL during blocking operations.
 - **Sample conversion**: All input formats are converted to float32 in Rust before entering the ring buffer.
+- **Auto-resample**: If the device doesn't natively support the requested sample rate, linear interpolation resampling is applied transparently.
+- **Auto-upmix**: Mono audio is automatically duplicated to stereo (or more channels) to match the device.
 - **Interruption**: `clear()` sets an atomic flag checked by the audio callback, which discards remaining samples and outputs silence.
 
 ## Running Tests

@@ -32,10 +32,14 @@ pub struct AudioPlayer {
     interrupted: Arc<AtomicBool>,
     /// Whether the stream is active
     active: Arc<AtomicBool>,
-    /// Configured sample rate
+    /// User-requested sample rate (what Python sends)
     sample_rate: u32,
-    /// Configured channels
+    /// User-requested channels (what Python sends, e.g. 1 for mono)
     channels: u16,
+    /// Actual device sample rate (may differ from user-requested)
+    device_sample_rate: u32,
+    /// Actual device channels (may differ from user-requested)
+    device_channels: u16,
 }
 
 #[pymethods]
@@ -67,105 +71,76 @@ impl AudioPlayer {
             .default_output_config()
             .map_err(SpeakerError::from)?;
 
-        let sample_rate = sample_rate.unwrap_or(default_config.sample_rate());
-        let channels = channels.unwrap_or(default_config.channels());
+        let user_sample_rate = sample_rate.unwrap_or(default_config.sample_rate());
+        let user_channels = channels.unwrap_or(default_config.channels());
+        let device_channels = default_config.channels();
+
+        // Find the best supported config: try user rate first, then fall back to device default
+        let supported_configs: Vec<_> = cpal_device
+            .supported_output_configs()
+            .map_err(SpeakerError::from)?
+            .collect();
+
+        let (device_sample_rate, use_f32) = Self::negotiate_config(
+            &supported_configs,
+            user_sample_rate,
+            device_channels,
+            default_config.sample_rate(),
+        )?;
 
         info!(
-            "Using config: {}Hz, {}ch (device default: {}Hz, {}ch)",
-            sample_rate,
-            channels,
+            "Config: user={}Hz {}ch, device={}Hz {}ch, format={} (default: {}Hz, {}ch)",
+            user_sample_rate,
+            user_channels,
+            device_sample_rate,
+            device_channels,
+            if use_f32 { "f32" } else { "i16" },
             default_config.sample_rate(),
             default_config.channels()
         );
 
-        let desired_config = StreamConfig {
-            channels,
-            sample_rate,
+        if device_sample_rate != user_sample_rate {
+            info!(
+                "Will resample: {}Hz -> {}Hz",
+                user_sample_rate, device_sample_rate
+            );
+        }
+        if user_channels != device_channels {
+            info!("Will upmix: {}ch -> {}ch", user_channels, device_channels);
+        }
+
+        let stream_config = StreamConfig {
+            channels: device_channels,
+            sample_rate: device_sample_rate,
             buffer_size: cpal::BufferSize::Default,
         };
 
-        // Determine the best sample format to use
-        let supported_configs = cpal_device
-            .supported_output_configs()
-            .map_err(SpeakerError::from)?;
-
-        let mut supports_f32 = false;
-        let mut supports_i16 = false;
-        for config in supported_configs {
-            if config.min_sample_rate() <= sample_rate
-                && config.max_sample_rate() >= sample_rate
-                && config.channels() >= channels
-            {
-                match config.sample_format() {
-                    SampleFormat::F32 => supports_f32 = true,
-                    SampleFormat::I16 => supports_i16 = true,
-                    _ => {}
-                }
-            }
-        }
-
-        debug!(
-            "Device supports: f32={}, i16={}",
-            supports_f32, supports_i16
-        );
-
-        if !supports_f32 && !supports_i16 {
-            return Err(SpeakerError::ConfigError(format!(
-                "Device does not support {}Hz {}ch in f32 or i16",
-                sample_rate, channels
-            ))
-            .into());
-        }
-
-        // Create ring buffer
+        // Create ring buffer (always f32 internally, converted to i16 in callback if needed)
         let rb = HeapRb::<f32>::new(RING_BUFFER_SIZE);
-        let (producer, mut consumer) = rb.split();
+        let (producer, consumer) = rb.split();
         debug!("Ring buffer created: {} samples", RING_BUFFER_SIZE);
 
         let drain_signal = Arc::new((Mutex::new(false), Condvar::new()));
         let interrupted = Arc::new(AtomicBool::new(false));
         let active = Arc::new(AtomicBool::new(false));
-        let drain_signal_clone = drain_signal.clone();
-        let interrupted_clone = interrupted.clone();
 
-        // Build output stream
-        let stream = cpal_device
-            .build_output_stream(
-                &desired_config,
-                move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
-                    // If interrupted, discard all buffered samples and output silence
-                    if interrupted_clone.load(Ordering::SeqCst) {
-                        while consumer.try_pop().is_some() {}
-                        for sample in data.iter_mut() {
-                            *sample = 0.0;
-                        }
-                        return;
-                    }
-
-                    let mut all_silence = true;
-                    for sample in data.iter_mut() {
-                        if let Some(s) = consumer.try_pop() {
-                            *sample = s;
-                            all_silence = false;
-                        } else {
-                            *sample = 0.0;
-                        }
-                    }
-
-                    if all_silence && consumer.is_empty() {
-                        let (lock, cvar) = &*drain_signal_clone;
-                        if let Ok(mut drained) = lock.lock() {
-                            *drained = true;
-                            cvar.notify_all();
-                        }
-                    }
-                },
-                move |err| {
-                    log::error!("Stream callback error: {}", err);
-                },
-                None,
-            )
-            .map_err(SpeakerError::from)?;
+        let stream = if use_f32 {
+            Self::build_f32_stream(
+                &cpal_device,
+                &stream_config,
+                consumer,
+                &drain_signal,
+                &interrupted,
+            )?
+        } else {
+            Self::build_i16_stream(
+                &cpal_device,
+                &stream_config,
+                consumer,
+                &drain_signal,
+                &interrupted,
+            )?
+        };
 
         stream.play().map_err(SpeakerError::from)?;
         active.store(true, Ordering::SeqCst);
@@ -177,8 +152,10 @@ impl AudioPlayer {
             drain_signal,
             interrupted,
             active,
-            sample_rate,
-            channels,
+            sample_rate: user_sample_rate,
+            channels: user_channels,
+            device_sample_rate,
+            device_channels,
         })
     }
 
@@ -202,8 +179,20 @@ impl AudioPlayer {
             }
         }
 
-        let samples = Self::extract_samples(data)?;
+        let mut samples = Self::extract_samples(data)?;
         debug!("write: {} f32 samples", samples.len());
+
+        // Resample if device rate differs from user rate
+        if self.sample_rate != self.device_sample_rate {
+            let before = samples.len();
+            samples = Self::resample(&samples, self.sample_rate, self.device_sample_rate);
+            debug!("resampled: {} -> {} samples", before, samples.len());
+        }
+
+        // Upmix channels if needed (e.g. mono -> stereo)
+        if self.channels < self.device_channels {
+            samples = Self::upmix(&samples, self.channels, self.device_channels);
+        }
 
         py.detach(|| {
             let mut offset = 0;
@@ -285,6 +274,18 @@ impl AudioPlayer {
         self.channels
     }
 
+    /// Returns the actual device sample rate.
+    #[getter]
+    fn device_sample_rate(&self) -> u32 {
+        self.device_sample_rate
+    }
+
+    /// Returns the actual device channel count.
+    #[getter]
+    fn device_channels(&self) -> u16 {
+        self.device_channels
+    }
+
     /// Returns whether the player is active.
     #[getter]
     fn is_active(&self) -> bool {
@@ -309,6 +310,225 @@ impl AudioPlayer {
 }
 
 impl AudioPlayer {
+    /// Negotiate the best sample rate and format for the device.
+    /// Returns (device_sample_rate, use_f32).
+    fn negotiate_config(
+        supported_configs: &[cpal::SupportedStreamConfigRange],
+        user_rate: u32,
+        channels: u16,
+        default_rate: u32,
+    ) -> PyResult<(u32, bool)> {
+        // Check what formats/rates are supported
+        let mut f32_at_user = false;
+        let mut i16_at_user = false;
+        let mut f32_at_default = false;
+        let mut i16_at_default = false;
+        let mut any_f32_rate: Option<u32> = None;
+        let mut any_i16_rate: Option<u32> = None;
+
+        for config in supported_configs {
+            if config.channels() < channels {
+                continue;
+            }
+            let supports_user =
+                config.min_sample_rate() <= user_rate && config.max_sample_rate() >= user_rate;
+            let supports_default = config.min_sample_rate() <= default_rate
+                && config.max_sample_rate() >= default_rate;
+
+            match config.sample_format() {
+                SampleFormat::F32 => {
+                    if supports_user {
+                        f32_at_user = true;
+                    }
+                    if supports_default {
+                        f32_at_default = true;
+                    }
+                    if any_f32_rate.is_none() {
+                        any_f32_rate = Some(
+                            config
+                                .max_sample_rate()
+                                .max(user_rate.min(config.max_sample_rate())),
+                        );
+                    }
+                }
+                SampleFormat::I16 => {
+                    if supports_user {
+                        i16_at_user = true;
+                    }
+                    if supports_default {
+                        i16_at_default = true;
+                    }
+                    if any_i16_rate.is_none() {
+                        any_i16_rate = Some(
+                            config
+                                .max_sample_rate()
+                                .max(user_rate.min(config.max_sample_rate())),
+                        );
+                    }
+                }
+                _ => {}
+            }
+        }
+
+        debug!(
+            "negotiate: f32@user={}, i16@user={}, f32@default={}, i16@default={}",
+            f32_at_user, i16_at_user, f32_at_default, i16_at_default
+        );
+
+        // Priority: f32 at user rate > i16 at user rate > f32 at default > i16 at default
+        if f32_at_user {
+            Ok((user_rate, true))
+        } else if i16_at_user {
+            Ok((user_rate, false))
+        } else if f32_at_default {
+            info!(
+                "Device doesn't support {}Hz, using default {}Hz (will resample)",
+                user_rate, default_rate
+            );
+            Ok((default_rate, true))
+        } else if i16_at_default {
+            info!(
+                "Device doesn't support {}Hz, using default {}Hz i16 (will resample)",
+                user_rate, default_rate
+            );
+            Ok((default_rate, false))
+        } else {
+            Err(SpeakerError::ConfigError(format!(
+                "Device does not support {}Hz or {}Hz in f32 or i16",
+                user_rate, default_rate
+            ))
+            .into())
+        }
+    }
+
+    /// Build an f32 output stream.
+    fn build_f32_stream(
+        device: &cpal::Device,
+        config: &StreamConfig,
+        mut consumer: ringbuf::HeapCons<f32>,
+        drain_signal: &Arc<(Mutex<bool>, Condvar)>,
+        interrupted: &Arc<AtomicBool>,
+    ) -> PyResult<cpal::Stream> {
+        let drain_clone = drain_signal.clone();
+        let int_clone = interrupted.clone();
+
+        let stream = device
+            .build_output_stream(
+                config,
+                move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
+                    if int_clone.load(Ordering::SeqCst) {
+                        while consumer.try_pop().is_some() {}
+                        data.fill(0.0);
+                        return;
+                    }
+                    let mut all_silence = true;
+                    for sample in data.iter_mut() {
+                        if let Some(s) = consumer.try_pop() {
+                            *sample = s;
+                            all_silence = false;
+                        } else {
+                            *sample = 0.0;
+                        }
+                    }
+                    if all_silence && consumer.is_empty() {
+                        let (lock, cvar) = &*drain_clone;
+                        if let Ok(mut drained) = lock.lock() {
+                            *drained = true;
+                            cvar.notify_all();
+                        }
+                    }
+                },
+                |err| log::error!("Stream error: {}", err),
+                None,
+            )
+            .map_err(SpeakerError::from)?;
+        Ok(stream)
+    }
+
+    /// Build an i16 output stream (reads f32 from ring buffer, converts to i16).
+    fn build_i16_stream(
+        device: &cpal::Device,
+        config: &StreamConfig,
+        mut consumer: ringbuf::HeapCons<f32>,
+        drain_signal: &Arc<(Mutex<bool>, Condvar)>,
+        interrupted: &Arc<AtomicBool>,
+    ) -> PyResult<cpal::Stream> {
+        let drain_clone = drain_signal.clone();
+        let int_clone = interrupted.clone();
+
+        let stream = device
+            .build_output_stream(
+                config,
+                move |data: &mut [i16], _: &cpal::OutputCallbackInfo| {
+                    if int_clone.load(Ordering::SeqCst) {
+                        while consumer.try_pop().is_some() {}
+                        data.fill(0);
+                        return;
+                    }
+                    let mut all_silence = true;
+                    for sample in data.iter_mut() {
+                        if let Some(s) = consumer.try_pop() {
+                            *sample = (s * 32767.0).clamp(-32768.0, 32767.0) as i16;
+                            all_silence = false;
+                        } else {
+                            *sample = 0;
+                        }
+                    }
+                    if all_silence && consumer.is_empty() {
+                        let (lock, cvar) = &*drain_clone;
+                        if let Ok(mut drained) = lock.lock() {
+                            *drained = true;
+                            cvar.notify_all();
+                        }
+                    }
+                },
+                |err| log::error!("Stream error: {}", err),
+                None,
+            )
+            .map_err(SpeakerError::from)?;
+        Ok(stream)
+    }
+
+    /// Upmix audio from fewer channels to more (e.g. mono -> stereo).
+    /// For mono->stereo, duplicates each sample. For other cases, duplicates
+    /// each frame's samples to fill the target channel count.
+    fn upmix(samples: &[f32], src_channels: u16, dst_channels: u16) -> Vec<f32> {
+        if src_channels >= dst_channels {
+            return samples.to_vec();
+        }
+        let src_ch = src_channels as usize;
+        let dst_ch = dst_channels as usize;
+        let num_frames = samples.len() / src_ch;
+        let mut output = Vec::with_capacity(num_frames * dst_ch);
+        for frame in 0..num_frames {
+            let base = frame * src_ch;
+            for ch in 0..dst_ch {
+                // Copy from source channel, wrapping around if dst > src
+                output.push(samples[base + (ch % src_ch)]);
+            }
+        }
+        output
+    }
+
+    /// Linear interpolation resampling from src_rate to dst_rate.
+    fn resample(samples: &[f32], src_rate: u32, dst_rate: u32) -> Vec<f32> {
+        if src_rate == dst_rate {
+            return samples.to_vec();
+        }
+        let ratio = src_rate as f64 / dst_rate as f64;
+        let out_len = ((samples.len() as f64) / ratio).ceil() as usize;
+        let mut output = Vec::with_capacity(out_len);
+        for i in 0..out_len {
+            let src_pos = i as f64 * ratio;
+            let idx = src_pos as usize;
+            let frac = (src_pos - idx as f64) as f32;
+            let s0 = samples[idx.min(samples.len() - 1)];
+            let s1 = samples[(idx + 1).min(samples.len() - 1)];
+            output.push(s0 + frac * (s1 - s0));
+        }
+        output
+    }
+
     /// Convert any supported Python audio data to Vec<f32>.
     fn extract_samples(data: &Bound<'_, pyo3::PyAny>) -> PyResult<Vec<f32>> {
         // bytes → int16 LE PCM
