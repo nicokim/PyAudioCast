@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.7...pyaudiocast-v0.1.8) (2026-02-24)
+
+
+### Features
+
+* auto-negotiate device config with resample and upmix ([#19](https://github.com/nicokim/PyAudioCast/issues/19)) ([8f0d5e4](https://github.com/nicokim/PyAudioCast/commit/8f0d5e41dc1bb18f4623856bb39eb81ad4a59163))
+
 ## [0.1.7](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.6...pyaudiocast-v0.1.7) (2026-02-24)
 
 
