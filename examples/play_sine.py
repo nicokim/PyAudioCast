@@ -2,7 +2,7 @@
 
 import math
 
-import pyaudiocast as pyspeaker
+import pyaudiocast
 
 SAMPLE_RATE = 44100
 DURATION = 2.0
@@ -17,7 +17,9 @@ samples = [
 
 print(f"Playing {FREQUENCY}Hz sine wave for {DURATION}s...")
 
-with pyspeaker.AudioPlayer(sample_rate=SAMPLE_RATE, channels=1) as player:
+with pyaudiocast.AudioPlayer(sample_rate=SAMPLE_RATE, channels=1) as player:
+    print(f"  Source: {player.sample_rate}Hz, {player.channels}ch")
+    print(f"  Device: {player.device_sample_rate}Hz, {player.device_channels}ch")
     player.write(samples)
     player.drain()
 
