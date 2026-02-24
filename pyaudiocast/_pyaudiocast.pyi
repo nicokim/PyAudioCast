@@ -1,6 +1,6 @@
-"""Type stubs for the native _pyspeaker module."""
+"""Type stubs for the native _pyaudiocast module."""
 
-from typing import Optional
+from typing import Optional, Union
 
 import numpy as np
 import numpy.typing as npt
@@ -8,7 +8,7 @@ import numpy.typing as npt
 def list_output_devices() -> list[dict[str, str | int]]:
     """List all available audio output devices.
 
-    Returns a list of dicts, each with "name" (str) and "index" (int).
+    Returns a list of dicts with "name" (str), "index" (int), and "type" (str).
     """
     ...
 
@@ -30,20 +30,31 @@ class AudioPlayer:
     def __init__(
         self,
         device: Optional[str] = None,
-        sample_rate: int = 22050,
-        channels: int = 1,
+        sample_rate: Optional[int] = None,
+        channels: Optional[int] = None,
     ) -> None: ...
-    def write(self, data: bytes) -> None:
-        """Write raw audio bytes (int16 little-endian) to the player."""
-        ...
-    def write_array(self, data: npt.NDArray[np.int16]) -> None:
-        """Write a numpy int16 array to the player."""
-        ...
-    def write_f32(self, data: list[float]) -> None:
-        """Write f32 samples directly (values should be in -1.0..1.0 range)."""
+    def write(
+        self,
+        data: Union[
+            bytes,
+            npt.NDArray[np.int16],
+            npt.NDArray[np.int32],
+            npt.NDArray[np.float32],
+            npt.NDArray[np.float64],
+            list[float],
+        ],
+    ) -> None:
+        """Write audio data to the player.
+
+        Accepts bytes (int16 LE), numpy arrays (int16/int32/float32/float64),
+        or list[float]. Format is auto-detected.
+        """
         ...
     def drain(self) -> None:
         """Block until all buffered audio has been played."""
+        ...
+    def clear(self) -> None:
+        """Discard buffered audio and unblock drain() immediately."""
         ...
     def stop(self) -> None:
         """Stop the player and release resources."""
