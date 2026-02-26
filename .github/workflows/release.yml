@@ -19,14 +19,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build wheels
+      - name: Build wheels (skip bundled auditwheel)
         uses: PyO3/maturin-action@v1
         with:
           target: ${{ matrix.target }}
-          args: --release --out dist -i python3.9 -i python3.10 -i python3.11 -i python3.12 -i python3.13 -i python3.14
+          args: --release --out dist-pre --auditwheel skip -i python3.9 -i python3.10 -i python3.11 -i python3.12 -i python3.13 -i python3.14
           manylinux: auto
           before-script-linux: |
             yum install -y alsa-lib-devel
+
+      - name: Repair wheels (exclude libasound for system PipeWire/Pulse)
+        run: |
+          pip install auditwheel
+          mkdir -p dist
+          for whl in dist-pre/*.whl; do
+            auditwheel repair --exclude libasound.so.2 -w dist "$whl"
+          done
 
       - uses: actions/upload-artifact@v4
         with:
