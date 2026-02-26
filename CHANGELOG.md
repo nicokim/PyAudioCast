@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.8...pyaudiocast-v0.1.9) (2026-02-26)
+
+
+### Bug Fixes
+
+* update python stubs ([#21](https://github.com/nicokim/PyAudioCast/issues/21)) ([b8211eb](https://github.com/nicokim/PyAudioCast/commit/b8211eb781ee9d5c58c7c4f6da25d6b28445a031))
+
 ## [0.1.8](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.7...pyaudiocast-v0.1.8) (2026-02-24)
 
 
