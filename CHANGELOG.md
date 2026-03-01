@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.9...pyaudiocast-v0.1.10) (2026-03-01)
+
+
+### Bug Fixes
+
+* remove stderr redirect that suppressed Python logs ([#23](https://github.com/nicokim/PyAudioCast/issues/23)) ([bde5b61](https://github.com/nicokim/PyAudioCast/commit/bde5b613ce5e846d457f063df2ff619182d72f1b))
+
 ## [0.1.9](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.8...pyaudiocast-v0.1.9) (2026-02-26)
 
 
