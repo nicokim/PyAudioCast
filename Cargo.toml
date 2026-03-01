@@ -15,7 +15,6 @@ ringbuf = "0.4"
 hound = "3.5"
 log = "0.4"
 env_logger = "0.11"
-libc = "0.2"
 
 [build-dependencies]
 cc = "1"

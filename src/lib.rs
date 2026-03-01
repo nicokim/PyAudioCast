@@ -29,12 +29,9 @@ pub(crate) fn init_logging() {
     });
 }
 
-/// Suppress noisy ALSA/JACK error messages.
-/// ALSA: set a no-op error handler (persistent).
-/// JACK: redirect stderr to /dev/null during cpal operations.
-/// The stderr redirect is done once and stays in effect — JACK re-probes on every
-/// cpal call, so we keep fd 2 pointed at /dev/null and route our own output through
-/// the saved original stderr fd.
+/// Suppress noisy ALSA/JACK error messages without affecting Python's stderr.
+/// ALSA: set a no-op error handler (persistent, does not touch stderr).
+/// JACK: set JACK_NO_START_SERVER=1 to prevent JACK from trying to start a server.
 #[cfg(target_os = "linux")]
 fn suppress_backend_noise() {
     extern "C" {
@@ -47,35 +44,14 @@ fn suppress_backend_noise() {
         snd_lib_error_set_handler(pyspeaker_silent_alsa_handler as *const std::ffi::c_void);
     }
 
-    // Prevent JACK from trying to start a server
+    // Prevent JACK from trying to start a server (suppresses connection messages)
     if std::env::var("JACK_NO_START_SERVER").is_err() {
         std::env::set_var("JACK_NO_START_SERVER", "1");
-    }
-
-    // Redirect fd 2 (stderr) to /dev/null to suppress JACK connection messages.
-    // Save the original stderr so Python/log can still write to it.
-    unsafe {
-        let devnull = libc::open(c"/dev/null".as_ptr(), libc::O_WRONLY);
-        if devnull >= 0 {
-            // Save original stderr to a new fd
-            let saved = libc::dup(2);
-            // Point fd 2 at /dev/null (suppresses JACK noise)
-            libc::dup2(devnull, 2);
-            libc::close(devnull);
-            // Point fd 1 (stdout) stays as-is, Python print works
-            // Redirect env_logger to original stderr via saved fd
-            if saved >= 0 {
-                SAVED_STDERR_FD.store(saved, std::sync::atomic::Ordering::SeqCst);
-            }
-        }
     }
 }
 
 #[cfg(not(target_os = "linux"))]
 fn suppress_backend_noise() {}
-
-#[cfg(target_os = "linux")]
-static SAVED_STDERR_FD: std::sync::atomic::AtomicI32 = std::sync::atomic::AtomicI32::new(-1);
 
 /// List all available audio output devices.
 #[pyfunction]
