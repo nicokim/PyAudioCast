@@ -116,6 +116,29 @@ jobs:
         shell: cmd
         if: runner.os == 'Windows'
 
+      # TEMPORARY: how well each macOS output device keeps time.
+      - name: Audio pace probe (macOS)
+        if: runner.os == 'macOS'
+        continue-on-error: true
+        run: |
+          system_profiler SPAudioDataType
+          .venv/bin/python - <<'EOF'
+          import time, numpy as np, pyaudiocast as pc
+          print([d["name"] for d in pc.list_output_devices()])
+          end = time.monotonic() + 60
+          while time.monotonic() < end:
+              for dev in (None, "Null Audio Device"):
+                  try:
+                      with pc.AudioPlayer(device=dev) as p:
+                          p.write(np.zeros(int(p.sample_rate * 0.2) * p.channels, np.float32))
+                          t = time.monotonic()
+                          p.drain()
+                          print(dev, p.device_sample_rate, p.device_channels,
+                                f"0.2 s -> {time.monotonic() - t:.2f} s", flush=True)
+                  except Exception as e:
+                      print(dev, "failed:", e, flush=True)
+          EOF
+
       - name: Run tests with coverage
         run: |
           source .venv/bin/activate
