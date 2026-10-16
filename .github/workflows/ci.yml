@@ -124,17 +124,26 @@ jobs:
           system_profiler SPAudioDataType
           .venv/bin/python - <<'EOF'
           import time, numpy as np, pyaudiocast as pc
-          print([d["name"] for d in pc.list_output_devices()])
-          end = time.monotonic() + 60
+          def pace(dev):
+              with pc.AudioPlayer(device=dev) as p:
+                  z = np.zeros(int(p.sample_rate * 0.05) * p.channels, np.float32)
+                  p.write(z)
+                  p.drain()
+                  p.write(z)
+                  t = time.monotonic()
+                  p.drain()
+                  return time.monotonic() - t
+          def churn(dev):
+              for _ in range(2):
+                  with pc.AudioPlayer(device=dev) as p:
+                      p.write(b"\x00\x00" * 100 * p.channels)
+          end = time.monotonic() + 90
           while time.monotonic() < end:
               for dev in (None, "Null Audio Device"):
                   try:
-                      with pc.AudioPlayer(device=dev) as p:
-                          p.write(np.zeros(int(p.sample_rate * 0.2) * p.channels, np.float32))
-                          t = time.monotonic()
-                          p.drain()
-                          print(dev, p.device_sample_rate, p.device_channels,
-                                f"0.2 s -> {time.monotonic() - t:.2f} s", flush=True)
+                      print(dev, f"plain: {pace(dev):.2f} s", flush=True)
+                      churn(dev)
+                      print(dev, f"after churn: {pace(dev):.2f} s", flush=True)
                   except Exception as e:
                       print(dev, "failed:", e, flush=True)
           EOF
