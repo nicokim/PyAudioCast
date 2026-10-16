@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4deb1554d4bdf8e33ef77e95647eda2b46157b7446b0309d7e40156e83c1d785",
+  "claims": [
+    {
+      "id": "claim_728ecc9dcffb40b589054a8004c4440e",
+      "statement": "All Python-visible behavior is implemented in the Rust extension; the pyaudiocast package only re-exports the native module's names.",
+      "evidence": [
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L1-L5",
+          "version": "repo-lines-v1:sha256:297e4b2bf79196a932cb9d5c0edc457a8d9db0a3511957a726cd7afa1d3a3c2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JlNWUyMmUwNTBkNWY5NTVlYWI4MmJjZTNmODM3MjNjMzc4N2I1OTFlYmE1MjUwYzI2ZGMyZDUyZjc5ODI3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L131-L139",
+          "version": "repo-lines-v1:sha256:1298736cf5af0519fb9f0d1b337315812c5ee5ac12a1cf86c0c2f8c5091f26d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYzNWYwY2Q0ZmM0MmFjNzFjMTAwNzkyZjExMTk3MTUxMGZhYWRjYTBhM2U1OWY0YTJlYzczZjhkZGEyMGZhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRiNzAzOWMwNzhjMmEwMzFjZjZiZWUxMzYyNTg0ZjhkYmFkYjE0Y2NlYTI1MDY0YjIwMzUzMjMxNDQ2OTQ4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a6c285c934441ecbbcc78cb94e24ad9",
+      "statement": "cpal is used without optional host features, so on Linux the ALSA host is used and PipeWire/PulseAudio sinks are reached through the ALSA pulse or pipewire plugin devices.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L15-L15",
+          "version": "repo-lines-v1:sha256:96a08104be005051e281e13e752f0edac622d6df74c9072b15a30232d773b8a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZhMDgxMDRiZTAwNTA1MWUyODFlMTNlNzUyZjBlZGFjNjIyZDZkZjc0YzkwNzJiMTVhMzAyMzJkNzczYjhhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZhMDgxMDRiZTAwNTA1MWUyODFlMTNlNzUyZjBlZGFjNjIyZDZkZjc0YzkwNzJiMTVhMzAyMzJkNzczYjhhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTY2ZTRmNmIyZmRlYWM3NDkxMTE5NzMzZThkNGRkYTE2MTkyYmFhMGM5YTFjYzIyNTk1YzUwMTQ4NzM4OTEzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA5ZDEzYjI3ODE5ZDg0MGE3MmRhOWY3YTNiMWYyZjMxMWEwY2RlZWIwZjcxOWQwN2IyNjIyYWNhYTJhOWY1OSJ9"
+        },
+        {
+          "resource": "repo://src/device.rs#L186-L204",
+          "version": "repo-lines-v1:sha256:b0e035b8031a0a22934ea457f8c0173c6975285de57a311d360cee24503d51df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwOTA0NjQyZGZmMTE4NGVkMDhjZjVjNzBlNDg5YTc0OTM0ZTNkM2YyNTgzN2UyY2QwN2RkMDA4MGU5YTY2MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NGU2ZDM1NzU2YzY2MzA4NjI2NjRhOGI0MjA5NzM4MjZhY2Q5N2M1ZjM0ZjAyNzFjODg5ZmFkM2VkMjE5ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NTgzMDMyM2VmYTNlNGNkNTdjNzdjOGEwMTJjNmEzNzFmMDBlOTRjZTA4YWYxMzkyYjkxMGUzZWQyOWI1ZDMifQ"
+        },
+        {
+          "resource": "repo://src/device.rs#L41-L49",
+          "version": "repo-lines-v1:sha256:77dcd68e7a332cf239aee5b4a9030137408de44a24458911ebb0688fb023be00:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYyZjM4MTcxODg0OThiOTFkOTcxNGY1ODkyMDYyZmRiOTM4M2U5YzBiNzA3Y2Q3YTJjOGI4MmU0NTdiZGZkMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjdlZjNkYmY5ZmQzOGFhNTY1MmIwYjY3YzdkNmZkZmRhODA5NGQ3NjI0NGJjOGVmZTY2YTA3ZWMwZjlkZGRlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTg3YWMxODNhMDVhMzk3MmNiNDA2MWNkYzFmNmFhOWRmNTAyYzkwYmU3ZjRkOGQ3M2NlNjk5MTJkMzQ2ZWFlMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_854fa7fcbed44bf4b69f3f17122971e1",
+      "statement": "The audio callback shares state with Python threads only through the atomics in Shared, while the ring producer, resampler and carried partial samples live in a Writer used only by Python threads under a mutex.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L142-L152",
+          "version": "repo-lines-v1:sha256:15724fc70ef22e4f10a7001047e4eccb8184b5d8de4c58851a30fe18642fa1b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MTc2ZDZiYjZiZjQ1NTkzZDY2Yzk2YmM4YTNlNDYzNGI3ODI3NmU0OTdlMjNiMWM2OWNlNGM3ZWFkZDFmNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiYWMwMmY4ZTkxNzUwNWViOWM3MDBiZTBkOTljNGJiZTIzNzgxZTM3MTlmYTZjZjI3M2FkMDhjMDE1ODY5YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5MGU0N2Q1ZDAxYzM5NDg0YmNmYzFlMGZkMDQzMjdjODgwZGEwNTZlYTA4ZWUxOTkzYzUxYjQ3NmQxMzk5NjgifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L195-L204",
+          "version": "repo-lines-v1:sha256:73c6848d22d6d24e2b7d8d06b440934e3126de0d76a24918e58d912a3f577bc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MjMyNTg2ZTMzZGFiMjNjOWIxYWY2MWRiM2FlZjQ0MDQ1NGFkZDY5YmFjNjI4ZGY3ZjRiNTg1ZDJiOWE1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMTIwZWU1MTI4NTYxYjNjYTMyMzQzZTI2ZTI1NmIwZjNjYjFhMmFkMmRjNjMwYzc0NmJhMTZiZDI0YTc2MzEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L48-L74",
+          "version": "repo-lines-v1:sha256:eeb5148ea0a9408e671aebd779feaee3aacef0222fa7a9c23935b736de8123d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNjgzZmMwNzY4ZDcwNDhhYmM1Y2MyZmI5M2E1NTRhZTRiMWU1NmI4ZDI1N2IxZDZmYWI1YTc1N2NjNDExNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0M2JiMzQ4Y2I1NDI5ZmZkNzk0ZDgyYjgzMDcyMDA3NDYwZTI4N2IyZjcyZjUxYWRiMTNmYzc3YmIwNTIzYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2NmUwYzJlMTdhNTFhY2FiYzQ0OTIwODUzOTYyNWRmYzVjMDJmY2ZlYjE3NjYyODU3YTZjNjY1NDk3Zjk4ZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_462ccbff5ab94691842233df2ace8015",
+      "statement": "Rate and channel conversion happen on the calling thread inside write(), before samples enter the ring, so the ring carries interleaved f32 samples already in the device's rate and channel count.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L444-L452",
+          "version": "repo-lines-v1:sha256:ca59610a68d964e7be9490676139094dccfe2709531dcb34deeebe40500578fe:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjEzMWRmMDA1ZjFmNTFmM2RmOGE4NmZmMmVmOWJjMTFjYzdhMTQyZDBmYzkzZDM4OWJiODlhZDdmNTVmMjNiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY2YzBjMTIxMGFmMzg1ZWQ1ZjEyMGIyZDVkODlmYjJmODU4OTNkYjMwODhmNjQ2ZGE3ZDRkNzZjMGE4MmQxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGUxOTk2M2FlM2RhMmIyOTQxMDhiMjUzZGY5M2I4MTJhOWZmYmIwNTFmOWZkMGE3YjAyMTQzYWIyODM3ZjFhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThlMzgyMmNjNGNmYWM3ZGE5MDQxYWQ5OTcyNjgwNjQ3N2ZlY2EzYTZhYTkyZTQyMWNlMDkzMWRkMTdiNGYxOSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L476",
+          "version": "repo-lines-v1:sha256:6a25ca496b22c9ba0e31101c208dd326949ad9d31e2684ae2b08119fc51562f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMTY4NzZjYzBjMjhmMGVhYTJlYzA3NTAyODE5MmZjNjM3OWIxN2NmYWRjZDVmMjEwYzY1M2JhYWI0Yzc0OTQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L702-L703",
+          "version": "repo-lines-v1:sha256:d94063f2d2889a4f76e5f87ec666a8e103cb34f73000c6cbafe38bd070326613:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM1OWYyOTAyNjhhY2U2NDlhZDZhMGViZDc5ZmE1MzRiYTViOWYwMGYyN2M5ZjZkYjA3YzVjMzczZTIxZTIyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ4MTc2YjFjOTk1MDYzMTczY2VjMWJiOTkxODMzYzY4YjBjYmJmNjE2MjliNDk3YTA1ODA3YTYyMzRiN2E0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I3NWY2M2E5Njc5YmY0NTM1OGJkZjI1NWVkNDU3NjgyYzIwMjBhMGE0NTU1MjJlMjg1ZTc5MjNkMjE1MmJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI2ZGI3Nzc4ZDA3ZGNkNTljOTc0NTg2NmIxMGE4ZmM2ZjEzYTc0ZmRjZGM2YTY3NWYzOTFmY2U5ZjExMjRiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5cb374e025ea43168578d51414ec0608",
+      "statement": "The ring buffer is sized to four seconds of device audio: device rate times device channels times RING_SECONDS samples.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L19-L20",
+          "version": "repo-lines-v1:sha256:524013a1b80cac1d217db9fe8f9ac53881c55d1697574d42e3867607be80b27f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFlOGNlNTA5MWMyMjk3Y2RiOWYyZWQyMzQ4Njg3ZDM2YjVmYjI2MTgyYmNlOGQyYTU3N2RlZWVlNWYyNDBmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIyODg1MDE1MmRiNzc3ZDVkYmRmZTQ5MjRiMzIwZjJhZWQzM2M3MjNlZjI2MmM2OTM2YWY1MjVhNzM2MjExZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVkZmFlNzdkMWI1MDgxOTBhYmU2NTUxNzU4NTVjMWI1ZTk5Zjg2NmEzNzgzNDFhOTUxY2YyMzgwZTU2YmYzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJlZDRhNGUxMTg3YjE0NDljY2QxZjg0OWRjMGY5NWRhYjA1ZGI4ZDRkNDIyNzJkYzM3MmZlYmM0NzEzYTZlNiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L414-L415",
+          "version": "repo-lines-v1:sha256:5a5b969c5f217c0a634a2c65a59345207cb80c99387df6de2ba53f2333ba6eff:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3NDM4MTJkZDM5OGE0NzI2YmI1NDZjY2NjODQ3OWFiMGYzZjU5ZGJkYmJkNTRkM2I1NmNiMTFlNDdhODAzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZmZmUxYzE4OGQxMDBmYzQyYmUxMjhiY2UyNGU1MjhlMjI0NDU4Yjg2NjFmNTY0MDg0NDEyNzdiNjZjYmExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgxN2FiNjRhOGY5NDQ0NTg1MTIwNDliNTU5YzIwZGY5NmI0MDljZjdmNWM5YmI5MDNlYjhhNTc1OGY1M2I4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjY0N2JhNjA4ZTY1OTg2YmMxY2IzMTM4ODVkNzQyMjljOGNlNzMyNmM3Y2QzOGU3ZWY0MTNmNjA5MmJlMWYxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba9488acede346eca101b2fc3e71e589",
+      "statement": "The written, consumed and discard_until counters count interleaved device-format samples, not frames.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L488-L496",
+          "version": "repo-lines-v1:sha256:d898f23a993183c563bcdd891c4db140dc852dd80344c21d236fb588964d167a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzcwYjk0Y2ExN2Y5YjRjZjg3Yjk2YjVlNTRmZmQ4ZDI5MjZlOGUzOGNhZjAwM2NmODU1MjhkMTQ5ZGM1MmY3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFkODM1ZThiNjY0NTVjNTNhN2NjZWVkODU1MGY1YzNhYzE5YjNhNmRlYzM1MzYzM2RmZmZkOTRlMGJlMjc0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWY2NDliMTU3ZDQ3YzdlNjk1NmEzOThkNmY4NDU0ZWM1NWUzMTliYTBjOGFlOWIxNjVmOGU2NTE5Y2Y0ODJlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGRkMmU5YWE1MDc3YmM4ZDIzZjUwNmM5YzU4MTg3N2M5Y2E3YWI2YzMzZjlmMjk0MDhhZTE0ZWZiNzEwZWMyOCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L51-L56",
+          "version": "repo-lines-v1:sha256:9758681bd8e76f83115e9785b4690bb1d4dfd1b905ef6e692aaf6cae25a8c01f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODBlOGM0YjU0MTMwNjI1N2ZmN2IyMjQxMDgwMGEwYjczOTNjNGVmMThmNmQyOTM2MjJjNzEwNmQzODNkM2FjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJmYzk3NTBkZjE1M2Q5NGUxZjE4NTZkMGMzNTgyODc3YjQyMTNhZWE3Mjg1MmNkZjcyZDQwM2ZjYzQyZjNjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI4NjJiNzYyYzg3YzkyZjNlY2YwOTQ0NDI2MDhiZGQ5ZmU1OWI1YzFjNWZhMjhkODA3ZGQwYWZlOWUyMzMyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQ2OTEzNzkzNGUxZWE3YWQwYTU1NTI1NzU5NWFmYTRlYmNiMjlkYTQ3NjUwYTNiNjUwMjI3M2I0M2MxMWIyMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L691-L692",
+          "version": "repo-lines-v1:sha256:06712735fc1fc5691e9177f6280f15e3abed55a806a05bbea96dbcd982839643:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5MDRiYzNiOGQ4OGFiZjVjMDk5YTc4MjBlYjcxY2FmYTc0YTk5MGVmM2ZmN2IzODk5M2QxY2E5MzRjZTJhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNkMzYzYjliZmY5M2UzMWI5NDliMGJjZjBmMzljNzNiNjc4MzEwNTA4OThjYWVjMzI5NzdjYWJhYmIzY2E0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVkYmZlYzhhYWUyNmYxZmEwODcxMWYwNDRjNzllNWFiNDY0MDkyYjE4MzE5NjU0YzFjMzRhM2M2NmY2NzI3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJhOTE0ZDBkYjg4OWZiZWJhMjhhMDYyNWJmMDQ2Y2JjNGQ0M2JiZTZlZWZlZmFjOWMwOGQ1Y2I3MTM5MWI4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_103e0e252ddb4564b8a7350f56569711",
+      "statement": "The cpal data callback renders the ring through Renderer, converting f32 samples to the device stream's sample type, without taking locks or allocating.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L48-L49",
+          "version": "repo-lines-v1:sha256:d2e99d76a3ba0b6b6771935043fc16f1e493ac75732f9437852fac6fdc5a2339:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA2ODNmYzA3NjhkNzA0OGFiYzVjYzJmYjkzYTU1NGFlNGIxZTU2YjhkMjU3YjFkNmZhYjVhNzU3Y2M0MTE1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQzZmM3NWJiNjZmYzE2YjQyZmM1NmJhZjc3YzQ0ZTQ1NWUwNTRkMzc1ZGM3MjVjYTc3ZDdlMDJlNGYzOWI3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQzYmIzNDhjYjU0MjlmZmQ3OTRkODJiODMwNzIwMDc0NjBlMjg3YjJmNzJmNTFhZGIxM2ZjNzdiYjA1MjNiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTk5NGI4OWI2ZjlmZTkyYWJlYjRhYjI2ZTUyN2MxNGY5OWIxYjg4OGIzMzQwYWE2MjcxZTA2Y2M2NmYxZTczMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L585-L602",
+          "version": "repo-lines-v1:sha256:7bb50ca12a6d21e51ff5baa7621b126bd49a837773b609db9978360c97e62f10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZDFjYzkzMTE4YWU2NWQ1ZDVmYWUzYjVmMzdkNjVlNzA5Y2MxN2I5MjZiM2YzMTQzZWM2MjY2M2ExMGI5MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNjczYWJkNDU3YTk3ZWVhMTdhNjAwNjJlYjBmYWVhNmJkZjA5NDg2OGNjNmI4ZjhjMGViZGEyZjYxZWQ0MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZWZhMTFmNTAxNmYzZDlkMDU2MDA1ZGQ4ZjI5ZGJlOTY4MjhiMDc2ZWQxNzU1NWFlNDVjYmU0NWFkYWZhNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4NzEzMzJhMDcxODcyODk0MjczZmY0YzAwMjdhM2M2ZjQ1ZTBiYmQwZmRiZmJjZTdmMzRiM2NkMDNkZDM2MzYifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L639-L697",
+          "version": "repo-lines-v1:sha256:d308cc99ce86c853087eea76908409c878a7d31437f5676806414bb7b6308954:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1M2YzNTk4MGZkOGRkNDIxMzE2ODMxYTZkNjY5ODExODAxOWMwMmZhMTYxNDdmYzUxNjhjNjJkNDhiZmJhZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDFkMTc1YzM1YTRlMjQ0Nzg1YWZjODRjODdhNGZmMGY1M2QxMGFhYmNjNzYyMWI3NzczNzllNWU4MGRjMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNmY2YzY5ZGFhMTFiOWQ2Y2EzNGFjZmU1ZjMxNzMyMzljOTUzMTg1MTFkYWM1ZTc0ZmUzNWIyMjI1YjQ0ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c1ff0bfeb4c4012960caa2b71933fbd",
+      "statement": "clear() and stop() coordinate with in-flight write() and drain() calls by bumping a shared epoch and raising a discard watermark that the audio callback honors.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L313-L320",
+          "version": "repo-lines-v1:sha256:0411d1e8a1227c8fdb67deb1ed63c7dc62c2514fc4e851811e1695c56cd79598:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdmZmVmNWE0YWI0ZDk4ZjkwZTNhZGVjZjljNDg2ZTM5ZDYwZjQ2NTY4YWY1NWZhMWMzMDU1ZTQzMDFlYzliZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE2MTFlYjNlZTUzODRmN2Q2YjEzZjg1OTI1Y2NhYzJhMWE4ZDU1OTkzOGZiMzVhZjExYjBiZWMwMDFjNzIxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg5NTg5MjBlMzg1ZDYwZDU0NjRlNmRiM2I0YTA0OGJiNDI0N2U2YmQyOGNiOTNiZDFiNmQxNTgzOTVkMDJkYiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L670-L676",
+          "version": "repo-lines-v1:sha256:f8b916567579d6ce02d170e8a0913dabc5bae5796f27ed3e9ff71381a116adf5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUwNDQyYWM3YzM3MzM1ODk5YzllMDExZmQzMGI1MmNkOWE5N2RhNmM0ODljMzQzODdkMWYzYjc5NjA1MWM5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZjZGFjOTA4MjFiZGM5YTIyYzQ5ZjhlNmJkNWU1YjIyNGFhMmNlZGExZDJmYmVlZjRjOWQ5YTBiMTVlYjY5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5YmYxYjc1ZTJjYWQwMjQ1YTA2ZjA3ZWFkN2Y3ZDlkOWExNmJmNmJmZWU5ZDhiY2I0MzcwMTZiZGU4MjFjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM1ZDYyZmJlZWEwM2M5ZTNkODEzYzRjMTc2MmRiMjkxZTdlNzgyOTI4ZjljMmViNDBiYjY2MTQzMTFlOWI3MCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L99-L105",
+          "version": "repo-lines-v1:sha256:fb8629e976b40e9d09abdb142d972d9249ae88daf6c54dbbccff29593cf8a8b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5OTMyMjUwMTUzMWMxMDA2MWM1NWRlYWRhNzEyN2U0Mjc5OGU4NGFlZjZhNmU3OTA3YzJhMGZkMmI4ZGI3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2I0NWNkMTYxNzYwZmQ4N2MyZWUxM2I2Yjk2NDAzMjFmNWEyNDdjZmU2NGU0NTJlMjU1ZWU5MWE0MGFmNTk3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM4ZmY4YmI2OWZmZjJhNjIwOTM1NDUzNDIxNTMwMDJlOTM0YmQ3NDc4YmRlODNkOTkzN2U0NDE2OWVkNWY5MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d03910c93be74c91b2ad455df82cafb2",
+      "statement": "Stream failures detected by the cpal error callback or by stall detection are latched in Shared and surfaced to Python by the next write() or drain() check.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L107-L127",
+          "version": "repo-lines-v1:sha256:15035e6949dba163b79c84984785ef4cee2c2b338d3ad381bc02aa4a5e04cbd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzIwZTY2YjAwOTllZjI3NzQ4OWI1MDEzZTBhNjA5OGJhODZiNjRhYzQ4OWNjNWYzMTQzMGUzOGNiZDk4YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYzY4ZGQzNWU2N2ZmODMwY2RjNzRkOWNmZTdmMTc2NmRkNGRlNWY3MTRhMWY5Zjg1ZmJjODc1ZTRiZTRkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L538",
+          "version": "repo-lines-v1:sha256:81c015677cd9cabf310193f4c9f1a96446e1871d14578d0e2e03cd66cb06ba43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxZjcyNDkxYjdiMDRkZjJlYmY2ZjVkNzU4M2M3NDRiZTk1OGQxOGQxMTNkODUyYzNjNzU3MDEyOGFjNWY1NmQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L603-L633",
+          "version": "repo-lines-v1:sha256:c84dffe0b31e4d94e88a33b6b6a682eef09319d3d563d3f9e0659dc3710029a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Yjc1NGVhYTBlZGYwNzM3NTE1ZTRkODNlODkyYWIwZTc5NmY3NWI4NDk4MzhiYTI5MjBjYzFmNjBiNDU4ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNjczYWJkNDU3YTk3ZWVhMTdhNjAwNjJlYjBmYWVhNmJkZjA5NDg2OGNjNmI4ZjhjMGViZGEyZjYxZWQ0MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYjZiMWFmZDRiMGY3ZDdiMDUyNWNhZjJhM2YyMjczMDI3N2YwMTRmOWQyMWNjYjg2YjQ3MzQ3ZTQ2NWJiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4ZjBiOWQ5YzgxMWQ2ZjZiYTE1MDM3MzVkNTJjZjI5NmQ4ZGZlMWI1NGU4Nzg5ODQzNDQ2YWI4ZWFiNjJhZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_788f226ac44444e686ab143b9ae471fc",
+      "statement": "Device lookups and stream opens are serialized process-wide by a single mutex in device.rs because sink routing changes the environment that alsa-lib and libpulse read.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L121-L123",
+          "version": "repo-lines-v1:sha256:87dbc19e42f624b672602d0a9fb9c5eb4424ae52f8f98fd17072160b34a16b36:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM5M2Q5M2I2OGQyNmU0NDE2MTFhOWU0ZWI2NTEzOTBjNWNkOTYwZjc3ODcwMzY2ODQ4NjQyZDNhNGZmYWQ5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYxNmQyMzEwNGVmMGQxNzM0ZjAxOTgwMDZjNjlmMjkyNjYzMDNhNjMxM2YxNTZiZWJlNjFhMjIyMTkyM2I0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE4MzA2NDdiZDM1MWQ0NTE4ODE3OGUyNTk0ZDRlNDhkOWY3NGI3YTRmZGI0ZjljZmJiOTY3YTc1YTRjNWM1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODcyODFjYjFlM2JmNmM3OTI3MGI3NGYyYmIxMmRjY2FjNTQxY2Q5OTM2MTU1NzkxZjQ3YzM5NDBiYWY2OTVkMSJ9"
+        },
+        {
+          "resource": "repo://src/device.rs#L33-L39",
+          "version": "repo-lines-v1:sha256:c4bf8e60f0537cd46f67ab22388df81e92aebe7c633b3972c592f296efc528a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTRmNTljNDkyYWU1ODBmNTAwZGYzYjk3YWEzNmQ3MDlmZjA3YjFmZDZlZDNmNjk1MzlkNzU2MzEzZjA1ZjIyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBjOGM5MmM1NjZkNDhkZWE0ZjhlNzBlMzhlZTkxNmMxNDc0ZDQ2YjZiOWI1ZGY0MTFiNjkzOGE5NTZlNjU1NyJ9"
+        },
+        {
+          "resource": "repo://src/device.rs#L80-L82",
+          "version": "repo-lines-v1:sha256:164e7f6347a089f2528d2cc75e1d0aafbe232d5b2775afdd7603168abdb0d040:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFiZGI1ZDZlNmNiZGJmNjJkZmYxOTUzZTVjNzBkNjEzOTJiMDNiMDFlZmZmODE5Mzk0MTQ0MjZmNTlmNzFkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYxNmQyMzEwNGVmMGQxNzM0ZjAxOTgwMDZjNjlmMjkyNjYzMDNhNjMxM2YxNTZiZWJlNjFhMjIyMTkyM2I0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZkZDgzYTkzN2ZlNWE2ZDJjYThhMGEwYjkwMzliYjcwMGNiZTUxNGE3NjBiMTE0M2E0YTc1OTExOWYzMGU3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWIwOWJlNzBhMDFmYTcyOTdjMzFjY2Q1YjA4MzRhOGE2MTE0NTE2NTgwOWEyMmEyNmEzMDYyNTMwYWE0YTI2YiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L374-L380",
+          "version": "repo-lines-v1:sha256:b2bbdfdec93efa9677b55169388c38443b4b7a0bdc46a965a5d26e98a373c794:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3NTM1NmYwYzQwNjBmZDkzNWUwNzliZDI2OWFmYWFkN2IyMjM2MTM4NDNkZDJkOTFkYTcxMTdkOGE1YmRmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU5ZmNhMDMzZDQxNTdmY2Y3OTViNjU4MTdiNmZmY2Y2MDhiZmQyNWU0MWUzMzE4N2UxNWEyMDk2MDVkMWU5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWExYTQ4NWQ0NDZjMTVhZGI3OTcwYjFhNjgxODM1Y2IxMTM5NDNhNDljNzYzYjAzMmU5NDVhY2RkMDU3MWIyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI2ODk5ZDg0MTRiNzVjOThhZDU5NDJhYWYyMmYwMDIwMTQxMDliODYzNDIyOWYxZDViNzAyNGU1ZjNkNTFhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5611304129324841a68f0cd53c3ae594",
+      "statement": "On macOS the stream opens at the device's current default configuration and all rate/channel conversion is done by the Rust converter; on other platforms the configuration is negotiated against the device's supported configs.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L391-L403",
+          "version": "repo-lines-v1:sha256:c69377200bc72fc65074656dfef2564c75652788e2f55285c9f6c8cf226f18cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4ZDA3NmJlMjZlN2IwOGMwZjIxOWViMmIxNWQwYmNlMWZhMGY4MDM2ZTgxMTkxNTExODIxYWE5M2ZkYmYzZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkxNzRhZDUwYTNjY2M4Y2VmZjc1NTBhMzhhYjgxMmNiMDQwMzgyMmE2NDgzMzUyOTkyM2E3M2RjOGY2Nzk4ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNzc1MWYxNDZiMGQ1ZDRlZjhhNGVlOTIwMDkwOWJhOTc2NGUzNjQxMDg4MzVmYzc3OTVlMjZlN2Y2MzYxOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_368e8bc03a3b49fe9eaa968b7464cd62",
+      "statement": "stop() ends playback by dropping the cpal stream, while the Writer and its ring producer remain until the player object itself is dropped.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L312-L320",
+          "version": "repo-lines-v1:sha256:e92ee5896c9807c4062dee11c9cee3524709bc3335399f4c0a10776ce66a361c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NhYjJmMTBhMGJmM2VlZmI4YTk5MjdhMWQ4ZjI3Mzk1OGE2YTU2ZTI2MzNkODBhZWU1NmRmMGU4MmFhMWMwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI2NWViOGJhZTMwOTQ2YWI5ZjEzMzRhMGVkNWEyYmYwMzcwNzk2NmRmN2I4ODAzYmVjN2U5ODM0ZjgyMTkzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg5NTg5MjBlMzg1ZDYwZDU0NjRlNmRiM2I0YTA0OGJiNDI0N2U2YmQyOGNiOTNiZDFiNmQxNTgzOTVkMDJkYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eeb5f9039fde4e8fb9e235806a60842c",
+      "statement": "play_file reuses the AudioPlayer engine: it opens a player at the WAV file's format and streams decoded chunks through the same push and drain path.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L65-L115",
+          "version": "repo-lines-v1:sha256:ef06fe0db09cf719f9679e323b34079671f9809c684197620e8332fa7f159909:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMTM3NTdiZjE0ZTQzYWE3MDc2MDM0NzI1ZGQ0YzI0ZjY3OTliOWE1MzA1ZmEyOTExZTllOTMwOTExMDY4YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NzM3M2Y0ZjFhNGZmZDI0N2YyZTdmZGE4ZGIyMWMxNGYyOTQzZDQ3NmI5MjczNjBkYmM3MTFhNTIxYjM5NzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0M2ZiOGRhOGYyMDZkZjMxMTEyMjQxODNjYzNlOTY4ZjExZTEyZjgzNWZiZDU5OTVlNGE2Y2YzMGI0YzA1YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0MThlM2FiNzQyYWU0YjM3M2Q2MjkwNWQ0OWE2N2U1NDE1ZjNmZDYxYWE5MWFmYjc5ZTgxODQ0MWEwMjJjZjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a292a462ab072d929e2a86d98a01a8867727ab5d559940266769a6558bc24fd4",
+  "claims": [
+    {
+      "id": "claim_5eafc455898b4a7b80ba8f0c1b6aaaf1",
+      "statement": "PyAudioCast is distributed as the pyaudiocast package, a thin Python layer over the Rust extension pyaudiocast._pyaudiocast built with PyO3 and maturin, targeting CPython 3.9+ on Linux, macOS and Windows.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L8-L14",
+          "version": "repo-lines-v1:sha256:12a3d02f21dc9ef6ca06153a9d7b65593456d09764c1146b5b781114960eb121:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg0MzVlZjU5NGYzMzcwNzMwN2MxZmU1OWIwMTdmMjExZTllZThhMTVjODJkZDVlYWIxOWI3NjdhNmY3NGJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdjMmZhMzlmM2VlNzE1OGRhNjI1Mjc1Mjc3NTE3MTgwNWUyZjhhZjU3OGY0ZmQzZjE3OWIzODAzYzkzNTIwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWNkNzdmMTUxNzgwMGZjZDc3NmYwNzEyMjdkMTQ0M2FiMmRhY2U1ZDRhYzAxM2E0OTFjODE2ZWEwOWMxZTlkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBjNjkyZGFmODMyNzkyNDdmNTQzMGNmNDk1MWY3YWEwODYxMTlhNzQ3ZGZmMjNmMjBhZDZmZmVmYjc3ZTcxYiJ9"
+        },
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L1-L5",
+          "version": "repo-lines-v1:sha256:297e4b2bf79196a932cb9d5c0edc457a8d9db0a3511957a726cd7afa1d3a3c2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JlNWUyMmUwNTBkNWY5NTVlYWI4MmJjZTNmODM3MjNjMzc4N2I1OTFlYmE1MjUwYzI2ZGMyZDUyZjc5ODI3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L1-L31",
+          "version": "repo-lines-v1:sha256:579450e84bf6bf4ee2606a3a5af5c9a412b53fa1368fefc66b988c87887a4aa2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0NTY5OTQ2YWM5YmJlN2NiMmNkZWMzZjhiZWNmMzQzNzUwYzU4YjliMzIxZWMyMTk1YmZiYWFiMmFhOGM0YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NDE2ZTA5Zjc4YmEzMTZjMDMyNTY4MjEzYjg1NWVlNzU2ZTQxNTY1ZDkxOGYwOTUxOWM4MWZkNjIwZjQwNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5M2NmYTE5YzM3ZTQ5ZjlhMDg0MDEzMmM2YzMwNTMwNWVkYzA0MTQxZDI2MmY3YzljYTA4MWEzOTVjYzI2MDcifQ"
+        },
+        {
+          "resource": "repo://pyproject.toml#L42-L43",
+          "version": "repo-lines-v1:sha256:3528203ede15f6e3f37d992e4a7cddc69ce70da8fa358db66d7f22605f27645a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZjZlNmE2Mjg0OTBmMDdmYWVlYTk4ZDgzZTU3ODRmZmE3ZDM1MjU5NzVhYmI5NTNjMDQ0NjU3N2I0NjQxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYxNWQ2MmE4YmQ3YjQ4MWJhMWQzNDFhOTdhNjZmZTk4ODM4OTc2ZTE1MTNlNWZiZTVhZDMxMGQ0NDI0NWE2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ1ZDNmNDg4NWRkMDc3MWU2YjA3Nzc2ZTg5ZDY5ZjNiMDgwYzA3ODE4ZWY4NjVmZTJjMWE3ODc0MGI2MGUwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c519dcd2517340a6b9e84f6fb44dbbdc",
+      "statement": "The Rust core divides responsibilities between lib.rs (module entry, list_output_devices, play_file, logging), device.rs (device listing, matching and sink routing), player.rs (the AudioPlayer engine) and error.rs (error conversion to Python).",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L79-L121",
+          "version": "repo-lines-v1:sha256:5b65bd18858412762a7d7afbdd66c17e4a122e58e65be2599ca8ef38b3321a62:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOGY3NDBkOGE2ZWRkODMyYTQ2MDIxOGFkYTU4ZGNmNDIzZWE5Yjg5YTZhNzRlZDdhYmVhYWE2YTIzZDRhYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzOTNkOTNiNjhkMjZlNDQxNjExYTllNGViNjUxMzkwYzVjZDk2MGY3Nzg3MDM2Njg0ODY0MmQzYTRmZmFkOTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MzlmZjlhOTY3MTZkNWIyNjRkNTU5NDQzZDQ5YTM4Y2EyYTA5MzE0NjgwZDc2YmIyZTEzNjRjY2I2OWUzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNjY1NWE1ZDc5NzY1YzkzNTQwNzIxNGY2NjNjMzFiN2Q5YWU5YmI2NDJkYzNmYmZjODkwMDcxMTdlZDVlZjEifQ"
+        },
+        {
+          "resource": "repo://src/error.rs#L37-L41",
+          "version": "repo-lines-v1:sha256:c8a33cb02003943a15cb7b198024ee7d373cf66ad6554049bddc6205bba4304f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVkNzg1MzBhZTllNzI0MDc0ZDY5NjY0ODU5Mjc2YTE2NjFjNmVhMmE5ZGQ2N2Y3YWU3ODMzNzEwYTFhODYwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThhY2FkYTM2NGM1MjcwODYwMTQ4YjIyZWFhZTljNDA1OTU2MTgyMjdlNWNmNGIwMWQ3ZmU2Y2I1NjZjOWU1NCJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L1-L13",
+          "version": "repo-lines-v1:sha256:ac7f58d4ac1ada9d83a4ae5cc84523e359731d0f8df28fe3b3a5fe1d9f011601:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjQ1OTNlYTcxMmJjNjk3ZGFhZjIyMjBmNzNkM2ZkNmQxNDM0Zjc1MTBlYjgyOTVjZDQxMWU4NjA1YWYyZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MmIyYzJiZWY2OGRhYmZiZTljNGJkYTNjYWUwNzA3ZGY1Njk3NmRjOGUxN2UzNjMzMDI4NTlkNTcxZTAzY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhMjM4Y2ViMjAwMTAyMDMyMWJiMzI0ZTBiZTIyMGM1ZjA2ZGFhZTQ0MzA1ZmM5MzZkMzJmYTY3MmM2NDc1N2MifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L131-L139",
+          "version": "repo-lines-v1:sha256:1298736cf5af0519fb9f0d1b337315812c5ee5ac12a1cf86c0c2f8c5091f26d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYzNWYwY2Q0ZmM0MmFjNzFjMTAwNzkyZjExMTk3MTUxMGZhYWRjYTBhM2U1OWY0YTJlYzczZjhkZGEyMGZhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRiNzAzOWMwNzhjMmEwMzFjZjZiZWUxMzYyNTg0ZjhkYmFkYjE0Y2NlYTI1MDY0YjIwMzUzMjMxNDQ2OTQ4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L195-L207",
+          "version": "repo-lines-v1:sha256:b6168ba3d8757602c519362f471e997ff96bdd499793f0aff35ea0487bb1d356:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MjMyNTg2ZTMzZGFiMjNjOWIxYWY2MWRiM2FlZjQ0MDQ1NGFkZDY5YmFjNjI4ZGY3ZjRiNTg1ZDJiOWE1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwYzkyMTUyMzBmZWVmNTk0OWU2NjUzZjBlM2JhM2FjZTRiMTE0MDczNjZiYjYzM2ZiYTg3OTliZmJiZTg5YzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkYTZhNzEyN2IwOGE3OTdkOWFiYjEyNzg4ZTAwZjMzNjkxNWM2ZjM2Zjc5ZGI4Mzg0YzhhN2VjYWE0ZjU2ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a56b0fe6d1a74075a9f926445ff89ce5",
+      "statement": "The tests import the package under the alias pyspeaker and mark device-dependent tests with requires_audio, which skips them when a default AudioPlayer cannot be created.",
+      "evidence": [
+        {
+          "resource": "repo://tests/conftest.py#L1-L21",
+          "version": "repo-lines-v1:sha256:00a3a049863a32806938f81022466c3f0fec2a03b5efdcb350c9c61871b91146:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NmEzZmJlMjM5YjUyZmRiYTdmNjEwMjQ1MzlhMTZmZTBlNjY2YzYxM2RjNmM3YjI3MmE5YmUwZmQ0Zjg0MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c49bad19fc1947848d8a63ce990709c3",
+      "statement": "Local development installs the extension into a virtualenv with maturin develop and runs pytest from the repository root, while cargo test runs the Rust unit tests.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L281-L289",
+          "version": "repo-lines-v1:sha256:5bd1e0601013baa3e84fbecb9bbee9e7a5c290159bef028a559d667a99070cfc:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIxYjA0NTNhYzY2NWJlNGZkNTJkY2FiZDRmNTdmYTkzNjg5NWUwYWNmZTJhNjYyYjlkMGZmYzA4MTBlZTY4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg3NWI0NGQzZWY2Y2QxMzdlMzI0OGVkNmI2YjA3OWNmNmFlMzdhNTk5NTUwYjhiMmY5ZTBhNmQ0YmMwMzE3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMwNDU1OGQ4YzMzZThjYWNlNTQxMDAwM2EwZjMxMTdkODQyMmE3ZDBhOWQ2OGFkZDY0OTBmMGM4ZWVkMWNhZiJ9"
+        },
+        {
+          "resource": "repo://README.md#L59-L65",
+          "version": "repo-lines-v1:sha256:2f99df70d0f66c1c945bccf00e5ed8928fb3562831469e98a0ae17d32f149696:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ0OTAzYmNhMjkzOWU1YmIzMDFkNTRmMTQ4NTc3MzdlOTgyNGYyMTVjYjM5NGIwODc2YTMwOWQyMDIxNGNhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2UwNDJlNmQwYTcyOGE5Y2VmYzI3ZmNkZDI3OTEyMTc0MGQxNzg0MWQ2ZGUyYjNmM2IwZWVmNWM4ZjVkMGU5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFiODhkOWY3MDVlNzc2MjVkZjk2OGUwNGM5ODYxNDhlOTM1NWNkNmI4OGMyOTgyOTU3MWE4ZmM3M2VkZjlkZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c860022e29f4329b77bfd98f2ae9eb5",
+      "statement": "Deliberate simplifications are marked in the source with 'ponytail:' comments naming their ceiling and upgrade path, covering the 5 ms polling, the 5 s stall timeout, the cubic resampler without anti-aliasing, first-channels downmixing and the usbstream name-match exclusion.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L106-L111",
+          "version": "repo-lines-v1:sha256:3412ba12fbeb683c035d1349ebd8845d938fe8b422db0095a4afe77da8303bbc:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjlmNWEyYTk1NmI5OTRkYzJlZjM4NGNkYmM2NDgxZDZlZGFhMjQzZDAxMzBlZDFhZjg2MWY2NDQwNzM2OTI3NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NmNzM1NDQ4OWQ1ZTUxMDNiOTcwOTZiOTFmYTc1M2NjZWEwYjBkMmUxNTQ0ZTU4N2MyZGY3NTk2ZjY5MzU2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzMyMGE1MzIzZDJlMjA4YjkwZTQxMDI3MWI4NDcyMmQ5NzMwNmE0ZGFkZDcwNWNlYmIzMjJlMWM5YmMwY2I0MCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L21-L29",
+          "version": "repo-lines-v1:sha256:508596ab0ba8be03b0d0582348afa442d1d787a15883519db440fc6e906c98ef:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIyODEzMzVjYmU0YWNjYjk5MGE3MmI0YTlhOWFlMDhiYTA3Zjk4YjA0OGFlZDQ0ZDE5ZDI5MmIxODUyZThkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODlhNjQ2M2FlMGYwOWFhYTk1MmI5YjU5NmZlZjhlZTczZWRhY2NkN2RkYjFmMDY0MzAwN2QwYjM0YzUyN2FiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZhNTAyZmQ2ZGM0MWE3MmU2ZDY5NmVlZTdjMWYxZTFkNGNlYWMzODMzMmQ1ZjljYjJlNmU2ZjUwZDQxODVkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVlNjliYmZhNmMwYjZhZGEyNDc2N2IyYzgxODMyYmE3ZmRhZDVmOTI3ZmRiZWQ2YzcyMjJkMjBhNjdlM2U3YyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L761-L762",
+          "version": "repo-lines-v1:sha256:ec28fec98993f25a5e6003fbcc7275403092227f0ef96441b84feee0fda18926:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM1MDc4YTEwODBkODNjYzIzMGJiZGY5NmY1ZGE4MGJmMmQ1MTYzZTVhMDk0ZDA4NGE5MWJkZjUxNmFlYzExYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFiY2JiMjgxMjczYjkzNGVmYzk3Y2UwMWE2YzFiYjNiNmIzYTdhZTYzNjc4ZTFlNzJlODgxZTZjM2MyYmEwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjc3MjU2ZDViMTc2OGZjY2Y2ZmFmYWRiYTQ5ZjFmMjJhMWVhZmQ1OTZkZTJhMmVmNjg1MTBhNzYzMWY2MmUzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdiMDAzNWNmOWVlYzJjNTg3MmMxNWIyNmFkNTBlMTYxZjg4NDc4ZjY0ZmQ4YTMxNmRmZTM0YThmYWYzYzlkZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L809-L810",
+          "version": "repo-lines-v1:sha256:3c40e466a02a4eb4c220b6bd61a9456754fa72418280952e7e9104676fc80d17:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiNzBlOTRjMTQ5Njk1MzI3N2M2ZTI1NmRmOTlkZmQyNDNkZTBiNzUxOTczM2M0YjAwNzlmYTU4YzdkMjY4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZmMDZhYzdmMTRjNTgyNDhkMzcwNTU3MWZjNWI2ODQ2ZjIwMWExMjRjZGZiZDI3M2ZmMGUwZjg0NjE5N2YzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRmMzNkOTU3ZjI2MWNjMTdkOTFlZjA5ODFlMTg5ZDVhNjIyOWI1OTk1ZWM4Y2IzZWUyNWYyOWYyMGJhMWNiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWExNjM4OWNiNzAwY2RhYzQ3MjNmYjAyM2U5MDg3ZWU0OThkODlkOGVhZmMyZTIxNjIxMzAxNmFhZWM0NGE5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8e9b8855a9c4229bbf3d9c59419d551",
+      "statement": "Releases are driven by conventional commits through release-please, whose pyaudiocast-v<version> tags trigger the wheel build and PyPI publishing workflow.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-please.yml#L1-L17",
+          "version": "repo-lines-v1:sha256:03538308612f63e889790af3aaee2d133aca2fabaad0a6672b5f9a0d1f912129:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjliNjMzMjE4MzFkOTkxMWRkNWFkOTlmMTM5NjYyMTIyYTA0YmU2YmU4Zjk5ZWY5MThiMmE1N2NjNDlhOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOGJmNDhkZjFhM2MwMDNhNmQxZGViYmYxM2NlZjQ5OWIxOTE3ZjcyYzMxNDI2NGY1YmJkMWRlZmFhNGE2YzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/release.yml#L1-L6",
+          "version": "repo-lines-v1:sha256:2500c2a920a94660cf83e98d6c3db51d8dc9ce54bbc5f76672073c934241bf64:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJlZWY5MDMwZDBjNzAyOTAxMGM0NjM1Njg5ZjU4MzI4ZDEwOWU2YTg1ZWQxYTkyNDViMjBmMzk1NWI3ZGIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI0MGQ3M2E4NjYzOGY0YzA5ZWU1YmI4OTY1NzFkMDE1MmNiN2IzZDQwMzc1ZmM5ZDc4N2M1MTQwMTk3MGQwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UyNzQyMjRlOTgyODgxZDk4MWI4YWRkZmRkYzk4ODBiMmYxZDA3ODAzMTVkNzBkNWQ1MTkxYzc1Zjk1YTViMiJ9"
+        },
+        {
+          "resource": "repo://release-please-config.json#L1-L10",
+          "version": "repo-lines-v1:sha256:81a8810bbcd0996248575d5d8a1c5bc76993719dcd89f6c26037c9e45e8a24e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

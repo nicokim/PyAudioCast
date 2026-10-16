@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:763479ebfb2c80d9e7e5b0afdd501b582e1881720209e9704de1a9f33612da83",
+  "claims": [
+    {
+      "id": "claim_db44daaec1ef44bc896bbef08f7995f2",
+      "statement": "The pyaudiocast package re-exports exactly AudioPlayer, __version__, list_output_devices and play_file from the native module pyaudiocast._pyaudiocast, which registers them at module initialization.",
+      "evidence": [
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L3-L5",
+          "version": "repo-lines-v1:sha256:4315b2ba07301b0b8df30950e327c087ab4ebcd02fc5810e9c25a82122fd813e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNmNmIzMTU0YmI4ODliMzkxZmI3NmUyOTdjYTg0ZDA0MzlmZGNmZTIzY2ZlY2NlYmY0NjllODFlYmYyMDg0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU3MGEyZjVhYWNiZTE3NGQzZmVmYjdjMWMzMTA5YWM3Y2FiNTYyNGYzMTYyNmQ5NDhiNzMyOTEyMjg3ZDA1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L131-L139",
+          "version": "repo-lines-v1:sha256:1298736cf5af0519fb9f0d1b337315812c5ee5ac12a1cf86c0c2f8c5091f26d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYzNWYwY2Q0ZmM0MmFjNzFjMTAwNzkyZjExMTk3MTUxMGZhYWRjYTBhM2U1OWY0YTJlYzczZjhkZGEyMGZhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRiNzAzOWMwNzhjMmEwMzFjZjZiZWUxMzYyNTg0ZjhkYmFkYjE0Y2NlYTI1MDY0YjIwMzUzMjMxNDQ2OTQ4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JjOThkNmIwZGM0OTJjNTAxNmRmMTA4MDVhM2E1NGViOWMxODRhNWE2MTM3ZTdmNGJlY2ZhMGMyMjA1NTBkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5daa4603d5548b6b276c92c936be093",
+      "statement": "pyaudiocast.__version__ is the Cargo package version compiled into the extension.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L1-L3",
+          "version": "repo-lines-v1:sha256:71f25f67535f8f9b1f43f6f0cbb867686af3e0031a7526ea5e48e8e88b235cb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGEzY2Q1YTgxYjNmOWE2MjFhYTQ5M2Q5MGM0NWY0MmFiNTcxZDRlNDJiOGFlNWFmZjM1MWNiMGEwMmQwNmQ4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQwNTYxOGEzNDg3Nzg4NTRjNTczNjM2NGI4N2Q4ZjQxMmIxNTc2NWM3NDkzYWZkNTU1MWVjNjI1YjQ2M2VmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDJhZDBmYjJhMmZmODVjNjY2MGNkZDZhMzdkNDI2YmJkYjE0YWZlNDYzY2FiZGQxZTdiNzM3MGE1YTdiOGVmYSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L133-L135",
+          "version": "repo-lines-v1:sha256:3c72be3a2c4d7e1b4e82d0984e799b4689120c86b664f6e52922099ee8916c38:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE1ODA2ODVmYWRiYjI1OTcyZGU0ZWRlNzAyOTRmYWQ2MmY3NWMxZDlhNjJkZWE1MmY1Mjk1OGI3YWMyMzgwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FjMGE1ZDk2YjAzMDE0ZWFhZGVmNjYxYjYwZDA4YWI1MzAyZDM0NmRlNTM3Y2MwZDQwYmVmN2UwZjMwY2VmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIxMGNmMDE2OGVlMzNjODA0N2EwMTk2NzRjYmUxOGE4ZTU4YzMzYTQ0N2IxNzI5MTU4ZjNhYTNkNDY5Y2ZmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmNiNDY3OTk4MDAwMWM3OGYxOGYzYjE5MGRmZjQxODZiYzRiNmYzMTNjNDJhNWJiZWFmMzQwZjU3MGQwZWY0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c72638eaea004145bd725378af7df51d",
+      "statement": "list_output_devices() returns one dict per device with name, id, index (the position in the returned list) and type keys, and enumerates devices without holding the GIL.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L28-L47",
+          "version": "repo-lines-v1:sha256:08ae18a02f3f966a085c84a176a9f29fc378ae1982de6d8d5d49c21f46e9a36f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYWIwMDQyMWZkYzE2ZjM1MzRiMWYwZDAyYmNlMWVjNmNmMTc0ODNjMmZjMzRjZTJiZWI5YWNlMWNmYmZhOTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYWI3MTBkZGY3ODU5ZTU3NTc2NGE5MTNhMDAyYzc0NTg1ZmZhNzAwMTUxMGNiODgxMWRhODNkMmNmNzRiMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YTYyNTNiZGIyOTVlMDZhNzg2MWVlZTcwYjE0NTljNTM2MTBhMDZhYjY3YWRhNjM5OGJjOTNjNzg5MjA2NWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_459b1f392360440985d90cf1f863f8d6",
+      "statement": "Listed device ids are unique: cpal devices report their bare device id with the host id as type, and PipeWire/PulseAudio sinks are appended with id 'pipewire:<sink>' and type 'pipewire'.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L79-L101",
+          "version": "repo-lines-v1:sha256:e869e0669e213c7e98577e467bbbed9c144230019e5692e339854aab612a3bae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOGY3NDBkOGE2ZWRkODMyYTQ2MDIxOGFkYTU4ZGNmNDIzZWE5Yjg5YTZhNzRlZDdhYmVhYWE2YTIzZDRhYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MzlmZjlhOTY3MTZkNWIyNjRkNTU5NDQzZDQ5YTM4Y2EyYTA5MzE0NjgwZDc2YmIyZTEzNjRjY2I2OWUzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljM2RjOWNkZDBiN2RhYjYzMTk5NzdiNTI2NDVhNGY5MTM1MjU0MDcyODAwMTAwZjQwYTQxMmU2YTEwODQ2ODAifQ"
+        },
+        {
+          "resource": "repo://tests/test_devices.py#L17-L26",
+          "version": "repo-lines-v1:sha256:62fd779aab54c607dbe7046c22029bf0a308f5823297dec908eeb62dd417f86e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MDI3MmRjMzJkNDFlMWM1OTg5MzIyODgxMzUzNzUzYjMzNGY2YjdiM2NjMDc3NjE2OGM0MTBkZmFkYmUyZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0Njk3YjkzNzYwYzgzNGFjMjQ1OTA4ZDU2MjQ1NzljMmQxNjE2NDRkMzU0ZDk5MGIxYWE4OGViMjFlZDk5ZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZGE2N2FkZjJkYmI0ZjRhZTdiODRmMjgzMmRmNWIzOTNmN2IwNWY5MDc1MmMzODhkMGUwODdjNGE4MTAzNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0NjgyMzRlYzVmNWU1ZDI5YzJlM2Y5OGViNjlmZDQ2MTNmOTEwYTg0YWU0ODc2ZjAyZmZmZGIwYTgxNWI3OTAifQ"
+        },
+        {
+          "resource": "repo://tests/test_devices.py#L40-L49",
+          "version": "repo-lines-v1:sha256:6691bd9fc5376eb649b78834566c5050b8fc211c95f3716d8d84c6f73e12a2d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMjEyMjJlN2U5MjNmYTA2ZWRlYjY3NTI5OTc4MzI5MTkxYzlmYzk4YjQ0ZTQxYjY4ZmEyZWFlNWQ5MmJjOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNDFmYjQ0ZjgxNDRiYjBlY2ZkMTU1ODhjYzcwOWI1ZWQ3MThkY2FjMzdmYWVhNDA3Y2FmMDhiMDU0YTRhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxOTE3YWNjNTNkODEyZDc5ZDI5M2I3ZTRiZDBjZmFmZmM1OWI5MGY5ZTAyOWI0YmM2MGFkZjQ1M2I4NzYwZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a68dafac00bc41738dd69f459de72923",
+      "statement": "AudioPlayer raises ValueError unless sample_rate is within 1000..=768000 Hz and channels within 1..=64; None adopts the device's default rate or channel count.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L224-L237",
+          "version": "repo-lines-v1:sha256:5b05e022cf43c9c3cb38f2bf45da59ab8515646e9bc3a7219c0d74919c6481d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNGQ0ZjI3ZGM1ZDc3NzQwYWZjZWY5Zjk2NTFlYjU2OTQ3ODk2YWI2Zjk3Njg1OWYwMWZmZDViNGNjNTIxZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NGNlZjk1N2U1ODZkZDMyODkwNjA4OGEyNjYwYjBlYWNjODY4ZjE5OTI4MTE0ZjJjNzcxNzZkOTJlYWY5YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0Y2FjZGYxMmUyNmM3Y2VhZjlhZWZkMmFkMTZmOTNjZGMxNTNhZmIwZDgyMzc5ODk3YzI5NmEyMDY4MzAxMmEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L38-L39",
+          "version": "repo-lines-v1:sha256:fd3fdd2b6acd4be05caf11138a9a3337ca83787629dff1fbf846bfe8ff37020f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDYzYmJjMTYyMTQ5MDczM2VmMTQ4Nzc1NThkMDM1MWM0MzgzNmVjYjUzYjdlOGRiMDExNzZmYmVhY2I1ZGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzlhNWIxZTAzNzk3YzQ1YmY2MjUzMTIwMDQwNTk3ODVhODg5ZTY1NjE5NzUxMTQ4ZTExMzk5MzA5MmVlOGY3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzg0NWM5Y2I4MjMxMWRiNWIzMGM0MWNlYzNiNmEwNjAyNGZlMTRlYjM3ZWQ4Y2QzYzUxNjg1MzE2ZTBkMDZmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGFmMGRhMGNkMGVkMmQ3YmFlOTYyMDdiMTlkNDllMWViMGIyOGU2MDU0YTFiNzMzYWJjYzBmZmYyZjllZjVhNiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L385-L390",
+          "version": "repo-lines-v1:sha256:bc9998e1a9f576b8671633a5ef30646a4c28f944e291c34169ff0e7c259de5b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzIyMGNhMTZjYTQxNmMxZWY2MGI1NDhiZDg0Y2Y0ZGE5ZDRjODMyZDU1Nzg3MmNlNGViMTVkNjQyNjI1NDg1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY2ZGU4ZWIwODdhY2U2ZmU5MjE3N2ZlYzY3MmFmNzE1YzA4NGFhMWI4MzNhMDMzZmI1MzMxY2Y2YWY5NzUxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDJkNTMzMWFhODM2MDg3YmNhZjE1YmYzNTYzMjFmZTBlZTVmMjU1MWFlYzM0OWMxMDk3ZDQwY2YxOGJhOTJiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBiMTA4NmQ0MjI1OTBjNTRhZGEyNDYyMWYzMWUxOTc3Y2Y3MTMwNGY5M2QzNzQyMjZhOGJlODVkY2JiYWVmMyJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L67-L71",
+          "version": "repo-lines-v1:sha256:afe0daa22bd8ebbc455711a5e7bccb6318b2777eb2df68de13ed3d3dbbb61de9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRiZWRkOWY0NTJhOTgxNTc0Y2Y0MDMyNGRhZTcwNTM4NGZhOTEyMDFmNmMzMjc1YTc0NGM5MzIxMDAwMjBlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhmN2VmNDk0YmJiNmJhZmQ2MDZkODQyNWNhMjg2MzY0OWFjNDg1MTI2YjU5MWZmNDQ1YmM2NzFmZjFhMDhmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI4NzcxNDc2MTQxOWM1M2M4MDU2ZmE2ZjQxMjJhMGMzM2Y5NWM1MWM3NDBkZjExN2NlNGYyMjk4NjlkNjc4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjJjMWI5ODQwNDhjM2I2ODJkYTAzOTliM2VmMjIyZDUzNmY5Y2FlZjRjNDQ2YzgyOTcwODBmM2I2NTJhYTliYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_243a05f4ca544efaa163d45198b0d6b9",
+      "statement": "The sample_rate and channels properties report the caller's audio format, while device_sample_rate and device_channels report the configuration the device stream was opened with.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L322-L344",
+          "version": "repo-lines-v1:sha256:e26d6b4bef19d9afa19f4c200cde6f3907f7584887d6219625a6e8d6ff554e39:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNzhiMjZiM2ZiYWUyNDM1OWVlZjgzMTg0MDIyN2ZkMjRmNDM5NjE3OGYzYmVlNzgxMWQ5MDRjNzFlNWM1YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3NmEwMjA4YWFhOTRjMTE2MGEwMjFhZTJjY2FlNTk3MzRhZDE1ODRjMzNhYjc0NTkyNThjODk3YmM5Zjg4MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZDI1MzM4MjE5ODA3NDQ5Zjk5OWVjZDkxY2Y2ZWNiOTAyZjNjMWIzNmQ0Yjk5ODk1MjAzYzdkNjM5NmI4ZDgifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L404-L412",
+          "version": "repo-lines-v1:sha256:3adbd2b735566a65a0abc760e05f1e38a291d8ae0375831db0c8ec7486ac3b7f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgzOGM0OWMzZWVlMjY4N2UzZWVjMDgzMGEwZjg2Nzg4MTFiODY3MWZhN2Y2NDQ2N2E0YjJiNzBmMjViNzIwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU3NWM3MGQ5NDYzNjI1ZTEwNzlmZDhmYzhlZTYyYWQyZTkyYzQyYmVhYWJmZDg1Yjc4ZDhlMGE0OTc5Yjk0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc0NTk4Y2M1NTgxMjEzMmRjMDA5MDdmZjMwMjhmMDYwMmU2MGQwMWM1NjljYWEwZDhlNDA5MmZiY2ZlNzkxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTk3Yzc1ZjgwNThlMjQ5YzhmMzUwMWY2YmM3MWU3YjgxM2U0NzQ4MWE3MDk2Y2I1NDZhMGMzZDEzMmFhYTI4YiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L444-L458",
+          "version": "repo-lines-v1:sha256:a20ef646111b1f350c3019dfc5d1682fd3974202806acc41d6fcf5ee4222f9b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMzFkZjAwNWYxZjUxZjNkZjhhODZmZjJlZjliYzExY2M3YTE0MmQwZmM5M2QzODliYjg5YWQ3ZjU1ZjIzYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMTk5NjNhZTNkYTJiMjk0MTA4YjI1M2RmOTNiODEyYTlmZmJiMDUxZjlmZDBhN2IwMjE0M2FiMjgzN2YxYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MzE1MGE4NTY0N2NlNTdhZTYzOGIwMTdkYTYwODRmMjAwOWI5ZDcyMmY4YWNlNzk0Nzk2OTRlMWZlOTE3MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed6e268e2f9e4c768cc44e7f72912b26",
+      "statement": "write() accepts bytes and bytearray as int16 little-endian PCM, list[float], and numpy int16/int32/float32/float64 arrays that are 1-D interleaved or 2-D shaped (frames, channels) with channels equal to the player's channel count; other inputs raise TypeError and mis-shaped arrays raise ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L827-L848",
+          "version": "repo-lines-v1:sha256:e657243753af8411dee0131cb381b8e08bab309742800dad2ad2b7a5efa9540c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGJmMTY4N2YxNmMzYmExZTUyOWE5MDYwNDhjYzk3MWRiMTlmZDRkMzg2OGM4YzA5NTg1NDJlMTBlYWZkMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjYTE3NTVjODY0N2ZkNjFhNGNjOTUzNTdlOGRlZGE5MDRhZTI1NDgyNDQ0NzgxZTM0MzZjNjhiYjE0ODIwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxNTc4OTIzMGYzZmM5OWIyZmI4YTI2MGVkNjI5YTgyNzAxN2Q3MTFhYmRkN2RlNmRlMmU5Y2MyYTk1OTA5YzMifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L879-L906",
+          "version": "repo-lines-v1:sha256:251d66689169f76b4a29c6e83699c43b723dab79b44d219aa8057be905d9eaae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNTBmZDk5YjQ3YWYxNTBlNzU1NjQ4YTk0ZmM4NGUyYjliN2Q5YzE3MmI2YjZjMWU2NDYzODQ2YjYxOThmZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ODU5MjEwZWJjYjEyY2Y2OGM2MTYyMjJmYzU2MGMxZjY4ZTJmYTMxZjYzMDQ5M2RmODA5NTg4ODdkNTdhZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDRhNzkxYzA2ZjczYmE1Yzk0ZjBmMzZlMjYyZWZjOTk4MThkYjIzZWQzOGM3OWEwYzRlZWY1MjhlMWJjMjIifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L118-L145",
+          "version": "repo-lines-v1:sha256:29e4110ff41046bbb60325fbe5efec46e1fa70b694889a8551c15773e7775775:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiNzJhYjhjMDhiYTVkOGFlZDNjNmFhZWE3MDA3NGUyYmVkZGZmM2U3MDUzNmYzNmM1ZGY1ZWMzODJjMTYwMzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViODdlOWQyNDVlODk2ODA5YWRlNWVmYzRiOGRlNGZmYWQzYmYxOGVlZWQxNDc4NDUyN2UxYTI5OTc4YWMyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5NTJjYjFhMzRmNmFiNWQ4MTkzZjlkZTI4OGE0YzJkMDJhNWZlYzc5YTA4YmUzYzY2YTg3MzE0MGM2OGI4OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9d1f09cde4e4b70be828c700f34ff17",
+      "statement": "write() blocks while the ring buffer, which holds four seconds of device-format audio, is full.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L19-L20",
+          "version": "repo-lines-v1:sha256:524013a1b80cac1d217db9fe8f9ac53881c55d1697574d42e3867607be80b27f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFlOGNlNTA5MWMyMjk3Y2RiOWYyZWQyMzQ4Njg3ZDM2YjVmYjI2MTgyYmNlOGQyYTU3N2RlZWVlNWYyNDBmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIyODg1MDE1MmRiNzc3ZDVkYmRmZTQ5MjRiMzIwZjJhZWQzM2M3MjNlZjI2MmM2OTM2YWY1MjVhNzM2MjExZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVkZmFlNzdkMWI1MDgxOTBhYmU2NTUxNzU4NTVjMWI1ZTk5Zjg2NmEzNzgzNDFhOTUxY2YyMzgwZTU2YmYzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJlZDRhNGUxMTg3YjE0NDljY2QxZjg0OWRjMGY5NWRhYjA1ZGI4ZDRkNDIyNzJkYzM3MmZlYmM0NzEzYTZlNiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L414-L415",
+          "version": "repo-lines-v1:sha256:5a5b969c5f217c0a634a2c65a59345207cb80c99387df6de2ba53f2333ba6eff:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3NDM4MTJkZDM5OGE0NzI2YmI1NDZjY2NjODQ3OWFiMGYzZjU5ZGJkYmJkNTRkM2I1NmNiMTFlNDdhODAzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZmZmUxYzE4OGQxMDBmYzQyYmUxMjhiY2UyNGU1MjhlMjI0NDU4Yjg2NjFmNTY0MDg0NDEyNzdiNjZjYmExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgxN2FiNjRhOGY5NDQ0NTg1MTIwNDliNTU5YzIwZGY5NmI0MDljZjdmNWM5YmI5MDNlYjhhNTc1OGY1M2I4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjY0N2JhNjA4ZTY1OTg2YmMxY2IzMTM4ODVkNzQyMjljOGNlNzMyNmM3Y2QzOGU3ZWY0MTNmNjA5MmJlMWYxZSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L477-L503",
+          "version": "repo-lines-v1:sha256:d6b2d2b5950d9b20b7f3208a8b9777c75c4394f3d58fa2939ed29972144e40f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGZiNTcyMjE5YWEzNTQ2NTE4YTk1NTE5ZGMxZjY2YmRmZjBhMmFkZmRiNWJmYTc2ZDA0MTYwMTczMjllNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OWQzYTI3ZmQzOTJlNjZmNDJiMjBjNjk1Y2Q5YTkwZDVkNGEyODBhMTk1NzI3OWFlYzFlYWM0OGYxMDkxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18de5892117c4d4f82fffaa0f1901af8",
+      "statement": "write() chunks may end mid-sample or mid-frame; the remainder is completed by the next write unless a drain() or clear() ended the stream first, in which case it is dropped.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L154-L193",
+          "version": "repo-lines-v1:sha256:73b325b86c623d2a88ffcf191102d981403e67bd660858abfc55dba1c6ad7a17:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMzU1NmNhZjI3ODA1MGU3OGQzZWYyOWM2NDRjYTc5MjQ0MjFiZjZkMzFmMzE0ZjBkMmJkN2Q1YmUyMmEyOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiMjg1ZDRkM2RmYzg5NGMwMWY4NDU2OWVlMDc3MjJhNWRlZGM5ZGE0ZTU5MjZiNmYxNmJhNzFhZDMyNDM2MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFmZGEzZWRhODYxNDcwZDQ2NTY3ODJmZmM5ZTYxYmY1YTc1MmQ0YjA4YTk4Y2NiYmI1Nzc4ZDQzYTM5MjliMGIifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L101-L109",
+          "version": "repo-lines-v1:sha256:2dc37024a7eef73758d5ea7d6c59d1b839a8953e423fd715419d90208315cbca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGExYmUxZGMxNmY5MzBjYTEwZTZkZDE4M2I5ZWVhYjJjM2M2NjM5ZGQ3MmVjNTRmMTg3MDVjODA5YjFiZjRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQ4ZDI2ZDhjZTMzZGNlZmJhNzk5MmI5NzJjOTljODA4MzhhMTJhNGE0NTc2NDQ1ZTg1ZTI3ZDUxZTJkNjYyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzlkNmExYjliZGIzODg0MDg1M2U5YmVjMjI3NzJmNDg4YmI0YWJhYWIxZTBjMDgzODNlNjUyMGZhOWY5ZWE3YSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L153-L159",
+          "version": "repo-lines-v1:sha256:c688c2aee81efb55da5034b821c94225cd604460bd602c285f03955fd0785b10:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGExYmUxZGMxNmY5MzBjYTEwZTZkZDE4M2I5ZWVhYjJjM2M2NjM5ZGQ3MmVjNTRmMTg3MDVjODA5YjFiZjRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWU0MWZhMzYyM2EwOWYyMTg4MzljNDBkYjEzYWY3MzEyNzc4YzgwZDRhOWU4NjE1M2Y2ZTkyYjU5NmRjYzNiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE5OTk5NDhiZDE0MWM3NTdjOGFiZDAyMzJkMTlkMGZmNmRkMDA0YTk4ZmFmNzA1YmQzZTZjZmU0NjUwMjUxMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_872295ab16f947318b4a901f64d3d32e",
+      "statement": "Float samples from lists and float numpy arrays are clamped to -1.0..MAX_SAMPLE and non-finite values are replaced with silence.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L835-L838",
+          "version": "repo-lines-v1:sha256:5f614df0ebb95df77d4a1e423fc75ac6b2b32164b4105c58f622b99fefebbe4d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGYxZTA3YjBjMTk3YjEyMTdlYzkxNGM0ZDY1ZGE3M2UxMzJiNGNiMjQ5ODhmYWQ0MWI2NzU1NGEwNzkzYzYzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU0MzUzOWYwMzk5MzhhMThkMzY0NDg1NjFmMTk0ZTE3ZTY5OTA0ZjdjN2VmNmIzMWZjZmE1OWQ4NjRiODY1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTI4YWQwNTRlYmUxNDVkM2M4ZGM0ZTUyMWM1NjFhYzUwYzc2YTQ2N2ZjMjMwNzRiMDljYThjNDgyZDQzY2VjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGY4NjI4ZGRkM2Y4ZTJmOGU5ZjIzMWZjZDhjMjk4ZmE1ZTAwZTc0YTY4YTkwOGY2OTJhYjAzZWQ0MDNkZjExMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L860-L868",
+          "version": "repo-lines-v1:sha256:374f72e0d8d4bf2b790d5bd8fe8fdcf0afcda9d913883d8b71f69ec45adf0ac3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhmYjEzNjgzNDBhNTk0YmY5ZThiNmE4Nzk1ZmE0MWIwYWYxODFhZTIyZTEyOTcwMTJmOWZiZGU0YTIzNmY1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NjNDg5MWU4MjRkY2U0YzFkZDZiYTY1NWQxZGZhMmI2M2Y0MzMyMzQ2ODgyOGZlMDNhZmI0ZmYxZDYyZTVkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU4MjcyMmZlYjgyMDI5Zjc1Y2E2YjRiMzdiNTgyZTM0ZDNjNWQ4Mjc3ZjJjNjkyZjVkNmViZGNiZWQzYTAwYyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L891-L896",
+          "version": "repo-lines-v1:sha256:32cabe93aca86beb62fc7acc04825f3979572d6ae9c5fcf98a052069b7040da8:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ4N2ZhYmUxM2EwZWJkOTYyOWVmYTMyMmY4YTU3MjExMjIwNTBmMjgwZDVlZTg0ZDQxYzNhODkzZTEzYjcxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE0MTExYWU0YzE2MDViOTcwNTQ4YmU5NTkxMGYzMWE3YjkyZmYyNDAxMDBlMjAyMzI2MTU2OTIyOWM4MjNiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTlmZDE3ZTNmYTg1ZGFjNzE2ZWIxZGZlZDYwMWI0MGY3NTc4ZmU1MGE1MWE2NzA1Yzg0ZmQ3ODA1YjQwMDcxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIwNTllZWQyYjQ5ZjBiZDNkZDE5ZWY4MmViZjA5YTdjZDYyYTQ2ODBlYWIwNGUyOTMyNWVkZThhOTJiNWYzZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c152bfbdc41748daa545314c0c25822d",
+      "statement": "drain() waits until the audio written before the call has been consumed by the audio callback and has become audible, ignores audio written after it started, and returns without error if clear() or stop() intervenes or already happened.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L268-L302",
+          "version": "repo-lines-v1:sha256:2dced4d850953711aedb2b7a17ef476497d58ea255d9ab0f85badffc81758244:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyNmI0ZjE1MTIzNDk4NzhlOWIzMGE4NDhkN2JjYWJhOWU5NmFjNTRjYTgzN2I3NTg4NjQ2Y2YxYmUzNDk1Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYTI2YTgxYzBkY2ZmZTkyY2E5NmE5OGRmYTE2ZGQ4MjE4YjI2YzU5NTRkYmQyYWM1MmI3OWM2OWMzZDIxZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3YjAwYTRlYmYxZjdhMTcxMmFkMTZiNGY3MDc3N2U3YjhhMmQ0ZjE4NDMyMzQ2OWQ1ZDI3ZDliOGZlYjcxNjQifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L229-L250",
+          "version": "repo-lines-v1:sha256:b288e2892a49b2a71f32553f66604bd7657afbc2a9e3ee3f0dd0556d0ac14208:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0OGZlY2RiNGNkMDI1ZmRiM2NjY2NlOWQzNTk0NzkzZWU1YjQ1YjE0YTJiZGU4NGUzMzcwMTZmZWI1YjAxZmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MzgyOTcwMzdlMDZmMTJkNjM3OGI3MDk0Yjg3M2E0Njc3ODNmNmJkNjY0YWQzYTYyZjMyMDRhY2U3Y2FmNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkYWUxN2EwMmE3ZTBlMGVkMTFjZjA4N2Q0NjZlYzVlYWRmMTEzODAxOTEyZjZjNTk1ZDZlM2M5MmY0Yzk5ZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df84bdef50e14596bfc17513e8c3eb9e",
+      "statement": "clear() discards buffered audio, causes an in-flight write() to drop its remaining data and return normally, and unblocks a pending drain().",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L304-L310",
+          "version": "repo-lines-v1:sha256:6b20a1400d007fc9554e28f754253bb6cedf040ac0ba156df1d45b1c684cabff:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ZhNGJiMTQzY2JmNzE1ODY4ZTFmYzg3NmMxYmIwOWFjNzMyNDNlZDZiZTVjMGQxZjc5YTY2ZWVjZGQ0NTAxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWI5YTA4YmMyOWY2ZWJlYmU5YTVmMDE5MDNkOTg0NWRiY2I1ODQyYTQ1NWYwN2Q1ZjQwMDJkYWMzMmE1YzYwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmUzN2YwODUyN2E5NTYyZDM1M2NkYmZhYmE0NGRhNWY3YjIwMDZhZTMwMmE2MDIwYzgxZDU5NjY5YmQzOGU2MyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L487",
+          "version": "repo-lines-v1:sha256:85930e835bf0493e6a650b7e0f993cdb65f916ac06c8ef3ddf5ae062e6a135ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2Yjg4ZjVmMzA0OWE5YmNhZjYyZTU5NjY1ZGE3MzY4YzFjOWM3OTQwMjg5Njc2NzhkOTQxOWI4MWEyNDkxNGIifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L99-L105",
+          "version": "repo-lines-v1:sha256:fb8629e976b40e9d09abdb142d972d9249ae88daf6c54dbbccff29593cf8a8b5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5OTMyMjUwMTUzMWMxMDA2MWM1NWRlYWRhNzEyN2U0Mjc5OGU4NGFlZjZhNmU3OTA3YzJhMGZkMmI4ZGI3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2I0NWNkMTYxNzYwZmQ4N2MyZWUxM2I2Yjk2NDAzMjFmNWEyNDdjZmU2NGU0NTJlMjU1ZWU5MWE0MGFmNTk3ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM4ZmY4YmI2OWZmZjJhNjIwOTM1NDUzNDIxNTMwMDJlOTM0YmQ3NDc4YmRlODNkOTkzN2U0NDE2OWVkNWY5MCJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L300-L328",
+          "version": "repo-lines-v1:sha256:69f6cbdaae3e4dbb46c3b59926ed33fe53d569269eecd3499da7f557b91d4e02:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmN2NmYTE5NjVmNzgyYzZlYzg5ODIzZGQzYmE3MjNhYTkwZThmODFjN2NiM2IxNzFjNDcyMDY4ZmE0Mjk0MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNDUyOWMwYmNiMmE1ZTBjOWQ1MGZkMmFiZDdmMjEzZmM2NWFjZmFjZWMzOGVmZmNmMzFjMDRlMWVkOWYzYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMWViNWYwNDUyNWU2Yjk5YTY1ODI4Mzc4ZDU4NDBlYzcxZjgzMTU2NDIyZjc5ZTVmMmJlZTg1MzQ5ZDJkOTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_754f3c17e7b746239f63175cb8023d44",
+      "statement": "stop() is idempotent and closes the player: later writes, and writes blocked when it runs, raise RuntimeError 'Stream error: Player is closed'.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L118-L127",
+          "version": "repo-lines-v1:sha256:7b5940963f5bb496f75770c206fc489d9f44578c1a2cbec02e8870f2357cae4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOGZjMDI4MjVlZDc4OGIwYmZkMDVlZTE2MTkyNGYyZTE1N2I2ZmVhODcxMzdkMDI2MjcxMDJjN2ViZjMwNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L312-L320",
+          "version": "repo-lines-v1:sha256:e92ee5896c9807c4062dee11c9cee3524709bc3335399f4c0a10776ce66a361c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NhYjJmMTBhMGJmM2VlZmI4YTk5MjdhMWQ4ZjI3Mzk1OGE2YTU2ZTI2MzNkODBhZWU1NmRmMGU4MmFhMWMwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI2NWViOGJhZTMwOTQ2YWI5ZjEzMzRhMGVkNWEyYmYwMzcwNzk2NmRmN2I4ODAzYmVjN2U5ODM0ZjgyMTkzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg5NTg5MjBlMzg1ZDYwZDU0NjRlNmRiM2I0YTA0OGJiNDI0N2U2YmQyOGNiOTNiZDFiNmQxNTgzOTVkMDJkYiJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L190-L196",
+          "version": "repo-lines-v1:sha256:d7823cf0e5283ad2db8a1d2e78519d3045788605b2c844d3cd4d433b9ac99b28:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTNkZDIxYmJiYzFlNzlkZTQ3Njc1NWRmZWEwYjZhMmY3ODg3YjZkYmZiMDI4OGIwZWM0MTg2NmVmNDIzZGJjNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTIzNzFhMjFhMjVlY2Y2N2M1MDE1NTdjNzQ3NWIzMWYxZTIwYTY3OTI3ZDljMWI4ZTIwMjRkZGY1M2JlNTliMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDQ2OGRiMTI2NDU0MzU5NDA5YTNhM2RjYWRlODcxMTFmZGM3Mjg3ODkyN2EzMjBhM2Q5MmE1OGYwMmViM2FhMSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L330-L339",
+          "version": "repo-lines-v1:sha256:58a6152bdcab98fe3fa2b79514fcf6e73fe8313fcee54d3546e26c5f65001a8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MmExNDVjMzg3YTM4YzZjOGYwNWQ0NDQ4MWVhMjQwMjNjZTdiYWQ3ZjZhYjBkMDU0MDQzYWM3MmE2ZGY4YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZWYzOWRlNWJjYzI2MWQ1OTg4NDQyNmYwYzA2ODQzMTI4ZTk4YzM2MWE5N2E1MzA0MGI2ZTZkNjAzYzBkZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZGViM2FlYWU5YTgwOGFlMThmNjU2MDUwYWY0Zjk5NjgyZmVjYmNlNzAwZTk1YmEyNTY1N2UzMmE4ZjA2NGEifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L80-L84",
+          "version": "repo-lines-v1:sha256:97caa960e69f9396cb98fd3d5abfabf7c74f5b3cbc54d8923fc7271b8eb98571:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY4MThhMzY4NWQwZjVlNmVjOWYzYWIxOWU1ZGViYmI3YTRmZmZjY2RkMGY2YjhjNzUzNDg4MmYzYTU3YzM4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDljYzM3NDRkMTkwODRmYTc4MDVlNzdmNjM2MjBjZWE4Mzg5MDY1MTk4ODkwMTEzNTI5NDRjNzEwYTA3ZWFmNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWQzNDg4MzViNGQ0MmNjODkxNTcyNDZhMTJjNDMwNjcwMWIzZGE2NDEwNWEwMDIwNjUyNGFlZmZjODRlODZjMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_474de2a342d74df99248de43c2275d62",
+      "statement": "is_active is True only while the player has not been stopped and its stream has not failed.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L346-L350",
+          "version": "repo-lines-v1:sha256:d0adb423f20a48ebc0c76cd667d28e34d29bca7ae92ca4738c9e6985c8e845c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgzMWNkODVlOWNlNjhiM2Q2MGZhN2M4ZmQwZTQ4N2ZlMjY5YWFiN2VkYmYxMWJiOGNmM2RlYTgxNTU4M2I3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWMyMGZlYjA1OTcwNTYyNjc4ODc2Y2IzMmYxYmM5NWFhMjY1MGU5N2Q3N2Q2ZDY5MTViZmYzMzljOWFjNTIwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWY4NmE5Nzk3MmMxOTNmNzYwY2I5NmU2OGQyYmE1MGEwMzQ2NmRkMDAwOTliMmMxZjVlNzZlNjIzY2NmNjc3ZiJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L40-L48",
+          "version": "repo-lines-v1:sha256:275ffae3efa543f26685a1295d71ac5bba134eb031822aa1a905faa462d01115:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE0Yjk2YWFhNTJlYTIxMTZhYjYxMDk5NTI2MjdhOTcyMzQwMWMyNzIwYWQxNDU2NmUxNjc2ZTdlOWU3OGJiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZmOWVjNzc2ZmFlZmQ0MGE4NTVmZGU5MTliYjliZmQzNzQyNTQwM2Y3M2U2NWJjMTlkYmIyMmVjZWFjYzBmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWJiMGE2MWZlZGYzYzA3M2JkMzVlZjg1MTUwYWU5ZTNjNzk3YmFlOWI5NWEwNTQ2NzllNWJlNDZhMjAwNTEyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_538b2c5040784925b0e149b790bbe9c0",
+      "statement": "Using AudioPlayer as a context manager returns the player itself and calls stop() on exit.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L352-L365",
+          "version": "repo-lines-v1:sha256:a08efef5104c4863b632d5fb11b2bd71c203cfba797da42c4e560e8f7b2d873b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OWUyZjk3NGRkOGQ5ZTdmNDgxMGI2MmY1NDExMjdhZTU4ZTEwMjlmYjZhYzRkMjNlYjFjYTk0MzliZjcwMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkYTFkNGY1MDYyYTg2NGZmNDZmOTk5MTkyMTIyZDczZmRjYTY4NTc2NTA2MDgxNmM5NGE5ZThmZjU1YWJiNWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MTgzMWZkZTdjMzhhNjZmMmIxZDYyNTNlMmNiOTE3NDQwYzRkNWE5MjI4OGQwN2Y3Nzk1NzA0Y2ExMWUzZDEifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L73-L78",
+          "version": "repo-lines-v1:sha256:d56cf92fe348c35965c4c4a1b01a6a470d2f72601cf64a04363383b0c9b9766e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE0Yjk2YWFhNTJlYTIxMTZhYjYxMDk5NTI2MjdhOTcyMzQwMWMyNzIwYWQxNDU2NmUxNjc2ZTdlOWU3OGJiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDZhZTk1MTIwMDlhMDkwZjcwZWM1N2U5MTcyM2NhMmMxNTQwMjYyNGY2ZjA0ZmIyOGI1ZTFhMTY0ZjJkODBiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU0YzM0Y2UyMjI4OTI0NDM4NzhhMjdjOTBhNTJlMTFhM2VmYjI2YzkxOTczZGNjZjI4YmZhZjI2ZjEwNjg5ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2af08cd2e420429ca2f797a03d30def5",
+      "statement": "Every SpeakerError is raised in Python as RuntimeError whose message starts with 'Device not found:', 'No default output device available', 'Stream error:', 'Config error:' or 'IO error:'.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L37-L41",
+          "version": "repo-lines-v1:sha256:c8a33cb02003943a15cb7b198024ee7d373cf66ad6554049bddc6205bba4304f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVkNzg1MzBhZTllNzI0MDc0ZDY5NjY0ODU5Mjc2YTE2NjFjNmVhMmE5ZGQ2N2Y3YWU3ODMzNzEwYTFhODYwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThhY2FkYTM2NGM1MjcwODYwMTQ4YjIyZWFhZTljNDA1OTU2MTgyMjdlNWNmNGIwMWQ3ZmU2Y2I1NjZjOWU1NCJ9"
+        },
+        {
+          "resource": "repo://src/error.rs#L5-L24",
+          "version": "repo-lines-v1:sha256:f8649324f0f127f3804d11d05a13a61fce2bf265a418271e83e1c52cdbf87a0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZjQ0YmMxMTkyMzdkMWFlZDZjNzIxYzMxNTkxNzQ3OGU2MzQ2ZGU0ZmI0NDc1ZmEyOTA5MGQ5MzgzMjk5MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMWE4OGM0MjVjZGIzNmQ3YTc0NDhhNTg2NzYzZDM1N2U1ZDk2YWY2YmZhY2Q5ZDE4OTRiNDVlNzNhNjZhZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGQyZDU0NjVhZGQ3Mjc4ODI1Yzk2MTBhMmRkNjdjZDc5NDQ2NDliZWQxYWMzOTNiOTdlZjg5OWM5NDY1ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f9bc7cc44f5c4580af586dd9e761e0a4",
+      "statement": "Blocking write(), drain() and play_file() run Python signal handlers about every 100 ms while waiting, so Ctrl+C raises KeyboardInterrupt promptly.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L24-L25",
+          "version": "repo-lines-v1:sha256:6165a486fb61873b82d6a81fc9fde77b87ab334eaadfb48a8914d71dc9996fc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q1ZmMxY2QzNTYwOTcyNzc3YTU4ODJlY2RkMDg0ODBiNzNhMTIzZDU4Mjc5ZmY0ZTQ0YjRhNTMyNDgyNDkxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NmODQ1MDY5ZWNhMTEzNjE3OTZhZTJlODBhMDEwNTVjZjRjM2UwZmMzOGM0YmFjMWQzOTIwOTBhNTliM2U2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjJlZDRhNGUxMTg3YjE0NDljY2QxZjg0OWRjMGY5NWRhYjA1ZGI4ZDRkNDIyNzJkYzM3MmZlYmM0NzEzYTZlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU3Y2Q4OGNkNmYxZmZmYWJkZTAzMzNjNDIxMWY5MGNlN2YxOWMzZTM2M2UzMDg4ZmE2NzA0ZmMxMGM5ZWI4ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L545",
+          "version": "repo-lines-v1:sha256:70b0a4c247fe9f26f90f2522d948dc3152f46e8f822152daef71db907a3eab34:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2NmQzOTRiN2RjNWRjMTgxMWNlMWE2MGE0MGFiOWQ5MzY4MzlkZTNkZDI5YTA2YTc2MDMxN2RhMTAwZTRjZDYifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L252-L262",
+          "version": "repo-lines-v1:sha256:f17ae8237071d3eecddae2db0980b39cdae62d6a804048a64dbaa20b1af91bae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1OTkyMmZjOTViMDVhM2U5NzYzZTZhYWQ3ZjZjYjRhOGU5YTI4YzY4MzE5ZDQ3ZjNiNzc4MjQ0OWZlZjYxODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZGQ4NmIyYjExMDg2ODlmYzUwYWQzYWMwZDRiOTdlYmJjNGVmNzhjOWVmNTE4ZWE3ZmRkOGM3MjNiNmVlN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NWFhMzkxZTE0ZTI3NDczMGE4ZDliNWM3NWFjOWJlZTA2NzBjZDY2ZDJjNjE5NjkxN2Y0NjJjYWNiZWI3ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d28f7cc872be415d91403a12658d871b",
+      "statement": "play_file() accepts a str or path-like, opens the player at the WAV file's sample rate and channel count, and blocks until playback has drained.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L113-L122",
+          "version": "repo-lines-v1:sha256:45205c008254ddad93f75146dddf0e568e17eb410abb28a8136f5c6f1567479e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YzlhMDE5ZTRlMDIxYThhODExNDEwOTJkNmYzNmZiYjI4NzdiZjY4M2UwMWQ5ODQ5MTRkN2FiZmY0NzViNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhNmIwZDBmYzM0ZWU2OTQwZTQxNWJiMGM1ZmVkNWFiNzUyYjg1N2ExZTBiMWQ2MGZlYzBhYzBjY2I4ZDZmOTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhMzk5NjFhNWI2NzA1YmQwOTQ2YzgxMTY5NGNiNWI1Mzk3NWIxNDBlMzk3ZTU4ZmQ5NGI2MWY0NjZjZDNhZTUifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L49-L65",
+          "version": "repo-lines-v1:sha256:a8d24baf61cf7193d7140f2378dfeafce6f56a4856f75f1f39b1b684f2699a9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYWU2MGVmYmI3MWYxN2FhOWNhZWJmNjIzZmFkNmRhNzcxN2E0NTJiODE2M2Y2NWJmM2UwNTk3NWIyOWRiMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzMTM3NTdiZjE0ZTQzYWE3MDc2MDM0NzI1ZGQ0YzI0ZjY3OTliOWE1MzA1ZmEyOTExZTllOTMwOTExMDY4YTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ODU5MjEwZWJjYjEyY2Y2OGM2MTYyMjJmYzU2MGMxZjY4ZTJmYTMxZjYzMDQ5M2RmODA5NTg4ODdkNTdhZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZWE5YzNhMmEwODQ1NWRjMWU3MGFjNWUxZTIxYWZkZDQzMTBjZTlhYTBiMmQ1NTcyOTMyN2ViNjJmNDYwNTYifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L379-L387",
+          "version": "repo-lines-v1:sha256:2e258de387c93b95f2d5d1078a8e7714bf812ce29d551c420f97bbe784880a1e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFlNDJhNGE2ZDU0ODUwZDZkYmFlYWRjNjFiMjI4NDQ0Y2E0NTE1YWVjOWI1MzE5YjNlYjlmNGUwODFkZTQxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRlYTBmNjg3ODAzYTUxYWJmNWU1YTg2ZGU0Yjk0NjdmZTBmOGY5MGU2MjZjOTllYmJjNjQwNTZjNWJlMTMxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVjNzQ2NWMyNDZhNWZhOGZkZjM1NWU2NGRhNjk4ZjVhZTliMmEzNmVlM2FlYWMzY2M1NjhhY2E5ODdlY2FmZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7dd6da45a5e54fc78574a1c60d13b8a3",
+      "statement": "play_file() plays files that end before their declared length without raising, and raises other decode errors only after playing the audio that decoded.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L113-L119",
+          "version": "repo-lines-v1:sha256:2d8fd0f4e0ba7670f5aa147fe6e687b3aee884c63bba8a032b7f17c07eb8eddf:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZjOWEwMTllNGUwMjFhOGE4MTE0MTA5MmQ2ZjM2ZmJiMjg3N2JmNjgzZTAxZDk4NDkxNGQ3YWJmZjQ3NWI3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2E2YjBkMGZjMzRlZTY5NDBlNDE1YmIwYzVmZWQ1YWI3NTJiODU3YTFlMGIxZDYwZmVjMGFjMGNjYjhkNmY5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMxNmNiMThiNTFkNjA3MmQwOGVlOWM0NjAzNDc5ODAzNzVlNzQ2MGE4MzcyYTc0NDY3MTA3NWY1ZjhiODYxMSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L72-L91",
+          "version": "repo-lines-v1:sha256:25ff74018cbe6957a6677bd880d2ad290773ad365f11887c351949e5802ab871:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxZGIzYTg4NTNjMzlhNzQxYzY3N2Q1ZjY2NDU1YWI3NWY0YmUyMGMwM2EwZTY2NjQ0YTNjNTY4NWE3MjJiNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliMGM4MWUwYzg4YmVjNTk5NjQ2ZDdhZDQ5MGZlZDM0NjNiMGMxZDUwY2MzYTVmNjA4NTM3ZDE2MDgxYmY0YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzODYxOGQ0YTk0NDA1YjdjNTcxMTU5YmJlYWE1NjgwMjJlZDBlZGRiODljMDQxMmVjZGI3ZThjOGI2YTYyZWEifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L389-L406",
+          "version": "repo-lines-v1:sha256:dd18986e4902af54257bac8a3c7a07f2b261aad4e1484ba9776254aeb8475617:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MzgxOTY3NjFkYzc3Y2Q3YzRkOTI2MGIzNzg4NTE2YTM5ODUxMWRlZWUxNjRkODA2NTY5ZjY3ZWRjMDNkNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNDM0OWIyMGUxYWZmM2UyNDUwMDAxNzE4OTc4YWNhMjA1NWY2YzJiMjg0ZGM2MjNlN2U1MmNmMmQzZWQ1YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTdmMGRhYmQxMDYzZjQxOTBiMTc3MDVmOGVhYmEzMGJjOTU1NGYyMjY5NGUyNGJiNjU0ZTRiZjgxYmM4ZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_eff48f88ab16485bb93b77a86f3d651a",
+      "statement": "AudioPlayer methods may be called from other threads or from signal handlers while a write() is blocked, because the class is a frozen pyclass with mutex/atomic state and write() does not hold the writer lock while waiting.",
+      "evidence": [
+        {
+          "resource": "repo://pyaudiocast/_pyaudiocast.pyi#L33-L40",
+          "version": "repo-lines-v1:sha256:3dacbd39a3a920a0ebd8e22fd71ba596629c22857830d4488f735116e6e5468f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDk5YmVhYjdmMGRjNDgzMGIzZjk3MjU4NWMzZmUzMTRmZjk2ZjQyNDRlZTBjZDY3M2RhZWViZDI1NDBjMjU5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZhNzE1MjU3MmVlODRmMTA5MDZjNzRiOWYyYTkyNDM0ZGRhYjBlM2M0MjgxM2IwNGU1OTdlZmNlYzk1MWIyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzE4YzNkNWQyODZiODg1YzBkNGEyYTg1MzRhZGUxNTg3YTNkN2I4YTM5MDdlZTRmNTJlODdkMTQ4ZGI1MWMzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMzMTA5NWQ1ZmQ5NDk3ZjQzZGQ2OTAxYTkzZjc0M2JiNjU1NTA2YTA1MGUxNWMyODE1YmYxYzlkNGYxMzI5OCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L195-L204",
+          "version": "repo-lines-v1:sha256:73c6848d22d6d24e2b7d8d06b440934e3126de0d76a24918e58d912a3f577bc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MjMyNTg2ZTMzZGFiMjNjOWIxYWY2MWRiM2FlZjQ0MDQ1NGFkZDY5YmFjNjI4ZGY3ZjRiNTg1ZDJiOWE1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMTIwZWU1MTI4NTYxYjNjYTMyMzQzZTI2ZTI1NmIwZjNjYjFhMmFkMmRjNjMwYzc0NmJhMTZiZDI0YTc2MzEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L479-L503",
+          "version": "repo-lines-v1:sha256:f788762d48e3aff404b6165725d0680698e0fdc2ab7d4c3fa2e3ce79ac826dd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YTU1ZmZmYmVkNTRjNzhmOThkYTE0Y2Q3Y2I2NzZjYjBjZDBmMzY4Nzk4ZGY2Njk0ZTEwNTY4MjZkMzdmNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4YmNiY2JkNDZmN2UzMjA3YzQ5YTg5NThjMjEzYWVhYmJkYTY0NDBmOTc5MTJlOThlNjRhZmQ1NjM3YjdhYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L341-L360",
+          "version": "repo-lines-v1:sha256:7ad7f08e9d1cc386f5d5627132845c342b30818ce19a9df593b7133cdda180c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ODJmYTVjZjhjMmQxNGUxZDUzN2JhMzIzMGRjNGFmNjQ4MjAzZTIxMGExNjZlOThlYjliNGE0ZjBhMTg4YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MDI1YWMzN2YwZWRiM2FiZWYzOGFkZjQyZDg0MjZhYWFmMzE1YTdmMmU4MWI4ZGIwMGJhNzVkOGY3M2U1NjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzM2YmU2YjYyMDdhNTlmOGRjMmU2MzA4ZjExMTJkMGFmMjJhZjkwZDMwNGI3ZTFjYmI2NmVhYTkzYTYyMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a0b9dcd30ea42b8b3898b2513c505b4",
+      "statement": "write() takes the writer lock separately for conversion and for each ring-buffer push step, so concurrent write() calls from several threads are not serialized as whole chunks.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L463-L504",
+          "version": "repo-lines-v1:sha256:087233e6f11f5c55acf8873326ba099991c3df595f221648336820caa5f4af56:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY0OWRjYmVkNzAzOWY2MTI2M2Q5MjM1MWNmOWQ5NzQ2ODNlZDEzOTAzNjA2MmZhOWE1OTJiNzY3NTcyYTYyZDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3c8fa35d4a647ff940cdc1f4cc2a6ca",
+      "statement": "numpy is optional: arrays are only inspected once numpy is present in sys.modules, and bytes/list input works with the numpy import blocked.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L38-L40",
+          "version": "repo-lines-v1:sha256:f4c4c22694c9676346bccf994c01feaabf9c7b5793b92ee32acd134c3568b250:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTkyMThkYzRjZTk3MWNiZTNkMzhkNzc0MzBlNjM5OTE4ODg0ZGQ3N2Q3MTg0YzdiOTNkZmRjMmU5OTg2OTFiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJlMTRkZTAxNmVhMTA5NTQ0OTc3NzRmOTdkZjhiMjljNzk2M2MzYjc3ZmUzOGE5ZjNjOTZlZjExYzFhZGYzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWI1MGU4OTI2NDJjNjgyNmU3ZDk2ZjMyMTllMGY0ZjNkZmUzZTdkZjQxNzRkODZjNjY4NGRlN2U0Yzc4YjBkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzM1MmExNmE4OWYyNWQxNzYxYjBlY2Q1N2U5NzY3NThjNTdkOTQ1N2JhMzYwZjRjM2I0ZDgyMjFkZjM5N2Y2NiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L840-L844",
+          "version": "repo-lines-v1:sha256:4efd3429ebb17a6b1290ee396d783b7f502075ff8ca9ecf7e7932f1e811dc451:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVkYjRkYTljNWU2ZTgxODQ3NDE0MGY3ODc5ZTg5NmFhMDk3MTBlNDdlY2NhMjljYmMxYTQ1Y2Y0ZWM4ZmI1NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGZlMmMwZTgwYTM5NTZhNDZiMDY2ZDFlYmJmMTcxNmY1ZDZhY2M4NzJmNDhhNzhlNGU1Mjk5NjkyMzNkM2FhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGJjYzgxNThjMWUwMjczMzIzNjNkMGExZGNiZjY3ZmYyMjYwMTk1MTljYTU3YmM5MjIyYzA5MDI4N2EyOTA2MyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L850-L858",
+          "version": "repo-lines-v1:sha256:b0049ac1da490caacabc4a3354ec61f8c9bc7dd56769dd3ed17de4a40ceb4eb7:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjIxM2E2ZGU2OTRmODg5ZDNiZDcwZTY4YTg2OTlkMzUyZmZjOTlhNzRhMDIzNjYxZmUzNTZmOTk0OTE2MmFmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODNlOWRhZTU0MDhjNmFhZmMzYjMwYWM3NTAwYWNjZDM5MjFhNWFmYzgyMzJlYjc5YjZkNjQxY2M5MGU4NGY5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTljNjM1YzRkZjVjZDc2ZTg5ZmNlMzE1MGZjMzgzYjcxZDEyODIzYmJlYjY3N2Y4MmY2ODQxMDFiODY1OTFhNSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L161-L175",
+          "version": "repo-lines-v1:sha256:0eabbaae5e446021bbdcaa84ce81459783b96484703db3bcdc93af8d6cc6660c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YTM5ZmE4ZWI5ZjEyYTFjYzgzOGE0MjljZmUzNzI5YzUzZWEwOThmOWYzMzdiNWRlZDBlY2Q0MGI0NGEzZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiZThhNGNkOWQxNTg3NWFjMjIyMzk4ZWJhNDRjYzdiYjEzOWY1ZTdlOTY4MzcwZDM3NmFmMDhhZWIzOWM1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0Y2JmOTJjOTAwZTM3ZTk2MTBhZTE1YzQyN2Q1NDIzM2I4NjBkZGFmMzQ4Y2Q0ZDdjNzI0OTM2M2RlNzM2NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48c5074f3f7e445d851eaa67d255b8d8",
+      "statement": "Stream failures are latched: once the stream has failed, write() and drain() raise RuntimeError carrying the first failure message.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L107-L127",
+          "version": "repo-lines-v1:sha256:15035e6949dba163b79c84984785ef4cee2c2b338d3ad381bc02aa4a5e04cbd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzIwZTY2YjAwOTllZjI3NzQ4OWI1MDEzZTBhNjA5OGJhODZiNjRhYzQ4OWNjNWYzMTQzMGUzOGNiZDk4YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYzY4ZGQzNWU2N2ZmODMwY2RjNzRkOWNmZTdmMTc2NmRkNGRlNWY3MTRhMWY5Zjg1ZmJjODc1ZTRiZTRkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3f0047375fa469d8d126be8d3f3f85a",
+      "statement": "Release 0.2.0 changed observable behavior: type reports the real host, sink ids became 'pipewire:<sink>', write() accepts unaligned chunks instead of raising ValueError, drain()/clear() end the stream, play_file raises decode errors after playing, and macOS streams keep the device's rate and channel count.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L6-L8",
+          "version": "repo-lines-v1:sha256:ac87a66254268e2439ad1b72b2d6ef993b1620753b078b6036ff78f7582b2747:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFkNDc0ZjIxNjVkOTYzNjMzYWRkYTdmNmI0YWZkYWJlM2Y1NmI0ZmU5NDQ0ZTFjYzI5YTMzMmFkZjZhMjhlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVjZDhkYjM4YjI2ZTE4OWZkMDVlYjA1NmU3OWEzZmNkN2M3NDU5OTFjNWY5NzYwYzU1NzkwMmY4NjdhYjg5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjM3ZWJhZWFiNWVhZGNhZmRmZDgzNjVjZTkzYzcwMzc3YzFmYTIzNmRjMTZmYWM0N2I3MmVjZDljNzc2Njg5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY5NmFmNWVhYjM4OTdlNjZkOTE5MzExNWIyOGY2MWI3YTYzYjllM2JkM2M0ZWNiM2FiYmE2YzhjYTcxNGE0MiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

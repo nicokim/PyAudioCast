@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:68139165e040e4b206fc252aa758a5b09930d676e9c76e4023c0834bde5b696b",
+  "claims": [
+    {
+      "id": "claim_d7bf02530c8f4984af9ba67d3c737553",
+      "statement": "AudioPlayer construction rejects a sample_rate outside 1000..=768000 Hz or channels outside 1..=64 with ValueError before any device work; zero values used to panic deep in the resampler.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L224-L237",
+          "version": "repo-lines-v1:sha256:5b05e022cf43c9c3cb38f2bf45da59ab8515646e9bc3a7219c0d74919c6481d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNGQ0ZjI3ZGM1ZDc3NzQwYWZjZWY5Zjk2NTFlYjU2OTQ3ODk2YWI2Zjk3Njg1OWYwMWZmZDViNGNjNTIxZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NGNlZjk1N2U1ODZkZDMyODkwNjA4OGEyNjYwYjBlYWNjODY4ZjE5OTI4MTE0ZjJjNzcxNzZkOTJlYWY5YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0Y2FjZGYxMmUyNmM3Y2VhZjlhZWZkMmFkMTZmOTNjZGMxNTNhZmIwZDgyMzc5ODk3YzI5NmEyMDY4MzAxMmEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L38-L39",
+          "version": "repo-lines-v1:sha256:fd3fdd2b6acd4be05caf11138a9a3337ca83787629dff1fbf846bfe8ff37020f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDYzYmJjMTYyMTQ5MDczM2VmMTQ4Nzc1NThkMDM1MWM0MzgzNmVjYjUzYjdlOGRiMDExNzZmYmVhY2I1ZGJlMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzlhNWIxZTAzNzk3YzQ1YmY2MjUzMTIwMDQwNTk3ODVhODg5ZTY1NjE5NzUxMTQ4ZTExMzk5MzA5MmVlOGY3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzg0NWM5Y2I4MjMxMWRiNWIzMGM0MWNlYzNiNmEwNjAyNGZlMTRlYjM3ZWQ4Y2QzYzUxNjg1MzE2ZTBkMDZmZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGFmMGRhMGNkMGVkMmQ3YmFlOTYyMDdiMTlkNDllMWViMGIyOGU2MDU0YTFiNzMzYWJjYzBmZmYyZjllZjVhNiJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L67-L71",
+          "version": "repo-lines-v1:sha256:afe0daa22bd8ebbc455711a5e7bccb6318b2777eb2df68de13ed3d3dbbb61de9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRiZWRkOWY0NTJhOTgxNTc0Y2Y0MDMyNGRhZTcwNTM4NGZhOTEyMDFmNmMzMjc1YTc0NGM5MzIxMDAwMjBlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhmN2VmNDk0YmJiNmJhZmQ2MDZkODQyNWNhMjg2MzY0OWFjNDg1MTI2YjU5MWZmNDQ1YmM2NzFmZjFhMDhmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI4NzcxNDc2MTQxOWM1M2M4MDU2ZmE2ZjQxMjJhMGMzM2Y5NWM1MWM3NDBkZjExN2NlNGYyMjk4NjlkNjc4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjJjMWI5ODQwNDhjM2I2ODJkYTAzOTliM2VmMjIyZDUzNmY5Y2FlZjRjNDQ2YzgyOTcwODBmM2I2NTJhYTliYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fe45d4938e14269b490bd9f80ceb99a",
+      "statement": "Device lookup runs with the GIL released, and the stream is opened with the GIL released unless the target is a PipeWire/PulseAudio sink.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L242-L248",
+          "version": "repo-lines-v1:sha256:4b9601df4e9eb1934fa38d67adaf3073b35c4828a7c34150c5fc4562408251c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTczZDFmOTYzYjBlMzAwYWIxNjY3NzgyMWViOWEwZTU2NzcxMjVlNmIxNWUxZTU4MGJkNDZjOGE1OTVjMWM5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRjNjkxYjMyYzhjMTY1OGMwN2NkOTBiOWNmM2MwZDY0NDk4MTEyYWE2OTk2YmE2OWNiMTNhYzI1OTdjYTcwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc2ZmJjODdmYTU1MzJhMGE0Y2ZkYzRiNjFmZjM1ODRiYTBkNmZhZWMzOTI3NjBjN2EzZDIxODVmZTYzYWYxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFkMGUwYjNkNGQyNWM0OTIxM2VlNDY4OTJkZGJkMWExODMwZGIyOTFkYTY1YThiYmRiNzNmNTMzMTA5MzE0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4937307317b4fd4b137b3e1c6aa1043",
+      "statement": "open() holds the global open lock for the whole open and applies any sink override for its duration.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L374-L380",
+          "version": "repo-lines-v1:sha256:b2bbdfdec93efa9677b55169388c38443b4b7a0bdc46a965a5d26e98a373c794:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3NTM1NmYwYzQwNjBmZDkzNWUwNzliZDI2OWFmYWFkN2IyMjM2MTM4NDNkZDJkOTFkYTcxMTdkOGE1YmRmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU5ZmNhMDMzZDQxNTdmY2Y3OTViNjU4MTdiNmZmY2Y2MDhiZmQyNWU0MWUzMzE4N2UxNWEyMDk2MDVkMWU5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWExYTQ4NWQ0NDZjMTVhZGI3OTcwYjFhNjgxODM1Y2IxMTM5NDNhNDljNzYzYjAzMmU5NDVhY2RkMDU3MWIyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI2ODk5ZDg0MTRiNzVjOThhZDU5NDJhYWYyMmYwMDIwMTQxMDliODYzNDIyOWYxZDViNzAyNGU1ZjNkNTFhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de033c20426c424db7419879097ca4e9",
+      "statement": "An unspecified sample_rate or channels takes its value from the device's default output config, forming the caller format.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L385-L390",
+          "version": "repo-lines-v1:sha256:bc9998e1a9f576b8671633a5ef30646a4c28f944e291c34169ff0e7c259de5b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzIyMGNhMTZjYTQxNmMxZWY2MGI1NDhiZDg0Y2Y0ZGE5ZDRjODMyZDU1Nzg3MmNlNGViMTVkNjQyNjI1NDg1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY2ZGU4ZWIwODdhY2U2ZmU5MjE3N2ZlYzY3MmFmNzE1YzA4NGFhMWI4MzNhMDMzZmI1MzMxY2Y2YWY5NzUxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDJkNTMzMWFhODM2MDg3YmNhZjE1YmYzNTYzMjFmZTBlZTVmMjU1MWFlYzM0OWMxMDk3ZDQwY2YxOGJhOTJiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTBiMTA4NmQ0MjI1OTBjNTRhZGEyNDYyMWYzMWUxOTc3Y2Y3MTMwNGY5M2QzNzQyMjZhOGJlODVkY2JiYWVmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed5a803bff9b4d5cb558038c87218a19",
+      "statement": "Off macOS, negotiate() picks a supported non-DSD range with the caller's channel count and rate, else one with the device default's channel count at the caller's rate, else the device default config, choosing among matching ranges by cpal's default heuristics.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L397-L403",
+          "version": "repo-lines-v1:sha256:396e6264771cdaa65edc2e0e649eae342a2d6147c10235c7f031ca7c6fba19db:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFmMzNjNDJiM2FjZjE4MTFlZTU2ZGVlMDUwMWJmYWE2NDlmYmZhMzgzNDEwMjZhZjJkZjNkZDgwYzk0ODY0NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzVjZGVmODA4NWFlNzRhYjYzNmQ2NDU5ZjVjNmQ1ZmJmYjBkYjI2NGYxYjBkNzViYWM1MTljOWIzZjY3MTdhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjU3MmVmM2M4ZjlkY2ZiNzUxOTI3Mjk2ZTM5NWQzMTA3MjQyZmY1ODUxNjIwMTU4Zjk5OTg3ZmQ4NWU2M2U2OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA3NzUxZjE0NmIwZDVkNGVmOGE0ZWU5MjAwOTA5YmE5NzY0ZTM2NDEwODgzNWZjNzc5NWUyNmU3ZjYzNjE5YSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L548-L569",
+          "version": "repo-lines-v1:sha256:f09498e9871ef1995e0d9ce37751992d602fca8211d65479a9fa0a7d61e30fcc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNGViMWMyZGQ1NjUwNWQxNDYwMzQxNGNkMzA5ZjNkNTBjYWVlNTc1OWY1MDkwMGU1MjU1ZTIzNTlhNTc2YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUzYmFiNTA1NTMzZmI3N2I2YWEwMTg3NTM4YmMzZjY2MzM0NmMyYzMzY2Q2NjFjNDY5NTU2MDZjM2IyOTIxYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cadcf59d77974d41b206dda76d78b2ab",
+      "statement": "The negotiation unit test shows f32 preferred over i16 when both contain the caller's rate, the default channel count used when the caller's is unavailable at that rate, and the device default used when no range contains the caller's rate.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1124-L1146",
+          "version": "repo-lines-v1:sha256:b4fe68a8f0c18275b7205e649740c4f6070080c50627be40a0da205e71ba3ce7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFiN2QwYmUxMDE2ODczMDYyODZiYTIzZTYxYmZjMGU0YmI4ZTJjYjk5YWFlMmQ4N2E5NWM1YzQ1YzUwNjgyYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_582242644dcf4ae2abdede4b420f208b",
+      "statement": "Opening the device at the caller's channel count when supported leaves channel conversion to the system mixer instead of the built-in positional remap.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L548-L550",
+          "version": "repo-lines-v1:sha256:41e47cb58c75ab1c3846ac378d408c3ab00b3136e33ec4afb623f3b99b6d3f81:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTI0ZWIxYzJkZDU2NTA1ZDE0NjAzNDE0Y2QzMDlmM2Q1MGNhZWU1NzU5ZjUwOTAwZTUyNTVlMjM1OWE1NzZiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlkYmIwMTNjZThmMjBjYzc5NzMxMTlkZGY4NDU0MDYxMWFlMWNjMjdmMGUyMjA4MDY3MTY0N2NjMjE2MGQzOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjU2OWM3MjIzZmU1Yjk2ZTUwY2YzOWE3NGQwMDI3ZGZhZjIyNmNlMjViMjFlMmRiNjc1Y2RiNTU2NjNmZjZkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d705207cd35343828d0eb748acb8c3bd",
+      "statement": "On macOS the stream always opens at the device's current default config, because CoreAudio would switch the hardware rate for every app; the converter adapts the caller's audio, though cpal may still switch the hardware sample format to 32-bit float.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L6-L8",
+          "version": "repo-lines-v1:sha256:ac87a66254268e2439ad1b72b2d6ef993b1620753b078b6036ff78f7582b2747:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFkNDc0ZjIxNjVkOTYzNjMzYWRkYTdmNmI0YWZkYWJlM2Y1NmI0ZmU5NDQ0ZTFjYzI5YTMzMmFkZjZhMjhlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVjZDhkYjM4YjI2ZTE4OWZkMDVlYjA1NmU3OWEzZmNkN2M3NDU5OTFjNWY5NzYwYzU1NzkwMmY4NjdhYjg5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjM3ZWJhZWFiNWVhZGNhZmRmZDgzNjVjZTkzYzcwMzc3YzFmYTIzNmRjMTZmYWM0N2I3MmVjZDljNzc2Njg5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWY5NmFmNWVhYjM4OTdlNjZkOTE5MzExNWIyOGY2MWI3YTYzYjllM2JkM2M0ZWNiM2FiYmE2YzhjYTcxNGE0MiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L391-L396",
+          "version": "repo-lines-v1:sha256:7a02b7abc4236f4dcbe5864a3d19ccf2767c84758f6d54b36c17dc179befb6a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhkMDc2YmUyNmU3YjA4YzBmMjE5ZWIyYjE1ZDBiY2UxZmEwZjgwMzZlODExOTE1MTE4MjFhYTkzZmRiZjNlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODY5ODI1MTc5MjRmZThkM2UxNTY2NzExNWIxZjVhMjAxOGUwZDU1Y2U1YTAwMWIxZTJkNWUzMWI4YjI0MTIyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTE3NGFkNTBhM2NjYzhjZWZmNzU1MGEzOGFiODEyY2IwNDAzODIyYTY0ODMzNTI5OTIzYTczZGM4ZjY3OThkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzkyMWViZWJjODVmNTkxYTJiNTBlYzg5YWUzODJjNjY0ZmY5MTI0MzczM2M2MWFmNTNmZWYyODA4YTY2MjdhZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed2e47459fc44a23b8d4599b7782fe1d",
+      "statement": "The ring buffer is allocated for four seconds of audio at the negotiated device rate and channel count.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L19-L20",
+          "version": "repo-lines-v1:sha256:524013a1b80cac1d217db9fe8f9ac53881c55d1697574d42e3867607be80b27f:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFlOGNlNTA5MWMyMjk3Y2RiOWYyZWQyMzQ4Njg3ZDM2YjVmYjI2MTgyYmNlOGQyYTU3N2RlZWVlNWYyNDBmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIyODg1MDE1MmRiNzc3ZDVkYmRmZTQ5MjRiMzIwZjJhZWQzM2M3MjNlZjI2MmM2OTM2YWY1MjVhNzM2MjExZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjVkZmFlNzdkMWI1MDgxOTBhYmU2NTUxNzU4NTVjMWI1ZTk5Zjg2NmEzNzgzNDFhOTUxY2YyMzgwZTU2YmYzYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjJlZDRhNGUxMTg3YjE0NDljY2QxZjg0OWRjMGY5NWRhYjA1ZGI4ZDRkNDIyNzJkYzM3MmZlYmM0NzEzYTZlNiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L414-L415",
+          "version": "repo-lines-v1:sha256:5a5b969c5f217c0a634a2c65a59345207cb80c99387df6de2ba53f2333ba6eff:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA3NDM4MTJkZDM5OGE0NzI2YmI1NDZjY2NjODQ3OWFiMGYzZjU5ZGJkYmJkNTRkM2I1NmNiMTFlNDdhODAzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWZmZmUxYzE4OGQxMDBmYzQyYmUxMjhiY2UyNGU1MjhlMjI0NDU4Yjg2NjFmNTY0MDg0NDEyNzdiNjZjYmExZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjgxN2FiNjRhOGY5NDQ0NTg1MTIwNDliNTU5YzIwZGY5NmI0MDljZjdmNWM5YmI5MDNlYjhhNTc1OGY1M2I4ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjY0N2JhNjA4ZTY1OTg2YmMxY2IzMTM4ODVkNzQyMjljOGNlNzMyNmM3Y2QzOGU3ZWY0MTNmNjA5MmJlMWYxZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_95ff1640753b487188fabde0ee1ec875",
+      "statement": "The output stream is instantiated for the negotiated sample format — f32, f64, i8, i16, I24, i32, i64, u8, u16, U24, u32 or u64 — and any other format fails with a Config error 'Unsupported sample format'.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L419-L440",
+          "version": "repo-lines-v1:sha256:2f662a5edcaaa063d5ec63bc7acd11b7d9f7bb7a4f4ea7dc6ea0cac00c96aec8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMDlmNWVmMTdjNWY2OWIzYTYyZDEyOGRkZGY3YTBkOTEyNTk1NzMyY2ZjYjNlMzM2NTI2NTEwMGY5MGZkZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYjZlOTQ2MjUxYWYwNjY1NzJjZDcxY2VhMTlhN2ZhNWUzZTUzM2MzYWRhOTAxMDgwNTBiOGJhOTI0MjU4ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2NDdiYTYwOGU2NTk4NmJjMWNiMzEzODg1ZDc0MjI5YzhjZTczMjZjN2NkMzhlN2VmNDEzZjYwOTJiZTFmMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMTk5NjNhZTNkYTJiMjk0MTA4YjI1M2RmOTNiODEyYTlmZmJiMDUxZjlmZDBhN2IwMjE0M2FiMjgzN2YxYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c7ac9aafb7e45b4bd123a6c4b910457",
+      "statement": "Errors from querying configs, building or starting the stream are prefixed with the device's host:id, with cpal UnsupportedConfig/InvalidInput becoming Config error and other cpal errors Stream error.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L26-L52",
+          "version": "repo-lines-v1:sha256:447d68294e5c2302187797a5b7f2ec6825559eb1d6ed911ec40f366e0c676849:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNDBjOTI4MTE2MTg3NDUzYmZkMzI1OTY2NjNjNGYxMTQ1MDM0ZDU4YjE5Yzk5ZjYwNzQxNjlkZjIwY2M3MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNjQzNjc3MjA2MTMxNmIxNTY2MTJhNGVmOTA0NTZmOTZjZDhjMDkzOGRiNDY4ZjRlMDk5MDg0OWY5MTM1NGQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L381-L401",
+          "version": "repo-lines-v1:sha256:1e269c3743ab4c0837a88f9d89f96502ff64b5211b9230f3b67539a99b639503:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4YmQzYjQwYWNkZTZkMWZjZDQxYTc4MmEyMDBjN2I3MzRhNDIzMzE4MzUyYTE5MmY0YmMxYWUyN2FkYjE2ZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1YjRmYTkzN2ZjZDJhYWY1YjdkNjk5MWUwNWY4NTNjOGJjYjM2ZTk2NzMyZDY0MDJiMDE2YTE2NjRmYzk5NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlYWY4YWE1NDMxMWZlNjQ1OTQ1YmRkNjhjNDUwNTE3ZWQzZGNmZGVlNTUwNTgyNmE2M2U2ZDg0NDJhYzMzMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZDM1NTgwNGRjYTBjZTUwMzk1MjMzODc2OTBmYzRlMGEyMjliY2RmZGY5MzNmNjYzYTA5ODc4ZjZjOTcyYWIifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L440-L441",
+          "version": "repo-lines-v1:sha256:ebb11d46ac40adfc8673586386772540e9bae46fa0b0ed584a21c59fe1d2c5ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNiNmU5NDYyNTFhZjA2NjU3MmNkNzFjZWExOWE3ZmE1ZTNlNTMzYzNhZGE5MDEwODA1MGI4YmE5MjQyNThlOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDExNTEzNWJkZjM0YjdmODRiMzljY2VkZWJkNjk0MDNkZjhiZmIxMmQ4MjFkZjM5OGVhZmE2NDYxNmY1ZTA0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWE3NWRmNTQ2NjM4ZWQ0ZmY3NjI4ZjRhZjViNzFhMzg3YjIwMTc3NTkwYzBlNzRlZmJhOWZiYjEzMWJlMGRjZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzA3ZWUzNmYyOWI5YWQ4YTM5NWMxZDQ2MTk3ZjU3YzM4MWM1MmQ2ZWM4MDg1MDVjMTI4ZDJmNjY3MmQzZWI3OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_585fd01d94924f63894a32e7265918b1",
+      "statement": "The stream is started inside the constructor, so the device is held and the callback runs, rendering silence, from construction until stop() or the player is dropped.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L312-L320",
+          "version": "repo-lines-v1:sha256:e92ee5896c9807c4062dee11c9cee3524709bc3335399f4c0a10776ce66a361c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NhYjJmMTBhMGJmM2VlZmI4YTk5MjdhMWQ4ZjI3Mzk1OGE2YTU2ZTI2MzNkODBhZWU1NmRmMGU4MmFhMWMwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjI2NWViOGJhZTMwOTQ2YWI5ZjEzMzRhMGVkNWEyYmYwMzcwNzk2NmRmN2I4ODAzYmVjN2U5ODM0ZjgyMTkzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg5NTg5MjBlMzg1ZDYwZDU0NjRlNmRiM2I0YTA0OGJiNDI0N2U2YmQyOGNiOTNiZDFiNmQxNTgzOTVkMDJkYiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L441-L453",
+          "version": "repo-lines-v1:sha256:f3bf82ed8024555d8f59bef23cb533ff393fcbedc87abf49d80b79a03dc797a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxMTUxMzViZGYzNGI3Zjg0YjM5Y2NlZGViZDY5NDAzZGY4YmZiMTJkODIxZGYzOThlYWZhNjQ2MTZmNWUwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmYzU3NjFiOGMyZjIwZTc2NzM2NWQ0YmIzODYxNmJjMDQxZmFiN2RmN2QwYTA3MWUyODc0OTE0NDgzMWI3ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjOTJjYjVjNDU4NzhlMmZmYzA4YzBhOTE5MTEyNGY0YzdkYWI1ZmY0ODk2NTA1MjcyYTRlNjg5NTc4MjUwYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzNmJjMmI0YzMzZGQ1ZGI4NTQ3NjNhNjZiMjc2ZTcwZTI5YTUyOWFlYTQzNThiZTljYTZhZWIxZTc2Yzg1MjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0185dada908942198a8d6cd8d1313ce9",
+      "statement": "The player records the caller's rate and channel count as sample_rate/channels and the negotiated values as device_sample_rate/device_channels, and creates its Converter from the caller format to the device format.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L404-L404",
+          "version": "repo-lines-v1:sha256:1838c49c3eee2687e3eec0830a0f8678811b8671fa7f64467a4b2b70f25b7208:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgzOGM0OWMzZWVlMjY4N2UzZWVjMDgzMGEwZjg2Nzg4MTFiODY3MWZhN2Y2NDQ2N2E0YjJiNzBmMjViNzIwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgzOGM0OWMzZWVlMjY4N2UzZWVjMDgzMGEwZjg2Nzg4MTFiODY3MWZhN2Y2NDQ2N2E0YjJiNzBmMjViNzIwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc0NTk4Y2M1NTgxMjEzMmRjMDA5MDdmZjMwMjhmMDYwMmU2MGQwMWM1NjljYWEwZDhlNDA5MmZiY2ZlNzkxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTEyZTM4NmYxYWJkN2QzZWM2ODI2YjdlYTgwOWFmODE5MTk5YWJhNGFhY2UzZjRlMGE2Yjg4MDNhMzY1NjM2NSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L444-L458",
+          "version": "repo-lines-v1:sha256:a20ef646111b1f350c3019dfc5d1682fd3974202806acc41d6fcf5ee4222f9b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxMzFkZjAwNWYxZjUxZjNkZjhhODZmZjJlZjliYzExY2M3YTE0MmQwZmM5M2QzODliYjg5YWQ3ZjU1ZjIzYjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5YjE5ODJlOGRkNzQ4MTE4MTQ2YjM5YTJkMDA2MmY0MDgxZTM0Nzc5Yjg2NzVjMjM0YzRmYjEyNGRjMzkzOTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMTk5NjNhZTNkYTJiMjk0MTA4YjI1M2RmOTNiODEyYTlmZmJiMDUxZjlmZDBhN2IwMjE0M2FiMjgzN2YxYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MzE1MGE4NTY0N2NlNTdhZTYzOGIwMTdkYTYwODRmMjAwOWI5ZDcyMmY4YWNlNzk0Nzk2OTRlMWZlOTE3MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_348357101d9b42e68401e8840b48f1be",
+      "statement": "The stream config is taken directly from the negotiated SupportedStreamConfig via config(), without requesting a specific buffer size.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L417-L420",
+          "version": "repo-lines-v1:sha256:9ec46c662fa199f3205b7b25ab3fd7625a69503ae32a6738e3852d5ac70ca894:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJjMDY4ZTQ3ODcxYTg4MTNjNTAyYzQ3OTU3MWNhYjhiODBmMGE3NmMyYWQxNTJhNjJjYzZjYjkwMzc3OTg0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVjNGZiMzYyZjU4NDUyODFhZTRhMWM1YzcyN2E5ZmZiOWM0NTJkZGZhNmQ5YWE4NGY3ZTBkZmJlNWQxOTQ1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjE1Nzk5Y2JlN2RmOWQ3OGMyMjQ0MjcyMDBmNTY2YTBjNDcyOTkwZDFlNTlkMGI2YmEzYTBmNjUzNjJiNzgwOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWE3YzJkMzlmNjAwMWUwMzY3NTkyNTdkNTJlNThiMDJlMWZkMmNlNDkxMjMwZjUwZTMzYmZiNDU2MDI5YzZjZSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

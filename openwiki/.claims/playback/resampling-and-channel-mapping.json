@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d65ebf21f76ec8a7e80cb9219ce479c20320383c3401602094f7937621b84746",
+  "claims": [
+    {
+      "id": "claim_ba7d68a1984e415887a5d5bd2d48e22d",
+      "statement": "Conversion from the caller's rate and channel count to the device's is performed by a stateful Converter owned by the Writer and run inside write() on the writing thread, before samples enter the ring.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L444-L452",
+          "version": "repo-lines-v1:sha256:ca59610a68d964e7be9490676139094dccfe2709531dcb34deeebe40500578fe:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjEzMWRmMDA1ZjFmNTFmM2RmOGE4NmZmMmVmOWJjMTFjYzdhMTQyZDBmYzkzZDM4OWJiODlhZDdmNTVmMjNiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY2YzBjMTIxMGFmMzg1ZWQ1ZjEyMGIyZDVkODlmYjJmODU4OTNkYjMwODhmNjQ2ZGE3ZDRkNzZjMGE4MmQxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGUxOTk2M2FlM2RhMmIyOTQxMDhiMjUzZGY5M2I4MTJhOWZmYmIwNTFmOWZkMGE3YjAyMTQzYWIyODM3ZjFhNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThlMzgyMmNjNGNmYWM3ZGE5MDQxYWQ5OTcyNjgwNjQ3N2ZlY2EzYTZhYTkyZTQyMWNlMDkzMWRkMTdiNGYxOSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L476",
+          "version": "repo-lines-v1:sha256:6a25ca496b22c9ba0e31101c208dd326949ad9d31e2684ae2b08119fc51562f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMTY4NzZjYzBjMjhmMGVhYTJlYzA3NTAyODE5MmZjNjM3OWIxN2NmYWRjZDVmMjEwYzY1M2JhYWI0Yzc0OTQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L702-L703",
+          "version": "repo-lines-v1:sha256:d94063f2d2889a4f76e5f87ec666a8e103cb34f73000c6cbafe38bd070326613:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGM1OWYyOTAyNjhhY2U2NDlhZDZhMGViZDc5ZmE1MzRiYTViOWYwMGYyN2M5ZjZkYjA3YzVjMzczZTIxZTIyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjQ4MTc2YjFjOTk1MDYzMTczY2VjMWJiOTkxODMzYzY4YjBjYmJmNjE2MjliNDk3YTA1ODA3YTYyMzRiN2E0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2I3NWY2M2E5Njc5YmY0NTM1OGJkZjI1NWVkNDU3NjgyYzIwMjBhMGE0NTU1MjJlMjg1ZTc5MjNkMjE1MmJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI2ZGI3Nzc4ZDA3ZGNkNTljOTc0NTg2NmIxMGE4ZmM2ZjEzYTc0ZmRjZGM2YTY3NWYzOTFmY2U5ZjExMjRiZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc826f97380941a09a531e58e6a50b4d",
+      "statement": "When caller and device sample rates are equal, the converter returns the input unchanged or only remaps channels, keeping no resampling state.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L737-L748",
+          "version": "repo-lines-v1:sha256:159773ac00e2f3950ead7eb29c6d94fa0618660e086cbab56ba22954c6eb6b8b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNzIwZjBiZGIxZjdmOTRiM2ZhZTc0MTI1YjcwNTExN2VjNGM3ZDFmNmY1MTM5MTBhZGNlYmY3YThmMjA1OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NGY3NjY2YjhmOGJiYmRjMDEyMzRlM2Y5MDY5MGZkMDM2MDQzODNmYTM5MmMwYzliMjY0ZDZmNDFkOWY3ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljYzk5Yzg3Y2JmYzE4Nzg2NzQ5MzY3M2Y2MzZkMTA0NThkMjgwNTU4MDBkMWJjMjAxMWVmNjNhMDNkZDZkYjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56d10ada863549e8b8a8506697858eea",
+      "statement": "Resampling positions are exact integers in units of 1/dst_rate of a source frame that advance by src_rate per output frame, which makes the output independent of how the input is chunked.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L709-L712",
+          "version": "repo-lines-v1:sha256:66d2aa792a187d72eb1b68b8e6fa814203a8124454890ef5fb0c92ada7f64013:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NjN2JiNTk0OGQ4NWIxYjdjNGVmNGI3ODhmZmEzNGE5MWRjZTRkMjJhYjcxOWY0NGY2MjMwNmY1MTcxZWU0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFjYjIyYTA4NTkyYWUzYWMxYWYxNDQxZGM0YjQ4M2RkNmY4MTVjMjdjZDFjZGZmYzExOGUzMWExNDdjOTgxZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWVmNWY5ZjY4MmY4MTZkODEzOGEyOTk5MzM1NTJiOTkwNmU2NzNiNWZhNTJmMzQzYjI5N2VkNjBjZWMzODRhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM3ZDFjYWVhNDFkMmEwZjRiYTdjNjg1ZDVjYTBlNmU3NmJkOWRiNjcwNGEzZGI3MTNlNTRjZjFmMGZjNGEwYSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L763-L794",
+          "version": "repo-lines-v1:sha256:65351b1a0bd4a21f1bb14446503e53c25ef333b41f6d8e14c5aa8b5eaa22c5c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZTZkZmZkYzk4NzY5YjFkNjFkNWIwMjYxY2U4NTJhYmFlZTRhODc5YzYzYTcxYmVkZTg5MTQzOTMwOTYxNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyOWE0NThhMjNlNTUyMWE1NDMxOWQ1NGY3M2FiNDEzNWVkOWQ4NmEyOWFkNTIzMjZmODdiM2FlYjVlMGUzODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkODY2YTZlZTQ3NTYyNDA3MTk1NDNjMzdjMjU1OTJjZTZiOWIxMjMzYzk2ZWFiOTNjZWNkOTMwNGFlNTQ1ZWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L938-L967",
+          "version": "repo-lines-v1:sha256:bb758959186392fbf7c579f1426ee88390279da330d5b120a8f824be913a9f96:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJmMDVhNDI2YWE2MDk1ZjE2ODYyNTRkYTViNGVmMjgwMWQ2MGYyMmVjZTQyYTQyZmVmYWRmNTlmMGIwM2VmYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwM2I3M2IxZWNhNDNhYzQ1OTBlYzBkMjIxNWU0MmYzYTk3MzU5MmUzY2Y3OTgzZmEyNTg1YzdiY2M4MmM0NzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50078dd324874998bff40f7427a6f365",
+      "statement": "The resampler carries the last three source frames as history between calls and interpolates each channel with a 4-point Catmull-Rom cubic Hermite spline.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L699-L716",
+          "version": "repo-lines-v1:sha256:911fc151854a984933bf228c805dc254b5794877a1fcb0caf7eb47e51f4f0a57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYTAwODA1MDg4NmMxYjdkYWQ5YjkyNWExNWZhMjgyMjU0ZGRlM2YxZDI2ZTYwODMyZDZmNThkMzUxMmEwZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0MWJjOTQ3YzM3MWVlZGE2ZmRlNDhlMjBjODQxNjNlZTRkNzdlNmJjNGM1YzZlYjc4YmUwYTI5Zjk5ZDk2NmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhYmRhYjZkYzM1NTQxMjA5Y2FmN2YzYjg3NWQ2NjkzZmE2ZmY4MTA4NTI1NDU4YTIyYzJmOTk1MjVhNDhjNzQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L766-L792",
+          "version": "repo-lines-v1:sha256:ba9422958dedaac326d8cdc425b242d79d31e258edcfbffa56c7208684eaa72f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlYTgxOWNkNDcyMjZjZTc0YTE3NDg2MTViNjVhNzUzNWM3NzE1N2Y3YmQ1OTFmZTNhNGI0ZjI4YzIwOWU2OWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMjY4OGZkYzYyMjI5OWFhMGI2Y2FiZDhmMWM3NDJiNWM0OGE3MDIxYzlhNTJkNTBhN2E0NzRmNTAxZWM2OTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3YjAwMzVjZjllZWMyYzU4NzJjMTViMjZhZDUwZTE2MWY4ODQ3OGY2NGZkOGEzMTZkZmUzNGE4ZmFmM2M5ZGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3ZTg5YWFiMjhkMGNiZTQxYzQxZDM1ZGQwNjRkY2UxODg4Y2Y5ZTE2MjliODJiM2RjM2U0ZmI1MmQzMThlNWEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L798-L804",
+          "version": "repo-lines-v1:sha256:c74336db9b177fa4ee4a9b2ea60ecad7727a8cc809762197d77754f1d84c8f08:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ1ZmM5ZTU5YTlhODdhNWEzYTlhNGQzNTliNDdmZDgyM2M4M2IxYzgyODA4Y2QxNGU4ZTZlYjY0OTE2YmMyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjcwZGFiZThiYWExNzZiMzBjZjJjNGRkZjRmZTAyZDM4YWI4Nzg3ZGFmOWU3MTUwYzRjMGM1ZmZjZjUxNDJjYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a29f6fbd85b4fc280af805e82585d70",
+      "statement": "Interpolated samples are clamped to -1.0..MAX_SAMPLE because the cubic curve can overshoot the input range.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L780-L784",
+          "version": "repo-lines-v1:sha256:2e58157f1e649c721c5e7a8b2d231802fd5724f76051963c2592915580c2865b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNkZGUwOGExYzA5YzJiY2ViYTkwODNlOWJlZDAyMDViMjQwNGIxMTM3MGFkMTVjOGE2MjUxYjBhMGU4YmNiNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyMmM0MmNkMTljNmQwM2Q4MDhjNDUyNzIwNTUyODI1YjdlYTFjNWI0OTFiMjE4NTExY2FjNzQxNWNmOWQ5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjkwZTEzNGFkNmM4MjY2ODBjYzY3NDdjMzBkYzdmMGQzMDI0ZmFhNDg0OTRhNDhhNmY5MjE4ZjU5Y2JmMWUwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNThmM2YxNDNhOWUzMGJiMzFlMzZkNTU3Nzk0MWNmNWZlZmFmNGE3N2E1ODQ2MzdlNDcyOTJmNDMyMWUyYzNjNyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L998-L1005",
+          "version": "repo-lines-v1:sha256:d9b027f1af73434e310ce480cc23a5fd2fb2757b9ce5eb8072b5e390c62a4879:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJiNWVkZjU5NDljZmVhNjc4MjJjZjY5MTEzMjM2M2Q2OGQ2ZjFlMTY5ZjVlMGQ0ZjdjMTRlNWZhMWU2ZDRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmUwYTYxZWE0YjJhMDJkM2YzYjE5ODg2YzZkNzU4YTM2NzY4NzM1MDMyMDYwZGVhYzE5NTlkN2NiYTQ5M2Q3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjA3Mzc3MTllOTZlNDg4MDMwODgyMDNjNDRjMmNlM2JjN2IxMjkwMTUyMmVlYjhiYWMxYmYyNGRhNmExNzZhYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_98a86b992d94431aa447034a7f687ceb",
+      "statement": "The resampler applies no anti-aliasing filter, which the code flags as a known ceiling for downsampling quality with a sinc resampler such as rubato as the upgrade path.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L761-L762",
+          "version": "repo-lines-v1:sha256:ec28fec98993f25a5e6003fbcc7275403092227f0ef96441b84feee0fda18926:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM1MDc4YTEwODBkODNjYzIzMGJiZGY5NmY1ZGE4MGJmMmQ1MTYzZTVhMDk0ZDA4NGE5MWJkZjUxNmFlYzExYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFiY2JiMjgxMjczYjkzNGVmYzk3Y2UwMWE2YzFiYjNiNmIzYTdhZTYzNjc4ZTFlNzJlODgxZTZjM2MyYmEwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjc3MjU2ZDViMTc2OGZjY2Y2ZmFmYWRiYTQ5ZjFmMjJhMWVhZmQ1OTZkZTJhMmVmNjg1MTBhNzYzMWY2MmUzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdiMDAzNWNmOWVlYzJjNTg3MmMxNWIyNmFkNTBlMTYxZjg4NDc4ZjY0ZmQ4YTMxNmRmZTM0YThmYWYzYzlkZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d82bac1a68b44fca5e62a808f399181",
+      "statement": "Each call only emits output positions that have two source frames of look-ahead, holding back output for its final two source frames until more input arrives, and nothing flushes this tail when a stream ends.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L732-L735",
+          "version": "repo-lines-v1:sha256:16e7d2e3bff44e824fa7aed33d116de0b3c8650ce00170c7790ddd8c0b132544:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk0OWM5MmFiOGE4MTlkNDg1ODRjNDg3NzI5YTk5MzQ1NTdiNTliMmMwMThjOWNiYWI1N2ZjY2U5YjRiMDQ5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDczZmEwMGM5NmYzYjJjYjNjOWMyMWQyYmJlNWFjZDRiNGEzZTY2ODdhMDRkZWU0OGI3NTZhNTliMGM3NGVhZCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L774-L777",
+          "version": "repo-lines-v1:sha256:50eca88002711d3a922516286ca73fba50335d0d6fbefa0af504645a85c787f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBjMDQyYTFhODk4YmJmYWYzMmI5OGU4NzY0ZWM5ZWRiNzZkMDZiYzc4NmU5YTJhMWFmZjg0MzhhNDNiODI0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRjODI5MGU5YmQ2OTgxZDllZDEyZTI0MGMyM2YyNjdmMjQwZWFjNjBiMjJiYTU4NjA4MTgwM2I4YjljNDE3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY2YzFjNmJmMjUzNzU3OGQwZjA3MmM0YzQwZDZlODNlYjAxNDYyNDA4NTczZjA1ZDdkM2U1NjA4NTJmMjI1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjdhMWYzYjg4ZWQwODdiZTgzNTAyNTZkMDdhMzE4OTRmYzc5ZWRkZDY1YjhjM2I3MWM0OGYxNjlmNDFiNWM4MCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L969-L975",
+          "version": "repo-lines-v1:sha256:4041eb1bbb53cdbeef39426a07d56c594a6849d49b3a38c1109f0f56d128b73c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJiNWVkZjU5NDljZmVhNjc4MjJjZjY5MTEzMjM2M2Q2OGQ2ZjFlMTY5ZjVlMGQ0ZjdjMTRlNWZhMWU2ZDRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MGUzMmNmODU0NTFkMDkyM2ViYjViN2JjNGM2MDkxODY2MjAyYzMwOTUwZjcxMjhjNGYwNjUxNWRlNDQ0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e400f511232b4c598c32217ad9b1f0b9",
+      "statement": "On its first input after creation or reset, the converter pads the history with copies of the first frame and starts exactly on it, so a resampled stream does not ramp up from silence.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L753-L760",
+          "version": "repo-lines-v1:sha256:963616fd144d6ff2f3055056cae1abc0962f24f872072f79a1b13badc3710692:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2JjMjIzMmNlYTc4NTczOGU0MTRhZGVlMjE5NDRhOWExMjE4NDA0ODgxMTExZGYxOWU1NGYxNjE1ZjRlNzg4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjAwMDA4NzY4NzgwZmVmODI5NDFjNDE1YjFkY2Q1NGYyZDlmMjFkMDQzNmNjNWYyMjk0MzdlYmI3MDk5M2NlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUzMDRhMGM4Y2QzNWQ4YTYzNDczNTNlMzAwOWIzNWE2ZDhiYzc2MmU0MjUxNTIxZGQ0MzYzOTE5YzRmODVjYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2dc94b0cd3b546de89352b3b4532c690",
+      "statement": "reset() only marks the history unprimed, and the Writer calls it whenever a stream ends, so resampler history from earlier audio never bleeds into the next stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L179-L192",
+          "version": "repo-lines-v1:sha256:78b2392ea12dd356406fc1bb709f2259c11a9addd45b3f43c396372ed4a6de9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmM2MwYTY1Yzc4N2Y5NDllNGQyYzRjMjNkNjkwYWZkOWEzYTBiNjI1ZTEzYTQzMjdkNjBiYjI5N2YyOWU1NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYzZmZjZmMWZmZWJjZmI0OTI4M2M5MTI2NWY5MjdmMWEzYmNmMTQwMDU3NWJiODM1ZWJhMmU4MTgwMmVhMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOWQwY2Y2ZGNjZjYwNGZlZThhNzM5NWVjNTU0MGNlN2QyOTE0Y2U4YzgyN2RlM2UwYmE2MDU1Y2MxMDg3MDgifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L732-L735",
+          "version": "repo-lines-v1:sha256:16e7d2e3bff44e824fa7aed33d116de0b3c8650ce00170c7790ddd8c0b132544:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk0OWM5MmFiOGE4MTlkNDg1ODRjNDg3NzI5YTk5MzQ1NTdiNTliMmMwMThjOWNiYWI1N2ZjY2U5YjRiMDQ5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDczZmEwMGM5NmYzYjJjYjNjOWMyMWQyYmJlNWFjZDRiNGEzZTY2ODdhMDRkZWU0OGI3NTZhNTliMGM3NGVhZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ff51c6e6e54a486dbc538c951a66216b",
+      "statement": "Catmull-Rom interpolation must track a 1 kHz sine upsampled from 24 kHz to 48 kHz within 2e-4, where the test notes linear interpolation would be off by about 4e-3.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L977-L996",
+          "version": "repo-lines-v1:sha256:48e390accbaf672dc9ef4a1f7b7752af88c125459e6f5f26a8cfb191987b99a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1ZjhiOGUwMTI2NTkyYWMzMmIwYzE4M2E4ODA5NDA1ZDg2Y2FjODk1MmFhODkwNzJmODUyM2M3OGU5ZmNmMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlOTcyNjhkN2Y0MGQzYTk1MzJjZDM5NzFiOTkwZjU5NGYwMzcwMTQzNTc4ZTY3OWYzZjQ2ODFiNjNmMzc2YzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5fdb34c7cd0a4fb8aeada29fe7949884",
+      "statement": "Channel remapping is positional: any source to a mono device is averaged, a mono source feeds both front channels, extra device channels stay silent, and downmixing to two or more channels keeps the first channels.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1111-L1122",
+          "version": "repo-lines-v1:sha256:2a55d414469c14566b31c1d24ad369978f32e6894433b723a38f2a329e6576e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyZDgyOGEwMzdhYzFjODE1MzViMWQ1NTAwODMyMzIzYmZiYjg2NmEzYTNmODdlN2E2OGMxM2EyYmFlNTZmZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ODEyZWFkY2ExYmJiZjhiYjk0Y2YwNDFmMDMwOGU1YWI0M2I0M2IwMmY3ZjhmMThhM2ZhZTE1YjUyNDY1OTAifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L806-L825",
+          "version": "repo-lines-v1:sha256:b8ee0b8c3dedc88fba6068b31aae2449e2b1dbee3cd71f487841b21bf1010920:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNzA1YjU4MjcyOGFiZjE1ZDI2NTFjODQxOWJkNTZkMTRkMmEwYTEwMzUxYmVkYzNmNzVhMDgzYzQ4NGNhNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYWExZDY2ZjJhNGQ0YzdjZjU5M2JjMWM3YTY4NTcwYmI1N2I3NzExOWY1NjhlMzI3NGJiODcxNGNlZDk5ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlNTI5ZGQwNDlkYWIzYTMyNjZmZjQ1YjgxM2JiMTA0YmY3Yzg1MTk1ODVmYmQ3YzNmOTUzY2JkMjQ0YzdhNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1dac94a40eeb4574abf52d4c00a5ecba",
+      "statement": "Downmixing 5.1 to stereo drops the centre channel, which the code marks as a known limitation with per-layout matrices as the upgrade path.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L809-L810",
+          "version": "repo-lines-v1:sha256:3c40e466a02a4eb4c220b6bd61a9456754fa72418280952e7e9104676fc80d17:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiNzBlOTRjMTQ5Njk1MzI3N2M2ZTI1NmRmOTlkZmQyNDNkZTBiNzUxOTczM2M0YjAwNzlmYTU4YzdkMjY4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZmMDZhYzdmMTRjNTgyNDhkMzcwNTU3MWZjNWI2ODQ2ZjIwMWExMjRjZGZiZDI3M2ZmMGUwZjg0NjE5N2YzOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRmMzNkOTU3ZjI2MWNjMTdkOTFlZjA5ODFlMTg5ZDVhNjIyOWI1OTk1ZWM4Y2IzZWUyNWYyOWYyMGJhMWNiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWExNjM4OWNiNzAwY2RhYzQ3MjNmYjAyM2U5MDg3ZWU0OThkODlkOGVhZmMyZTIxNjIxMzAxNmFhZWM0NGE5YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_255a64adf7874a509940bde851b31fb8",
+      "statement": "Resampling keeps interleaved channels independent, so constant stereo input stays constant per channel after rate conversion.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1098-L1109",
+          "version": "repo-lines-v1:sha256:e6a3cffb9559c1d5e22e1ad2fc9dfcb9a208e18ca19c7db8c6180e2cd0806055:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdmMjFjNTA2Y2NjNDQzZmY2ZGNmNzViMzQzOTFhNjM5ODM1NzMzMGJjYTUwYzU4MGU3YjRkNWQzNGZhZDA3ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MDQ2NzFhYmFmZGNjZDkzMzU1YmNmZTZmMDBhNTAxZTNiMDA5OTM5Mzc5MDI2ZmJjNWVjYTlkMjNmMDhmZGQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bfbd62dcdb4d247edd630fdfd4ea8703cbcc69a64105c08a0c30905265f70aac",
+  "claims": [
+    {
+      "id": "claim_8b5e3dc34e064d039744319aeb8520d2",
+      "statement": "The Rust library is built as a cdylib named _pyaudiocast that maturin installs as pyaudiocast._pyaudiocast inside the Python package, whose __init__ re-exports its public names.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L8-L10",
+          "version": "repo-lines-v1:sha256:8fa6a1a06845ba6d6d29c57340ef8d5a1a2971378da65b1a16edc4460bbfba8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg0MzVlZjU5NGYzMzcwNzMwN2MxZmU1OWIwMTdmMjExZTllZThhMTVjODJkZDVlYWIxOWI3NjdhNmY3NGJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2MzkzNGMzYTM5ZjhkNWMzYzI2ZjE2NWU1ODc1MWVmMWE1NTNkNDFkNTRmZWExNWNiNjliYjJhOTc0ZmY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWNkNzdmMTUxNzgwMGZjZDc3NmYwNzEyMjdkMTQ0M2FiMmRhY2U1ZDRhYzAxM2E0OTFjODE2ZWEwOWMxZTlkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEyZmU0NDQ5NDlkZjZhY2JmOTAzZDdhOGIwNzEyZTMzYzBmYWY5MDdlYzlhNmQxNzg2ZDY2NWJjNjg1ZDMwZSJ9"
+        },
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L3-L5",
+          "version": "repo-lines-v1:sha256:4315b2ba07301b0b8df30950e327c087ab4ebcd02fc5810e9c25a82122fd813e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNmNmIzMTU0YmI4ODliMzkxZmI3NmUyOTdjYTg0ZDA0MzlmZGNmZTIzY2ZlY2NlYmY0NjllODFlYmYyMDg0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU3MGEyZjVhYWNiZTE3NGQzZmVmYjdjMWMzMTA5YWM3Y2FiNTYyNGYzMTYyNmQ5NDhiNzMyOTEyMjg3ZDA1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L42-L43",
+          "version": "repo-lines-v1:sha256:3528203ede15f6e3f37d992e4a7cddc69ce70da8fa358db66d7f22605f27645a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZjZlNmE2Mjg0OTBmMDdmYWVlYTk4ZDgzZTU3ODRmZmE3ZDM1MjU5NzVhYmI5NTNjMDQ0NjU3N2I0NjQxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYxNWQ2MmE4YmQ3YjQ4MWJhMWQzNDFhOTdhNjZmZTk4ODM4OTc2ZTE1MTNlNWZiZTVhZDMxMGQ0NDI0NWE2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ1ZDNmNDg4NWRkMDc3MWU2YjA3Nzc2ZTg5ZDY5ZjNiMDgwYzA3ODE4ZWY4NjVmZTJjMWE3ODc0MGI2MGUwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e4d8f8e1815435280de1861b274d3c8",
+      "statement": "The extension targets CPython's stable ABI for Python 3.9 and later through PyO3's abi3-py39 feature.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L12-L14",
+          "version": "repo-lines-v1:sha256:566e4f6b2fdeac7491119733e8d4dda16192baa0c9a1cc22595c501487389139:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJkZjZjNzE0Yzk5NGQwOGRjODVhYWZmZTYxZWM2NGUwMjU1YmUyYjhiZjZjY2FjNzU2ZjE3OTBhYzk5NDBjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdjMmZhMzlmM2VlNzE1OGRhNjI1Mjc1Mjc3NTE3MTgwNWUyZjhhZjU3OGY0ZmQzZjE3OWIzODAzYzkzNTIwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZlYzNiYjZmZDAyMmZiZTFlNTFjNmZkYjQ1ODc3ZjE2N2ZiNjY2Mjc4YTBkNzE3MjZlZTIxMmZiMGI4ZjBhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBjNjkyZGFmODMyNzkyNDdmNTQzMGNmNDk1MWY3YWEwODYxMTlhNzQ3ZGZmMjNmMjBhZDZmZmVmYjc3ZTcxYiJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L10-L10",
+          "version": "repo-lines-v1:sha256:4f8813c43213d760f4db6c1955b4c08ce41592a1f91cc219ed11906504936932:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY4ODEzYzQzMjEzZDc2MGY0ZGI2YzE5NTViNGMwOGNlNDE1OTJhMWY5MWNjMjE5ZWQxMTkwNjUwNDkzNjkzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY4ODEzYzQzMjEzZDc2MGY0ZGI2YzE5NTViNGMwOGNlNDE1OTJhMWY5MWNjMjE5ZWQxMTkwNjUwNDkzNjkzMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkZTcwZjgwYjQyMmNhZDdmNmE4YjJhNzFiZGZmMmYwMDNkZTQ3YTRiNDExNmEyYzAxNmQ5YzllZWUwZjkzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA3ODFhYzgwOWRhYjU4MThhZjhiYzljNWI0MjI3YjYyN2MxY2M5ZjBiM2YzYThkZDhiMmEwMTA2ODc3OGU1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_987cec20dc1c4b9b84f2fe4624ffc747",
+      "statement": "AudioPlayer is a frozen pyclass whose mutable state lives in an Arc<Shared> of atomics (plus a mutex-guarded failure message), a Mutex<Writer> and a Mutex<Option<cpal::Stream>>, so its methods take &self and can run concurrently from several threads.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L195-L204",
+          "version": "repo-lines-v1:sha256:73c6848d22d6d24e2b7d8d06b440934e3126de0d76a24918e58d912a3f577bc2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MjMyNTg2ZTMzZGFiMjNjOWIxYWY2MWRiM2FlZjQ0MDQ1NGFkZDY5YmFjNjI4ZGY3ZjRiNTg1ZDJiOWE1Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMTIwZWU1MTI4NTYxYjNjYTMyMzQzZTI2ZTI1NmIwZjNjYjFhMmFkMmRjNjMwYzc0NmJhMTZiZDI0YTc2MzEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L48-L74",
+          "version": "repo-lines-v1:sha256:eeb5148ea0a9408e671aebd779feaee3aacef0222fa7a9c23935b736de8123d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNjgzZmMwNzY4ZDcwNDhhYmM1Y2MyZmI5M2E1NTRhZTRiMWU1NmI4ZDI1N2IxZDZmYWI1YTc1N2NjNDExNTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0M2JiMzQ4Y2I1NDI5ZmZkNzk0ZDgyYjgzMDcyMDA3NDYwZTI4N2IyZjcyZjUxYWRiMTNmYzc3YmIwNTIzYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2NmUwYzJlMTdhNTFhY2FiYzQ0OTIwODUzOTYyNWRmYzVjMDJmY2ZlYjE3NjYyODU3YTZjNjY1NDk3Zjk4ZDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3185d01156b544099e05f0dde1806a02",
+      "statement": "Locks in the player and device modules recover the guard from a poisoned mutex instead of panicking.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L35-L39",
+          "version": "repo-lines-v1:sha256:e6853598f4645ea693e4a137296995ef6ef1e597073b9f801a5bf26610cbd203:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU1ZDQyMmVhMjRkOWU2M2NkNzIxMDAzMzY4ZWZjZGYyNzdkODdjOTJiMjFkYzg1MWYxMmI1ZjRlZjFiMGM0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTE1YjlmZTI3MjlkNjE5OWFiYjlkZDY4NjhmZGFhNjdlZWMzMmFiMzE1MTFkMTkzMDQ2Y2NjNzA3Zjc2NTljNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBjOGM5MmM1NjZkNDhkZWE0ZjhlNzBlMzhlZTkxNmMxNDc0ZDQ2YjZiOWI1ZGY0MTFiNjkzOGE5NTZlNjU1NyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L130-L132",
+          "version": "repo-lines-v1:sha256:34d1b72f7bfb6933c7a3d589e6de6b16286a90a5ba5a051a1892019af81177d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZhOTNiMjg0MzY4ZDkxODRmZDNkOGZkMDNjY2FlM2JkYzI5MzBhYzVmNDg1ZjkwYzAwOTBmYmVhMzkxZTE3NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzlkYTM4YjJlYTE5Y2RiOWVkMjA5ZGFiZWJkODYyNGEyYzgzYWMyOGQyNDIzYTU3M2U1ZWI2Yzc0YTdlYTA0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_02022459c33d4412b4db00ad6e5b6fd4",
+      "statement": "play_file builds the same Rust AudioPlayer via AudioPlayer::new and drives it with the crate-internal push, drain and stop methods rather than going through Python.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L65-L65",
+          "version": "repo-lines-v1:sha256:6313757bf14e43aa7076034725dd4c24f6799b9a5305fa2911e9e930911068a2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMxMzc1N2JmMTRlNDNhYTcwNzYwMzQ3MjVkZDRjMjRmNjc5OWI5YTUzMDVmYTI5MTFlOWU5MzA5MTEwNjhhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMxMzc1N2JmMTRlNDNhYTcwNzYwMzQ3MjVkZDRjMjRmNjc5OWI5YTUzMDVmYTI5MTFlOWU5MzA5MTEwNjhhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQzZmI4ZGE4ZjIwNmRmMzExMTIyNDE4M2NjM2U5NjhmMTFlMTJmODM1ZmJkNTk5NWU0YTZjZjMwYjRjMDViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGVlYTljM2EyYTA4NDU1ZGMxZTcwYWM1ZTFlMjFhZmRkNDMxMGNlOWFhMGIyZDU1NzI5MzI3ZWI2MmY0NjA1NiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L86-L115",
+          "version": "repo-lines-v1:sha256:2549674ea29c3aeb5541346d3d119c636c84ef35e1832ea9fc13898721599da3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2N2ZlOWM0ODU1N2RmMTA4NmY5MjcxNWJiNzE3ZDJlODM2YTM2NDRkODRjNDNhNjJmM2E5MmEwNjhlMDk3NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NzM3M2Y0ZjFhNGZmZDI0N2YyZTdmZGE4ZGIyMWMxNGYyOTQzZDQ3NmI5MjczNjBkYmM3MTFhNTIxYjM5NzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmOWJkMjU2NTcyM2Y4MjZjNjRmMzI4MWU3MTNjYzI2YzZjOGY0OTI3MTc2MTEyNTU3ODk1ZTUzMmRkYWIyZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0MThlM2FiNzQyYWU0YjM3M2Q2MjkwNWQ0OWE2N2U1NDE1ZjNmZDYxYWE5MWFmYjc5ZTgxODQ0MWEwMjJjZjEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L461-L463",
+          "version": "repo-lines-v1:sha256:e82f7cef15a5239b3844d3ae7037b3905caea41ed7659dbf7a8d1fce05b81486:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRlMjdjODU0YmMyMmJkMTdhMjM0Y2E0OTY1MzYwM2M0MTgxOGRkNjg2N2E0MTUzOGVlYTRiMzM2ZTA3Nzc1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjhhNjQyOTQwNzJlMjE4NWQ4NDYzYTljNWJhOTBiN2Y3MWJlNDVlODZkNTJlM2Y1OTQ4ODAxNDRkNjY2NTE0YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWI5YTA4YmMyOWY2ZWJlYmU5YTVmMDE5MDNkOTg0NWRiY2I1ODQyYTQ1NWYwN2Q1ZjQwMDJkYWMzMmE1YzYwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjU5NDI3ZGQ3MjY5N2Y3NDMyNmFhYTA5N2UyMzZkYjAwNDM3YzY1NjAzMzNiMDA0OTU4NTI3YTYyNzExNDJhOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ae7c35709c9462abfd780cd9d4bcfe1",
+      "statement": "list_output_devices() enumerates devices with the GIL released and builds the result dicts with it held.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L29-L47",
+          "version": "repo-lines-v1:sha256:a8a82ba5575428c42f69241fa90740e1e2844fc38e9d79632776f0fd2389f569:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5OTc4ZmZiOGM2ZTYxOTU3Mjg1ODlhNDg3Y2I5ZjEzNjk2MjcyODEyOTYwMmIyNzJiZmViNjZhMTBhNTI1ZTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjZDZjYTQyNjA3NmIyOWQ5ZGEzYzNlY2IwM2EwMjA3ZGNlNWQ2YTQ5ZTU4NTAwZTVhMzQ5ZjYwZDAwNWFmYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0YTYyNTNiZGIyOTVlMDZhNzg2MWVlZTcwYjE0NTljNTM2MTBhMDZhYjY3YWRhNjM5OGJjOTNjNzg5MjA2NWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc98e63a2199452c890f6ab99fb6ca50",
+      "statement": "AudioPlayer construction validates its arguments with the GIL held, looks up the device with it released, and opens the stream with it released except when routing to a PipeWire/PulseAudio sink, where the GIL stays held because the sink environment variable is process-global.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L222-L249",
+          "version": "repo-lines-v1:sha256:8a38321203c5f0e3db09575e187157fa6ee46e3c1121535fcd75c3ba12959448:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0NTAyMzc4M2IzNmQyZmYxN2IzNmUzNzIzZDY1MTZmMTVlMzIxYmQ0NWExZDNlNGU4NDkzMGYyZTRiMmMzMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxMzZjOTdlNDYwOWRkMDA2NjA4N2NiNjRlMzQ1ZWMzYWJiNWQwMzZkYzUyYzkwMGYwZDYwNzJjMmFiYzQxOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5NmM1MzU3MDBkOTFkYjNlZDFhMGRhY2RmOGFjZjY1MWYzNzllZjBiZDA1ZDRlZmE1MGJmMGI5ZDg3MWRkZTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ed941c9003f4c35a07ef0182fa7be97",
+      "statement": "write() extracts samples from the Python object with the GIL held and performs alignment, conversion and the ring-buffer push with the GIL released.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L261-L266",
+          "version": "repo-lines-v1:sha256:dddbbd2243e5c4c6e11f19cae1ff666e167c274f19a5a516c70cd27b763daea3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE5ZDQ3Mzg5MzA4Y2RhMTYzMzI1YzNmNDZlM2UwODZlNTNmMzZkYzM4OTY2OGZjYmM0MjRlZmE4NjViZjA2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc1MWEyMTQyZDYxYThmMWUxNTYzZDY0ODI3ZGJiYjk5ODU5Y2FiNTgwYjgwZWIyZDIzODgxOWI2Yzk2NDY4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA2MmQyOWYwNTc4NTZjNGQ5NDdkNzM3N2ZkNDI0ZDk0NGQzNTE1MWM0NTYxODhiY2U1YzQzZmFiODgzMTIyOCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L476",
+          "version": "repo-lines-v1:sha256:6a25ca496b22c9ba0e31101c208dd326949ad9d31e2684ae2b08119fc51562f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMTY4NzZjYzBjMjhmMGVhYTJlYzA3NTAyODE5MmZjNjM3OWIxN2NmYWRjZDVmMjEwYzY1M2JhYWI0Yzc0OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1bb2c27f73d04711afb39cc6d819b09e",
+      "statement": "drain() waits with the GIL released, and stop() sets the closed flag with the GIL held but drops the cpal stream with it released.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L271-L277",
+          "version": "repo-lines-v1:sha256:f19ea9c623a9d83498082b3465ffb44e5458639be1675f2924333933c633c89b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODlmOGUyZTZhOWE4NDFlMjNmYWQyYWNlNzJhMTIzYThmYjM3N2I4YjliOGJmMTJhMzE2NzMwMThiNWJiNGZkNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRhMDQxMDMwY2ViZjM1YzNhYzU3OWY1NDkzZWY2ZDEwYzBlYzBkZjQyYWNkMmVmMjdlMjkwNjlkOTIwNjUzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTc0M2I3NTcxNjdhYzU0N2Y1YTM3MzdjYzVkYjJlNDA4OTljNmVkMDJlYjRmNTA3Yjk5MjUzYjNkZTFiZTM5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFkNDY5ZjQzYTI5ZGZlNmQ0MDdkODcwNzVhODQwMjkyZTlkZGNmZDNmMmE4YmMwYzVmOWI4NTc1NTNkMTI5NCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L313-L320",
+          "version": "repo-lines-v1:sha256:0411d1e8a1227c8fdb67deb1ed63c7dc62c2514fc4e851811e1695c56cd79598:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdmZmVmNWE0YWI0ZDk4ZjkwZTNhZGVjZjljNDg2ZTM5ZDYwZjQ2NTY4YWY1NWZhMWMzMDU1ZTQzMDFlYzliZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGE2MTFlYjNlZTUzODRmN2Q2YjEzZjg1OTI1Y2NhYzJhMWE4ZDU1OTkzOGZiMzVhZjExYjBiZWMwMDFjNzIxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzg5NTg5MjBlMzg1ZDYwZDU0NjRlNmRiM2I0YTA0OGJiNDI0N2U2YmQyOGNiOTNiZDFiNmQxNTgzOTVkMDJkYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a94d2a6fb9a4e12a11254b33ca217d4",
+      "statement": "Blocking waits sleep in 5 ms polls and re-attach to Python via Python::try_attach every 100 ms to run signal handlers, skipping the check when attaching is impossible during interpreter shutdown.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L21-L25",
+          "version": "repo-lines-v1:sha256:a29976aae534d4b75cdc196d412c38465a5083de8ec6f06873617dfabe157f4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIyODEzMzVjYmU0YWNjYjk5MGE3MmI0YTlhOWFlMDhiYTA3Zjk4YjA0OGFlZDQ0ZDE5ZDI5MmIxODUyZThkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NmODQ1MDY5ZWNhMTEzNjE3OTZhZTJlODBhMDEwNTVjZjRjM2UwZmMzOGM0YmFjMWQzOTIwOTBhNTliM2U2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZhNTAyZmQ2ZGM0MWE3MmU2ZDY5NmVlZTdjMWYxZTFkNGNlYWMzODMzMmQ1ZjljYjJlNmU2ZjUwZDQxODVkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU3Y2Q4OGNkNmYxZmZmYWJkZTAzMzNjNDIxMWY5MGNlN2YxOWMzZTM2M2UzMDg4ZmE2NzA0ZmMxMGM5ZWI4ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L545",
+          "version": "repo-lines-v1:sha256:70b0a4c247fe9f26f90f2522d948dc3152f46e8f822152daef71db907a3eab34:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2NmQzOTRiN2RjNWRjMTgxMWNlMWE2MGE0MGFiOWQ5MzY4MzlkZTNkZDI5YTA2YTc2MDMxN2RhMTAwZTRjZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb6ceea2345a454286bbb3c1644bbc22",
+      "statement": "play_file opens the WAV file and decodes and pushes its samples with the GIL released, since opening a FIFO blocks until its writer appears.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L56-L59",
+          "version": "repo-lines-v1:sha256:02980e756232541b18b715fbb3a3feda6e5f1c6f96e0dd5912496f1708052e70:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIxMmVmOGJiNjUxZTY1OTExMjBmYmY0NmNiZWE1MzI4MGI4OWRiZDg4MzhlYjg1MDUyODcyZTEwN2I1NmFlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJiYTQ5ZjMxZjEzNzVjZWQwOTg5Nzc1YjE0NzljZDllZDkyNDUwNWQzNGVmYTIzZjJhMjZjODExYWViMjlmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWMwMDhlNjhjMTFhYzJhYmVlZDE4MDg0MGYzMzQ5ZGJhYzI0NjEyNjNmODk3NmE0ODAwMTQzMmZmM2ZiOGI5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQ0NzZjYzIwNWQwZmE1Y2M4MWI0OGU0MWU2OGQyNjBjNTYxZTRiYTAwZGFkZjJmMGUzOGNlNTczMjU3NTg1ZiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L70-L112",
+          "version": "repo-lines-v1:sha256:1f86443791d2a7f09808fc4aa27f59cfa335991f5600269cab558fb7c669d10f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYTkwMGZmYTVhMTA1N2E1MDJkMjg5YmQxNWI0Y2YwMmIyNTgxNGI5NDcxMDc3YzRhYzUyOGQ4ZmYxNjIwYzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZDExY2FmNDNlOTdlZjM2OWU2YmVlZDFhMjY4YmQwNTgzOGYyOWI5ZGQyNTRiZjY5YmE2NDg4NDE0NzIzNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2YWViODhjMWYyYWI2ODhlYTE5NzBkMmUwYTU5ODM1YzQ4NzExYmI1YjExYzAxNDhiZDc4YTM3ZjAyZjJkNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyZDQ1ZTYyZTUxMWIyNDU5NzZiM2VjZWUxYjkwMmExMjcwZWI2ZDljOTNiZTI0YmY0NDAxYzA1MTE0M2NiYjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_adfe5f4b6a6847b3ab2f65ab3bcaacc7",
+      "statement": "Because write() does not hold the writer lock while it waits, a Python signal handler running during a blocked write can call stop() or write() on the same player without deadlocking.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L479-L503",
+          "version": "repo-lines-v1:sha256:f788762d48e3aff404b6165725d0680698e0fdc2ab7d4c3fa2e3ce79ac826dd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YTU1ZmZmYmVkNTRjNzhmOThkYTE0Y2Q3Y2I2NzZjYjBjZDBmMzY4Nzk4ZGY2Njk0ZTEwNTY4MjZkMzdmNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4YmNiY2JkNDZmN2UzMjA3YzQ5YTg5NThjMjEzYWVhYmJkYTY0NDBmOTc5MTJlOThlNjRhZmQ1NjM3YjdhYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L341-L360",
+          "version": "repo-lines-v1:sha256:7ad7f08e9d1cc386f5d5627132845c342b30818ce19a9df593b7133cdda180c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ODJmYTVjZjhjMmQxNGUxZDUzN2JhMzIzMGRjNGFmNjQ4MjAzZTIxMGExNjZlOThlYjliNGE0ZjBhMTg4YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MDI1YWMzN2YwZWRiM2FiZWYzOGFkZjQyZDg0MjZhYWFmMzE1YTdmMmU4MWI4ZGIwMGJhNzVkOGY3M2U1NjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzM2YmU2YjYyMDdhNTlmOGRjMmU2MzA4ZjExMTJkMGFmMjJhZjkwZDMwNGI3ZTFjYmI2NmVhYTkzYTYyMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a5c5d6895454f66ba2cca0deab9f0c9",
+      "statement": "SpeakerError converts into a Python RuntimeError carrying its Display message; cpal UnsupportedConfig and InvalidInput errors map to ConfigError, other cpal errors to StreamError, and all hound errors to IoError.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L14-L24",
+          "version": "repo-lines-v1:sha256:9566c4cbb57a6381e96282b3d99a444dfb4edc54b92dddce8ee1ad3a8c194328:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYzU0MjJkY2FhZjQ0M2VkYjQ0OWI0Y2Y3ZmFkNDI1ZDhiNzQxYTViNzg1YjZlNGIwYjgxMmFlODRkZTdjMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMGQxNmVhZGMxNWVjZWRlMzg5ZjVhNTNmMTVkYTEyNjQ3NDJlMDhiMzBmMDRlNTQyNjQyYmUxMTY4ZGYxYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGQyZDU0NjVhZGQ3Mjc4ODI1Yzk2MTBhMmRkNjdjZDc5NDQ2NDliZWQxYWMzOTNiOTdlZjg5OWM5NDY1ZTcifQ"
+        },
+        {
+          "resource": "repo://src/error.rs#L37-L58",
+          "version": "repo-lines-v1:sha256:e8aac450e3f31ff3c34b65a5d0651ba014663af15443c3446763b7c6ef494b50:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlZDc4NTMwYWU5ZTcyNDA3NGQ2OTY2NDg1OTI3NmExNjYxYzZlYTJhOWRkNjdmN2FlNzgzMzcxMGExYTg2MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2a865143606421f9b9fbdac38153f28",
+      "statement": "During stream setup, stream and config errors are prefixed with the device's host:id via SpeakerError::context, which leaves other variants unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L26-L35",
+          "version": "repo-lines-v1:sha256:83d6fa6522b185b31c7e89822ea714e7d7c7d1820d3ff13679cba838213d461e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNDBjOTI4MTE2MTg3NDUzYmZkMzI1OTY2NjNjNGYxMTQ1MDM0ZDU4YjE5Yzk5ZjYwNzQxNjlkZjIwY2M3MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxYmE5ODI2YjhiMTQ5NDAwNjAyMDViZGFmMDNhOWY1ZTQxNDI4MzFhODg0ZDcwZmUxOTdlMmZlMTEwNjJkNmYifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L381-L388",
+          "version": "repo-lines-v1:sha256:3c920d7273cddc0f66b49818978d38686da54b0fa99961d559f34546c8a65168:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhiZDNiNDBhY2RlNmQxZmNkNDFhNzgyYTIwMGM3YjczNGE0MjMzMTgzNTJhMTkyZjRiYzFhZTI3YWRiMTZkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTUwNDQwODAyMzA3M2YxZTY5ZjE2OGYyZWZjMDQwZGE1NGI2ZjkxMjNiZGQwMmM2NjU0YTlmZmUwMmQzMzVhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWVhZjhhYTU0MzExZmU2NDU5NDViZGQ2OGM0NTA1MTdlZDNkY2ZkZWU1NTA1ODI2YTYzZTZkODQ0MmFjMzMwZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjRlM2ZlOTJmNmUwZGJjZTljYTI2NmRiZGEzZDU0YjBhZDVhNzVhZmRjM2Q0ZDVmYzUzNDk2ZjIyY2Y1YjA0YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_63a6f049dfc049dba8d99fb76f10501f",
+      "statement": "Argument errors bypass SpeakerError: out-of-range sample_rate/channels and mis-shaped numpy arrays raise ValueError, and unsupported input types or numpy dtypes raise TypeError.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L224-L237",
+          "version": "repo-lines-v1:sha256:5b05e022cf43c9c3cb38f2bf45da59ab8515646e9bc3a7219c0d74919c6481d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNGQ0ZjI3ZGM1ZDc3NzQwYWZjZWY5Zjk2NTFlYjU2OTQ3ODk2YWI2Zjk3Njg1OWYwMWZmZDViNGNjNTIxZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2NGNlZjk1N2U1ODZkZDMyODkwNjA4OGEyNjYwYjBlYWNjODY4ZjE5OTI4MTE0ZjJjNzcxNzZkOTJlYWY5YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0Y2FjZGYxMmUyNmM3Y2VhZjlhZWZkMmFkMTZmOTNjZGMxNTNhZmIwZDgyMzc5ODk3YzI5NmEyMDY4MzAxMmEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L845-L847",
+          "version": "repo-lines-v1:sha256:4bcc8158c1e027332363d0a1dcbf67ff226019519ca57bc9222c090287a29063:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTcyMGIwYTc1YzNiNzAyYmJiNmZiNmMzYTczZWUyZDExM2UyNDA5OGUzYmZiZmRkNmEwOGY3ODIyY2U5NDlkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzMTIzM2QyOGQ5NTM1ZDdiMzc2MWQyMWEzZTlhZTQzZDgxNjBmZDUxMDM1YTE1MzdkMDE4MmU4Njg4Zjg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjEyNjU0MmUyMWMxMGJiMTlmY2M3OWVmNTNkNmU1ZWMyMmU1YzBjNGUxYzAxMzQ1ZjVjOTQwOTE5OTY4YTNhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODg2OWEyOTEwZDUzZGQyZjRiMDg5YTA0NzliNThlMjc0Y2QxOWI5Yzk2MzUwMzMzMWIyOWQ1NWM1ODkzN2YzNSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L880-L890",
+          "version": "repo-lines-v1:sha256:f6da3567d4d4c49730347c1c04aaacb939d1b7c0d45d02b19ecf5cbb90f84710:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NjFjZjc4ZjlmNTk5OTk2NDc1Zjk3MTFkNDVjMmIxYmZhNzRhODkyZGFlOGI5NjQ1ZmRiN2ZlZWEwZTA2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMWIwZmVmNjU1NmUxNjIxYjJlNGM2MjcwOGE0YzA0ODc4NzY0OTc1ODM3ZGJjNzc2ZGVkY2I0ZDAwYjNkNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NGRhMmQxOGY3OGY1ZjI2YWM3Yzk0MjViNzQ0YWQ1ZjJiZDY4M2VkYzc4MjkzOWMyZjUyNjZmZWRjMGYwNmYifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L900-L905",
+          "version": "repo-lines-v1:sha256:565eca78cb58f93eb232497ae9d11bdf5a0a69613345345d62cb6bd36fb74b02:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZiNDA5YzFhMTZhZjdkNTQ1ZDMzN2ZjMmQyZDdmYWZlOGVlZjQxYjMzMjA1ZWU1NWQ4ZWU4Njk0YjhmNjk4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIwNTllZWQyYjQ5ZjBiZDNkZDE5ZWY4MmViZjA5YTdjZDYyYTQ2ODBlYWIwNGUyOTMyNWVkZThhOTJiNWYzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIzOGU1ODYyNTdmYWMxODFiZWE0Y2Q3MTgzOTU1ZDc3Y2U4ZWFmMWMyYzc0OGMzN2NjMzU3YWZiNDYwYTcxYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ecbde3fcdcf43e7854b15f3fab7c7c2",
+      "statement": "Logging is initialized once, lazily, on the first call to list_output_devices, play_file or the AudioPlayer constructor, using env_logger installed with try_init.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L15-L26",
+          "version": "repo-lines-v1:sha256:3972ad36e6ae459427c9288fb7557319b9b35f1f4de9be613ac2a8e843eebbae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YjVjZTM1MTFkYWYzZTcxYjkxNjZhNjg1YjE0YTM3ODI3MmU0ODM3OWJjYWY5NGE4MDIzZDQ1NWViNTE2ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NzkxMjQ1MzQ4Mjg5YzNhNzI1MTVhNWNjNGEyNjIzZTU1ODNlOTJmMTVmMzdiYzRhMDkzZjM0YTdiY2NhMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NjY1ZGFiYzU0MWNkYzAzMDJjMzQ1YWRjNzBmMTljZDhkM2E4YmE5M2NmODQ2MWY0ZDE2OTVlYjMxN2I4ZGIifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L30-L31",
+          "version": "repo-lines-v1:sha256:73816627b81442106bbc1db6b5f890ca3147ed417bf8c5f01b3111bc0b2d76e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNiOTY3MzQ0ZDQ1ZDU2NzlmZWNmMDdjYWU5YjU2YWM5NDE5OWJiYTQ1YTVhMzllMWM0MmY3NTY0Yjc5NDU0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5MzFlN2FlNjc5NWQ1MzdiYWM5NjVjMDk2MThiYzhkMTFjYWVjMTI0NjNkYTZkNzk3NjA0N2QyMDI3ZGNiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU2NjVkYWJjNTQxY2RjMDMwMmMzNDVhZGM3MGYxOWNkOGQzYThiYTkzY2Y4NDYxZjRkMTY5NWViMzE3YjhkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWUxZWU4MjJhNTk0ZWYzZWU1YTExOWJmMjA2MTljNTI1NGFhNjJlMjU0MDliYWIwYTU4MmRlYTllYmIyNWVmNiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L52-L53",
+          "version": "repo-lines-v1:sha256:ed680b1049ad9d21889385cff942300bcb02ee848bad0284b80943c0dcefb801:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRkZjhkMDdiNjE2Y2RiMDc5NDUyN2M2NmUzMTI4YjIzY2IyMTI4MTc0NzIyZjM5YzYyYWUyZDYxNjA2YzcyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5MzFlN2FlNjc5NWQ1MzdiYWM5NjVjMDk2MThiYzhkMTFjYWVjMTI0NjNkYTZkNzk3NjA0N2QyMDI3ZGNiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U2NWMzZGNkMzkxMDdlODU5Y2Y0N2FlOWJjNTRjODkwZjg3NTIyZWE0OGNlZWFjYTkwNWJjZDEzZDVhYWNlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTIzMjhmYzNkNGFjMmY1YTU4NmEzMDgwNTFlYTZiNjU4ZDY5MGE4NTkwYzkyNGU3ZDFlODVkYjJkYmQ0YTZkNSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L222-L223",
+          "version": "repo-lines-v1:sha256:969997cc730c32b28d726a8e4eabcf8999a02dd880bbd44294e06bf909c5f071:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ1MDIzNzgzYjM2ZDJmZjE3YjM2ZTM3MjNkNjUxNmYxNWUzMjFiZDQ1YTFkM2U0ZTg0OTMwZjJlNGIyYzMyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZkYzJlZGU1OThkMzMyNTRhOWEyOTYzM2ZjN2RiM2IzZTBiMTIzMmE0ZWFiYjgxMDdjNzI0NjYzNTE2YzMwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEzNmM5N2U0NjA5ZGQwMDY2MDg3Y2I2NGUzNDVlYzNhYmI1ZDAzNmRjNTJjOTAwZjBkNjA3MmMyYWJjNDE5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFmODc2MDY2NGQ1MWZhMWIzNTExNTVlOWVhNmM0NzA4MGEyY2M0MjQzNWRkMjg3MTA5MzUxOWY5MjBkZmI4ZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

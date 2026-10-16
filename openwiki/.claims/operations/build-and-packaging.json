@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:31f3ce559ef581e5814f1a6525c283980694d0f5181ce1d98778d5d020660d56",
+  "claims": [
+    {
+      "id": "claim_17fcc338e3bd41b5b235df4232948de8",
+      "statement": "The project is built with maturin (>=1.9.4,<2.0) as a mixed Rust/Python package: Cargo builds a cdylib named _pyaudiocast, which maturin installs as pyaudiocast._pyaudiocast inside the pure-Python pyaudiocast package.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L8-L10",
+          "version": "repo-lines-v1:sha256:8fa6a1a06845ba6d6d29c57340ef8d5a1a2971378da65b1a16edc4460bbfba8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg0MzVlZjU5NGYzMzcwNzMwN2MxZmU1OWIwMTdmMjExZTllZThhMTVjODJkZDVlYWIxOWI3NjdhNmY3NGJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2MzkzNGMzYTM5ZjhkNWMzYzI2ZjE2NWU1ODc1MWVmMWE1NTNkNDFkNTRmZWExNWNiNjliYjJhOTc0ZmY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWNkNzdmMTUxNzgwMGZjZDc3NmYwNzEyMjdkMTQ0M2FiMmRhY2U1ZDRhYzAxM2E0OTFjODE2ZWEwOWMxZTlkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEyZmU0NDQ5NDlkZjZhY2JmOTAzZDdhOGIwNzEyZTMzYzBmYWY5MDdlYzlhNmQxNzg2ZDY2NWJjNjg1ZDMwZSJ9"
+        },
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L3-L5",
+          "version": "repo-lines-v1:sha256:4315b2ba07301b0b8df30950e327c087ab4ebcd02fc5810e9c25a82122fd813e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNmNmIzMTU0YmI4ODliMzkxZmI3NmUyOTdjYTg0ZDA0MzlmZGNmZTIzY2ZlY2NlYmY0NjllODFlYmYyMDg0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU3MGEyZjVhYWNiZTE3NGQzZmVmYjdjMWMzMTA5YWM3Y2FiNTYyNGYzMTYyNmQ5NDhiNzMyOTEyMjg3ZDA1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L1-L3",
+          "version": "repo-lines-v1:sha256:2c3381b15ecbab80231de31edc37230fb0c776f99fcc471d77e7d83fff79c65a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ1Njk5NDZhYzliYmU3Y2IyY2RlYzNmOGJlY2YzNDM3NTBjNThiOWIzMjFlYzIxOTViZmJhYWIyYWE4YzRiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc2YWQ0MzQ5M2JlM2NmZDJjNmU3MjQwNjJlYzY4NDlmNjM1NmYwYmUwMGIwZWQwNDk0ZGI2NjQ2MGViOTlhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTgyNjY1NmNlNTkyZDg3YzY0YWJjNzgwY2E4MGYyY2JiMDUxZjUzYzNkYjgzYTdmMTYzNmM5MDQ3YzMzMWE4NiJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L42-L43",
+          "version": "repo-lines-v1:sha256:3528203ede15f6e3f37d992e4a7cddc69ce70da8fa358db66d7f22605f27645a:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc0ZjZlNmE2Mjg0OTBmMDdmYWVlYTk4ZDgzZTU3ODRmZmE3ZDM1MjU5NzVhYmI5NTNjMDQ0NjU3N2I0NjQxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGYxNWQ2MmE4YmQ3YjQ4MWJhMWQzNDFhOTdhNjZmZTk4ODM4OTc2ZTE1MTNlNWZiZTVhZDMxMGQ0NDI0NWE2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ1ZDNmNDg4NWRkMDc3MWU2YjA3Nzc2ZTg5ZDY5ZjNiMDgwYzA3ODE4ZWY4NjVmZTJjMWE3ODc0MGI2MGUwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b12386f43604166bcde8d801a37e96c",
+      "statement": "The package version is single-sourced from Cargo.toml: pyproject.toml declares the version dynamic and the extension exposes CARGO_PKG_VERSION as __version__.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L1-L3",
+          "version": "repo-lines-v1:sha256:71f25f67535f8f9b1f43f6f0cbb867686af3e0031a7526ea5e48e8e88b235cb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGEzY2Q1YTgxYjNmOWE2MjFhYTQ5M2Q5MGM0NWY0MmFiNTcxZDRlNDJiOGFlNWFmZjM1MWNiMGEwMmQwNmQ4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQwNTYxOGEzNDg3Nzg4NTRjNTczNjM2NGI4N2Q4ZjQxMmIxNTc2NWM3NDkzYWZkNTU1MWVjNjI1YjQ2M2VmNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDJhZDBmYjJhMmZmODVjNjY2MGNkZDZhMzdkNDI2YmJkYjE0YWZlNDYzY2FiZGQxZTdiNzM3MGE1YTdiOGVmYSJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L5-L7",
+          "version": "repo-lines-v1:sha256:77f071150e2fb266fdc22da120ac72a05c216ebcff34d81272757f22f57022fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAyYTgxYzM4MzZlZGVmMmQwYmExMWQyMzUzZmI2ZGFiYzc3NzE1MGE3Y2E4M2VhMGQ5ZTlhNzAzMTNmZWFiYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzFmMzQ3NTIzY2RlNjAyNWFmZWQ0YWRlZDc1MmI5NGJiZGFiNGMxY2QzNzI4YTNjY2I2ZGRkYWMzMjY3NTA3MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzg1ZWM4ODk3MmU1OWYzYTNiZmE3YWU0ZTRhZTgzZDVlZjg3ZDM5ZjNlMTBiZWMzOTc5OTUzOGIwZTljM2RkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRkOWJjMjdiZDcwZWFmZmNhODQ1ODkyMTQ4Mzg5Zjk2NjgwMjA4MGNhZTQyZjQxMWUzOGMxZWU1ZjYxOWQ3OCJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L133-L135",
+          "version": "repo-lines-v1:sha256:3c72be3a2c4d7e1b4e82d0984e799b4689120c86b664f6e52922099ee8916c38:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWE1ODA2ODVmYWRiYjI1OTcyZGU0ZWRlNzAyOTRmYWQ2MmY3NWMxZDlhNjJkZWE1MmY1Mjk1OGI3YWMyMzgwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2FjMGE1ZDk2YjAzMDE0ZWFhZGVmNjYxYjYwZDA4YWI1MzAyZDM0NmRlNTM3Y2MwZDQwYmVmN2UwZjMwY2VmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIxMGNmMDE2OGVlMzNjODA0N2EwMTk2NzRjYmUxOGE4ZTU4YzMzYTQ0N2IxNzI5MTU4ZjNhYTNkNDY5Y2ZmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmNiNDY3OTk4MDAwMWM3OGYxOGYzYjE5MGRmZjQxODZiYzRiNmYzMTNjNDJhNWJiZWFmMzQwZjU3MGQwZWY0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_70abb0cb9b8642a7ab0b908a15af1167",
+      "statement": "PyO3's abi3-py39 feature yields one stable-ABI wheel per platform serving CPython 3.9 and newer, consistent with requires-python >=3.9.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L12-L14",
+          "version": "repo-lines-v1:sha256:566e4f6b2fdeac7491119733e8d4dda16192baa0c9a1cc22595c501487389139:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJkZjZjNzE0Yzk5NGQwOGRjODVhYWZmZTYxZWM2NGUwMjU1YmUyYjhiZjZjY2FjNzU2ZjE3OTBhYzk5NDBjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdjMmZhMzlmM2VlNzE1OGRhNjI1Mjc1Mjc3NTE3MTgwNWUyZjhhZjU3OGY0ZmQzZjE3OWIzODAzYzkzNTIwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjZlYzNiYjZmZDAyMmZiZTFlNTFjNmZkYjQ1ODc3ZjE2N2ZiNjY2Mjc4YTBkNzE3MjZlZTIxMmZiMGI4ZjBhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBjNjkyZGFmODMyNzkyNDdmNTQzMGNmNDk1MWY3YWEwODYxMTlhNzQ3ZGZmMjNmMjBhZDZmZmVmYjc3ZTcxYiJ9"
+        },
+        {
+          "resource": "repo://README.md#L34-L34",
+          "version": "repo-lines-v1:sha256:30985b2479e6e0802aef0be1c547a59fdfe504f92abd844dcf059bb6ff18813f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5ODViMjQ3OWU2ZTA4MDJhZWYwYmUxYzU0N2E1OWZkZmU1MDRmOTJhYmQ4NDRkY2YwNTliYjZmZjE4ODEzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5ODViMjQ3OWU2ZTA4MDJhZWYwYmUxYzU0N2E1OWZkZmU1MDRmOTJhYmQ4NDRkY2YwNTliYjZmZjE4ODEzZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGZhYzEzYTM3ZDk5OTJiMjgyYjhlYjhjZDRmZDZjM2IzOWMyM2Q1NzA1NjU2ZmI4OGZhY2ZmODM1ZGFiODdiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWYxMDAwOTU0ZGU3NGUwMzQ3Yzc5Nzk2ZDE1ZTgwZDA1MTU3ODI2MDBjMzJjNTZkZDEzYTFjM2YyN2RkZDk4NyJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L10-L10",
+          "version": "repo-lines-v1:sha256:4f8813c43213d760f4db6c1955b4c08ce41592a1f91cc219ed11906504936932:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY4ODEzYzQzMjEzZDc2MGY0ZGI2YzE5NTViNGMwOGNlNDE1OTJhMWY5MWNjMjE5ZWQxMTkwNjUwNDkzNjkzMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY4ODEzYzQzMjEzZDc2MGY0ZGI2YzE5NTViNGMwOGNlNDE1OTJhMWY5MWNjMjE5ZWQxMTkwNjUwNDkzNjkzMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkZTcwZjgwYjQyMmNhZDdmNmE4YjJhNzFiZGZmMmYwMDNkZTQ3YTRiNDExNmEyYzAxNmQ5YzllZWUwZjkzYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA3ODFhYzgwOWRhYjU4MThhZjhiYzljNWI0MjI3YjYyN2MxY2M5ZjBiM2YzYThkZDhiMmEwMTA2ODc3OGU1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a93f90a0a4914b199981892e9c98c552",
+      "statement": "The crate uses Rust edition 2024 with a declared MSRV of 1.88, which CI verifies by running cargo check --locked on the 1.88 toolchain.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L34-L48",
+          "version": "repo-lines-v1:sha256:3440fe2f5ee98ab3644f1f158da548ce94de04f167b0f9f689548da7873b0d01:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiN2M5MjgxMDZlY2ZkNTk5MmE3MTM4MDdiNGQxNzYzYWU1NzhmZjE3NmQ4NTkxMDc3N2E0Yjg4YzBkMGRhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZWE4ZDAyYTUwNzFhZmZhZWM0OWU2MTA1M2RkZjAwNDE4M2JiMDU1MDQ3Y2ZjN2E1NmMwYTRmNzI2MjE1MDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4M2U2ODM1ZmQxNmYwYTQ0ODM1MTc3MDhlYWYzMTBiN2IzODhmYjA4MzlkOWY4OWI3ZTA3MjBlZTBmYTM0MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiNmQ1MzUzMGU0Zjg3ZWE4ZmY3M2ExNmZhNDU1OGExNjlhYWQ3ZTMzYjQxYWNhMjk5OTA2NGU3NjNhZjFlNjMifQ"
+        },
+        {
+          "resource": "repo://Cargo.toml#L4-L5",
+          "version": "repo-lines-v1:sha256:0bd5ad8b625df24f05eb8762bd5e6cca5d15b09416fe35e7813b099b4c6faccb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjMyZDJmMDNiM2Y0YjFlMjk1Yzc5ZWQ0OWQ1NDNmMTIwNWM3ZGFjN2MzZGM3NGYwNWE1YTI3YWY0ZmVhMDU4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZhODY4NDBhOWFkZTE5M2U2NmJlZjk4NzcxODA3YzExOTdlOWE4YmFmYWE0MjIyMmQ1NzZmODU2YzUyOGQ1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzFmMjVmNjc1MzVmOGY5YjFmNDNmNmYwY2JiODY3Njg2YWYzZTAwMzFhNzUyNmVhNWU0OGU4ZTg4YjIzNWNiOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTI3ZmJmNmFmZTQ3MDQ2YzRhODdhNWMxNDBhN2M2MzA1ZjU4NjE5YmJiYmI0YTc1ZmQ5MWM1ZTg4ODM1NWVlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_27c19cc4d20344b9b625f84330ed05a0",
+      "statement": "numpy is an optional extra rather than a runtime dependency, and the dev extra adds pytest and numpy.",
+      "evidence": [
+        {
+          "resource": "repo://pyproject.toml#L38-L40",
+          "version": "repo-lines-v1:sha256:f4c4c22694c9676346bccf994c01feaabf9c7b5793b92ee32acd134c3568b250:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTkyMThkYzRjZTk3MWNiZTNkMzhkNzc0MzBlNjM5OTE4ODg0ZGQ3N2Q3MTg0YzdiOTNkZmRjMmU5OTg2OTFiNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJlMTRkZTAxNmVhMTA5NTQ0OTc3NzRmOTdkZjhiMjljNzk2M2MzYjc3ZmUzOGE5ZjNjOTZlZjExYzFhZGYzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWI1MGU4OTI2NDJjNjgyNmU3ZDk2ZjMyMTllMGY0ZjNkZmUzZTdkZjQxNzRkODZjNjY4NGRlN2U0Yzc4YjBkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzM1MmExNmE4OWYyNWQxNzYxYjBlY2Q1N2U5NzY3NThjNTdkOTQ1N2JhMzYwZjRjM2I0ZDgyMjFkZjM5N2Y2NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4e2351079934b3893ddbcf034296cc3",
+      "statement": "The release profile enables link-time optimization, a single codegen unit and symbol stripping.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L21-L24",
+          "version": "repo-lines-v1:sha256:53202ce1685019462f7388467786e1a2675ea973a17bd979094fa480289577e8:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxYjk5MGFkOGY0Mjg0YzM1NGNkOGY5YjZiMWIwZDAxNTY1MDJhYmIwOGFiMjlhYjUwODI0OTRkN2EwNzYwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGY4ZmNhNmE4OTMwYzJhZGY0N2NkOWQ0ZTNmN2FmNDRmMTZhMTA1ZmQ5OGM0YzZlMDg3YThkZjFhN2M4ZTVlOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODk0YzFmZTBkNDhiMjRhZjEwNmI5MjYzNWMxYjY5Mzk3ZjNhZTI4NDNiNjZhMmVjMTExYTE5M2JhYTBmMGU2MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6394c9349485490899efa2e68dd16cac",
+      "statement": "cpal is declared without extra features, and env_logger is built with its default features disabled, enabling only auto-color and humantime.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L15-L19",
+          "version": "repo-lines-v1:sha256:a991fdd4bb4e0777b2afd0d716346a82e5ec9d5dcd902fd8634ce8b7c1528c59:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTZhMDgxMDRiZTAwNTA1MWUyODFlMTNlNzUyZjBlZGFjNjIyZDZkZjc0YzkwNzJiMTVhMzAyMzJkNzczYjhhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzlhNzllOGQ5NTA0MDFmMjk4OTdjY2Q3YjdlNWZlMzI5M2QyN2ZiNDdlN2QxZmVlOGM5OWY0MDA2NDkxNzZkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTY2ZTRmNmIyZmRlYWM3NDkxMTE5NzMzZThkNGRkYTE2MTkyYmFhMGM5YTFjYzIyNTk1YzUwMTQ4NzM4OTEzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRhNTNlZGYyNWZlMWQyNmI1MmFlYmI1OGE3ZWYzZmRkYjBiNTJhMzk2Mjk5NDgzZTBiODk0OWYyN2E0NWI5OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad41bbccc9ca4565a2edb4f491aa5fa9",
+      "statement": "Building on Linux requires the ALSA development headers, and the Rust unit tests additionally require the Python development package because they link against libpython.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L15-L17",
+          "version": "repo-lines-v1:sha256:3f3d3ef6358d17e944823f458a48dc91ba9ea3969be43593c0b21a90ebd5c742:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ2YjFiY2NkNjRmNzM0MDY4YTViYmUxOGQyNjUwNDE4Y2UyZTM1MGM2YWI1MTY5NzBlMTkyZmVkOTEyMDA1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U1YzlhODg0M2VhZDlkZmQzNWU0NzZjYmYxMjllY2I2YzZmNWQyOGQwZmExZGFiMWVkODMzM2NjYTY3N2FlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDg2NmNhY2VmYWMzMmJjOGMzOTcyM2E4YjZmZDRhMzQzMzcwZDhlZmQ0MDNkYTU3ZTFkYWExYzM5N2E2ZDUyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQ0ZmE1YWRhOWQ4Mjk0YjBlYjI5MGRiOGQ3OGM2NWYzNTk2YTExMTZlOTRmZTBjMWRmOTg4NjY4ZWRjYWZkNyJ9"
+        },
+        {
+          "resource": "repo://README.md#L287-L288",
+          "version": "repo-lines-v1:sha256:4cfa40ad4c498bfb236edaf6280ae745f8a773a24587a9d0a36ffd967942b4e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjM0NDAxNTdhM2UzYTAxNTEwNjY3ZWI1YTY5YmZlNGJkZjYzZDU5NmJlZGRiYjgwZTJmNzg4ODZiMzI2NWY4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg4ZWQzZjkwOWFlM2Q0N2YwNTQ4OTQ1MWUxOGRkYTk5MzJjNDAyNjQzYjgzZTE0MDhkNTFjNDQ4OWY2YjdjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTg4ZGY5NGRmY2NlYmVjYWJiMzE3MDcwN2Q2NWZjNzIxOWNkYjg4MTcwY2RkZDQ0NjRkY2I2Y2U2YjBhNDE2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2MzYzI4ZWNiYWUwY2FhNmQ3NjQ1NWE2OWYxMTQxYTRhOTE4ZjIwZTU3YmVkYTNiNTkxYmMwYTYzN2E0ZTk3YiJ9"
+        },
+        {
+          "resource": "repo://README.md#L48-L50",
+          "version": "repo-lines-v1:sha256:a38f09905577b3025055e930dc8281c2cb112aee133ccfcb11f9f42815e68a80:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjA0NzIzMDk1Mzk2NjNhN2JmMjNmYTFmZjVhNWMyMjYzZDAzYjI3YWE4M2QwZGEyNTY3Y2QyYTQ3NzVjYjkyYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE1N2Y4NzNjMTYwN2E3OTkzZTc0NzViNzJiNmQwM2RjZDAyODA1ODg1MTJjNDk3YTE2ZjhhM2QyOWEwNWE0OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTg0MGU0NWQxYjM1MjNmM2MyZmE3OTU3ODhjZGNlNjE1ZGQ2M2MxMjdiMzI5NTEzN2NkNTI0NDYwODNiNTNiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjlhOGQyMWJhZDQwYTNhNWRjNjk5ZjIzOWZkMzVkZmU4N2Y2Yjc3OWRmYTY3OTAyY2U5MzYyODMwZDE2Yzg4YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4641936a16641a0b483d05b07a32582",
+      "statement": "Linux release wheels exclude libasound.so.2 during auditwheel repair so the system ALSA library and its PipeWire/PulseAudio plugins are used, which makes libasound.so.2 a runtime requirement on Linux.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L21-L36",
+          "version": "repo-lines-v1:sha256:cc8898ba99f4eb098999f1a99f522332d4e574e13175580ece49879b918a7179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYTI0MTIyMDE5NDZjY2VhYzk1ZGU1YTAxODA4MWM3ZDJhOGU0NzNiMDkyZjZiOTNiZWU0MDFkOTRhMDJjNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MTMzM2RmNjZkNTk1YzYyMjM3NDEyZTdkMTYwN2I1Y2ZiMDExNDdmMGYzYTlkYjdiN2FjNGU3MjljNDNkMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMjJiOGM2NDJkNTE3YTAyY2Q1OWM2ZTJiNTIyYzhlNjZlYTg0ZTM4M2NkZWEzNTdiMzRlNmNjNzE3ZjUxYzQifQ"
+        },
+        {
+          "resource": "repo://README.md#L36-L40",
+          "version": "repo-lines-v1:sha256:ac5b58ce34f05f1924605b00e3ccb7671cc6e9ddef2a04b66798f1e766b38501:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTFjOWU4YzdmNjc3YjMwMzQxODU0YTRlN2M2ZjZiOTdlYjJhZTgwMTczMDJhNzJlMmRhMmQxNWRlZDgzOTNhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2MxODY3MjgwODc0MTMyOGJiMWYxOTNhNmE4ODFjNTg3OTk2N2U5NmM4M2JmYmUzOWUzYWZlMTcwMWE3MmJjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTNmMTUwYTM4NWZiZDVkMTFkYjM5MGVjZTI1YzA5YzNiNzAwYzU2ZTdkOWIwYmZiM2ZlYjI5MDAwZmNjYjlhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQ4N2IwOTE3NzA1ZWNkNzJiMWI0NzgwMTY0OWZlZWJmMzZiOTU0MWJhYjkxMzkxMDJkYmU5Y2M3NjYzYmM1MiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_34b7fbc0eff343f3892cdcc6d34cd570",
+      "statement": "Cargo.lock is committed and every cargo command in CI runs with --locked.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L28-L32",
+          "version": "repo-lines-v1:sha256:fb151496cc44d7827a8fb9046ee7bd543eccf4daa52bb8bc74178976d92a85f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5MWJlMjIxN2EwNDNmMTYwMzJkNWQ4YjhjOTRjN2ZiNmYzZWE3MjI0NTJmNGMwNTQ2ZTlmZjYzNTY2MmMzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTc0MDRjZDQwM2UyZDc1N2NmMWI4YmU2NmQyNzg5YzViNDAyZTRlMzYyZWFlZGMwOWE0NzcwZDViNWQ5OGQyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzMxYzgxYzU2ZGZjMjA5NTgxYTg2Y2ZjOGY0ODQzYmNhNjkxMzk0MjI4YmRjNGYyOTM4NmFmMGY2ZWJkNmEyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTI5YmNjMGNmNjk5OGQ1NjcwZDY2MDdkN2MxY2QzZjgxNmNlOGUyZWIwYTMxMmU5ODA0MjU2ZTgwMDgwOTZmZiJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/ci.yml#L47-L48",
+          "version": "repo-lines-v1:sha256:38823ce69ee155311448087ea90311bbc30ed6cbb094211ded7e5167de754f65:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDMzNmYwMmZiMTI5NDJjMTUwMDliNDdkYjM5NjEyNzJlZGM2ZDRiYjliNjI5YjI5ZWEyYTI2NGNlMGM1ZWI5MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNlYThkMDJhNTA3MWFmZmFlYzQ5ZTYxMDUzZGRmMDA0MTgzYmIwNTUwNDdjZmM3YTU2YzBhNGY3MjYyMTUwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWUwOGJlZGMwMDdlMjFmY2Q0MDRiNjlhMjk1YjFkMDU5MWQ5MzZlMzkwMjZiYzkzMzg5MjA1Njk4M2EzZTgxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2I2ZDUzNTMwZTRmODdlYThmZjczYTE2ZmE0NTU4YTE2OWFhZDdlMzNiNDFhY2EyOTk5MDY0ZTc2M2FmMWU2MyJ9"
+        },
+        {
+          "resource": "repo://Cargo.lock#L1-L5",
+          "version": "repo-lines-v1:sha256:96de6473a3b449aac409472d21c244532a2f52766be190c757956fe7838d85b3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGZjNzIzNWNjMzg2NWJjMDgwZjhjNjg3ZDNkMWMyYTMwOTZkOTQzZTBiMTk5MzVhNmUxNDU1MjIyZTM0ZTAyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE1M2E1MGIxMzFjOGMzMzc2NmY5YTY2NTg2MTBlNjhhZjU1Mzk5ZjhjNmI2OTgxOGYxYjYyY2NkMGE3ZDgwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIzZmEzODQ0ZjdhY2E4ZDgxYjY5MTk0ODZhNWI2OTk1NTg1Y2U1NWUwODgxMzA2Yjk2ZDFjZmRjNzJiODgzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_20fb9fd042c747a9b60f46c756c66e2d",
+      "statement": "The type stubs and an empty py.typed marker ship inside the pyaudiocast package, which is classified as Typing :: Typed.",
+      "evidence": [
+        {
+          "resource": "repo://pyaudiocast/_pyaudiocast.pyi#L1-L9",
+          "version": "repo-lines-v1:sha256:a5ce7eae459df4a21f15cb47da874c2800ef19843b85fb260a1de8a31e737727:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjRlNDA0OGY3NGQ4MThlNmZlNmE0NTk0NmUyMjI3MTQ0NjI1MDU1N2UxMGEwZTdjNDg4MDIxY2NiMDUzZWRhMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM2ZTY3ZTM4YTcyMTM3YmU5Zjc2MzIyMDAxMmFiNzBhZGM4NTkxYzkwZDQ5MWI1YWQ5ZTE0N2VhY2I2OWMyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTY4MmQyNGUxNDJmM2FmNjEzMzM0Y2JjYTE4ZTVmMWU1ODhiNWYxNTdlOGE1ZDY0Y2Y1ODFhYzNhNTc4ZGVlMiJ9"
+        },
+        {
+          "resource": "repo://pyaudiocast/py.typed",
+          "version": "repo-file-v1:sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "resource": "repo://pyproject.toml#L30-L30",
+          "version": "repo-lines-v1:sha256:771e569e4e72ccf857ddb6bb313aa8ea090f374c13b0413f72938c74589f6167:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcxZTU2OWU0ZTcyY2NmODU3ZGRiNmJiMzEzYWE4ZWEwOTBmMzc0YzEzYjA0MTNmNzI5MzhjNzQ1ODlmNjE2NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzcxZTU2OWU0ZTcyY2NmODU3ZGRiNmJiMzEzYWE4ZWEwOTBmMzc0YzEzYjA0MTNmNzI5MzhjNzQ1ODlmNjE2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDQ5YWQ2MDM1NDg0OTljOTNlM2I0ZTYzNWQ3ODgzNzgyMjNjN2IwZDQ3OGQ4ZWMzYjM0MzZjZjFiMjQ0MjcwZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGVhY2E2YzYwMjNiNzYzMTQ1NmI5MDE1MTVlMTA5MzAyMzdmNmQxNWYwZTM4NjA2NGYwZDc3YWUzZTdmN2M2NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8743d6f65fc04cdab399b16692ec9130",
+      "statement": "Linux release wheels are built for x86_64 only; the Linux aarch64 build was removed because ALSA cross-compilation was unsupported.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L12-L17",
+          "version": "repo-lines-v1:sha256:d9e94437270a0897856a666f0aeef110c9615dd1e68458a4dbaf1458042ff44d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJhOWZkMDJjZTA3NTJjZjY2NjBmZTEzZGI4Y2E2ZGIwMjQ3ODYwNDk1NDA2ZmM5MzVjMDNlZWM1ZGZhYjMzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDE2NmE4ZWVjMDYwZjk4Y2FlZDgzZjY5M2JmNjc5MGU0ZjZlMzZiMjk0N2RkZGE5NmU5Y2VmMzVlNTczNDZjOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmNkZGFlNGU3YTYzNmMyMGY1NTBhY2I2YTU0ZjI3MDlhZTJjYjRjZGE0MTVkM2E3ZTUyNDFlMzcxODU2ODkyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDg2NmNhY2VmYWMzMmJjOGMzOTcyM2E4YjZmZDRhMzQzMzcwZDhlZmQ0MDNkYTU3ZTFkYWExYzM5N2E2ZDUyZSJ9"
+        },
+        {
+          "resource": "repo://CHANGELOG.md#L60-L65",
+          "version": "repo-lines-v1:sha256:13ca9926c3ab68337549968a9903d589ad5a97b7b182419e900bbb1ab669a741:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ3MTg4YmFiYTljMjUxZmIwM2VjOGJjZThjNDVhNGE0MTM2YjFmZWEwMTkyODhmYTFmOTFmYmEyODYzZDkxOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg3MmJlYjA1ODNkNTJlNGU2NDFjZDlhMjBiOTY2M2ViYmRkMDMwNWVmYWIyOGI1Y2JkNDY0ZTQ2NTE3ODAyYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTAwYjQ2MjEzNTM3ZDNhOTQ4MWNkZTYxMTNlY2JmY2I0ZjE4Njk2MmU0ZTk0ZTQ4MGM4ODlmM2U1YjczOTVlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQ4OTZkOWI5MWRkNjJmMzhkNTcwNGI4NWYyNmFlZTJkZTJjYWE3MzNhZDQyMDJjYmQyZDJkMzc2NDM4Mjc5YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

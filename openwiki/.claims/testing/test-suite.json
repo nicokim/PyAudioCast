@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7720d9f5b3cbcb6ce2a44c1475ecff4651e0d6ce75c48012cf8d98de9397f71c",
+  "claims": [
+    {
+      "id": "claim_ca158f708ffb402880afc27920f43113",
+      "statement": "Rust unit tests live in cfg(test) modules beside the code in lib.rs, device.rs and player.rs, while the Python tests in tests/ exercise the installed extension through a live output stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L237-L283",
+          "version": "repo-lines-v1:sha256:743590aff71622266e9951eb283c7ba08a0c25fd0e22ba5d009567f6d09393a7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Y2Y1ZmMyM2YyYTZkMjNjM2VhNTFlNzJmNWU4OTZjNzU1NWZiYWEwNWNkNWIxZWExODJiZjk2MThhOGU4MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L141-L164",
+          "version": "repo-lines-v1:sha256:00f4521a973a7a071757f3475f6d50ee72e8dec549ae10dcf11b598d075b8a68:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Y2Y1ZmMyM2YyYTZkMjNjM2VhNTFlNzJmNWU4OTZjNzU1NWZiYWEwNWNkNWIxZWExODJiZjk2MThhOGU4MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1ZjZmNDY2ZTU5Y2ZjMzA3MDNjNDVmNzJhZjY1ZGU1NGFjMzYzZDM1NGNjMWEzMzMwMzUwYWNkNDUyNDM0YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L925-L937",
+          "version": "repo-lines-v1:sha256:db18455228b813eabf30e60db62b8466c2ee0b5e403133a632fd0e3fad3a32dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Y2Y1ZmMyM2YyYTZkMjNjM2VhNTFlNzJmNWU4OTZjNzU1NWZiYWEwNWNkNWIxZWExODJiZjk2MThhOGU4MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNjNjNGQxYWY4Y2Q4OWJiMGJkZDc2NTdmZmNiZjY4MDZhNjEwZDc5ZDZjOGQ0YzMwN2MyNDFkZjM5MDA1MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZkMmIxNGZhNzc5NDdiZDJiZWY2Yzc0NzIzNjhiMDIyNzE5NjRjNjIyY2MxNjYwZGMxMjQ2Y2YzM2Q0N2I5OTEifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L1-L35",
+          "version": "repo-lines-v1:sha256:808a5bca37f8378433d60ea60b9d70ebec02d89beb6df54ec351861e16ca85fe:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ODE3MjE4ZjJkMWE0NTU5MmY5Y2FhMzY3YzkyZDA5MWNlYzdkMzg1ZTdjZTVhNzk5OTFmYzNiMWMyNTQ1NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjZTk5ODI5YTFlNzNhZWFiZjljMmJlYWJlZDNhNDIwNjc5Zjk3ZDgzYTM3NjkyYTI0MTYzZGY4MjJiMTg5ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0583851633ac4e7bb1c7290c06d29c5d",
+      "statement": "The Python tests write silence, so they verify durations, exceptions and liveness rather than sample values; sample-level correctness is pinned by the Rust unit tests.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L938-L1122",
+          "version": "repo-lines-v1:sha256:4b6ab817669579213d5f47cebd889d236453410e2024bbf812d3af10fdce0995:eyJzZWxlY3RlZExpbmVDb3VudCI6MTg1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MmI1ZWRmNTk0OWNmZWE2NzgyMmNmNjkxMTMyMzYzZDY4ZDZmMWUxNjlmNWUwZDRmN2MxNGU1ZmExZTZkNGU1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZjA1YTQyNmFhNjA5NWYxNjg2MjU0ZGE1YjRlZjI4MDFkNjBmMjJlY2U0MmE0MmZlZmFkZjU5ZjBiMDNlZmI4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1OTgxMmVhZGNhMWJiYmY4YmI5NGNmMDQxZjAzMDhlNWFiNDNiNDNiMDJmN2Y4ZjE4YTNmYWUxNWI1MjQ2NTkwIn0"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L18-L20",
+          "version": "repo-lines-v1:sha256:b82bfd53d32acadcb5ee2431510c991462ef4955255ab43e590e21996cca9716:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjIzNzc2NmIxY2M3NmFjZmNlMzk0NDM0NjFiMzJkYjA1MzgxMjZmMDdjYWUwMGEyZWFkYzQ3NTZlY2I4YmQxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc4ZmU2Njc2NjU4ZDQ3NGVmZGMzMDg5NTIwYWNmYWU1ZmExZGE4NzIzY2EwNmY3ODY3MmYwYzdiMTM3ZmVlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFmNWMzODM4NThiNDhhZGE3MjEyYjhjZjhlZjFjOGJhOTY3ZDkxZDQzY2RkMzNhOWVjYjExNDI5YjUxNzhhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDlmMzQ2Yjk3YjdlZTM4NDg0Y2U5YTg4NDY1NzBjNTIxNWY2NGY3NGI5YWE3ODQyZjU4YTQzZTQzM2VkZmViYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6cb8c3206e342c9b52bcd99dad53d5a",
+      "statement": "The Rust tests cover chunk-invariant resampling, output length, interpolation accuracy, clamping, channel separation and remapping, writer carry-over and resets, renderer frame alignment, fades and watermarks, config negotiation, device lookup and WAV short-read detection.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L241-L282",
+          "version": "repo-lines-v1:sha256:d62b5a6ffd7a6be860c6922e823d6cb00f2270dd9409de6814d5b4f637960bf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZWMzYjNmYzljZWRmMDgyMDRiY2M0YWUwYTVmMTMwYzhkODEzYjgxNTQ0ZWQ0NGVhYWJjYTA4ODEzOTg2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L145-L163",
+          "version": "repo-lines-v1:sha256:ecf9ad0befc9fe62a1a4ad8ff88086a103f1e8d58d054bec06936b6c1287950d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZWMzYjNmYzljZWRmMDgyMDRiY2M0YWUwYTVmMTMwYzhkODEzYjgxNTQ0ZWQ0NGVhYWJjYTA4ODEzOTg2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L938-L1146",
+          "version": "repo-lines-v1:sha256:713a86a85d75b91313c3227a3e2cc7762fd8bd9861f39826553d890d5ea6eba7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5MmI1ZWRmNTk0OWNmZWE2NzgyMmNmNjkxMTMyMzYzZDY4ZDZmMWUxNjlmNWUwZDRmN2MxNGU1ZmExZTZkNGU1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ODkzZjQwZTM3ODFlYjg5NmM4MmQwNDZhMDgwNjdhMTFlMzVjZGYyZjFkZmFmMjZmZWE5MGI4ZGI2Njc2NDEzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZjA1YTQyNmFhNjA5NWYxNjg2MjU0ZGE1YjRlZjI4MDFkNjBmMjJlY2U0MmE0MmZlZmFkZjU5ZjBiMDNlZmI4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_261bf4c19c6143dbb34351612ae6de11",
+      "statement": "Test helpers in player.rs build a Writer or a Renderer over an in-memory ring so alignment and rendering are tested without a device.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1007-L1016",
+          "version": "repo-lines-v1:sha256:10d5581c2fe87e53e471e0cd20fe8bac3dcd2a22ad7fd36a53fa4608a248ff98:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMGVhMDhjN2Y1OTBkMGJlZWUwODc1MmYwYjA5NWExODhkNDgzNDdlZTI4ZmY4MmNmM2M2NzQxYzA2MTRkZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZmE4YWJiNzk1ODIxNjY5ZGM3MDk4YTRlNTE4OWY0MTA5NWJhMGU4NDVhYTU1MmVkODA5ZjkwZmYyMTNhZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYzM2M3YmYwMDljNjU4Y2MwZDQ5MGJiNTA1NzMzZmNiODg1MDY4YmEwODI4MTEzNDQ0MzZjMmMxOGM1MmI3N2QifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L1048-L1052",
+          "version": "repo-lines-v1:sha256:f9c8b5eb6f1bac20ebc6faf048166f45de1b17d709bb129da63e86df9f83593a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTcwZjQwZmVkYWYwY2VjYTc3MDBhOTEwZDBhNDAwZjAyMDJkMzk3ZGJjYjgzNDk5NmQxOWQyMDVhNjBhZDM4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzc2ZGMyZWI2ZjMzZDE0NzEwYmQ3ZTM0ZGU3YWE2ODcxM2JjODU1ZGFlZTZmY2VlMzU1MDMxODFjZGI2NmJmMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmMyZWQ5MmMzZmRjYWIyNTBmNzY0YmQ0ODRiMzg0ZjEwZmJkMTYyZGIxMDRhNzJlNzNkZmE3MDRmMGExODE3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_57164d4829c841ac8c721d482df65eb7",
+      "statement": "Construction tests cover auto-detected defaults, a partial sample_rate override, a nonexistent device, the context manager, idempotent stop(), and ValueError for zero sample_rate or channels, which used to panic deep in the resampler.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L37-L84",
+          "version": "repo-lines-v1:sha256:9c82f0d371e1cf09a3cdd34b6a2963cc2f90ccebd7e39ae836ac7427e59cd178:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MWRiMTlkNmJhMzE1MjI4ZmJkZGRiNWE4MTFmMTY1ZmExODYwNjhlNjQyNDFlOTMxOWVmMjU5YTg3M2U3YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ODE4YTM2ODVkMGY1ZTZlYzlmM2FiMTllNWRlYmJiN2E0ZmZmY2NkZDBmNmI4Yzc1MzQ4ODJmM2E1N2MzODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZmOTE3MWVlMjY3ODc1NGZhNzdkMDIyM2Q3ZGFmMjU3ZmRiNTM4ZGY0YWRkNjZlOGI0MWYyNTk2MWFhMTlmODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkMzQ4ODM1YjRkNDJjYzg5MTU3MjQ2YTEyYzQzMDY3MDFiM2RhNjQxMDVhMDAyMDY1MjRhZWZmYzg0ZTg2YzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c33fe121b5549d5800e350a60768066",
+      "statement": "Input-format tests cover every accepted type and dtype, 2-D, strided and misaligned numpy arrays, unsupported dtypes and types, operation with numpy blocked, and unaligned chunk sizes that must still play for the full duration.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L87-L196",
+          "version": "repo-lines-v1:sha256:5a002dafac3efcf86f18c5649a4ba84c4ec0257850a4b30b07f5bfb380dc52a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiNzQyMTg3NjU3M2U4NmYyNGMwY2NiOWNkMGUwOWRlNjNjNTcxZjdlZmUwODJmZjBhZTU4ODE4MTcxMzA1OTNlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1M2RkMjFiYmJjMWU3OWRlNDc2NzU1ZGZlYTBiNmEyZjc4ODdiNmRiZmIwMjg4YjBlYzQxODY2ZWY0MjNkYmM3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI1MTA5MmMzM2NkNzU4ZjBmMjg4MGY2NWU4N2RlMDYxZDdhMDYwMDcwYjJjOTgzZDI1MmZlYzZjYTVhNDI1MmY2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwNDY4ZGIxMjY0NTQzNTk0MDlhM2EzZGNhZGU4NzExMWZkYzcyODc4OTI3YTMyMGEzZDkyYTU4ZjAyZWIzYWExIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee30d29406de40858bfced9e38353278",
+      "statement": "Drain tests pin past regressions: returning early while write() was still converting, losing half of all-zero int16 arrays, hanging after stop(), and waiting for audio written after drain() started; Ctrl+C must interrupt a drain within 1.5 s.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L199-L262",
+          "version": "repo-lines-v1:sha256:70262ba427ba62483b1e07df5a095e29330b1cfd7237c0468ddaebedc797c66b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZjQxYjE0MGQ3Y2RlMzZmZWI2ZTUxMmY5YzVjZGI3ODFlOWY3MDlkMDE2Y2U1OTQ5OWQ2MmUyZmNhMTc5ODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1OTkyMmZjOTViMDVhM2U5NzYzZTZhYWQ3ZjZjYjRhOGU5YTI4YzY4MzE5ZDQ3ZjNiNzc4MjQ0OWZlZjYxODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NTEwZjhmMTJiMmQ2ZDA3ZDkwYjdlYjc0Mzc2OWZkOWM1MWVkMDcyOWVjMDAzZTRjZjE1OGQxOWQ1ZTlhN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NWFhMzkxZTE0ZTI3NDczMGE4ZDliNWM3NWFjOWJlZTA2NzBjZDY2ZDJjNjE5NjkxN2Y0NjJjYWNiZWI3ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_338aea292f0c453a8b292ae757f3fbdf",
+      "statement": "Clear tests pin past regressions: write() after clear() resurrecting cleared audio, a blocked writer replaying its stale chunk, PanicException when clearing from another thread, and a deadlock when a signal handler used a blocked player.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L265-L368",
+          "version": "repo-lines-v1:sha256:43ced1fe291a2494c501892233a1710a5c36ac990780946288e52c84b3c81f23:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZGUxMDdiODI0ZDBmMzJjNDcwOGJiMTZhNmI3ZGNiNDA2MzIwYjhkYmUxOTI5ZjE5ODBmNjJkN2EyODU1NGNlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5NDNlOTBkZjU2ODMyNDgyZWY4NmEwYjk3ZjkzY2VjOGQzZGQ1ZDQzNjVmNGY1NDNlN2ExOGFjNjc2NmY3YzU2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0ZDI1Njg3ZjM4Nzc3YTk4YjhlZjRkZGE4ZjEyYjdjYjBiNDJhMGY5NzU0ODhmMGFkNmYzZmQyMGJkZTYyNzM2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlMzgwNzMzMGU5MWI5NGFhYTdhZmZjNzdlODQ5ZjA4MTllZGM4NjcxZGUwMzY0ZTc3MzJjOTQyY2Y1OWM0ZjBjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_7bf4f8444cdf4fbcb423cc2ebc367e0f",
+      "statement": "play_file tests cover a missing file, a path-like argument, and files shorter than their header (truncated or carrying a pipe-style data size), which used to raise after playing.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L371-L406",
+          "version": "repo-lines-v1:sha256:2f51a57bf0e421a12807cda56eb3d205e17a6fd7f3fed26ff46765639786953c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjOWVlN2Y1NzUyOGFhY2VhNmJmY2JmYWRiMmVlMjc4YmNkMzBjN2M0MDI4ZmIwNmIwYTNjYjc5MjViZThhYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MzgxOTY3NjFkYzc3Y2Q3YzRkOTI2MGIzNzg4NTE2YTM5ODUxMWRlZWUxNjRkODA2NTY5ZjY3ZWRjMDNkNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyZGNmZTlmNzc2MjI5MzQxZjU3YjE0MDEwMDg2MDJlODY0ZGYyNzFlOTE4ZDJmMzIwNTQzYzMwNTgyOTllMjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTdmMGRhYmQxMDYzZjQxOTBiMTc3MDVmOGVhYmEzMGJjOTU1NGYyMjY5NGUyNGJiNjU0ZTRiZjgxYmM4ZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a796b561bbb549a9a4ce6e28e8fda148",
+      "statement": "Device tests check dict keys and types, that index equals position, that type is one of alsa, pipewire, wasapi or coreaudio, that ids are unique, and on Linux that the pulse device and the first sink open by id.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_devices.py#L11-L49",
+          "version": "repo-lines-v1:sha256:04d8e829d8d7cc950df0eb1585de77778a87ad6302bc8860e2a5933deb77817d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZTYxNDZjZGYyZmMyZjcwNDkyOTczOGYzMTYxMmM4YjQ4MzVlMGRhYmVhOWEwNzg2NDZiM2M5YzM3MTQ2ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNDFmYjQ0ZjgxNDRiYjBlY2ZkMTU1ODhjYzcwOWI1ZWQ3MThkY2FjMzdmYWVhNDA3Y2FmMDhiMDU0YTRhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhZjVjMzgzODU4YjQ4YWRhNzIxMmI4Y2Y4ZWYxYzhiYTk2N2Q5MWQ0M2NkZDMzYTllY2IxMTQyOWI1MTc4YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8629fd6459e440f995877149268890b3",
+      "statement": "Running the Rust tests requires the Python development package because they link against libpython.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L15-L17",
+          "version": "repo-lines-v1:sha256:3f3d3ef6358d17e944823f458a48dc91ba9ea3969be43593c0b21a90ebd5c742:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ2YjFiY2NkNjRmNzM0MDY4YTViYmUxOGQyNjUwNDE4Y2UyZTM1MGM2YWI1MTY5NzBlMTkyZmVkOTEyMDA1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U1YzlhODg0M2VhZDlkZmQzNWU0NzZjYmYxMjllY2I2YzZmNWQyOGQwZmExZGFiMWVkODMzM2NjYTY3N2FlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDg2NmNhY2VmYWMzMmJjOGMzOTcyM2E4YjZmZDRhMzQzMzcwZDhlZmQ0MDNkYTU3ZTFkYWExYzM5N2E2ZDUyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQ0ZmE1YWRhOWQ4Mjk0YjBlYjI5MGRiOGQ3OGM2NWYzNTk2YTExMTZlOTRmZTBjMWRmOTg4NjY4ZWRjYWZkNyJ9"
+        },
+        {
+          "resource": "repo://README.md#L281-L289",
+          "version": "repo-lines-v1:sha256:5bd1e0601013baa3e84fbecb9bbee9e7a5c290159bef028a559d667a99070cfc:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODIxYjA0NTNhYzY2NWJlNGZkNTJkY2FiZDRmNTdmYTkzNjg5NWUwYWNmZTJhNjYyYjlkMGZmYzA4MTBlZTY4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDdjMDZjNTYxZDVjMzI3MzQzNjg1MjY4YTQ2YjMzOTFmMzk5OGVlZTg5MGQyYmU1MWYwZDIxY2M0YTUzYWU2ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjg3NWI0NGQzZWY2Y2QxMzdlMzI0OGVkNmI2YjA3OWNmNmFlMzdhNTk5NTUwYjhiMmY5ZTBhNmQ0YmMwMzE3ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMwNDU1OGQ4YzMzZThjYWNlNTQxMDAwM2EwZjMxMTdkODQyMmE3ZDBhOWQ2OGFkZDY0OTBmMGM4ZWVkMWNhZiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

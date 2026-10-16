@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:daf5c65170302773df089d244f091f46f97e76d7a6e5e87e46f25fb47b2381cb",
+  "claims": [
+    {
+      "id": "claim_cbe4eae10af3488b9eecc66a8119b482",
+      "statement": "release-please runs on every push to main with contents and pull-requests write permissions, authenticating with the RELEASE_PLEASE_TOKEN secret.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-please.yml#L1-L17",
+          "version": "repo-lines-v1:sha256:03538308612f63e889790af3aaee2d133aca2fabaad0a6672b5f9a0d1f912129:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjliNjMzMjE4MzFkOTkxMWRkNWFkOTlmMTM5NjYyMTIyYTA0YmU2YmU4Zjk5ZWY5MThiMmE1N2NjNDlhOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExOGJmNDhkZjFhM2MwMDNhNmQxZGViYmYxM2NlZjQ5OWIxOTE3ZjcyYzMxNDI2NGY1YmJkMWRlZmFhNGE2YzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c33ef740f6a4d6684175bf616a26e6e",
+      "statement": "release-please manages a single rust-type package at the repository root, and the last released version is recorded in .release-please-manifest.json.",
+      "evidence": [
+        {
+          "resource": "repo://.release-please-manifest.json#L1-L3",
+          "version": "repo-lines-v1:sha256:8d4345027875e882e486777538e2f463d77e81842d36a04776d756e69e25939a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://release-please-config.json#L1-L10",
+          "version": "repo-lines-v1:sha256:81a8810bbcd0996248575d5d8a1c5bc76993719dcd89f6c26037c9e45e8a24e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72a33115201347888945d05db01fab52",
+      "statement": "Below 1.0, breaking changes bump the minor version and features bump only the patch version, as configured by bump-minor-pre-major and bump-patch-for-minor-pre-major.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L28-L33",
+          "version": "repo-lines-v1:sha256:b7675fe6c5d0ae3be25d369ecd9e865c0cee76775a79be1608d0fd5912a01b63:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDkzMzE2YWQ4Y2ZhY2MwOWY5MDlmMTc3NzUyMjIyZmFiYjFhNzhiZGFmMjdiNWVkMmU1OTUyNGE0MWUyY2NjZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTFhOWNhYzFiNmJlMmRjN2M1ZWNkYTcyODBmMWZjNzg2ODE2ZGVlMmFiOWFhMjk2NDc0ZDBiZGUxZGI5NTdjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzU5MzRiMjU1NTNmMzczZWRhYjVjNGRhMjU3YzE2Mzg3MGZkOGQ2NzljNjAzMDg1YzZjNjg2MzE4OGI3MTFhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTcwYTZmOTVkOWU0MDRhYmUxZDVlMmYxZGVhNjk4ZmMyNDdlZWI5NzdmMmUzMmM4MzlmM2Y5YTE3NDViMDllMiJ9"
+        },
+        {
+          "resource": "repo://CHANGELOG.md#L3-L12",
+          "version": "repo-lines-v1:sha256:851e46e841e9e6d16f6a6b49d925bb85c7138f9ecf3302d1c3d1764b1db243e1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MjFiMTFiNzhhNjk1MjFlY2Y2NDU3MjhkMjAyMjZjYWU2YjM4MDM1ZWQwMDQ4YzU4YTM4Y2Q1NDBmODRiODkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2N2YxYjA0NDAyMGU0ZDU2ZjZlMjFhYTFkNzQ5MDJjNmEzN2MyY2VkZTA2NjViYTNjODU0ODI4OTkwNzE1NjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNjhjNWI4OGFjNDg3MmM2MDNkNjZlNjUxMzcwNzRjZmJmMTg4MjdkZmU3NTYyNTA5NDJmOGEyMTM2OTQwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNWRiN2QwOWU1ZjAxNTE3YWRhMzk0NDRiZmU2MTZlOTFiMGUzMzU0ZDBiZmNmN2UwYzY5MDU4NGNmNjBkOTgifQ"
+        },
+        {
+          "resource": "repo://release-please-config.json#L5-L7",
+          "version": "repo-lines-v1:sha256:45c8fe4f91704bf8b5fc631a409673ac5f9bb8038ef5b4b3e7365cfef8d2dcb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODg2NGJjZTU0MzY3OTUxZDdmMGM1ZjFmN2JkODUyYjYyMzA1ZDkzNzlhYzY0OWY4MDY5Yjg2MTU3M2YzZjEyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTE0M2I2YWU1MzljOTAwNDA0MmE3MjM0YjMyNDAwNmM1YzhlNDMzM2JlZTllOTFiNGQzZGZjYWRkOTI0MGUzYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWEwODQ5NzczNTQ2ZWQ5NGUxNmQ0YmMyMWY2MTg4ZGYyMjc5Zjk5ODJkNjM0MWY1N2RlZjQ0NWQ2ZTU1MzY5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGUwZjcyOTNkMTU2YTZkMTI1MjhkYjEyOTMzNzllNTJhNWY4MzY3MDQ0Mjk3YjIyODJiOTdmZjJjODYwNDM4ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4710c6fafd6f4a8080c591cf84cde073",
+      "statement": "Releases are tagged pyaudiocast-v<version>, and pushing a tag with that prefix is what triggers the release workflow.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L1-L6",
+          "version": "repo-lines-v1:sha256:2500c2a920a94660cf83e98d6c3db51d8dc9ce54bbc5f76672073c934241bf64:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJlZWY5MDMwZDBjNzAyOTAxMGM0NjM1Njg5ZjU4MzI4ZDEwOWU2YTg1ZWQxYTkyNDViMjBmMzk1NWI3ZGIzOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI0MGQ3M2E4NjYzOGY0YzA5ZWU1YmI4OTY1NzFkMDE1MmNiN2IzZDQwMzc1ZmM5ZDc4N2M1MTQwMTk3MGQwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UyNzQyMjRlOTgyODgxZDk4MWI4YWRkZmRkYzk4ODBiMmYxZDA3ODAzMTVkNzBkNWQ1MTkxYzc1Zjk1YTViMiJ9"
+        },
+        {
+          "resource": "repo://CHANGELOG.md#L3-L3",
+          "version": "repo-lines-v1:sha256:8921b11b78a69521ecf645728d20226cae6b38035ed0048c58a38cd540f84b89:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODkyMWIxMWI3OGE2OTUyMWVjZjY0NTcyOGQyMDIyNmNhZTZiMzgwMzVlZDAwNDhjNThhMzhjZDU0MGY4NGI4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODkyMWIxMWI3OGE2OTUyMWVjZjY0NTcyOGQyMDIyNmNhZTZiMzgwMzVlZDAwNDhjNThhMzhjZDU0MGY4NGI4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmQ2OGM1Yjg4YWM0ODcyYzYwM2Q2NmU2NTEzNzA3NGNmYmYxODgyN2RmZTc1NjI1MDk0MmY4YTIxMzY5NDA3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODZhNTNhN2JiMTYyZjE2Nzc5YzU2MDAyZTViOWQzOGNlNmNkY2VmZWEzZmY5Mzk4ZjM3N2MwZWY3MmNhNmY1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a6a4aa877b048249166860d6baf3b67",
+      "statement": "release-please uses a personal access token so that the tags it creates trigger the release workflow, which listens for tag pushes rather than release events.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release-please.yml#L15-L17",
+          "version": "repo-lines-v1:sha256:828745f2a15ba44cb43ad096ea6828b292c99489d807342aa2b32bd6a956ac27:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGQzNzRhYjRmMmUzYTUwMzE0NGZhMDIyMzBlYjUzMWU5MGIyYTYyM2QxYmY2ODAwNjNhYjEwM2VhY2RjN2MxNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTE4YmY0OGRmMWEzYzAwM2E2ZDFkZWJiZjEzY2VmNDk5YjE5MTdmNzJjMzE0MjY0ZjViYmQxZGVmYWE0YTZjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg0NDNjYjY4ODFkMDgxMjMzMDM3OWIyY2ZjNjc4NTIyMjMwM2IzMThjNTU2NjA2YzVlZTU4MDU5MGUxY2IzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://CHANGELOG.md#L84-L96",
+          "version": "repo-lines-v1:sha256:08bd4457b0c07afdb3a3b9039bf14d05308305ddbb7100623131037d263e8f34:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhOTA5YTMzZTRhODA1MWFhY2ZhNWUyMTY0M2M0OGIwODRmODFjZDJhNDVlZmYxNTQxZDNmNGU4NTk3ZjU4NzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMzk2N2RmOTIzMmJjMjcxNTIwM2FhNWM5MzQwOTgzNjMxNzZkMDljZDlkNjkwODhkOTQxY2UwODY2MTU2MDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwMGI0NjIxMzUzN2QzYTk0ODFjZGU2MTEzZWNiZmNiNGYxODY5NjJlNGU5NGU0ODBjODg5ZjNlNWI3Mzk1ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY3NDcyOTEzMmNhYTY3NWUwMDIyMjY3MGIxNzc0Njk2MDdmYzhkOWY3ZjJkZjRiNDRlYTQwNGMxODcwMmQyOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c1ccecd03424fdd9f9f31f3fe04cdf1",
+      "statement": "The Linux release job builds an x86_64 manylinux wheel with maturin-action and Python 3.12, installing alsa-lib-devel in the build container and skipping maturin's bundled auditwheel step.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L12-L28",
+          "version": "repo-lines-v1:sha256:2e8b68606614bec51b9b53cab1826862d775db14992f9b13bebafa33d3d8d944:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiYTlmZDAyY2UwNzUyY2Y2NjYwZmUxM2RiOGNhNmRiMDI0Nzg2MDQ5NTQwNmZjOTM1YzAzZWVjNWRmYWIzMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5M2EzNWQ1OWRjM2Y2MmI3YzM2ZTA0ZjJkMzlhMTRhMDdjZjI5YmM4YTgxYzI0YjNkMDQ3MTdjZDlkZjYxM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjZGRhZTRlN2E2MzZjMjBmNTUwYWNiNmE1NGYyNzA5YWUyY2I0Y2RhNDE1ZDNhN2U1MjQxZTM3MTg1Njg5MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZjdmNDM4YmNlMzY2MDRkYWRkNTcwODE0MmE5MDZhZWViODMwZjYzMjQ2NjkzYTVlYzk0ZWU4M2EzMDNkNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a57436e6b5a74036a67b111f1434b5c1",
+      "statement": "Linux wheels are repaired with auditwheel while excluding libasound.so.2, so the system ALSA library and its PipeWire/PulseAudio plugins are used at runtime.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L30-L36",
+          "version": "repo-lines-v1:sha256:3d6ae5fb15dd1aee58dfdf00fd2efc3656411eaca4b171e51c56e17392e988e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc5OTNjM2EyZjA0MWIwMTQwMzc2OTUzNDc4ZmQ0ZGZhMjFlNjY1YjEwODM3ZTBmOTA2OGE1OGQ0ZTIwYjI5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzgxMzMzZGY2NmQ1OTVjNjIyMzc0MTJlN2QxNjA3YjVjZmIwMTE0N2YwZjNhOWRiN2I3YWM0ZTcyOWM0M2QyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjA1MmRkMjliNjE0MzM0M2MyYjFjM2QyYzNjNzQwZWY1ZWUwNWY5YTBlZTE1MDA2N2MzMDVlMmRjYjVkZjFjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIyMmI4YzY0MmQ1MTdhMDJjZDU5YzZlMmI1MjJjOGU2NmVhODRlMzgzY2RlYTM1N2IzNGU2Y2M3MTdmNTFjNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_26fb660911a6404aa547f610b9009141",
+      "statement": "The release workflow builds macOS wheels for x86_64 and aarch64 and a Windows x86_64 wheel with maturin-action in release mode, plus an sdist built with maturin.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L43-L103",
+          "version": "repo-lines-v1:sha256:8ad6d1e028d25a9e59fce93089e00f4a653bf8f780fbd10dee8e81044e0f44a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5MThlMWUxNTYxZTdjN2I4ZDE3NThhZTc5NTJhYTEwMGUyZDE3MzAzMzVlYzM0OTQ4ZTY5YjlkYWQxOTM1YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNWQ0YWQ2NjFhMjRkZDk3MGM2NWU2MWMwYmY1YTZlNzcxNTExYzU2OGJiYjRlNmZhOWQwZDU4MTdkZmE1YzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZjAzNjMyYWM4MDdiMzQ4ODE3YmU0Y2JmMGFhZmI2NTViZjEyNjI1NWMzNTBiZDE0NWJlZDk3NjRiYmExNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjNjVmMDQzMmVhNjViMjVkNmNlMDZhMDg1ZmQyYWM2MTljNGZmNGI4NTBkNDMzZDg2NmQ3MDI2MmVlZGJkMDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6ed7fec4cee43efb35abe1b4d0ee5fe",
+      "statement": "Publishing runs only after all build jobs succeed, in the pypi environment with an OIDC id-token permission and no API token, merging every wheels-* artifact and uploading with pypa/gh-action-pypi-publish.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L105-L120",
+          "version": "repo-lines-v1:sha256:af1c8f6a9096659963df597ebabd5a7fea7fcf6b2e84d51b084c65417dafae71:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjU0YzkxNmE0NDgxMjNlMmQzZDk1ZWJhYTJlNGIxZGIwZmE3YjU0M2UxMmMzZTFiMTFjZjM2MjE2ZjIwMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMzMzOGI1N2QyMTJhMTY5ZTQxZDRiNTE1N2MyZmVlNzBlOTA5NjQ0MTFkYmI0YjE4MDgzMWU1NzM0YWYxNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4Y2RkMDc3N2RkNzZlNTAxYTkxYjA0ZTdhZDA0YjJjNDE4MDNmY2QxYTY3MWEzNzgxZjlkNzY2ZTVjM2Q1OTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0bc1e2c5b4604cf5933464704ff88de4",
+      "statement": "The release workflow's default token permission is read-only access to repository contents.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml#L8-L9",
+          "version": "repo-lines-v1:sha256:e8f2263b0413f25128aa11d16dd3ae0ef6b0c660fb5b1dc08fe71e0a7daabb4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUyNjI0N2VkZTAwNmU5YmRhYjljNjg1MDcyODQyNWQxYjQxNjZjYWY1Y2FjNTBjZjA5NTVjNDRkMjRjMWE4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDllY2VkYzE4ZWNhZjFkYWY5ZTdiZWZiOWZkNzllMmMzY2YxNTU5OWU1M2U3OWNkYmQ5MDFlZTZlMmM5NzlkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTUyMGFlOTkzYThjZDMwNTcyYjU4MWNlMDAwNDlmNGRmYjhmODQyN2JiNDJmMTMwZDBjODdlNzYzZGUxOGFhYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjAwNTJmMjk1YmQzOGNiYjJkY2ZmNDMyZTk0ZWI2NWMyMzRjNWRlZTAyZjdhZTZmZWFkNDRlNmU5YzYwM2ZmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ee082a49d124b0fb0ba7a5f66cae74c",
+      "statement": "The release workflow only builds and uploads artifacts; it runs no tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/release.yml",
+          "version": "repo-file-v1:sha256:a0c89a621dd030bf6bb83aacda56e64f7967044b97112c159564d82200f575f2"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}
