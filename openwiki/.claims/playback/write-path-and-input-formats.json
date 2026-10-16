@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b419104cc1752ec7a714245bd1ee89347eec1cbb6a7b551e8f739d85818bdcb6",
+  "claims": [
+    {
+      "id": "claim_a260e1f36b474e80b618b6798dac2ccd",
+      "statement": "write() captures the epoch, checks the player's state and extracts the input with the GIL held, then performs alignment, conversion and the ring push with the GIL released.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L261-L266",
+          "version": "repo-lines-v1:sha256:dddbbd2243e5c4c6e11f19cae1ff666e167c274f19a5a516c70cd27b763daea3:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjE5ZDQ3Mzg5MzA4Y2RhMTYzMzI1YzNmNDZlM2UwODZlNTNmMzZkYzM4OTY2OGZjYmM0MjRlZmE4NjViZjA2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc1MWEyMTQyZDYxYThmMWUxNTYzZDY0ODI3ZGJiYjk5ODU5Y2FiNTgwYjgwZWIyZDIzODgxOWI2Yzk2NDY4MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDA2MmQyOWYwNTc4NTZjNGQ5NDdkNzM3N2ZkNDI0ZDk0NGQzNTE1MWM0NTYxODhiY2U1YzQzZmFiODgzMTIyOCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L476",
+          "version": "repo-lines-v1:sha256:6a25ca496b22c9ba0e31101c208dd326949ad9d31e2684ae2b08119fc51562f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMTY4NzZjYzBjMjhmMGVhYTJlYzA3NTAyODE5MmZjNjM3OWIxN2NmYWRjZDVmMjEwYzY1M2JhYWI0Yzc0OTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4506e784f27f45e1b5f2454f6fcd55bb",
+      "statement": "Input types are recognized in order — bytes and bytearray as int16 little-endian PCM, list as float samples, numpy arrays only when numpy is loaded — and anything else raises TypeError.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L827-L848",
+          "version": "repo-lines-v1:sha256:e657243753af8411dee0131cb381b8e08bab309742800dad2ad2b7a5efa9540c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4OGJmMTY4N2YxNmMzYmExZTUyOWE5MDYwNDhjYzk3MWRiMTlmZDRkMzg2OGM4YzA5NTg1NDJlMTBlYWZkMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjYTE3NTVjODY0N2ZkNjFhNGNjOTUzNTdlOGRlZGE5MDRhZTI1NDgyNDQ0NzgxZTM0MzZjNjhiYjE0ODIwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxNTc4OTIzMGYzZmM5OWIyZmI4YTI2MGVkNjI5YTgyNzAxN2Q3MTFhYmRkN2RlNmRlMmU5Y2MyYTk1OTA5YzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d6e4f1018144e34847f1e894ba77ad8",
+      "statement": "bytes and bytearray input is copied and kept as raw bytes under the GIL, and decoded to f32 (little-endian int16 divided by 32768) later without the GIL.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L157-L167",
+          "version": "repo-lines-v1:sha256:d02b19148c93a21bb9bfec40630fbf27801f7b8288cb008bf88ad42d77abf9ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5YWI2MjU0YWU1Nzc1MTIyMWE3ODdiMGFlNjI3MWMxYWQ2YWUyYTQ3ZDlkYWVkYWM0MWE5Yzk5ODMxNWJiMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2YTQ3YTllMmNlMGIxZGIwMWQwYjBlMjIyZWQzYjNkNGEwZjA1MDM4MWJiMjZjMjVkMjE2YmNiN2Q0NzI3NWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5MGZhMTkwMGVmYWU5Y2E1NGQyYWU2ZDA0ODMwNjU4MWY0ZDc1YmI5MDc1NTgwNzM0NTgwZmYzNTA3YTZlMzkifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L829-L834",
+          "version": "repo-lines-v1:sha256:5cd2f6149d1c552baaf4faa1d56181dae012b18be328dae45a81cbaec608affb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQxZjU3Y2I3ZTk2OGJhYzY0M2M1ODA2ODQ4YmZjNWIxODFmZTU0ZGJiZWEyZmNkNjE2MDk5YTViNDc4ZTg5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGU1MjlkZDA0OWRhYjNhMzI2NmZmNDViODEzYmIxMDRiZjdjODUxOTU4NWZiZDdjM2Y5NTNjYmQyNDRjN2E2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGZiMjIxYTBlZjY2ZDcyMWExNGE1NDQ0NWRmNTg1ZDMxMzFlYzM3NDRkMTUxNzAzYTJjZjdkNjMyYTA4Y2NhMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L870-L877",
+          "version": "repo-lines-v1:sha256:dc7138486b240ffdf9b56960f46ad4cb80b35c8444877235031707d5d7045a02:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2MwY2NjZTM4YWE0ZWZlNDAxMTczZGVlYWI4ZWJlNDYyMjYwZWVhNzFjMzU0YThjZDNlMjJkMTA4MDhkMjg0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY4NTk0NDQ3NTgyZjIwOGRlZDc4ZGQwZTBlZjlmMjcwODQyN2QyODE0Mjg0ZjhhYjMyMzQ1MWVkNzgwMzczOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a7d597ea53e451498f918514dc68ea8",
+      "statement": "numpy arrays are only inspected when sys.modules['numpy'] exists and is not None, because rust-numpy's type check panics when numpy cannot be loaded.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L840-L858",
+          "version": "repo-lines-v1:sha256:ffd04407a2742b8fdc12e845dd489213e39abd9908903c0dafc2e87511d725c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlZGI0ZGE5YzVlNmU4MTg0NzQxNDBmNzg3OWU4OTZhYTA5NzEwZTQ3ZWNjYTI5Y2JjMWE0NWNmNGVjOGZiNTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBmZTJjMGU4MGEzOTU2YTQ2YjA2NmQxZWJiZjE3MTZmNWQ2YWNjODcyZjQ4YTc4ZTRlNTI5OTY5MjMzZDNhYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5YzYzNWM0ZGY1Y2Q3NmU4OWZjZTMxNTBmYzM4M2I3MWQxMjgyM2JiZWI2NzdmODJmNjg0MTAxYjg2NTkxYTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L161-L175",
+          "version": "repo-lines-v1:sha256:0eabbaae5e446021bbdcaa84ce81459783b96484703db3bcdc93af8d6cc6660c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YTM5ZmE4ZWI5ZjEyYTFjYzgzOGE0MjljZmUzNzI5YzUzZWEwOThmOWYzMzdiNWRlZDBlY2Q0MGI0NGEzZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiZThhNGNkOWQxNTg3NWFjMjIyMzk4ZWJhNDRjYzdiYjEzOWY1ZTdlOTY4MzcwZDM3NmFmMDhhZWIzOWM1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0Y2JmOTJjOTAwZTM3ZTk2MTBhZTE1YzQyN2Q1NDIzM2I4NjBkZGFmMzQ4Y2Q0ZDdjNzI0OTM2M2RlNzM2NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1903fd0e485649eab933782c351e5a0c",
+      "statement": "numpy arrays must be 1-D (interleaved) or 2-D shaped (frames, channels) with channels equal to the player's channel count; other shapes raise ValueError.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L879-L890",
+          "version": "repo-lines-v1:sha256:6ec41347c894e438fdca8ebb5b133ba9ef405e6bb6b9f7de283509831b7ae44d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNTBmZDk5YjQ3YWYxNTBlNzU1NjQ4YTk0ZmM4NGUyYjliN2Q5YzE3MmI2YjZjMWU2NDYzODQ2YjYxOThmZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4ODU5MjEwZWJjYjEyY2Y2OGM2MTYyMjJmYzU2MGMxZjY4ZTJmYTMxZjYzMDQ5M2RmODA5NTg4ODdkNTdhZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NGRhMmQxOGY3OGY1ZjI2YWM3Yzk0MjViNzQ0YWQ1ZjJiZDY4M2VkYzc4MjkzOWMyZjUyNjZmZWRjMGYwNmYifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L118-L123",
+          "version": "repo-lines-v1:sha256:4c2f7246e675dc9e41ef92c72998b16dc3e9480b5a434675440c9b076994cf08:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIyMGExNDk3M2ZjNWFjOTI2Y2MxMmY2N2E2NDYwZWY5ZTY3NjhkNjk1ODUzZmNiMTQ2NzM3NzA1MTU5ODUxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWI4N2U5ZDI0NWU4OTY4MDlhZGU1ZWZjNGI4ZGU0ZmZhZDNiZjE4ZWVlZDE0Nzg0NTI3ZTFhMjk5NzhhYzI2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzdmYjZjNDA0N2UwYjg2MmY4Y2M3YjIxNzViOTNjY2U3MDc3OTY0ZjgwMjIxMDQ3ZGRkNGY2MDE1NDYzOWI0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_42927fe6a5284f8db0c84218b33ed372",
+      "statement": "float32 and float64 arrays are sanitized, int16 arrays are divided by 32768, int32 arrays are divided by 2^31 and capped at MAX_SAMPLE, and any other dtype raises TypeError naming the dtype.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L891-L905",
+          "version": "repo-lines-v1:sha256:6f56fa2fa257fdf2af0dd53e31b9c2dd233b34982b6ba94d6b06f7751e068283:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkODdmYWJlMTNhMGViZDk2MjllZmEzMjJmOGE1NzIxMTIyMDUwZjI4MGQ1ZWU4NGQ0MWMzYTg5M2UxM2I3MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZmQxN2UzZmE4NWRhYzcxNmViMWRmZWQ2MDFiNDBmNzU3OGZlNTBhNTFhNjcwNWM4NGZkNzgwNWI0MDA3MWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMzhlNTg2MjU3ZmFjMTgxYmVhNGNkNzE4Mzk1NWQ3N2NlOGVhZjFjMmM3NDhjMzdjYzM1N2FmYjQ2MGE3MWIifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L141-L145",
+          "version": "repo-lines-v1:sha256:8a5012fdf63638288132e368ccc8f43ead16057a0ceb61595760c5523ede3e12:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2I3MmFiOGMwOGJhNWQ4YWVkM2M2YWFlYTcwMDc0ZTJiZWRkZmYzZTcwNTM2ZjM2YzVkZjVlYzM4MmMxNjAzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc4NjFmMzVlNzczNmJiOTMwNWJlMzE0NzU3ZTRhZGZiYTAxNTA5NzM5ZDY3YjFhYzNhMTcxMTY2OTc1ZGE0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjk1MmNiMWEzNGY2YWI1ZDgxOTNmOWRlMjg4YTRjMmQwMmE1ZmVjNzlhMDhiZTNjNjZhODczMTQwYzY4Yjg5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f573947752a4ed7b75590adcfd340c7",
+      "statement": "Misaligned numpy arrays are copied before being read because reading them in place is undefined behaviour, and arrays that are not C-contiguous are iterated in logical C order so (frames, channels) data comes out interleaved.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L908-L923",
+          "version": "repo-lines-v1:sha256:de284abe64858c7248297c0d248d47ce3f18b2b49db31f20bf22edca66776b78:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NDYzNGZlNDk5ZWMxMzQwYjA3MTkzZDNjMTkwNjlhMTAxNDhjY2VhOGUxZGY3ZDE3NDNkZmYxMjQ0YmVkOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYzk4ZDZiMGRjNDkyYzUwMTZkZjEwODA1YTNhNTRlYjljMTg0YTVhNjEzN2U3ZjRiZWNmYTBjMjIwNTUwZDAifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L125-L139",
+          "version": "repo-lines-v1:sha256:72c47136153486a67b6d6d0ded2b3702964c45ac11b15b71a6b51c3bf9244361:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlODdmMDU1MjBiMmY5ZDBiNjg3ZTkzOGVjOTg4ODA2Nzk4OWQ1M2FjNjdjOWY4MzE1ZTE3MTY0ZmYyZmVjZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5MTBjZTU4MDg4MzlhNmY1MTJhMzBhODEwZTIzY2Q5ZDNmZWI1ZmNhNmQ4ZjYxZTVjYjA4MWIzMTI2ZTkyZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwZjI0N2Y0MjgxZGMwM2U4NWYyYjY3MDUzNDNlNGExMTYyMmI1MzQ4NDYwYzcyMWQwYjk5MDc5ODA4ODViZTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b83ef2883ad144a389f86730a7739a10",
+      "statement": "numpy int16 arrays always take the numpy path; an earlier version read all-zero int16 arrays as raw bytes and lost half their samples.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L829-L844",
+          "version": "repo-lines-v1:sha256:26e8ad1a90e3d0ee35b3102c26578bdc223ab78b00de6bed8a8f4673711c9ca9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0MWY1N2NiN2U5NjhiYWM2NDNjNTgwNjg0OGJmYzViMTgxZmU1NGRiYmVhMmZjZDYxNjA5OWE1YjQ3OGU4OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlNTI5ZGQwNDlkYWIzYTMyNjZmZjQ1YjgxM2JiMTA0YmY3Yzg1MTk1ODVmYmQ3YzNmOTUzY2JkMjQ0YzdhNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiY2M4MTU4YzFlMDI3MzMyMzYzZDBhMWRjYmY2N2ZmMjI2MDE5NTE5Y2E1N2JjOTIyMmMwOTAyODdhMjkwNjMifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L221-L227",
+          "version": "repo-lines-v1:sha256:755a7c4515c5d6bca112b91722d2907ac705ae8be200db87fbf8729e7557752a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI3NDYxOGM4NTQzYzYwYzE4YTc2MzlhYjliMmVmMjFjMTQ2Yzg5MTg4OTM4NjlhMTNkNDM3MzZlYmQ0MzkzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkxZTM4OGE1MTFmZGZmNDZmNzZiNTg4ZGE2YzE5ZjkxYTAxNGFlNTYwMTA0MGEwYmUzNjI5MjJhMWYyNjg3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjJiNWI0OWE2MGEzNDJjZTViMmYyNDU4YzRlOTRlMTA2NWNiYjIwMGQwZWQyYzNmNzI4ZjVmODI1YzAyM2IyMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e0dd17288f37445ea23fbd50e249649f",
+      "statement": "Float input is clamped to -1.0..MAX_SAMPLE and NaN or infinite values become 0, because non-finite values would reach the device as full-scale noise and values beyond MAX_SAMPLE overflow 24-bit output.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L40-L42",
+          "version": "repo-lines-v1:sha256:4af0da0cd0ed2d7bae96207b19d49e1eb0b28e6054a1b733abcc0fff2f9ef5a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg2MzA5ZTNiNDk2YTUwY2Y0YTBjYWVjNzIwNTY0NmI2YjgxNGVjNTY1ZDBiNjZhOWEyOTY4ZGQwNzYzOTIyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdlMmIyYzJjMGQzYzc2ZmFiMjEyNDcyMmNiOThjNGVkMTM5MTliZmZiNmUwZmFiZDM1MmVjZDIxNjdmODk1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDExNWUzMTdmN2FhYTAyNjdhZTgwNDc3MGVkNmE4NmE0ZDQ0NTUxYjFkZWFhZDAwYTliODRmODg3MDJiYTA1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdlYzE1OGQxZWFmYTg1ZTVjYjY0Njk0NWE0NWVlMDhkMzIwZmZjNDhmYWQzNWJmYjcyM2MzODU1YTdkMzBkNyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L860-L868",
+          "version": "repo-lines-v1:sha256:374f72e0d8d4bf2b790d5bd8fe8fdcf0afcda9d913883d8b71f69ec45adf0ac3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhmYjEzNjgzNDBhNTk0YmY5ZThiNmE4Nzk1ZmE0MWIwYWYxODFhZTIyZTEyOTcwMTJmOWZiZGU0YTIzNmY1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NjNDg5MWU4MjRkY2U0YzFkZDZiYTY1NWQxZGZhMmI2M2Y0MzMyMzQ2ODgyOGZlMDNhZmI0ZmYxZDYyZTVkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU4MjcyMmZlYjgyMDI5Zjc1Y2E2YjRiMzdiNTgyZTM0ZDNjNWQ4Mjc3ZjJjNjkyZjVkNmViZGNiZWQzYTAwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9f31ebab24849b09960eed6a9f8b4f7",
+      "statement": "The Writer carries the odd trailing byte of int16 PCM and any trailing partial frame from one write to the next, prepending them to the next write and passing only whole frames to the converter.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1018-L1033",
+          "version": "repo-lines-v1:sha256:4ec292d805ee657d93986b1796a5d4157d99be1e057d5501f65241c3e287725a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1ZDhmNDJlOGZhODEyYjY1NDFlOGFhMzhmM2Q3MjAyMTE2YmRmNTU2NzQ2MWY3ZGU1ZTJkYjUxODQxYTljNTYifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L142-L177",
+          "version": "repo-lines-v1:sha256:33270b5e93a7d146b738231283a6ab123fc5d7b5c9ba74c2abb70587d6c2962f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4MTc2ZDZiYjZiZjQ1NTkzZDY2Yzk2YmM4YTNlNDYzNGI3ODI3NmU0OTdlMjNiMWM2OWNlNGM3ZWFkZDFmNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiYWMwMmY4ZTkxNzUwNWViOWM3MDBiZTBkOTljNGJiZTIzNzgxZTM3MTlmYTZjZjI3M2FkMDhjMDE1ODY5YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3N2U5ZTkzMjk3OWMzYzdhNThiNjg2OTQxZTFhYjYyMjM0NjBjZmZjZGEzNWQ4YzgzMDRjZjAyYmRjMzQ5MDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f372643a1f674845983211c4855bb1de",
+      "statement": "At the start of each push the Writer resets its carried byte, partial frame and resampler state when the write's epoch differs from its stored epoch or a completed drain marked the end of the stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L179-L192",
+          "version": "repo-lines-v1:sha256:78b2392ea12dd356406fc1bb709f2259c11a9addd45b3f43c396372ed4a6de9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmM2MwYTY1Yzc4N2Y5NDllNGQyYzRjMjNkNjkwYWZkOWEzYTBiNjI1ZTEzYTQzMjdkNjBiYjI5N2YyOWU1NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYzZmZjZmMWZmZWJjZmI0OTI4M2M5MTI2NWY5MjdmMWEzYmNmMTQwMDU3NWJiODM1ZWJhMmU4MTgwMmVhMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOWQwY2Y2ZGNjZjYwNGZlZThhNzM5NWVjNTU0MGNlN2QyOTE0Y2U4YzgyN2RlM2UwYmE2MDU1Y2MxMDg3MDgifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L466-L473",
+          "version": "repo-lines-v1:sha256:a75d5f1b08693046bfb70259aac6062e8b0457f4111ddb62d983cdcd042ef129:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRiNTI3MTJiYmI3MzEzMzQzMzkwMWZjMDg1YmE5ZGEzMmU4YzZmYzFhNTk1ODJmYzRhYzRhYTUwOTFmZjZiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTQ0MDM1ZmQ1YWJmNDg0YmUxZTk0OWJlNDI3YjJjZTdiNGRhYzEyNzA1ZjgzMTQ4YWE1MWY1YWJjMjc0ZWRlMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmY5OTYxNTdlOTM5ZmQ2YjJiMWI4NzZkZmI4NTZlNmI3MGY1ZWViOWM4ODJlNWE0NWIwYzg0NTk0M2UzNTcwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjg5ZDNhMjdmZDM5MmU2NmY0MmIyMGM2OTVjZDlhOTBkNWQ0YTI4MGExOTU3Mjc5YWVjMWVhYzQ4ZjEwOTFkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0cec9df1e8046daa899e3f2c35be908",
+      "statement": "The push loop takes the writer lock per step, pushes as many samples as fit, counts them in written before publishing, and releases the lock before each wait so signal handlers or finalizers can use the player meanwhile.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L477-L503",
+          "version": "repo-lines-v1:sha256:d6b2d2b5950d9b20b7f3208a8b9777c75c4394f3d58fa2939ed29972144e40f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGZiNTcyMjE5YWEzNTQ2NTE4YTk1NTE5ZGMxZjY2YmRmZjBhMmFkZmRiNWJmYTc2ZDA0MTYwMTczMjllNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OWQzYTI3ZmQzOTJlNjZmNDJiMjBjNjk1Y2Q5YTkwZDVkNGEyODBhMTk1NzI3OWFlYzFlYWM0OGYxMDkxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3a13ff92d8e4adaa9d9460d716105af",
+      "statement": "write() returns once all of its converted samples are queued in the ring rather than played, so a write longer than the ring keeps blocking until the callback frees space.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L477-L503",
+          "version": "repo-lines-v1:sha256:d6b2d2b5950d9b20b7f3208a8b9777c75c4394f3d58fa2939ed29972144e40f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGZiNTcyMjE5YWEzNTQ2NTE4YTk1NTE5ZGMxZjY2YmRmZjBhMmFkZmRiNWJmYTc2ZDA0MTYwMTczMjllNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OWQzYTI3ZmQzOTJlNjZmNDJiMjBjNjk1Y2Q5YTkwZDVkNGEyODBhMTk1NzI3OWFlYzFlYWM0OGYxMDkxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L330-L339",
+          "version": "repo-lines-v1:sha256:58a6152bdcab98fe3fa2b79514fcf6e73fe8313fcee54d3546e26c5f65001a8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MmExNDVjMzg3YTM4YzZjOGYwNWQ0NDQ4MWVhMjQwMjNjZTdiYWQ3ZjZhYjBkMDU0MDQzYWM3MmE2ZGY4YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZWYzOWRlNWJjYzI2MWQ1OTg4NDQyNmYwYzA2ODQzMTI4ZTk4YzM2MWE5N2E1MzA0MGI2ZTZkNjAzYzBkZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZGViM2FlYWU5YTgwOGFlMThmNjU2MDUwYWY0Zjk5NjgyZmVjYmNlNzAwZTk1YmEyNTY1N2UzMmE4ZjA2NGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

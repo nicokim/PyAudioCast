@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:30f9b5fefa2c76a015702159addca257cacae0973fd765254cad56678744162d",
+  "claims": [
+    {
+      "id": "claim_d5e80e299f9e456798e6903a520650de",
+      "statement": "Logging is configured once with env_logger: default level warn, overridden by the PYAUDIOCAST_LOG variable in env_logger filter syntax, and installed with try_init so an already-installed global logger is not replaced.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L18-L19",
+          "version": "repo-lines-v1:sha256:ea07e6a501502ebae71a1c5ca7fe6fefaf19e863c1bdefa1ae195b0b019dbe97:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmRmZmI4MmRmMTg3YWUzYmQwYWFkYzQwMjQwZjZjNzlkODVkNzlkYjFkZjdlNWU5YmNiMTRlZjRjNmY1Y2MyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzlhNzllOGQ5NTA0MDFmMjk4OTdjY2Q3YjdlNWZlMzI5M2QyN2ZiNDdlN2QxZmVlOGM5OWY0MDA2NDkxNzZkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzBjNjkyZGFmODMyNzkyNDdmNTQzMGNmNDk1MWY3YWEwODYxMTlhNzQ3ZGZmMjNmMjBhZDZmZmVmYjc3ZTcxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRhNTNlZGYyNWZlMWQyNmI1MmFlYmI1OGE3ZWYzZmRkYjBiNTJhMzk2Mjk5NDgzZTBiODk0OWYyN2E0NWI5OSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L15-L26",
+          "version": "repo-lines-v1:sha256:3972ad36e6ae459427c9288fb7557319b9b35f1f4de9be613ac2a8e843eebbae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YjVjZTM1MTFkYWYzZTcxYjkxNjZhNjg1YjE0YTM3ODI3MmU0ODM3OWJjYWY5NGE4MDIzZDQ1NWViNTE2ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NzkxMjQ1MzQ4Mjg5YzNhNzI1MTVhNWNjNGEyNjIzZTU1ODNlOTJmMTVmMzdiYzRhMDkzZjM0YTdiY2NhMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NjY1ZGFiYzU0MWNkYzAzMDJjMzQ1YWRjNzBmMTljZDhkM2E4YmE5M2NmODQ2MWY0ZDE2OTVlYjMxN2I4ZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7919ce29a2ac4f5c8649208bec98d875",
+      "statement": "The logger is initialized lazily on the first call to list_output_devices, play_file or the AudioPlayer constructor, so PYAUDIOCAST_LOG is read at that moment rather than at import time.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L15-L26",
+          "version": "repo-lines-v1:sha256:3972ad36e6ae459427c9288fb7557319b9b35f1f4de9be613ac2a8e843eebbae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5YjVjZTM1MTFkYWYzZTcxYjkxNjZhNjg1YjE0YTM3ODI3MmU0ODM3OWJjYWY5NGE4MDIzZDQ1NWViNTE2ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0NzkxMjQ1MzQ4Mjg5YzNhNzI1MTVhNWNjNGEyNjIzZTU1ODNlOTJmMTVmMzdiYzRhMDkzZjM0YTdiY2NhMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1NjY1ZGFiYzU0MWNkYzAzMDJjMzQ1YWRjNzBmMTljZDhkM2E4YmE5M2NmODQ2MWY0ZDE2OTVlYjMxN2I4ZGIifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L30-L31",
+          "version": "repo-lines-v1:sha256:73816627b81442106bbc1db6b5f890ca3147ed417bf8c5f01b3111bc0b2d76e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzNiOTY3MzQ0ZDQ1ZDU2NzlmZWNmMDdjYWU5YjU2YWM5NDE5OWJiYTQ1YTVhMzllMWM0MmY3NTY0Yjc5NDU0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5MzFlN2FlNjc5NWQ1MzdiYWM5NjVjMDk2MThiYzhkMTFjYWVjMTI0NjNkYTZkNzk3NjA0N2QyMDI3ZGNiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTU2NjVkYWJjNTQxY2RjMDMwMmMzNDVhZGM3MGYxOWNkOGQzYThiYTkzY2Y4NDYxZjRkMTY5NWViMzE3YjhkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWUxZWU4MjJhNTk0ZWYzZWU1YTExOWJmMjA2MTljNTI1NGFhNjJlMjU0MDliYWIwYTU4MmRlYTllYmIyNWVmNiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L52-L53",
+          "version": "repo-lines-v1:sha256:ed680b1049ad9d21889385cff942300bcb02ee848bad0284b80943c0dcefb801:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRkZjhkMDdiNjE2Y2RiMDc5NDUyN2M2NmUzMTI4YjIzY2IyMTI4MTc0NzIyZjM5YzYyYWUyZDYxNjA2YzcyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzA5MzFlN2FlNjc5NWQ1MzdiYWM5NjVjMDk2MThiYzhkMTFjYWVjMTI0NjNkYTZkNzk3NjA0N2QyMDI3ZGNiNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2U2NWMzZGNkMzkxMDdlODU5Y2Y0N2FlOWJjNTRjODkwZjg3NTIyZWE0OGNlZWFjYTkwNWJjZDEzZDVhYWNlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTIzMjhmYzNkNGFjMmY1YTU4NmEzMDgwNTFlYTZiNjU4ZDY5MGE4NTkwYzkyNGU3ZDFlODVkYjJkYmQ0YTZkNSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L222-L223",
+          "version": "repo-lines-v1:sha256:969997cc730c32b28d726a8e4eabcf8999a02dd880bbd44294e06bf909c5f071:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDQ1MDIzNzgzYjM2ZDJmZjE3YjM2ZTM3MjNkNjUxNmYxNWUzMjFiZDQ1YTFkM2U0ZTg0OTMwZjJlNGIyYzMyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZkYzJlZGU1OThkMzMyNTRhOWEyOTYzM2ZjN2RiM2IzZTBiMTIzMmE0ZWFiYjgxMDdjNzI0NjYzNTE2YzMwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEzNmM5N2U0NjA5ZGQwMDY2MDg3Y2I2NGUzNDVlYzNhYmI1ZDAzNmRjNTJjOTAwZjBkNjA3MmMyYWJjNDE5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFmODc2MDY2NGQ1MWZhMWIzNTExNTVlOWVhNmM0NzA4MGEyY2M0MjQzNWRkMjg3MTA5MzUxOWY5MjBkZmI4ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9feed76cea2945bba058d8cc0d4cf385",
+      "statement": "Log targets are module paths of the library crate _pyaudiocast, such as _pyaudiocast::device and _pyaudiocast::player, because the Cargo library target is named _pyaudiocast.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L8-L10",
+          "version": "repo-lines-v1:sha256:8fa6a1a06845ba6d6d29c57340ef8d5a1a2971378da65b1a16edc4460bbfba8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg0MzVlZjU5NGYzMzcwNzMwN2MxZmU1OWIwMTdmMjExZTllZThhMTVjODJkZDVlYWIxOWI3NjdhNmY3NGJlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY2MzkzNGMzYTM5ZjhkNWMzYzI2ZjE2NWU1ODc1MWVmMWE1NTNkNDFkNTRmZWExNWNiNjliYjJhOTc0ZmY1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWNkNzdmMTUxNzgwMGZjZDc3NmYwNzEyMjdkMTQ0M2FiMmRhY2U1ZDRhYzAxM2E0OTFjODE2ZWEwOWMxZTlkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTEyZmU0NDQ5NDlkZjZhY2JmOTAzZDdhOGIwNzEyZTMzYzBmYWY5MDdlYzlhNmQxNzg2ZDY2NWJjNjg1ZDMwZSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L1-L3",
+          "version": "repo-lines-v1:sha256:cb7d5ee9dacf8ad418d99259abfb85dd2fd2e5b290f33da4f7aff20707677a99:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgyNDU5M2VhNzEyYmM2OTdkYWFmMjIyMGY3M2QzZmQ2ZDE0MzRmNzUxMGViODI5NWNkNDExZTg2MDVhZjJlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjExZDFiNjVkMWZmODE3YzU3ZjA3ZmQ4YWNhN2YwNTM1N2M1MWE2ZGY3Y2ZjZDhjNjFhNzk2NDhiODRkMjJhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTUwNWEzNDMwZDljZTI5MTRhZDAyNjFhODM3NjYzMDUwYzZlYmM4ZjdmZjUxY2U4YzQ2Y2E1ODQ5OWUzYjY1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_83bc32717a1f40a9816e968c7791cac9",
+      "statement": "env_logger is compiled without its default regex feature, so the optional '/text' part of PYAUDIOCAST_LOG matches messages as a plain substring.",
+      "evidence": [
+        {
+          "resource": "repo://Cargo.toml#L19-L19",
+          "version": "repo-lines-v1:sha256:39a79e8d950401f29897ccd7b7e5fe3293d27fb47e7d1fee8c99f400649176d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzlhNzllOGQ5NTA0MDFmMjk4OTdjY2Q3YjdlNWZlMzI5M2QyN2ZiNDdlN2QxZmVlOGM5OWY0MDA2NDkxNzZkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzlhNzllOGQ5NTA0MDFmMjk4OTdjY2Q3YjdlNWZlMzI5M2QyN2ZiNDdlN2QxZmVlOGM5OWY0MDA2NDkxNzZkNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjA5ZDEzYjI3ODE5ZDg0MGE3MmRhOWY3YTNiMWYyZjMxMWEwY2RlZWIwZjcxOWQwN2IyNjIyYWNhYTJhOWY1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRhNTNlZGYyNWZlMWQyNmI1MmFlYmI1OGE3ZWYzZmRkYjBiNTJhMzk2Mjk5NDgzZTBiODk0OWYyN2E0NWI5OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_449256925a554e48a1fd2a1dddf2ea75",
+      "statement": "A player logs its stream failure at error level only once, when the failure is first latched.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L107-L116",
+          "version": "repo-lines-v1:sha256:4d7a372c41a370289ff5dcd684d420bcc767b10fbab0a83002b92779acd150ee:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzIwZTY2YjAwOTllZjI3NzQ4OWI1MDEzZTBhNjA5OGJhODZiNjRhYzQ4OWNjNWYzMTQzMGUzOGNiZDk4YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYzY4ZGQzNWU2N2ZmODMwY2RjNzRkOWNmZTdmMTc2NmRkNGRlNWY3MTRhMWY5Zjg1ZmJjODc1ZTRiZTRkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3M2E3YTQ0YjhmMzUzN2MxZDEwMWE0NzYwOGQxYzI1MDhiMDY0MzEwZGI0YmE3M2I3MzU2ZjA1ZDJiNTUyZGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c5f89ed6cb242b1adab61c8237d3dfb",
+      "statement": "Only a player's first recoverable stream error is logged at warn level; later ones, xruns and realtime-priority denials are logged at debug level.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L603-L632",
+          "version": "repo-lines-v1:sha256:f7244dd437b83d66bf0ddad24a9891efb2ad5f16657609e3eb3f9c33657ac5c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Yjc1NGVhYTBlZGYwNzM3NTE1ZTRkODNlODkyYWIwZTc5NmY3NWI4NDk4MzhiYTI5MjBjYzFmNjBiNDU4ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYjZiMWFmZDRiMGY3ZDdiMDUyNWNhZjJhM2YyMjczMDI3N2YwMTRmOWQyMWNjYjg2YjQ3MzQ3ZTQ2NWJiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjN2JmYTVjM2IzZTkyNjY0Zjk3NjM3ODI0YzVkZDRmOTkxNTU4ZWY3NmE0ZjFkMWViZjlkM2ZiZDYyMzlhMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0a14b813d0a42e58e98081d2541e1b6",
+      "statement": "Stream setup logs the caller format next to the negotiated device rate, channel count and sample format in an info-level 'Config:' line.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L404-L412",
+          "version": "repo-lines-v1:sha256:3adbd2b735566a65a0abc760e05f1e38a291d8ae0375831db0c8ec7486ac3b7f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgzOGM0OWMzZWVlMjY4N2UzZWVjMDgzMGEwZjg2Nzg4MTFiODY3MWZhN2Y2NDQ2N2E0YjJiNzBmMjViNzIwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU3NWM3MGQ5NDYzNjI1ZTEwNzlmZDhmYzhlZTYyYWQyZTkyYzQyYmVhYWJmZDg1Yjc4ZDhlMGE0OTc5Yjk0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDc0NTk4Y2M1NTgxMjEzMmRjMDA5MDdmZjMwMjhmMDYwMmU2MGQwMWM1NjljYWEwZDhlNDA5MmZiY2ZlNzkxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTk3Yzc1ZjgwNThlMjQ5YzhmMzUwMWY2YmM3MWU3YjgxM2U0NzQ4MWE3MDk2Y2I1NDZhMGMzZDEzMmFhYTI4YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85e75751380a4739a0456a78bbb9b05d",
+      "statement": "An unmatched device query is logged at warn level, and an ambiguous substring match is logged at info level together with the other matching ids.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L167-L183",
+          "version": "repo-lines-v1:sha256:aca52a7b4ec23db3475b602e9925fa56471a83f4192d363b554639e44383673d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNmM3YWIxOTA5MmU2NGQ3NzE0YTYyODUzZjNjMmU1Y2Y4NDUwMjJmZTE2YTk3ZGY4OWE3MTc1MGEzMzBlNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ODZhNjc4NjJjZTE1YmJiYmFjOTNjZjhlMGUzMzIyNDUxYjBhNzA3YTQyNWQ5YTU3NGNmOThiZWNjODk4OGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3ZmFiZTllODk2MTU5NGEzNzdiZjlhMzYzYTZhOTNkMDFlNTVjODFlNjI4OTA5NDc5MTEyYWMyZDk4YmQ2MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4ZjJlN2UxOTQ0YWJlZDdhNWRkMzVlNWZkYThkYmQ5ZTk4YTJjOWJmOGI2ZDcxMzFlOTBiZDBmMjZjZjNmMGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b30e6f2fada4c6a9ee107ffc9d8e596",
+      "statement": "Errors raised while opening a stream carry the device's host:id prefix, with configuration rejections reported as 'Config error' and other open failures as 'Stream error'.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L26-L52",
+          "version": "repo-lines-v1:sha256:447d68294e5c2302187797a5b7f2ec6825559eb1d6ed911ec40f366e0c676849:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNDBjOTI4MTE2MTg3NDUzYmZkMzI1OTY2NjNjNGYxMTQ1MDM0ZDU4YjE5Yzk5ZjYwNzQxNjlkZjIwY2M3MmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiNjQzNjc3MjA2MTMxNmIxNTY2MTJhNGVmOTA0NTZmOTZjZDhjMDkzOGRiNDY4ZjRlMDk5MDg0OWY5MTM1NGQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L381-L441",
+          "version": "repo-lines-v1:sha256:d9999b4136ad91fea4b331c51874fdb58b742dbc51b6d62a478cf9bd4396f16c:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4YmQzYjQwYWNkZTZkMWZjZDQxYTc4MmEyMDBjN2I3MzRhNDIzMzE4MzUyYTE5MmY0YmMxYWUyN2FkYjE2ZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxMTUxMzViZGYzNGI3Zjg0YjM5Y2NlZGViZDY5NDAzZGY4YmZiMTJkODIxZGYzOThlYWZhNjQ2MTZmNWUwNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlYWY4YWE1NDMxMWZlNjQ1OTQ1YmRkNjhjNDUwNTE3ZWQzZGNmZGVlNTUwNTgyNmE2M2U2ZDg0NDJhYzMzMGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwN2VlMzZmMjliOWFkOGEzOTVjMWQ0NjE5N2Y1N2MzODFjNTJkNmVjODA4NTA1YzEyOGQyZjY2NzJkM2ViNzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_966129d831ac4ae493dfc549eee7beae",
+      "statement": "A blocked write() or drain() fails the stream with 'Audio device stopped responding' when no audio callback arrives for 5 seconds while it waits.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L26-L32",
+          "version": "repo-lines-v1:sha256:859d9a0f5f0b3bee33f8eacb8ff48fddca07a328ad5591d4ec9793d2fca49ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmYjBhMmM3ODliZjdlMzhkZGFhNmRkM2Y2NDlmZDIyM2NkMmEyY2M4MWJjODViMjRiNmMzMjU2ZjVmMTRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3ZTA3ZDcyZmMxNWIxN2U0ZTUxYzU3Y2Q0Y2JjNWJhZDBlNGFlNGRlZmU5YTkyZWMxNWZlZDc1NDMwZTk3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc2YTQwMzk2NDk5NWM2MDFlODNhMTEwNDhjZTQ1NGMzMTRmNjFiYjEyM2RkZWJiZTk0MzMzMWMzMTYyZDEwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNkYWRiMWVkN2RmYmEwNTEyMjYzOWVjMWE0ZTM1NjI2YzNkN2Y5MjY5NDVjZGQxZjc5ZjU1YzY1NDcyMjMxZCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L538",
+          "version": "repo-lines-v1:sha256:81c015677cd9cabf310193f4c9f1a96446e1871d14578d0e2e03cd66cb06ba43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxZjcyNDkxYjdiMDRkZjJlYmY2ZjVkNzU4M2M3NDRiZTk1OGQxOGQxMTNkODUyYzNjNzU3MDEyOGFjNWY1NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2440d734b7724387901a56e674afeb65",
+      "statement": "cpal DeviceNotAvailable, StreamInvalidated and HostUnavailable errors fail the stream immediately, while other non-xrun errors fail it only after recurring for more than 5 seconds without an audio callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L603-L633",
+          "version": "repo-lines-v1:sha256:c84dffe0b31e4d94e88a33b6b6a682eef09319d3d563d3f9e0659dc3710029a7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Yjc1NGVhYTBlZGYwNzM3NTE1ZTRkODNlODkyYWIwZTc5NmY3NWI4NDk4MzhiYTI5MjBjYzFmNjBiNDU4ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNjczYWJkNDU3YTk3ZWVhMTdhNjAwNjJlYjBmYWVhNmJkZjA5NDg2OGNjNmI4ZjhjMGViZGEyZjYxZWQ0MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYjZiMWFmZDRiMGY3ZDdiMDUyNWNhZjJhM2YyMjczMDI3N2YwMTRmOWQyMWNjYjg2YjQ3MzQ3ZTQ2NWJiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4ZjBiOWQ5YzgxMWQ2ZjZiYTE1MDM3MzVkNTJjZjI5NmQ4ZGZlMWI1NGU4Nzg5ODQzNDQ2YWI4ZWFiNjJhZDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c6b2d2585ef4300a1eb8d07e5d210b0",
+      "statement": "play_file logs a warning instead of raising when a WAV file ends before its declared length.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L72-L80",
+          "version": "repo-lines-v1:sha256:6f389f55574a49537eba536b886c0f190836b40dc27d2257b347df504c48fe7a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkYjNhODg1M2MzOWE3NDFjNjc3ZDVmNjY0NTVhYjc1ZjRiZTIwYzAzYTBlNjY2NDRhM2M1Njg1YTcyMmI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWIwYzgxZTBjODhiZWM1OTk2NDZkN2FkNDkwZmVkMzQ2M2IwYzFkNTBjYzNhNWY2MDg1MzdkMTYwODFiZjRiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWUwNjE3MjRjODNmNjU5YzljODQ3NjE4MzFmYzhlYjQ5NzM5MmEwZWFjMTZkMmMyODIyM2YxYTAzNTU1NTNmNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a6ceec2781c4ff3a8419eeff5b3bf98",
+      "statement": "When a drained stream left an odd byte or partial frame pending, the next write logs a warning and drops that remainder.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L179-L192",
+          "version": "repo-lines-v1:sha256:78b2392ea12dd356406fc1bb709f2259c11a9addd45b3f43c396372ed4a6de9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmM2MwYTY1Yzc4N2Y5NDllNGQyYzRjMjNkNjkwYWZkOWEzYTBiNjI1ZTEzYTQzMjdkNjBiYjI5N2YyOWU1NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYzZmZjZmMWZmZWJjZmI0OTI4M2M5MTI2NWY5MjdmMWEzYmNmMTQwMDU3NWJiODM1ZWJhMmU4MTgwMmVhMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiOWQwY2Y2ZGNjZjYwNGZlZThhNzM5NWVjNTU0MGNlN2QyOTE0Y2U4YzgyN2RlM2UwYmE2MDU1Y2MxMDg3MDgifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L470-L472",
+          "version": "repo-lines-v1:sha256:c0eca3c5cb6ee9e8959069020af33cfeb7008ee865ebaf562894515cf95ce03f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2I1OGYzYjgxYzUyZDZhNzdhZjk3NjI4ZGVhMGU2MjdkMGVjNDc0NzllYmE1Mjc1ODliOTY3NmY4MGQ2NjM5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y3ZDQzYTgzMWIzNTM2YzFhNTYzNmYxOTdhNjk2NDdiMzFiZjk0NDYwZDkzYWI3YzljZDViMzI2ODI2NmIxYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQxNGZiNTRlZTM5ZGYxMzgyZDc0YTg4MjViZmU1MDY0ZTYxZmFjMmQ3ZTViZTEzZDcxOGI5MmU0YjIyZWZkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGYwMzhmYjIwMzMyOGVlYmQ1ZmY0NjI0YjM4NjE3YmIxNTFhMmIzNGFlNjM2OGMwMDRhMTA1ZDg4NjQ2MTY5NCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5dde9778e0246bfee45b5d096989618e18f9a3f27530f27f784538a61dc30f99",
+  "claims": [
+    {
+      "id": "claim_624f25f1890247f882a256b476dd5a70",
+      "statement": "The CI workflow runs on pushes to main and on every pull request.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L1-L6",
+          "version": "repo-lines-v1:sha256:dc7fd52cf85b9e3784f8ad26802a64304645884226d82bf781af3bd93d7c2730:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZlMWIzMmZhMDkwNzlhZTJmMDAwMWZmZjBlY2EyN2I0OTg1OTU3ZDRlYjQ4NTc5MjliM2NmMDU4ZmFhZTU0MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBhODYxMTcyZTY0ZGVmN2E1NTAxN2ZlZDc5YzgyMTY4YzA2ZTc5ZGM2ZWE0YjQ4NWIwZmQ3ZjU3MDFjZDE1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzlmMmM3OGNlMWM2MjA1N2MyNzZmYWM5YjlhODMxYjE2OGYyMTZlNWQxMWQ0NDcyOGRhNmQzODc5Y2E4ZTZlNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_de8eaf4eefbc4ebf9131a177628692d5",
+      "statement": "The rust job fails on any rustfmt difference or any clippy warning across all targets, and runs the Rust unit tests, with the lockfile enforced.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L9-L32",
+          "version": "repo-lines-v1:sha256:40c08a1bedd2dcf3698f806f3c0429ab3fbfa907d6f56ba39af47a30b1e366b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4ODYzNDNiNGZhZGU5OWEwYzBiYTcxMmIzMGI3OTc3YmY0ZjliMTVkOGY2ZDk1MzViYzhiZGM2NmFjOWFkZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3NDA0Y2Q0MDNlMmQ3NTdjZjFiOGJlNjZkMjc4OWM1YjQwMmU0ZTM2MmVhZWRjMDlhNDc3MGQ1YjVkOThkMjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYmUyODEzYjUzZjM3NGM0NmM5OGMyYmQxOWQ1MDg0NWFmZTUyYTdmZTE4ZjUxM2RkNjVhYTQxYzliZmU5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyOWJjYzBjZjY5OThkNTY3MGQ2NjA3ZDdjMWNkM2Y4MTZjZThlMmViMGEzMTJlOTgwNDI1NmU4MDA4MDk2ZmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e3a9d38ab85c4b4291827602b13c2d65",
+      "statement": "The rust job installs python3-dev because the Rust unit tests link against libpython.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L15-L17",
+          "version": "repo-lines-v1:sha256:3f3d3ef6358d17e944823f458a48dc91ba9ea3969be43593c0b21a90ebd5c742:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQ2YjFiY2NkNjRmNzM0MDY4YTViYmUxOGQyNjUwNDE4Y2UyZTM1MGM2YWI1MTY5NzBlMTkyZmVkOTEyMDA1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2U1YzlhODg0M2VhZDlkZmQzNWU0NzZjYmYxMjllY2I2YzZmNWQyOGQwZmExZGFiMWVkODMzM2NjYTY3N2FlYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDg2NmNhY2VmYWMzMmJjOGMzOTcyM2E4YjZmZDRhMzQzMzcwZDhlZmQ0MDNkYTU3ZTFkYWExYzM5N2E2ZDUyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjQ0ZmE1YWRhOWQ4Mjk0YjBlYjI5MGRiOGQ3OGM2NWYzNTk2YTExMTZlOTRmZTBjMWRmOTg4NjY4ZWRjYWZkNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_16782af4d62e42158f67a140880d800b",
+      "statement": "The msrv job only runs cargo check on the Rust 1.88 toolchain; tests are not built or run on that toolchain.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L34-L48",
+          "version": "repo-lines-v1:sha256:3440fe2f5ee98ab3644f1f158da548ce94de04f167b0f9f689548da7873b0d01:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiN2M5MjgxMDZlY2ZkNTk5MmE3MTM4MDdiNGQxNzYzYWU1NzhmZjE3NmQ4NTkxMDc3N2E0Yjg4YzBkMGRhMzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZWE4ZDAyYTUwNzFhZmZhZWM0OWU2MTA1M2RkZjAwNDE4M2JiMDU1MDQ3Y2ZjN2E1NmMwYTRmNzI2MjE1MDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4M2U2ODM1ZmQxNmYwYTQ0ODM1MTc3MDhlYWYzMTBiN2IzODhmYjA4MzlkOWY4OWI3ZTA3MjBlZTBmYTM0MTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiNmQ1MzUzMGU0Zjg3ZWE4ZmY3M2ExNmZhNDU1OGExNjlhYWQ3ZTMzYjQxYWNhMjk5OTA2NGU3NjNhZjFlNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c18d2b14157461e91598c955c408947",
+      "statement": "The python job runs on Ubuntu 24.04, macOS and Windows with Python 3.9, 3.14 and 3.15 without fail-fast, pinning Ubuntu to 24.04 because ubuntu-latest has no Python 3.9 build and testing only the oldest and newest Pythons because the wheel is a single abi3 build.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L50-L59",
+          "version": "repo-lines-v1:sha256:ec7525f49dde769a27b004bd6eb3aaf177bc0317e633bbefdc11f73bfb2e2084:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmOWM5ZDBhMDNlYjYxMDhhZDY1Yzk5NGFjYjA3MDQ0OGZhMzBiMTYzZTZiNmUyYTQ5ZTY4MTRiMTViYjcyNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmYzk5MWNiODFiMmEyMDBjY2I2NWU1Njk5Nzc2YzMyNjNjMmMyNjk0NGExMDFjYjJjM2FkZTcwY2U0YzM4ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhMWM5ZTVjYjYxY2E4NTA0MjkzYjgxMjlmNGQ3MWI1ZTE0ZmFjMWU1ZGU2MmU1ZGQzZWY2Mzg0YmEyZGVhZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4cadac0c737841b48def563ab36ceded",
+      "statement": "On Linux the python job installs PulseAudio and the ALSA plugins, makes pulse the default ALSA PCM via ~/.asoundrc, and starts a headless PulseAudio daemon with idle exit disabled and suspend-on-idle unloaded; if the daemon fails to start it only warns, and the audio tests skip.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L63-L80",
+          "version": "repo-lines-v1:sha256:63b12befb771e8fd48faea54633f7620555b37dd6dbe719b5ee258978b66cc91:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZTc1MjIwYTc3OWE2MDc4Y2NlNDg0YWU1YmM1OTlhMTUzODc2YjU3MDc3Yzk3ODA3ZWJiN2M0MGJhYjM0NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNTU5NzljZTczMDIwMzNlNmIyZmQ3ZDg4ZjUzN2EzYjhlMDkxZWEzMDVjODExZmZhMTI3NGJmNTc2NGVhNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NGRkZjRhODc5ZWY1Nzk3NWFiYmNhYzBlMjIzY2Y4ZDE5NDExZWE3N2RjYWIyMThkZjdjMWNlMjljYWIyZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4bc2532770f42d4887c282ed20b5583",
+      "statement": "The python job builds and installs the extension with maturin develop without --release, so the pytest suite runs against a debug build.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L90-L117",
+          "version": "repo-lines-v1:sha256:23c48b6afd75b9a1fef128a064af26ff337546f485dc71c2777b5b9ee7e3df26:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4OTVhZjZmZGU5MjU4Yzg2YzM2YmEzYzEzN2FkMzU2NTYzNGFlYWQwMzIzZGQ1ZTc1YTZhMzM5ODZmZWJhODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4YTgwYmUwNDIxY2M1MGEwNjA2MTQ2N2EzMjM3Zjk5ODA3OGE4ZmQ4OGRlYWUwNzJjYzMxMWZlOTAyYzc3OWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA1OTdhMWNmMGZhZWM4NDhiN2E0NDMxNTFkMWVhNTQzOWVkNTFlYTVmNTk3ODdhOTFmZmU0YzVjOTgyMDdjNmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0NmEwOTAzYTNmYjc2NThjMTk2OWI0OGE5NTFiMGYzY2JhZmU0YmUzM2YxMmFmN2QyNWM4MmJkMTIyZjljOTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ada1b3ab6f254ed3b5a2df8ca5f5a5f7",
+      "statement": "On macOS the python job selects the Null Audio Device as output because the VM's own sound device sometimes plays streams about 60 times too slowly, breaking the timing tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L119-L127",
+          "version": "repo-lines-v1:sha256:54aff01b265cf656e22ee4e57eda1c0980a07f34a8c4e9b813a7514c1a8417a4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNiMmFjMGE1ZWZmOTJhMDUwOGUyZWVlZWI4ZWY5NTg5OGJjN2I4MmFhNzU1NGYwMTRiMzA4MGNiZWRjNmEzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q1OWZmOTVmZjFlYjA2MWM3MzM3NTI0NzBhNWEwMTc0ZTUzZjRkOWU0MzkzN2QwOTViMzA0OGFlOGI4MThiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzk5MjJmMGUxMTlmMDc5N2JjNjNlY2Y1NDU3YWYxZDAyM2Q4NzllYmZkOThiZGU5YmY4YWI3MjA4NjFhNzM3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM3YjEyYzE4MDhiZmI3MTFmMzEyZmM5NWQ3NjZiNjJmMzI2YzNmNmE4NjlkNTkwYzkzMzFkZDA3MDg4MzU0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e8ae8cee50e4fe5ae3ee1d4a8d9433d",
+      "statement": "Coverage is collected by pytest-cov for the pyaudiocast Python package and uploaded to Codecov only from the Linux Python 3.14 job, so it measures the Python shim rather than the Rust core.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L129-L147",
+          "version": "repo-lines-v1:sha256:0cbe10e383fc1b87c1147ad914d037bbb2840b96377b92d0ad55994b408d99b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYTg5ZWRhYmVmZDE2YmIzZGE3ZjNiMjg2YjY0OGZhMTQwOTQ3Zjc0NWE0ODc0NTc0MGVlN2Q5Y2MwOTZjZDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiM2U3NGRlYzBlMGIyYThmZDJlNDJlNGUzNDVlNTA3YzJhMzYwOTRlYzdhYzQyYTdjYTMzZDBkYzJhYzIwZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0MWFmMjc3ZDdmOTBhNjRkOWYxNTZmYWQxZjBkNjBhOTZhNmNhZWViNmQ5MjVmNmFlNjAwNzYyM2UzM2YxZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://pyaudiocast/__init__.py#L1-L5",
+          "version": "repo-lines-v1:sha256:297e4b2bf79196a932cb9d5c0edc457a8d9db0a3511957a726cd7afa1d3a3c2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JlNWUyMmUwNTBkNWY5NTVlYWI4MmJjZTNmODM3MjNjMzc4N2I1OTFlYmE1MjUwYzI2ZGMyZDUyZjc5ODI3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJjNzZmMzc3MWU5YTVhMmUxZDNkYzUzYzEzMTY3N2I2MDViMTUzOTU2ODE0OWYyYTQ1ZjFkYjZhNTBhYmZhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf5c69390b0c4f0fbaf9bc242c9e99af",
+      "statement": "Pull-request CI never builds release wheels or the sdist; maturin-action wheel builds and auditwheel repair run only in the release workflow triggered by pyaudiocast-v* tags.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:74388c6429234c6add07d5b8c50ce05ec4009370cb46ef1998203b3d54ee39ea"
+        },
+        {
+          "resource": "repo://.github/workflows/release.yml#L21-L36",
+          "version": "repo-lines-v1:sha256:cc8898ba99f4eb098999f1a99f522332d4e574e13175580ece49879b918a7179:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYTI0MTIyMDE5NDZjY2VhYzk1ZGU1YTAxODA4MWM3ZDJhOGU0NzNiMDkyZjZiOTNiZWU0MDFkOTRhMDJjNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MTMzM2RmNjZkNTk1YzYyMjM3NDEyZTdkMTYwN2I1Y2ZiMDExNDdmMGYzYTlkYjdiN2FjNGU3MjljNDNkMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyMjJiOGM2NDJkNTE3YTAyY2Q1OWM2ZTJiNTIyYzhlNjZlYTg0ZTM4M2NkZWEzNTdiMzRlNmNjNzE3ZjUxYzQifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/release.yml#L3-L6",
+          "version": "repo-lines-v1:sha256:0c18e1c94b63735005b062357531339d62a12cc3528186f25429277e3210f3c3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTk2ZGM0ODE0OWY1YTgzZDFlZDZkYmIzOWJiYzdlMmI5MDJhYTNkMzRkNmJkNWFlNGIyOTFiNjhkZjBjYTc5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI0MGQ3M2E4NjYzOGY0YzA5ZWU1YmI4OTY1NzFkMDE1MmNiN2IzZDQwMzc1ZmM5ZDc4N2M1MTQwMTk3MGQwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWY5Y2FlNDE0MThhNWY4ZjRhMWE4MjlmZGRkMDJiZjc3NDgyZTBiOTAyZDNjMGI0ZmZjMTFhODc0ZmU0ZDFlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2UyNzQyMjRlOTgyODgxZDk4MWI4YWRkZmRkYzk4ODBiMmYxZDA3ODAzMTVkNzBkNWQ1MTkxYzc1Zjk1YTViMiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

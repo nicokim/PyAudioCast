@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:923283e9877b73656ecefc8cd5f329889f8a06750c2c363e1528a69fd6744081",
+  "claims": [
+    {
+      "id": "claim_699188a5bf0640a09a12f27277b2bc6d",
+      "statement": "Blocking write() and drain() loops poll the shared atomics every 5 ms rather than waiting on a condition variable, keeping the audio callback lock-free.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L21-L23",
+          "version": "repo-lines-v1:sha256:b2ed4a4e1187b1449ccd1f849dc0f95dab05db8d4d42272dc372febc4713a6e6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzIyODEzMzVjYmU0YWNjYjk5MGE3MmI0YTlhOWFlMDhiYTA3Zjk4YjA0OGFlZDQ0ZDE5ZDI5MmIxODUyZThkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJmYThlYTczYjU4M2Y1ODgxYWFjYjA1NzUxZmYxYWJmYzQ5Mzg3MzI5ZjFkMDY2ZWQ2NDQ0NzBlZmJmMjY1NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZhNTAyZmQ2ZGM0MWE3MmU2ZDY5NmVlZTdjMWYxZTFkNGNlYWMzODMzMmQ1ZjljYjJlNmU2ZjUwZDQxODVkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjk3NmEzMzYxOGFhNjFjNmI5ZGIyZWNiNjBjN2Q4YTBhOWJiZmQ4ODgwY2RhM2VlMmZiMmQ4MmFiMDFkOGFmOSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L528",
+          "version": "repo-lines-v1:sha256:133439fcc7a89412cb941d29b11c887fd82464bca22322fce34bbd365176211d:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTg2ZTEwYWExNjBkYWY5Mzk2MTBlNjI5ZDNkNWU5ZDlhNDc4MGU0ZWI3Njc4ZGFjYTY3NWE3MmI1MzA4M2Y2NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzMyNzczNjYwMmZmZGNkYWZiNTUyNjU2MmE2ZWQ4MjJiNjM4MTEyYzZkODgwNzQ2MjA3NWEzMzY4YjgyMzc2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTk5YmRlZmVlYWNhNjM0MGUwMjkwZGM4NmU4ODljODlkNWUxODlhYTViYTQ0YjU4NWIzYjcwNzM0ZjRhNjJkOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODE4MTBlMjQ4NTYyOWQwMWYwNzA1MzM1NWY4MmZlZjY4ZTJjZGRjYTk2ZjYxOTc5Nzk3M2YzYjQ2NTUyNmFkMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_092c2fd22a7a41aca925c05ac318c715",
+      "statement": "Each blocking loop runs the closed/failed check before every 5 ms sleep, so a stop() or a latched failure is noticed within one poll.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L281-L300",
+          "version": "repo-lines-v1:sha256:886d1d7fb75903786c046970347b3892231de650fd445afd11a2704f07d41580:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZjVlMWI0YTA2N2JjODQ2YmE1N2UxNWZjMzNjZDljYTQ2NDViZTZhNzkyOWVkYjdiYTc2NGJmMjdhOWI4MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhZDQ2OWY0M2EyOWRmZTZkNDA3ZDg3MDc1YTg0MDI5MmU5ZGRjZmQzZjJhOGJjMGM1ZjliODU3NTUzZDEyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViOWEwOGJjMjlmNmViZWJlOWE1ZjAxOTAzZDk4NDVkYmNiNTg0MmE0NTVmMDdkNWY0MDAyZGFjMzJhNWM2MDUifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L477-L503",
+          "version": "repo-lines-v1:sha256:d6b2d2b5950d9b20b7f3208a8b9777c75c4394f3d58fa2939ed29972144e40f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGZiNTcyMjE5YWEzNTQ2NTE4YTk1NTE5ZGMxZjY2YmRmZjBhMmFkZmRiNWJmYTc2ZDA0MTYwMTczMjllNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OWQzYTI3ZmQzOTJlNjZmNDJiMjBjNjk1Y2Q5YTkwZDVkNGEyODBhMTk1NzI3OWFlYzFlYWM0OGYxMDkxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_99ea9c9577ae49ce9d2f635bc1306cee",
+      "statement": "Stall detection fails the stream with 'Audio device stopped responding' after 1000 consecutive 5 ms polls (STALL_TIMEOUT / POLL) without a new audio callback.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L26-L32",
+          "version": "repo-lines-v1:sha256:859d9a0f5f0b3bee33f8eacb8ff48fddca07a328ad5591d4ec9793d2fca49ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmYjBhMmM3ODliZjdlMzhkZGFhNmRkM2Y2NDlmZDIyM2NkMmEyY2M4MWJjODViMjRiNmMzMjU2ZjVmMTRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3ZTA3ZDcyZmMxNWIxN2U0ZTUxYzU3Y2Q0Y2JjNWJhZDBlNGFlNGRlZmU5YTkyZWMxNWZlZDc1NDMwZTk3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc2YTQwMzk2NDk5NWM2MDFlODNhMTEwNDhjZTQ1NGMzMTRmNjFiYjEyM2RkZWJiZTk0MzMzMWMzMTYyZDEwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNkYWRiMWVkN2RmYmEwNTEyMjYzOWVjMWE0ZTM1NjI2YzNkN2Y5MjY5NDVjZGQxZjc5ZjU1YzY1NDcyMjMxZCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L527-L538",
+          "version": "repo-lines-v1:sha256:81c015677cd9cabf310193f4c9f1a96446e1871d14578d0e2e03cd66cb06ba43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxZjcyNDkxYjdiMDRkZjJlYmY2ZjVkNzU4M2M3NDRiZTk1OGQxOGQxMTNkODUyYzNjNzU3MDEyOGFjNWY1NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8dda6a62373149e09cbbff096a52222b",
+      "statement": "Stall time is counted in polls rather than measured in wall time so that a frozen process, for example after Ctrl+Z or in a debugger, is not mistaken for a dead device when it resumes.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L30-L32",
+          "version": "repo-lines-v1:sha256:bee69bbfa6c0b6ada24767b2c81832ba7fdad5f927fdbed6c7222d20a67e3e7c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y0NjRkYzkwMjNiNDJmZGZmYmM0N2M3OWQyY2EzNjRmNzZjMDllYjkzYTljYWRiYTZkYzcwMmFlYTk1ZTRiMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3ZTA3ZDcyZmMxNWIxN2U0ZTUxYzU3Y2Q0Y2JjNWJhZDBlNGFlNGRlZmU5YTkyZWMxNWZlZDc1NDMwZTk3YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDcwYzBkNjhiZjc1Zjk1ZjNhYjc1OTgyN2I5OWRhNTVjZGU3YTU1NGY1ZTYwYWZmMTgwOTlkNTU4MmEzNGU5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTNkYWRiMWVkN2RmYmEwNTEyMjYzOWVjMWE0ZTM1NjI2YzNkN2Y5MjY5NDVjZGQxZjc5ZjU1YzY1NDcyMjMxZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9cd8dc352a2747cf964ed4476d81a804",
+      "statement": "The 5 s stall timeout is deliberately generous so that slow device start-up such as Bluetooth is not flagged.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L26-L29",
+          "version": "repo-lines-v1:sha256:0c20416541a0bda6fc1c8d7251f0b83755dfdfd259d68096e422b4e66e5c25da:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFmYjBhMmM3ODliZjdlMzhkZGFhNmRkM2Y2NDlmZDIyM2NkMmEyY2M4MWJjODViMjRiNmMzMjU2ZjVmMTRmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODlhNjQ2M2FlMGYwOWFhYTk1MmI5YjU5NmZlZjhlZTczZWRhY2NkN2RkYjFmMDY0MzAwN2QwYjM0YzUyN2FiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc2YTQwMzk2NDk5NWM2MDFlODNhMTEwNDhjZTQ1NGMzMTRmNjFiYjEyM2RkZWJiZTk0MzMzMWMzMTYyZDEwYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVlNjliYmZhNmMwYjZhZGEyNDc2N2IyYzgxODMyYmE3ZmRhZDVmOTI3ZmRiZWQ2YzcyMjJkMjBhNjdlM2U3YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2ba61b5b1df43f8b17b7a94063b2d98",
+      "statement": "Stall detection runs only inside Waiter, i.e. while a write() waits for ring space or a drain() waits for playback; a write that finds room or an idle player performs no stall check.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L477-L503",
+          "version": "repo-lines-v1:sha256:d6b2d2b5950d9b20b7f3208a8b9777c75c4394f3d58fa2939ed29972144e40f4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxOGZiNTcyMjE5YWEzNTQ2NTE4YTk1NTE5ZGMxZjY2YmRmZjBhMmFkZmRiNWJmYTc2ZDA0MTYwMTczMjllNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4OWQzYTI3ZmQzOTJlNjZmNDJiMjBjNjk1Y2Q5YTkwZDVkNGEyODBhMTk1NzI3OWFlYzFlYWM0OGYxMDkxZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L507-L546",
+          "version": "repo-lines-v1:sha256:9e23a59a68ebab0a987a37c2522b4579473a85f708d05ed9276fa72db086453f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmMWFiZGVjODg4NDE1NDI3NzEyMTk2YmVhZTY2MjI3YzdjNGIyNzFlNThmZWNlNmQwZWMwNWUxYWUzYzhhMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2MDA2NTI2ODdjM2VjZDMwYjdkZmRhMzdjM2M4MTNkMzg4NjE2ZTZhNmUzNWJkOWQ4OWNiMDk5ZWI3NzQ5YmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e04b65113b242d192bc0c8b4c00d935",
+      "statement": "The cpal error callback only logs xruns and realtime-priority denials, fails the stream immediately on DeviceNotAvailable, StreamInvalidated and HostUnavailable, and treats every other error kind as recoverable.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L603-L612",
+          "version": "repo-lines-v1:sha256:84cc6828ee08539bc2abb9f382510606191eefdcca48e4ec5097a5014611bacd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Yjc1NGVhYTBlZGYwNzM3NTE1ZTRkODNlODkyYWIwZTc5NmY3NWI4NDk4MzhiYTI5MjBjYzFmNjBiNDU4ZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YjQ3OGRiNDRmNmE1NzMyY2E2MDhiZDIwZjA2NTllOTcyNGVkNDA5ZDQ4NGM4Yjg3ZjIzOTQ0NTMzM2MxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmYjZiMWFmZDRiMGY3ZDdiMDUyNWNhZjJhM2YyMjczMDI3N2YwMTRmOWQyMWNjYjg2YjQ3MzQ3ZTQ2NWJiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NGExY2RjYTU4MjBmODQ5NDQxNmNmNWNlZmFkZjgwZWRjMzNlY2ZlMzE2ODhjNTI1OGFiNDJjMzc3NWI0ZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8b007e6a93ee4226936b293beaf28098",
+      "statement": "Recoverable errors that keep arriving with no audio callback in between are throttled with a 50 ms sleep per error after 1 s, because cpal retries in a busy loop once the server has dropped the stream, and fail the stream after 5 s.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L33-L37",
+          "version": "repo-lines-v1:sha256:e49da3d03e28395ee8bc825ee6c145bf6d2269f8a715c8ee90479a70d3a52480:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWZiOTc2MDNjZjMyM2EwMThhYjA2ZTM5NWRhZGZhMGRlNzVmMjQ0OGY3NDAwMjU5MjUzYzMyNDdmYjVkODVmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDI5Yjk3MTU0NmM3MGM1ZWMzZWY4ZDFhMDA0MzMyZDUxMGIzZjRiMTRkYjMwYjEwMGU0NGRiMDhmNWEyOWEwZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVlNjliYmZhNmMwYjZhZGEyNDc2N2IyYzgxODMyYmE3ZmRhZDVmOTI3ZmRiZWQ2YzcyMjJkMjBhNjdlM2U3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWJmYTcxMmU5ZDM0MzE1Zjc1MjA4Mzk3NGM1YzIwZDg5ZTFhYjA0MGI2YTdhY2IyOWY5YTkyNWI1NTlhM2M3NSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L609-L627",
+          "version": "repo-lines-v1:sha256:e85d526ff6fe7e310b2d61730f6f9f78d2e33919251bec5494e0e6ec1ea39f0a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3Nzk1NjVlYTBkZjgwNDE2ZWU3NDQwYjI3YmUzNDYzOGY3MmZmMjAxZjYyZGU2M2VhNDJmYjI5Njg3NTgzNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyZjdjNDlhNGI4ZGMyNTNkOWFiZDkxNjk4NGRmY2ZiOGU2Mzc0ZmYzNTRkZjlhNTJmNDgxMTBlZWE3ZTM0MGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwODdhOWYzZjZmYTJjY2QwZTg2NzE4Yzc1NWQ5MjFkNDFmZjlkYTNhMzMyM2QxZmEwYTM1NTY2MGVjZjMyODkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0ZmQ3NjEwNmNhYjQyYWUxOGM4M2ZhNDdlNTAwZDkyMDE1MWFjZWZmMzYxYWEwYjMwNGIwYzM3YmUxY2ViMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2940de6bd0047a2be9472643256c0ba",
+      "statement": "The error-throttling clock starts at the first error since the last audio callback, so a process resumed after being frozen gets a burst of errors and then recovers instead of failing.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L588-L590",
+          "version": "repo-lines-v1:sha256:f38adffd4370ebf68a98a3e3fc325c295c4689f08294b06d05991d66a4036437:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjUzODZlYzY2NTBkYjdhMTgzZDBmMjYxNDMxNzg5MjUyODc2ZjZmOGMzODM3YTFkYjY4ZjdmZTk5ZjZjOWZkZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzljMWE0ODBjMmIzYzI5NjJmM2ZmZmEzMzIxNDBhNThiNTg4NDFiYzY4YzdlMjJiODM2ZTcyYWYwNTdkMTg1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDI2YjY3ZTg2OTUwZjQ2NWZmMDNjZDY2NGE4YTYzOTNlMmFiZTFiYTVjODk4ZmUzOTdiZjY1ZThhMTFjMWE3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTU5NWE4ZjZhZWRhNWNjYTUzYjJiMmM1NDI4ZmQxY2YzMjBkMWNhM2NjNjJiM2Y2ZTE2YjVlYzIzOWRmM2EzNyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L612-L621",
+          "version": "repo-lines-v1:sha256:d39fe884abd96fd88b9b7dfc2d1c15c86edb2d8fb3208abbd54380e19d5baf28:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YjQ3OGRiNDRmNmE1NzMyY2E2MDhiZDIwZjA2NTllOTcyNGVkNDA5ZDQ4NGM4Yjg3ZjIzOTQ0NTMzM2MxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxNWI0YmY5Y2NiZTZkMmJlMjg1MzM2ZDFkMTY0N2ZkYzc0YTA0Y2MxN2IyZjg5ZTYyNGZhMDgxYmY1NDZhN2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMTZlZWMyZDRlZDRjMmY0OGY2MTNjNjIyMWFkMjk1OWQxODhlMTE4MTc2NWY4YTgxZmIzNzZmMTk1ZTgxZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhYTQxZDQ5YWM4YTA0YWMzZTMyNDk0MzVlOTgyOTZiYWExODM2YjAzYzM0NjNjZDlkOTAzNjgzYzE2NTg4NDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_912e1a737fc34a65b1b71d1493846147",
+      "statement": "Only the first recoverable stream error in a player's life is logged at warn level; later ones are logged at debug level.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L627-L631",
+          "version": "repo-lines-v1:sha256:06667bbcaf627627b93062b387d47b9054b32b2caa3eba06456ee281e5729532:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJmN2M0OWE0YjhkYzI1M2Q5YWJkOTE2OTg0ZGZjZmI4ZTYzNzRmZjM1NGRmOWE1MmY0ODExMGVlYTdlMzQwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGMwNGViMTAwYjU3MTJkNTI5ZDk0ZTY5YjJjMzFjZGIyMjZmNjhkODJhNzgwMTRjNmUxNzc2MTlkYzkxMjM5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWMxN2U2N2Y2NmI1Yjg4YmRmMzdmMDAzNzNkMGFjZjIzNWQ3OTA4MzkzN2NiMzY1Y2IzOTgwMzM0NzJlYWRhNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8eb02657f8349b1888cd2ca704e331b",
+      "statement": "fail() keeps only the first failure message and stores it before setting the failed flag with release ordering, so a reader that observes the flag with acquire ordering also finds the message.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L107-L127",
+          "version": "repo-lines-v1:sha256:15035e6949dba163b79c84984785ef4cee2c2b338d3ad381bc02aa4a5e04cbd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzIwZTY2YjAwOTllZjI3NzQ4OWI1MDEzZTBhNjA5OGJhODZiNjRhYzQ4OWNjNWYzMTQzMGUzOGNiZDk4YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYzY4ZGQzNWU2N2ZmODMwY2RjNzRkOWNmZTdmMTc2NmRkNGRlNWY3MTRhMWY5Zjg1ZmJjODc1ZTRiZTRkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c81dd1758d14009b1a59e7f008be79d",
+      "statement": "check() raises RuntimeError 'Stream error: Player is closed' for a stopped player and 'Stream error: <first failure message>' for a failed stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L14-L24",
+          "version": "repo-lines-v1:sha256:9566c4cbb57a6381e96282b3d99a444dfb4edc54b92dddce8ee1ad3a8c194328:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmYzU0MjJkY2FhZjQ0M2VkYjQ0OWI0Y2Y3ZmFkNDI1ZDhiNzQxYTViNzg1YjZlNGIwYjgxMmFlODRkZTdjMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMGQxNmVhZGMxNWVjZWRlMzg5ZjVhNTNmMTVkYTEyNjQ3NDJlMDhiMzBmMDRlNTQyNjQyYmUxMTY4ZGYxYmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGQyZDU0NjVhZGQ3Mjc4ODI1Yzk2MTBhMmRkNjdjZDc5NDQ2NDliZWQxYWMzOTNiOTdlZjg5OWM5NDY1ZTcifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L118-L127",
+          "version": "repo-lines-v1:sha256:7b5940963f5bb496f75770c206fc489d9f44578c1a2cbec02e8870f2357cae4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOGZjMDI4MjVlZDc4OGIwYmZkMDVlZTE2MTkyNGYyZTE1N2I2ZmVhODcxMzdkMDI2MjcxMDJjN2ViZjMwNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6f2fa059c5a4a4d9b0ccdd580c64733",
+      "statement": "A failed player never recovers: the failed flag is never reset, so is_active stays False and later write() and drain() calls keep raising until a new AudioPlayer is created.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L107-L127",
+          "version": "repo-lines-v1:sha256:15035e6949dba163b79c84984785ef4cee2c2b338d3ad381bc02aa4a5e04cbd8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzIwZTY2YjAwOTllZjI3NzQ4OWI1MDEzZTBhNjA5OGJhODZiNjRhYzQ4OWNjNWYzMTQzMGUzOGNiZDk4YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViYzY4ZGQzNWU2N2ZmODMwY2RjNzRkOWNmZTdmMTc2NmRkNGRlNWY3MTRhMWY5Zjg1ZmJjODc1ZTRiZTRkMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlY2RkMTQwYzhjM2M5Nzc3NmNkZjQyZjg2NjI2OTA5MzZkMzlkMzdkZTk5M2YwZjRmY2QzYTE2YTA1ZWE1NGQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L346-L350",
+          "version": "repo-lines-v1:sha256:d0adb423f20a48ebc0c76cd667d28e34d29bca7ae92ca4738c9e6985c8e845c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgzMWNkODVlOWNlNjhiM2Q2MGZhN2M4ZmQwZTQ4N2ZlMjY5YWFiN2VkYmYxMWJiOGNmM2RlYTgxNTU4M2I3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWMyMGZlYjA1OTcwNTYyNjc4ODc2Y2IzMmYxYmM5NWFhMjY1MGU5N2Q3N2Q2ZDY5MTViZmYzMzljOWFjNTIwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWY4NmE5Nzk3MmMxOTNmNzYwY2I5NmU2OGQyYmE1MGEwMzQ2NmRkMDAwOTliMmMxZjVlNzZlNjIzY2NmNjc3ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L77-L93",
+          "version": "repo-lines-v1:sha256:8abe313aea0b50efc5e017989675934ac777380d1cf770a3ac7e3181362013bf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NDA5Njc0ZDcxMDU2NTEyMzM5ZTI4MzRjODNjOTg4YjAxZDY5OThhODUyZGRlY2I5OTJmNDAxZTA5MWY1ZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5YmFjOGEwZDM3MWNlOGEyYWRkYjE0MDU1MDMzY2M2YjlkOWNmOTBjMTg4MWIwNzc5M2ZkOTI1MjRhZDU5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmYTZlYzc5YWMwZmM2YjQxZmUwOTU3NmRiZTYxYThlN2Q1NDhhNzQyZDg2OWRmYTcwMDkzYjg2ZTUwYjVhZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_faad22e9527940e497fd76a3c982bf4c",
+      "statement": "drain() returns without error once the player has been cleared or closed, checking those conditions before the failure check, while a push interrupted by a new epoch returns check()'s result — Ok after clear(), an error after stop() or a failure.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L281-L299",
+          "version": "repo-lines-v1:sha256:7fac9c31c8c4c81f175e52a8ab035703694e4aaac48b2c495a595cd307c9ec21:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlZjVlMWI0YTA2N2JjODQ2YmE1N2UxNWZjMzNjZDljYTQ2NDViZTZhNzkyOWVkYjdiYTc2NGJmMjdhOWI4MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjYmJiNDVlNzE0OTQ4Y2IyZjUwNjVlYjM4YWMyNmEyNDdiYzU2YzJiMGM2NGY4MjE0YzMyMjA0ZjMyMTJlZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhZDQ2OWY0M2EyOWRmZTZkNDA3ZDg3MDc1YTg0MDI5MmU5ZGRjZmQzZjJhOGJjMGM1ZjliODU3NTUzZDEyOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyOTIyZTc5YWFmNjQ3M2ZmMjlhZjc5MGQ5NDQxMTc4MzgwY2I0NDM3ZjUwOGQ5NTEwZjg5MTdmNzQ2OTZhNzQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L463-L487",
+          "version": "repo-lines-v1:sha256:85930e835bf0493e6a650b7e0f993cdb65f916ac06c8ef3ddf5ae062e6a135ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YTY0Mjk0MDcyZTIxODVkODQ2M2E5YzViYTkwYjdmNzFiZTQ1ZTg2ZDUyZTNmNTk0ODgwMTQ0ZDY2NjUxNGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNjQ3OWNjMjMwNDQwZmQ0MWU4MjI0MjE4Njc5Njk4NTU5ZDI4OTNiZDY3YjQzODBhZmFiODExYjM4YTU1YWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxNmFhOTgxOTg0NjdlYjRhNjA3YTA3ZDM4ODVkNjVjOGYwMDlmYTdjNjk2M2Y2M2Q2ZTM0NzE4MjBkODMxZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2Yjg4ZjVmMzA0OWE5YmNhZjYyZTU5NjY1ZGE3MzY4YzFjOWM3OTQwMjg5Njc2NzhkOTQxOWI4MWEyNDkxNGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa3f4037fda6491b92b25990cdd3eb14",
+      "statement": "Every 100 ms a blocked call re-attaches with Python::try_attach to run check_signals, so exceptions from signal handlers such as KeyboardInterrupt propagate out of the blocking call, and the check is skipped while the interpreter shuts down.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L24-L25",
+          "version": "repo-lines-v1:sha256:6165a486fb61873b82d6a81fc9fde77b87ab334eaadfb48a8914d71dc9996fc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q1ZmMxY2QzNTYwOTcyNzc3YTU4ODJlY2RkMDg0ODBiNzNhMTIzZDU4Mjc5ZmY0ZTQ0YjRhNTMyNDgyNDkxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2NmODQ1MDY5ZWNhMTEzNjE3OTZhZTJlODBhMDEwNTVjZjRjM2UwZmMzOGM0YmFjMWQzOTIwOTBhNTliM2U2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjJlZDRhNGUxMTg3YjE0NDljY2QxZjg0OWRjMGY5NWRhYjA1ZGI4ZDRkNDIyNzJkYzM3MmZlYmM0NzEzYTZlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGU3Y2Q4OGNkNmYxZmZmYWJkZTAzMzNjNDIxMWY5MGNlN2YxOWMzZTM2M2UzMDg4ZmE2NzA0ZmMxMGM5ZWI4ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L539-L543",
+          "version": "repo-lines-v1:sha256:44a0be8776cdb55e37516f7a28df303e316aa76616df77d9a42e8d67c04d2cac:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U1ZDliZGE0ZmZkZGUyMjhiYzA0MmRmNzVkZTE5YjMxMTgxZWFmODY2YWIwYjBjY2RkMmZmYjhiNDM5YmY4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBmM2VmYWM0OWVmZjljNjAwNjE2ZWE3MjBlNWRlYThkMTJkMDBiZGEzZDU5NThhYWMxYTkzMjRkYWY1MzFjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzA5NTlmZTM4ZTgzZDcwNzUxNGVlZGUyZTZhODg5ZDVhNTgyZjZlZTMzMGQ2NmMxMTZhZTdkNWEzYmFlZmUwNSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L252-L262",
+          "version": "repo-lines-v1:sha256:f17ae8237071d3eecddae2db0980b39cdae62d6a804048a64dbaa20b1af91bae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1OTkyMmZjOTViMDVhM2U5NzYzZTZhYWQ3ZjZjYjRhOGU5YTI4YzY4MzE5ZDQ3ZjNiNzc4MjQ0OWZlZjYxODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZGQ4NmIyYjExMDg2ODlmYzUwYWQzYWMwZDRiOTdlYmJjNGVmNzhjOWVmNTE4ZWE3ZmRkOGM3MjNiNmVlN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NWFhMzkxZTE0ZTI3NDczMGE4ZDliNWM3NWFjOWJlZTA2NzBjZDY2ZDJjNjE5NjkxN2Y0NjJjYWNiZWI3ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_51c2105d658f4848bea64cf6b5d08cfb",
+      "statement": "A signal handler that runs during a blocked write() can call stop() or write() on the same player because the push loop releases the writer lock before every wait.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L479-L503",
+          "version": "repo-lines-v1:sha256:f788762d48e3aff404b6165725d0680698e0fdc2ab7d4c3fa2e3ce79ac826dd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3YTU1ZmZmYmVkNTRjNzhmOThkYTE0Y2Q3Y2I2NzZjYjBjZDBmMzY4Nzk4ZGY2Njk0ZTEwNTY4MjZkMzdmNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI4YmNiY2JkNDZmN2UzMjA3YzQ5YTg5NThjMjEzYWVhYmJkYTY0NDBmOTc5MTJlOThlNjRhZmQ1NjM3YjdhYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L341-L360",
+          "version": "repo-lines-v1:sha256:7ad7f08e9d1cc386f5d5627132845c342b30818ce19a9df593b7133cdda180c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ODJmYTVjZjhjMmQxNGUxZDUzN2JhMzIzMGRjNGFmNjQ4MjAzZTIxMGExNjZlOThlYjliNGE0ZjBhMTg4YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MDI1YWMzN2YwZWRiM2FiZWYzOGFkZjQyZDg0MjZhYWFmMzE1YTdmMmU4MWI4ZGIwMGJhNzVkOGY3M2U1NjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzM2YmU2YjYyMDdhNTlmOGRjMmU2MzA4ZjExMTJkMGFmMjJhZjkwZDMwNGI3ZTFjYmI2NmVhYTkzYTYyMmMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

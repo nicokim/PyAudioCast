@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fd4c984e348a9d2601e2826b19d5df1b8944551a1cea15cebd53548dc27cf2f1",
+  "claims": [
+    {
+      "id": "claim_81cc40183f3b44789181fe32ab523e15",
+      "statement": "Audio-dependent tests are skipped unless constructing a default AudioPlayer succeeds once when the test modules are imported; a RuntimeError during that probe marks the environment as having no audio device.",
+      "evidence": [
+        {
+          "resource": "repo://tests/conftest.py#L7-L21",
+          "version": "repo-lines-v1:sha256:35e31575dc40e894d7a494d1f7a15578f32f3af274e99bc44f0670955ecb4389:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NmE4NWFkYThkNzU0ZTlhNzk4YjIyZTJmYjQwMjc2NTBmZTU2MjA0OGNlNDRlOTJmZGQwNjBmMWQ4Y2I4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5N2Q1M2JhNmMxMzAxMDdmYTg5ZDk3Y2E0NTE4NjU2NWU0MGMzMzYwMWNkZWYzNmE0NzlkZGQ5NjVmODkyNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fce476633b64dc182b07e2fdd4ddaac",
+      "statement": "Tests that need no output device — device listing, invalid arguments, a nonexistent device or file, and the version check — run without the requires_audio marker.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_devices.py#L11-L26",
+          "version": "repo-lines-v1:sha256:507ef80bf0ada2e7351b9cafa901c50cedd2fbe9314f0826826b71805c690dad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiZTYxNDZjZGYyZmMyZjcwNDkyOTczOGYzMTYxMmM4YjQ4MzVlMGRhYmVhOWEwNzg2NDZiM2M5YzM3MTQ2ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0Njk3YjkzNzYwYzgzNGFjMjQ1OTA4ZDU2MjQ1NzljMmQxNjE2NDRkMzU0ZDk5MGIxYWE4OGViMjFlZDk5ZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhZjVjMzgzODU4YjQ4YWRhNzIxMmI4Y2Y4ZWYxYzhiYTk2N2Q5MWQ0M2NkZDMzYTllY2IxMTQyOWI1MTc4YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0NjgyMzRlYzVmNWU1ZDI5YzJlM2Y5OGViNjlmZDQ2MTNmOTEwYTg0YWU0ODc2ZjAyZmZmZGIwYTgxNWI3OTAifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L374-L377",
+          "version": "repo-lines-v1:sha256:075537a5972887ceff9a145029fa0d9b5e2603d3ecf38b6cc837989eeff3cd09:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg4ZDE2YWVjZmY5MTcyNDY3YTM1MjFkMTNjNjE4YmJkY2VhNzA2OGZjZDM3MjZmMmYwMzNlODE2ZjczYzVlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA0NjIxNmVhODQ1Yjg3MjlkZTkwZmY4NTY0OTAwYzVkN2UzYjJiYWMzODkxOWNkZmY2YzVlYWQyMzRkMGU1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUxMGIyYmNkNjRkZDU5NTg3MDY4YzVhMDgzODIwNDBhMDRkZjA5MjI0YmZmZmU4ZDBmNzgwN2I3MGRiZDA5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQ1NzY0YTg2M2M1Mzk3MjAyOWI4ZWNlNWI5ZWZhYmU1ZTllYTc1NmVlMDM3MTkzMTI1YWU2NzM0ZGFhOWFmOSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L409-L410",
+          "version": "repo-lines-v1:sha256:6b57a2fa21dadba3759d9bd3633b5ae505b4f4850e76c92d67874c9b236114bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDIyYmQ4Y2E1MzVmNTI0NTJkOGMyMzRmMzRiZWJkZDVhODI5ZWU1MDg1MWNiY2Y3Zjk2NzY4MGE5MDk2MDQ2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOThmMDZjMWY5ZDQ4YTk5NjU1NTMzYjk4OWVmNTY1ZTE3ZDkyYjMyNmY4NTVmMWRkODFkNzBkNmMzY2RiOGYyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmNhMGQ3ODY3NDhiZDM0YWQzOGNjMjAzMzg1NmY2N2Q3ZmRmZWY4YTI1ODI1NmM0MmRmZDVmMmFiNWIyYWQyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L62-L71",
+          "version": "repo-lines-v1:sha256:785ba42dd6d3bad30e20245c7145583253404e6e471f32ec4b617c91cb4d3b68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyMjYwODRiYjQ4ZTI2MDg0MWNjZTE3YzQ3NmJlMDUyYzUzODBhYzQxYjkxMGNlMzJlMGE2Y2UwMjNiYjI2MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY4ZjdlZjQ5NGJiYjZiYWZkNjA2ZDg0MjVjYTI4NjM2NDlhYzQ4NTEyNmI1OTFmZjQ0NWJjNjcxZmYxYTA4ZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmZmQwNzczOTEwNTIwOWYwNTdlOThmODdjMzkzNTg4YTAwZDIyNDdmYTEwOTM1ZGY4OGI4ZjkyMzhmYmIzYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyYzFiOTg0MDQ4YzNiNjgyZGEwMzk5YjNlZjIyMmQ1MzZmOWNhZWY0YzQ0NmM4Mjk3MDgwZjNiNjUyYWE5YmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5437329c6b5c4d229dd818b1d3787174",
+      "statement": "The Linux-only device-selection tests skip when ALSA lists no 'pulse' device or when no PipeWire/PulseAudio sink is listed.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_devices.py#L29-L49",
+          "version": "repo-lines-v1:sha256:5487b95d8feb9dcdb77d142f4dbf2fabbe3201724dbc2ea07e76677b89931e24:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMjEyMjJlN2U5MjNmYTA2ZWRlYjY3NTI5OTc4MzI5MTkxYzlmYzk4YjQ0ZTQxYjY4ZmEyZWFlNWQ5MmJjOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNDFmYjQ0ZjgxNDRiYjBlY2ZkMTU1ODhjYzcwOWI1ZWQ3MThkY2FjMzdmYWVhNDA3Y2FmMDhiMDU0YTRhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0YThhOGNjOWVkODY1NDc4YTQwMGM1ZWUzM2NmMjM4ZWYyNGUzN2VlMTcwNjI5NjA2MDFkYWY2NTFjM2RlNDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e496e8b23493404a80b05e9ebc4c6857",
+      "statement": "The Rust unit tests never open an output stream: player tests drive the writer and renderer with in-memory ring buffers, and device tests only enumerate and resolve devices while tolerating machines without a default or routing device.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L237-L282",
+          "version": "repo-lines-v1:sha256:5a08d7bbab0fd9702b1f656f785bcb0940e3d6a32b1f5db3cb574bd0c92b1c51:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1Y2Y1ZmMyM2YyYTZkMjNjM2VhNTFlNzJmNWU4OTZjNzU1NWZiYWEwNWNkNWIxZWExODJiZjk2MThhOGU4MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZTc2MzU1Y2YxMTk5NDgwYzNmOTk4MzZiMTQ4NmM4NDFkODkxZmFhZDkwNGM2MDhlMDkzMDIyZDM3NTdhZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L1007-L1052",
+          "version": "repo-lines-v1:sha256:9fbef6ea447ec8730bdc180b4a4aa0f46f57e2934d7e6d6a54d35753084abc6e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiMGVhMDhjN2Y1OTBkMGJlZWUwODc1MmYwYjA5NWExODhkNDgzNDdlZTI4ZmY4MmNmM2M2NzQxYzA2MTRkZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZmE4YWJiNzk1ODIxNjY5ZGM3MDk4YTRlNTE4OWY0MTA5NWJhMGU4NDVhYTU1MmVkODA5ZjkwZmYyMTNhZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjMmVkOTJjM2ZkY2FiMjUwZjc2NGJkNDg0YjM4NGYxMGZiZDE2MmRiMTA0YTcyZTczZGZhNzA0ZjBhMTgxNzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00daeaa58035482599f85c3d67cb6fc1",
+      "statement": "On Linux CI, ALSA's default PCM and control are pointed at PulseAudio through ~/.asoundrc and a headless PulseAudio daemon is started with idle exit disabled and suspend-on-idle unloaded, providing a null sink for the audio tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L63-L80",
+          "version": "repo-lines-v1:sha256:63b12befb771e8fd48faea54633f7620555b37dd6dbe719b5ee258978b66cc91:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZTc1MjIwYTc3OWE2MDc4Y2NlNDg0YWU1YmM1OTlhMTUzODc2YjU3MDc3Yzk3ODA3ZWJiN2M0MGJhYjM0NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNTU5NzljZTczMDIwMzNlNmIyZmQ3ZDg4ZjUzN2EzYjhlMDkxZWEzMDVjODExZmZhMTI3NGJmNTc2NGVhNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NGRkZjRhODc5ZWY1Nzk3NWFiYmNhYzBlMjIzY2Y4ZDE5NDExZWE3N2RjYWIyMThkZjdjMWNlMjljYWIyZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_06d9d339ee3448b4923c943503313e23",
+      "statement": "If the sound server cannot be started in CI, the job only emits a warning and the audio tests skip instead of failing.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L75-L80",
+          "version": "repo-lines-v1:sha256:350d0c279d8c7e44d82dd37657061e207adaf047c18e695e039a2cc71072303d:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQxZjI2ZjI1MDA5ODZiZWVhZmQzODM0MGM0MTYzMDE1YTI3ZWYwZjk3ZTViOTAwN2JhMDYxOGQwZjc3MmMwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmY1NTk3OWNlNzMwMjAzM2U2YjJmZDdkODhmNTM3YTNiOGUwOTFlYTMwNWM4MTFmZmExMjc0YmY1NzY0ZWE1ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODliNjgxMWRiZTk4ZGExYzdlNzA4MDM5ZDZmMTYzYWRhNTA5NGUwMjkwYTJmZjgxZjJjMmJhNzdhMjMzOWY0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODc0ZGRmNGE4NzllZjU3OTc1YWJiY2FjMGUyMjNjZjhkMTk0MTFlYTc3ZGNhYjIxOGRmN2MxY2UyOWNhYjJlZSJ9"
+        },
+        {
+          "resource": "repo://tests/conftest.py#L7-L21",
+          "version": "repo-lines-v1:sha256:35e31575dc40e894d7a494d1f7a15578f32f3af274e99bc44f0670955ecb4389:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NmE4NWFkYThkNzU0ZTlhNzk4YjIyZTJmYjQwMjc2NTBmZTU2MjA0OGNlNDRlOTJmZGQwNjBmMWQ4Y2I4NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5N2Q1M2JhNmMxMzAxMDdmYTg5ZDk3Y2E0NTE4NjU2NWU0MGMzMzYwMWNkZWYzNmE0NzlkZGQ5NjVmODkyNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5046e385dda4cf6b3befc0d93a0c29e",
+      "statement": "On macOS CI the output is switched to the Null Audio Device because the VM's own sound device sometimes plays streams about 60 times too slowly, breaking the timing tests.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L119-L127",
+          "version": "repo-lines-v1:sha256:54aff01b265cf656e22ee4e57eda1c0980a07f34a8c4e9b813a7514c1a8417a4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNiMmFjMGE1ZWZmOTJhMDUwOGUyZWVlZWI4ZWY5NTg5OGJjN2I4MmFhNzU1NGYwMTRiMzA4MGNiZWRjNmEzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Q1OWZmOTVmZjFlYjA2MWM3MzM3NTI0NzBhNWEwMTc0ZTUzZjRkOWU0MzkzN2QwOTViMzA0OGFlOGI4MThiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzk5MjJmMGUxMTlmMDc5N2JjNjNlY2Y1NDU3YWYxZDAyM2Q4NzllYmZkOThiZGU5YmY4YWI3MjA4NjFhNzM3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmM3YjEyYzE4MDhiZmI3MTFmMzEyZmM5NWQ3NjZiNjJmMzI2YzNmNmE4NjlkNTkwYzkzMzFkZDA3MDg4MzU0MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6cf6a15d96945fdbae1680f81290108",
+      "statement": "Many player tests assert wall-clock bounds on drain() or play_file(), using lower bounds to catch dropped audio and upper bounds to catch replayed audio or hangs.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L101-L109",
+          "version": "repo-lines-v1:sha256:2dc37024a7eef73758d5ea7d6c59d1b839a8953e423fd715419d90208315cbca:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGExYmUxZGMxNmY5MzBjYTEwZTZkZDE4M2I5ZWVhYjJjM2M2NjM5ZGQ3MmVjNTRmMTg3MDVjODA5YjFiZjRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQ4ZDI2ZDhjZTMzZGNlZmJhNzk5MmI5NzJjOTljODA4MzhhMTJhNGE0NTc2NDQ1ZTg1ZTI3ZDUxZTJkNjYyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzlkNmExYjliZGIzODg0MDg1M2U5YmVjMjI3NzJmNDg4YmI0YWJhYWIxZTBjMDgzODNlNjUyMGZhOWY5ZWE3YSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L221-L227",
+          "version": "repo-lines-v1:sha256:755a7c4515c5d6bca112b91722d2907ac705ae8be200db87fbf8729e7557752a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI3NDYxOGM4NTQzYzYwYzE4YTc2MzlhYjliMmVmMjFjMTQ2Yzg5MTg4OTM4NjlhMTNkNDM3MzZlYmQ0MzkzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkxZTM4OGE1MTFmZGZmNDZmNzZiNTg4ZGE2YzE5ZjkxYTAxNGFlNTYwMTA0MGEwYmUzNjI5MjJhMWYyNjg3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjJiNWI0OWE2MGEzNDJjZTViMmYyNDU4YzRlOTRlMTA2NWNiYjIwMGQwZWQyYzNmNzI4ZjVmODI1YzAyM2IyMyJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L283-L310",
+          "version": "repo-lines-v1:sha256:0ecf2b741c057e0800140cd4f9d5eec1c146e736c2d5767a4b353c768ac3acdd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4NmUzOTljYWEyMmQ2NDQyMGYxYWE0OTk0M2EyODEwZDYzOGVmZTI1Yzk1OGU4OTFlMGRkM2M0M2QwNTA2YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlMjczMDlmNGU0NTM3YWIzN2FmYzc0OWQ0ODIzMGIzNmI1NjE5YzBmNjIxODhiNTBjMmY3OTQ3NDE5ZjczOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhjNGFjMDVhZDgzM2VhNzUwNmY4MzIwZDIwMzJhOWIyMmM1ODYzN2E2ODNkMmZiYWU5NzM0YTUyZDg5ZGI0YTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L379-L387",
+          "version": "repo-lines-v1:sha256:2e258de387c93b95f2d5d1078a8e7714bf812ce29d551c420f97bbe784880a1e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFlNDJhNGE2ZDU0ODUwZDZkYmFlYWRjNjFiMjI4NDQ0Y2E0NTE1YWVjOWI1MzE5YjNlYjlmNGUwODFkZTQxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRlYTBmNjg3ODAzYTUxYWJmNWU1YTg2ZGU0Yjk0NjdmZTBmOGY5MGU2MjZjOTllYmJjNjQwNTZjNWJlMTMxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVjNzQ2NWMyNDZhNWZhOGZkZjM1NWU2NGRhNjk4ZjVhZTliMmEzNmVlM2FlYWMzY2M1NjhhY2E5ODdlY2FmZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd4d1a1262394383a96be20ba0cc38f4",
+      "statement": "Timing-sensitive tests first write and drain 50 ms of silence because a cold sound server can take a second to start a new stream.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L29-L34",
+          "version": "repo-lines-v1:sha256:1cf432e68eb6ced8f6e4c277b239ecfc12a049222262a8e177dbba204e2c5581:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDNlMjhjNjc3OTcwZjM0ODJmZjU5YjJmYmNhODE3NDAwNDMxNDljYjFmY2U1OGVlODE2ZTcyMDIxYjJlMWUzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1ZWY2Y2NmZGI5ZmVlOWE0YTZmMmRhNGUyZjVjZDAxZDMxZmEzNWVhMDc0YThiZDFiMmVlZGNjMTJjOGNmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWJiNGU1NzY3YTVkNTA5OTA0ZGE5MzBjZWU0ODZmZjkyNWUxNDdiNWIzYzEyMzJmMmY3MzE5OGM3MTNiNzNkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVjOGQzMDNjNzUzYTViMjc2YTk4MWI5YTQzOWUxODkyZDVlNWZkNWEzMGUyOTJiYTE5N2Y2MGRlODllN2M5YyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a159df9c4d54aad88457d3d765d9bf0",
+      "statement": "Test audio is silence sized from the player's caller sample rate and channel count.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L18-L20",
+          "version": "repo-lines-v1:sha256:b82bfd53d32acadcb5ee2431510c991462ef4955255ab43e590e21996cca9716:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjIzNzc2NmIxY2M3NmFjZmNlMzk0NDM0NjFiMzJkYjA1MzgxMjZmMDdjYWUwMGEyZWFkYzQ3NTZlY2I4YmQxYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzc4ZmU2Njc2NjU4ZDQ3NGVmZGMzMDg5NTIwYWNmYWU1ZmExZGE4NzIzY2EwNmY3ODY3MmYwYzdiMTM3ZmVlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGFmNWMzODM4NThiNDhhZGE3MjEyYjhjZjhlZjFjOGJhOTY3ZDkxZDQzY2RkMzNhOWVjYjExNDI5YjUxNzhhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDlmMzQ2Yjk3YjdlZTM4NDg0Y2U5YTg4NDY1NzBjNTIxNWY2NGY3NGI5YWE3ODQyZjU4YTQzZTQzM2VkZmViYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce90e9f12abc4d85823a17c915147ab9",
+      "statement": "The missing-numpy scenario runs in a subprocess that sets sys.modules['numpy'] to None before importing pyaudiocast.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L161-L175",
+          "version": "repo-lines-v1:sha256:0eabbaae5e446021bbdcaa84ce81459783b96484703db3bcdc93af8d6cc6660c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2YTM5ZmE4ZWI5ZjEyYTFjYzgzOGE0MjljZmUzNzI5YzUzZWEwOThmOWYzMzdiNWRlZDBlY2Q0MGI0NGEzZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiZThhNGNkOWQxNTg3NWFjMjIyMzk4ZWJhNDRjYzdiYjEzOWY1ZTdlOTY4MzcwZDM3NmFmMDhhZWIzOWM1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0Y2JmOTJjOTAwZTM3ZTk2MTBhZTE1YzQyN2Q1NDIzM2I4NjBkZGFmMzQ4Y2Q0ZDdjNzI0OTM2M2RlNzM2NmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6c2963eade44339868d748332bf4657",
+      "statement": "The signal-handler re-entrancy test runs in a subprocess where a SIGUSR1 handler calls stop() or write() on a player blocked writing more audio than the ring holds, with a 30 s timeout, and it is skipped on Windows.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L341-L360",
+          "version": "repo-lines-v1:sha256:7ad7f08e9d1cc386f5d5627132845c342b30818ce19a9df593b7133cdda180c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ODJmYTVjZjhjMmQxNGUxZDUzN2JhMzIzMGRjNGFmNjQ4MjAzZTIxMGExNjZlOThlYjliNGE0ZjBhMTg4YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MDI1YWMzN2YwZWRiM2FiZWYzOGFkZjQyZDg0MjZhYWFmMzE1YTdmMmU4MWI4ZGIwMGJhNzVkOGY3M2U1NjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMzM2YmU2YjYyMDdhNTlmOGRjMmU2MzA4ZjExMTJkMGFmMjJhZjkwZDMwNGI3ZTFjYmI2NmVhYTkzYTYyMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f4e17b2ace64d0cab01935cc09cbd51",
+      "statement": "Cross-thread tests run the blocking call in a ThreadPoolExecutor and wait on the future with a timeout, and Ctrl+C is simulated by calling _thread.interrupt_main from a timer thread.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_player.py#L229-L262",
+          "version": "repo-lines-v1:sha256:7e51095e31f63ecb3c08a06469a9c08545132a256b42b483cbcc9c95a1b63f8c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1OTkyMmZjOTViMDVhM2U5NzYzZTZhYWQ3ZjZjYjRhOGU5YTI4YzY4MzE5ZDQ3ZjNiNzc4MjQ0OWZlZjYxODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3MzgyOTcwMzdlMDZmMTJkNjM3OGI3MDk0Yjg3M2E0Njc3ODNmNmJkNjY0YWQzYTYyZjMyMDRhY2U3Y2FmNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4NWFhMzkxZTE0ZTI3NDczMGE4ZDliNWM3NWFjOWJlZTA2NzBjZDY2ZDJjNjE5NjkxN2Y0NjJjYWNiZWI3ZGMifQ"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L300-L339",
+          "version": "repo-lines-v1:sha256:87ce9381586f816b35fbce7460e92349bd672df15bc5671444e320ae798b1925:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0MmExNDVjMzg3YTM4YzZjOGYwNWQ0NDQ4MWVhMjQwMjNjZTdiYWQ3ZjZhYjBkMDU0MDQzYWM3MmE2ZGY4YzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyNDUyOWMwYmNiMmE1ZTBjOWQ1MGZkMmFiZDdmMjEzZmM2NWFjZmFjZWMzOGVmZmNmMzFjMDRlMWVkOWYzYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZGViM2FlYWU5YTgwOGFlMThmNjU2MDUwYWY0Zjk5NjgyZmVjYmNlNzAwZTk1YmEyNTY1N2UzMmE4ZjA2NGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

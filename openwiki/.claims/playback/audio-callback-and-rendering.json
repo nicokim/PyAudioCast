@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a7d5037bb8b95dbc5ebe1d66b91e09fcc89f16df1fb217f55a833c507b69b359",
+  "claims": [
+    {
+      "id": "claim_c7d2f1d5e850457292857b49250f6523",
+      "statement": "The cpal data callback touches only the ring consumer owned by its Renderer and the atomics in Shared; it takes no locks, allocates nothing and does not log.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L48-L49",
+          "version": "repo-lines-v1:sha256:d2e99d76a3ba0b6b6771935043fc16f1e493ac75732f9437852fac6fdc5a2339:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA2ODNmYzA3NjhkNzA0OGFiYzVjYzJmYjkzYTU1NGFlNGIxZTU2YjhkMjU3YjFkNmZhYjVhNzU3Y2M0MTE1OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQzZmM3NWJiNjZmYzE2YjQyZmM1NmJhZjc3YzQ0ZTQ1NWUwNTRkMzc1ZGM3MjVjYTc3ZDdlMDJlNGYzOWI3NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQzYmIzNDhjYjU0MjlmZmQ3OTRkODJiODMwNzIwMDc0NjBlMjg3YjJmNzJmNTFhZGIxM2ZjNzdiYjA1MjNiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTk5NGI4OWI2ZjlmZTkyYWJlYjRhYjI2ZTUyN2MxNGY5OWIxYjg4OGIzMzQwYWE2MjcxZTA2Y2M2NmYxZTczMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L585-L602",
+          "version": "repo-lines-v1:sha256:7bb50ca12a6d21e51ff5baa7621b126bd49a837773b609db9978360c97e62f10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZDFjYzkzMTE4YWU2NWQ1ZDVmYWUzYjVmMzdkNjVlNzA5Y2MxN2I5MjZiM2YzMTQzZWM2MjY2M2ExMGI5MWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNjczYWJkNDU3YTk3ZWVhMTdhNjAwNjJlYjBmYWVhNmJkZjA5NDg2OGNjNmI4ZjhjMGViZGEyZjYxZWQ0MmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZWZhMTFmNTAxNmYzZDlkMDU2MDA1ZGQ4ZjI5ZGJlOTY4MjhiMDc2ZWQxNzU1NWFlNDVjYmU0NWFkYWZhNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4NzEzMzJhMDcxODcyODk0MjczZmY0YzAwMjdhM2M2ZjQ1ZTBiYmQwZmRiZmJjZTdmMzRiM2NkMDNkZDM2MzYifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L639-L649",
+          "version": "repo-lines-v1:sha256:42d9b9ab97ba5c316bd2b776bac94b03dc947602c165fb2073e6e114e2684ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1M2YzNTk4MGZkOGRkNDIxMzE2ODMxYTZkNjY5ODExODAxOWMwMmZhMTYxNDdmYzUxNjhjNjJkNDhiZmJhZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDFkMTc1YzM1YTRlMjQ0Nzg1YWZjODRjODdhNGZmMGY1M2QxMGFhYmNjNzYyMWI3NzczNzllNWU4MGRjMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1Yzk4ZTZjYzdhYzQ3YjEwZDUxNGM3OWIzNjBkNGJiMTE4OGIyNGY0YmEwN2Y4MWM4ZWY3MTdiMmU2NWQxZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0b3d5941cc44c829b4b0e9b361c7276",
+      "statement": "Every data callback increments the callback counter and resets the error-throttling timestamp before rendering, providing the liveness signal used by stall detection and by the error callback's throttling.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L527-L538",
+          "version": "repo-lines-v1:sha256:81c015677cd9cabf310193f4c9f1a96446e1871d14578d0e2e03cd66cb06ba43:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4NmUxMGFhMTYwZGFmOTM5NjEwZTYyOWQzZDVlOWQ5YTQ3ODBlNGViNzY3OGRhY2E2NzVhNzJiNTMwODNmNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxZjcyNDkxYjdiMDRkZjJlYmY2ZjVkNzU4M2M3NDRiZTk1OGQxOGQxMTNkODUyYzNjNzU3MDEyOGFjNWY1NmQifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L587-L591",
+          "version": "repo-lines-v1:sha256:7cad749d2385e6e8b73ec8cb0a1ad256b20c24aae7a3aa29793c688d3b6638c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZkZTBiMjlkODY5MDUyOWQ2NjU1NDRmNzQ3M2FiZWI5OTljZDRmMjQyOWE1MTUzMDNmOWQ1NjE4YmMzN2FhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWYwNmFhMDFmNTNlNmUzZDdlOGZmZGI4ZTdiMjg2Zjc1MmY1ODY3ZjE0ZWM1NmJmZTcwOTNjZTIzOGU4YTE0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGJlZTRlMTM0ZDI0MmE4OWQ3YWFhY2JjMjA2ZGIxNDE5YTE3OTYyN2U2OWJkZDA5MTMzMmQ4MDNlZjViOGNmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJlNWNmNzU5OTI2ZTBlYmYyZjUxOTNlYWZjODEwNjUyYTMwMDUxMDRkMTNjZmM4ZjZjZWM1NTYyNGNiNzlmZCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L612-L621",
+          "version": "repo-lines-v1:sha256:d39fe884abd96fd88b9b7dfc2d1c15c86edb2d8fb3208abbd54380e19d5baf28:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2YjQ3OGRiNDRmNmE1NzMyY2E2MDhiZDIwZjA2NTllOTcyNGVkNDA5ZDQ4NGM4Yjg3ZjIzOTQ0NTMzM2MxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxNWI0YmY5Y2NiZTZkMmJlMjg1MzM2ZDFkMTY0N2ZkYzc0YTA0Y2MxN2IyZjg5ZTYyNGZhMDgxYmY1NDZhN2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMTZlZWMyZDRlZDRjMmY0OGY2MTNjNjIyMWFkMjk1OWQxODhlMTE4MTc2NWY4YTgxZmIzNzZmMTk1ZTgxZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhYTQxZDQ5YWM4YTA0YWMzZTMyNDk0MzVlOTgyOTZiYWExODM2YjAzYzM0NjNjZDlkOTAzNjgzYzE2NTg4NDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e6d312e2fb2408faabe28cc312d7b6f",
+      "statement": "The renderer fills each buffer with whole frames only, leaving a partial frame in the ring for a later callback so channels can never rotate, and fills the remainder with the sample format's equilibrium value.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1054-L1061",
+          "version": "repo-lines-v1:sha256:bcd8b0caee04707e9fdf1aed9b12d5e25fbad78fb184b58b48ce1a2ad2629127:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJiNWVkZjU5NDljZmVhNjc4MjJjZjY5MTEzMjM2M2Q2OGQ2ZjFlMTY5ZjVlMGQ0ZjdjMTRlNWZhMWU2ZDRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWViMGNhMDIxN2M1YTIzMjQ3NjEzOTZiODY3YjJlNzVhODlmYjcxY2NiNzFjNmMyN2EyNWQ0MDZlZTRiMWE5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzkyODA4NTgyYTVjNGI0NTJkOTQ0M2YyNjkyODc0ZjJkMDdkNWE4Yjg1YTgyYmZjODRhNzg2ODRjZTUzYjU4OSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L662-L696",
+          "version": "repo-lines-v1:sha256:27b7a0d9fb2c96eab2b061a1283997aa3b11d133582f5bf56007441d18f82656:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZDNiMWJhM2FmODVkOTllNGU5ZWE2YWNkZDE1MTk0OTdjNDBlY2Q3OWNiODliMDE1MmQyYzUxNzhlZTliMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk5OWJkZWZlZWFjYTYzNDBlMDI5MGRjODZlODg5Yzg5ZDVlMTg5YWE1YmE0NGI1ODViM2I3MDczNGY0YTYyZDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNmE3MDljZGY0ZWFjM2RlM2I2M2E2YjQzMzk3YmEzMTg5ZDc4M2QzOWJiMjcwNDQ1YzQ5OGZmMDk1NjkxY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_367a6a22e7f443e8943cd592508d08c6",
+      "statement": "The renderer snapshots the ring before loading the discard watermark, which is safe because push() raises the watermark before it publishes samples that a concurrent clear() made stale.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L488-L495",
+          "version": "repo-lines-v1:sha256:e6d917bd5ef9ec26680438cb729db59ea49ff19a0064a719cb05183456246eac:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzcwYjk0Y2ExN2Y5YjRjZjg3Yjk2YjVlNTRmZmQ4ZDI5MjZlOGUzOGNhZjAwM2NmODU1MjhkMTQ5ZGM1MmY3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2JiMjFkZDM5MzJkNzJmY2ZmYWRiMDI1MTU5Nzc4YmZlZGI5NTQ0NWI4ZTczMzAxNWI3ZmE0ZWI3YjE1YmY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWY2NDliMTU3ZDQ3YzdlNjk1NmEzOThkNmY4NDU0ZWM1NWUzMTliYTBjOGFlOWIxNjVmOGU2NTE5Y2Y0ODJlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjU4NThlZjAxZDU1YmZlYmZkOTBhNWVkYmQwZmFhMDA3ZDE5MmIxN2Y0NmVmNzg3YjZhY2U3NDdhNTE1YzJhYiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L670-L676",
+          "version": "repo-lines-v1:sha256:f8b916567579d6ce02d170e8a0913dabc5bae5796f27ed3e9ff71381a116adf5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjUwNDQyYWM3YzM3MzM1ODk5YzllMDExZmQzMGI1MmNkOWE5N2RhNmM0ODljMzQzODdkMWYzYjc5NjA1MWM5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZjZGFjOTA4MjFiZGM5YTIyYzQ5ZjhlNmJkNWU1YjIyNGFhMmNlZGExZDJmYmVlZjRjOWQ5YTBiMTVlYjY5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE5YmYxYjc1ZTJjYWQwMjQ1YTA2ZjA3ZWFkN2Y3ZDlkOWExNmJmNmJmZWU5ZDhiY2I0MzcwMTZiZGU4MjFjYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM1ZDYyZmJlZWEwM2M5ZTNkODEzYzRjMTc2MmRiMjkxZTdlNzgyOTI4ZjljMmViNDBiYjY2MTQzMTFlOWI3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c14c21d93b6945a1aa7a2910b673b0a6",
+      "statement": "Samples below the discard watermark are consumed without being played normally; when the previous buffer carried audio, the first of them are played with a linear ramp over up to 5 ms of whole frames so that clear() does not click.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1073-L1083",
+          "version": "repo-lines-v1:sha256:126e6e49801589c72e54258ed5fc1f0ebd79a3bececf8c5c4db52f6355743e97:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5MGQ5Y2JkYTgxZjI1NGZmZGIyOWQ3ODYyNDM5OTcxOTc3YWE0ZGY1MTJmYzBiMGMzNThiZDM5YzA1ZDg4NjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwMGUyNzZjNGExZTUzOWFlZjUyZTRmZWFjNzM0YWUyZmYyODI2OGEwMzU3NTkxMzc2NzQ0Nzg1MjU1ZTM0NmMifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L43-L44",
+          "version": "repo-lines-v1:sha256:eb7769dd1fd82949eea05f999532df9442acdc273eaf6db2e67867a4c5095659:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWI4NTdmODVkMjkxMzI4YTI3MjdlMzE3ZDZjMzlhMjIyOGQ4ZjRmODVlNDhiODBjODRhZmE1MjdkZGYxNDgxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFlZWZlZGYwZTZhZjMxOTFiNmE1MDk4N2IxMTQ2NmQ2ZDFkZmU1ZGM2Y2VhM2NjOWIwNDFlZDNmMDU3ZmY1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGFmMGRhMGNkMGVkMmQ3YmFlOTYyMDdiMTlkNDllMWViMGIyOGU2MDU0YTFiNzMzYWJjYzBmZmYyZjllZjVhNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQzYmIzNDhjYjU0MjlmZmQ3OTRkODJiODMwNzIwMDc0NjBlMjg3YjJmNzJmNTFhZGIxM2ZjNzdiYjA1MjNiNyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L583-L584",
+          "version": "repo-lines-v1:sha256:b65aa3d21d2b453dca1bddba71c919796023729ced9d0272df6e0451a83cf417:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTJkMmFkODFhMmQ4NmFmZGJhNjY4Mzg0NTgwMjBhNzlmY2NmMTczMDFjMmNlYjY3MDU1NDgwZTk2YjVkNzk2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM1YjkyMzljZDc0ZDY1NzUxZjNiNjA3MTJhOTA2NWQ0ZWE2YjEzOWUxOTliY2ViMjZhY2Y3NjUyZTgzZDk1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmFhYjdmMjdhZWEyN2ZiMTEzMjNjZTJkMWUwNzRlNjIzNzQwNzViNjVmMWI1YWY2MjEyNGI5ODQyMjVhMjg5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI2YjY3ZTg2OTUwZjQ2NWZmMDNjZDY2NGE4YTYzOTNlMmFiZTFiYTVjODk4ZmUzOTdiZjY1ZThhMTFjMWE3YiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L677-L686",
+          "version": "repo-lines-v1:sha256:ad5a9cf0a4f57ef3ef5b99f7362dee1cad1e07f54dd6633d37b830ccd5a848c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0OTQ5OWFjNDJmZjUzNGViMjc4MTBhZGNkYmEyNTg2ZmY2YTAwNjkwZjdjMDM4Y2I0MDRmYTVlOTE4N2Q3NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOGYxODRmOGJhNjUzZDI5OGVmNzFlYWU4OWVkOGI3YzVlMDRlNjU5M2E3OGVhOTQzNzIxODk2ZjRjNGY0MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyN2M4OTRmN2Q0OGQ3YTI3YTY2MzM4Yzc1N2QwNjRiMTQ4OGY5MDA0YzE2OWY1MzYyMWRkNGNiNzFjM2Y4ZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_430eba2220dc41c5bd01d6e350e9a758",
+      "statement": "When nothing was playing in the previous buffer, samples below the discard watermark are dropped outright without a fade.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1063-L1071",
+          "version": "repo-lines-v1:sha256:1c8f56a14982e357388a60cf89f4194dc1927e0b0d7a06dd4ebe95f90c76fae2:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJiNWVkZjU5NDljZmVhNjc4MjJjZjY5MTEzMjM2M2Q2OGQ2ZjFlMTY5ZjVlMGQ0ZjdjMTRlNWZhMWU2ZDRlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTkwZDljYmRhODFmMjU0ZmZkYjI5ZDc4NjI0Mzk5NzE5NzdhYTRkZjUxMmZjMGIwYzM1OGJkMzljMDVkODg2MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWViODc1ZjI4MjczYTZiODhkZmY1MjI0M2IyMzg3Mjg4NDI0MzJkYjA5ZmM2OTZlMjZjYjBlNDFlOWY5OGU2MCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L679-L686",
+          "version": "repo-lines-v1:sha256:b224904f4507a7be2d3b221fce7d811d28175e50666e9bdcd0cf8f0a20dd68db:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y0ZmNhODNmODFlNGYwZGE5ZmVlOWU4OGY1YzllNmZiODIyY2RkNTIzMzg5MWViMmNlNmEyZDExNDdhOGIyOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTgwYmMwODEwMzA3ODQ5MzQxNzY3Yzk4ODY4MjQwYTQ5MjVjZDhhOGZhZDcyZjg2ODMyZDFmZGIwNjM1NWNlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjI3Yzg5NGY3ZDQ4ZDdhMjdhNjYzMzhjNzU3ZDA2NGIxNDg4ZjkwMDRjMTY5ZjUzNjIxZGQ0Y2I3MWMzZjhmYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6d9a7e4265f48368dd1dffcc65d29dc",
+      "statement": "A discard watermark beyond the queued samples keeps causing samples published later to be skipped until the consumed count reaches it.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L1085-L1096",
+          "version": "repo-lines-v1:sha256:2dbf1dfea503e6ce88f8d7fe61553b2fc5d5ff72cb2ce757ddbc1c324d5ff577:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkMDg1ZGI5MTA3NjdjM2FhM2FmZDcxZDhlMDZmNDI3MDFiYWY0MTc3NGMwZmJmNDQ1ZWYyZDY1ODQ5ZmVjM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1M2M4MmI4NjZhNjkxOTk5YzNiMzQyNDk3ZmFmZjA3OGY2NmVhNTlhNjgyZDU0M2NiNTNkZjIwNDAwMTJkN2QifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L674-L676",
+          "version": "repo-lines-v1:sha256:f28f184f8ba653d298ef71eae89ed8b7c5e04e6593a78ea943721896f4c4f436:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTlhYmUyOWM2MTk1Y2M2OTE2MTUzNzcwOGZkYTMxYThjNDkwNWEzYzVlMmNhNTNlOTMwM2E2YzgxNGFhZGVjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzZjZGFjOTA4MjFiZGM5YTIyYzQ5ZjhlNmJkNWU1YjIyNGFhMmNlZGExZDJmYmVlZjRjOWQ5YTBiMTVlYjY5NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjhhY2NkMjFkYTdiNzc2NjBlZTY1ZjNmZmJhNWY1ZDNmNWIyYzdmZTQyNzg4MDkzMzA1NDcyNWMzN2NmOGIyMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM1ZDYyZmJlZWEwM2M5ZTNkODEzYzRjMTc2MmRiMjkxZTdlNzgyOTI4ZjljMmViNDBiYjY2MTQzMTFlOWI3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8294ccb233c444f48293c1f385867643",
+      "statement": "The stale-sample count is not rounded to whole frames, so the renderer skips exactly up to the watermark and resumes reading at the first sample of the next stream.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L674-L692",
+          "version": "repo-lines-v1:sha256:cac5b5d6a5cda0c32d0b91a7c3ae9d740cb092bcbd846b38426dd0c86e008b4e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5YWJlMjljNjE5NWNjNjkxNjE1Mzc3MDhmZGEzMWE4YzQ5MDVhM2M1ZTJjYTUzZTkzMDNhNmM4MTRhYWRlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzZDM2M2I5YmZmOTNlMzFiOTQ5YjBiY2YwZjM5YzczYjY3ODMxMDUwODk4Y2FlYzMyOTc3Y2FiYWJiM2NhNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YWNjZDIxZGE3Yjc3NjYwZWU2NWYzZmZiYTVmNWQzZjViMmM3ZmU0Mjc4ODA5MzMwNTQ3MjVjMzdjZjhiMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyYTkxNGQwZGI4ODlmYmViYTI4YTA2MjViZjA0NmNiYzRkNDNiYmU2ZWVmZWZhYzljMDhkNWNiNzEzOTFiOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e89f02db45a428f9c480bc7a32e4cbd",
+      "statement": "The renderer counts every sample it removes from the ring — played, faded or discarded — in its consumed total, which the callback publishes to Shared.consumed.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L600-L601",
+          "version": "repo-lines-v1:sha256:8a392ec8b8d0d0627b45f60f42e965ae0bff62715f193b3cb9968709f166836e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzAzZjQ2YjU2YmRlM2E2YjgzYzg5NjljZmUzZjUxNTY2NzIwNGU3NDQwNjEzYzQ0NTY2NDdkNmQzNzg0Yjc3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmY3NjczNWIzY2UzOThkOTE0NDIyZDliMTRjYTAzZWE4YThjZjk0YzcxODdjYWU4ZmI3NmQyNTZhNmRmMmM5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjM2NWZkNDk0ZGFkYjY0OTg5MWNjZGY4YWEwNjM1YWFiYzVmZmZhNzZhNGY2YzU5NjViZThhZmFmNTk0OGIyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRhNzg1ZDUwMThhMjY2MGJjNjk5NzY4ZDA1MjBjMGNiNWVhN2Q3ZTJlMmYyNjA5YTNmN2M5NDliMTdhMDE3ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L645-L646",
+          "version": "repo-lines-v1:sha256:6770f50b528134b1c8602583c3ced52b30e8e619f52ca216b5a524506879eb26:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYxODdiODY3MjYyZGU5NWIxZmE4YmJhY2VhZmExNzY5OGRkYTRjNGFjMjg0NjdjOGU1MDNmNzlmY2YyODU3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjlkNTJlNmRkMWQwNTg0YzgxZWQ1MGQ2N2VlMjU3OGQzYjFjOGMyYjBjYzFkMTNmZmVhYjZkNTQ3ZTdjMmI3ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJiODk2MTMwNzIwYjE5ZmI4OTU3NWVkZjQ0MjUzMTUyYjcxN2Y5MDEyODIzZTU4ZDdiMTYxZWVlMDA2M2IyNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY5NTA3MWY1NDIyYzg2OWZhZmY3NWVlNzQ3MjA2NzMwNzVkOWMzNGMxMTg4M2EyYTRiNTdlMDZjNzUyODBiZSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L691-L692",
+          "version": "repo-lines-v1:sha256:06712735fc1fc5691e9177f6280f15e3abed55a806a05bbea96dbcd982839643:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg5MDRiYzNiOGQ4OGFiZjVjMDk5YTc4MjBlYjcxY2FmYTc0YTk5MGVmM2ZmN2IzODk5M2QxY2E5MzRjZTJhNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODNkMzYzYjliZmY5M2UzMWI5NDliMGJjZjBmMzljNzNiNjc4MzEwNTA4OThjYWVjMzI5NzdjYWJhYmIzY2E0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVkYmZlYzhhYWUyNmYxZmEwODcxMWYwNDRjNzllNWFiNDY0MDkyYjE4MzE5NjU0YzFjMzRhM2M2NmY2NzI3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTJhOTE0ZDBkYjg4OWZiZWJhMjhhMDYyNWJmMDQ2Y2JjNGQ0M2JiZTZlZWZlZmFjOWMwOGQ1Y2I3MTM5MWI4ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a22e7587b3e246d99b8cde5344cfd187",
+      "statement": "A callback that renders audio sets audible_until to the callback time plus cpal's reported output latency capped at one second plus the duration of the samples it rendered.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L45-L46",
+          "version": "repo-lines-v1:sha256:efc569ca45af4a9f58fb3d58362877608efcfe7615ccba2380af77c81a3d8c5c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY1ZjdjZTJmZjVhZDExMjRlNWRhNjVlYzE1NjVlNmQxZWFkNTNmMGExYTg3YmQ1MTczODhmOWJmNzI0YTQ1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmRmMTU2MTE4NGE2MjczODhjZGE2YWUyMTI1MDY5MzhhOTMzZDUzNjkzY2ViY2IxMzc3MWI5OTc1MGYyYjVlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE3Y2I5NjNhOWJhODdmNGM4YjBhYmI1NTgyY2NhODNlODA3OGNmYTk0MGFhNzFiOGJlZDk5ODhhZWJlYjAyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjlhNjJhYWU4MzMyYzRiZjFkMzM4M2UxYmFlNzU0NTEzZDhhYWY0NTk0ZDI2MmZkNDNkOGU4NmJjYTI4ZDRkMyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L580-L599",
+          "version": "repo-lines-v1:sha256:5b1abaa1bddbc1135687a92225ff6cb33c79115ba30ea1f259e7e62820f05c7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyODI4M2M3YTJiM2VkYWYyN2IzOTc4MzBhNzYxYjAxMWRiZTcyNDdjY2U5NDQzNzk1ZWViNjBlOTgzZGUwYzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MjJjNDJjZDE5YzZkMDNkODA4YzQ1MjcyMDU1MjgyNWI3ZWExYzViNDkxYjIxODUxMWNhYzc0MTVjZjlkOWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5MjM0ZGM1ZDk3ZjFiZDA5NDQ1MjI5ZmY0MTgwN2M3MDc2YTg3MjE5OWMzZTQ4YTUyM2UyYWQ2MWY0NzNhM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmYjZiMWFmZDRiMGY3ZDdiMDUyNWNhZjJhM2YyMjczMDI3N2YwMTRmOWQyMWNjYjg2YjQ3MzQ3ZTQ2NWJiN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9e44b9892a544b6a559280e1ddb4d7a",
+      "statement": "The callback stores audible_until before consumed with release ordering, and drain() loads consumed before audible_until with acquire ordering, so drain reads the audible time of the callback that consumed its target or of a later one.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L288-L292",
+          "version": "repo-lines-v1:sha256:664513ad7c469e2ca3ad7a9d0089d40fab7a8dce468cb50990437f3076d1447a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2M0MDNiNWUyNTBlYzVmMTBiMDllNzM1MjE1NjU0ODUyMmViN2YwZmIzYmI1NWY0MDMyOTNiZjZjNWI0MDA4OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmQwMWRmZDk2OTZiNGU1ZDQ2MzQ2NTIxNTc5MDY3NTI3ZDI3NmNhNjU1YzhhNzIzYzNmZWYyMTQ2NGFlNTc0MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjRkZjUwNjFjNDZkMjQ4MTM4ZDc2NGM2NzU2YjI3NWRmODQ1OTllZDkwN2VjODI4YmQ1YWNmMjYyYTEyOGFkZCJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L592-L601",
+          "version": "repo-lines-v1:sha256:a9c5fe8f3491469d63596b85fc3f7e45057d7dd799e8b62e70ae8821b91d6efe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzMjZiMDE0MjY0YjFjNzhmYjhlZjVjM2M1MGI0NzgwOWU4ZDljYTQwOTUyNjEwNzRhNTQ5ODkwMTE4NzcxOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNzY3MzViM2NlMzk4ZDkxNDQyMmQ5YjE0Y2EwM2VhOGE4Y2Y5NGM3MTg3Y2FlOGZiNzZkMjU2YTZkZjJjOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhkNzdlMmVjMjAzMTI1OGQyZTk0Y2FjODYyMWNhYjExZGRiMjAzMzdlZjQxMzdlNzlmOTY5ZjZjNDRmZWI5MjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0YTc4NWQ1MDE4YTI2NjBiYzY5OTc2OGQwNTIwYzBjYjVlYTdkN2UyZTJmMjYwOWEzZjdjOTQ5YjE3YTAxN2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_09cbe874199f481281292709250b2871",
+      "statement": "Conversion from the ring's f32 samples to the device sample type happens per sample in the callback through cpal's FromSample, with one monomorphized stream builder per supported sample format and a Config error for any other format.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L419-L440",
+          "version": "repo-lines-v1:sha256:2f662a5edcaaa063d5ec63bc7acd11b7d9f7bb7a4f4ea7dc6ea0cac00c96aec8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMDlmNWVmMTdjNWY2OWIzYTYyZDEyOGRkZGY3YTBkOTEyNTk1NzMyY2ZjYjNlMzM2NTI2NTEwMGY5MGZkZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjYjZlOTQ2MjUxYWYwNjY1NzJjZDcxY2VhMTlhN2ZhNWUzZTUzM2MzYWRhOTAxMDgwNTBiOGJhOTI0MjU4ZTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2NDdiYTYwOGU2NTk4NmJjMWNiMzEzODg1ZDc0MjI5YzhjZTczMjZjN2NkMzhlN2VmNDEzZjYwOTJiZTFmMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMTk5NjNhZTNkYTJiMjk0MTA4YjI1M2RmOTNiODEyYTlmZmJiMDUxZjlmZDBhN2IwMjE0M2FiMjgzN2YxYTUifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L571-L579",
+          "version": "repo-lines-v1:sha256:bdd6198a30af898263ac7fa2d1503639c561375c1fc37465472b7195d8c90f4e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRkOTQyNzdlNWE5NTFkMmIxNjIzYzU3Y2JiYjcyYTFkNTIwODUyYTQxMGY2NmJjZDBmMzhjMDYzZGY1ZTdlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2QxMzUxMjk4ZjU4ZTg2MmU4ZmI2YzM0YWIyZDljZDQzNjQyMWFhMTcxNWE3NDgyMjdkOWZmOGE0NGNkN2FjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmFhYjdmMjdhZWEyN2ZiMTEzMjNjZTJkMWUwNzRlNjIzNzQwNzViNjVmMWI1YWY2MjEyNGI5ODQyMjVhMjg5ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L682-L689",
+          "version": "repo-lines-v1:sha256:ee0974996cbdc0f7af933d13ef7e9bfd9ec3e4a4a0962c1a11558d7236c732a8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ5NGFjMTEwNWU5YThmNDNlMDIwOWUzNjc2NDJjMmY0MGVkMjk2ZjU4MDU1ZGI1ZTRlNDgzYTQ3YjNhOTM4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTlkMjhkZmJkMDczMTAzMjYwZjJhNjY0NTFlNWQ0NjE1Njg5MWI3YWVkMTQ1NWI0OTJiYzZhYzNiYWUyZWRlOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2FhZjBjMGMyMzU5YTU1Mjc5NGU2YmU0ZTk5ZTQ5YzQ3OTgyMTU2NjNhMzNjYzc0MDdkYTMwNzNhMWY0OWU1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDVjYjhhMTQ0NjNmM2JlYjY2M2EzYjgyYmRkM2I3ZTFmZTdjMTY4ODhmZDBjMDc0Zjc4Y2VjYzEwZjhhMzhlNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f27f7654cc2c414e99ffeb412f4f2863",
+      "statement": "Samples are limited to MAX_SAMPLE (8388607/8388608) before reaching the device because the f32-to-24-bit conversion does not saturate and a full-scale 1.0 would wrap to full-scale negative.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L40-L42",
+          "version": "repo-lines-v1:sha256:4af0da0cd0ed2d7bae96207b19d49e1eb0b28e6054a1b733abcc0fff2f9ef5a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg2MzA5ZTNiNDk2YTUwY2Y0YTBjYWVjNzIwNTY0NmI2YjgxNGVjNTY1ZDBiNjZhOWEyOTY4ZGQwNzYzOTIyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdlMmIyYzJjMGQzYzc2ZmFiMjEyNDcyMmNiOThjNGVkMTM5MTliZmZiNmUwZmFiZDM1MmVjZDIxNjdmODk1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDExNWUzMTdmN2FhYTAyNjdhZTgwNDc3MGVkNmE4NmE0ZDQ0NTUxYjFkZWFhZDAwYTliODRmODg3MDJiYTA1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjdlYzE1OGQxZWFmYTg1ZTVjYjY0Njk0NWE0NWVlMDhkMzIwZmZjNDhmYWQzNWJmYjcyM2MzODU1YTdkMzBkNyJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

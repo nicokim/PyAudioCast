@@ -1,0 +1,6 @@
+# Files
+
+- [Build and Packaging](build-and-packaging.md) - How pyaudiocast is built into an abi3 wheel with maturin — Cargo and pyproject settings, module naming, the single-sourced version, Rust edition and MSRV, crate dependencies, system libraries needed to build, test and run, the release profile, and local development commands.
+- [Continuous Integration](continuous-integration.md) - What the GitHub Actions CI workflow checks — Rust formatting, clippy and unit tests, the Rust 1.88 MSRV check, and a Linux/macOS/Windows × Python 3.9/3.14/3.15 pytest matrix with a headless PulseAudio server, a macOS null audio device and Codecov upload — and how to reproduce each job locally.
+- [Logging and Troubleshooting](logging-and-troubleshooting.md) - How to turn on pyaudiocast's Rust-side logging with PYAUDIOCAST_LOG, what each subsystem logs at which level and under which target, and a lookup table from error messages, warnings and symptoms to their causes and fixes.
+- [Release Process](release-process.md) - How a pyaudiocast release happens — conventional commits on main, a release-please PR that bumps Cargo.toml and CHANGELOG.md, a pyaudiocast-v* tag, wheel and sdist builds for Linux, macOS and Windows, and PyPI trusted publishing from the pypi environment.

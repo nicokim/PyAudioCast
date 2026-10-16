@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f8a13358c632a6aa1e20016b416fac5944db94380b6115cef2edba398ccfbe23",
+  "claims": [
+    {
+      "id": "claim_6b52146f02f84b04b5c188abaf0e9b70",
+      "statement": "A sink target is routed through the ALSA device with id 'pulse' using the PULSE_SINK variable, or failing that the 'pipewire' device using PIPEWIRE_NODE; if neither exists the lookup fails with a DeviceNotFound message explaining that no routing device is available.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L186-L204",
+          "version": "repo-lines-v1:sha256:b0e035b8031a0a22934ea457f8c0173c6975285de57a311d360cee24503d51df:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwOTA0NjQyZGZmMTE4NGVkMDhjZjVjNzBlNDg5YTc0OTM0ZTNkM2YyNTgzN2UyY2QwN2RkMDA4MGU5YTY2MDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ3NGU2ZDM1NzU2YzY2MzA4NjI2NjRhOGI0MjA5NzM4MjZhY2Q5N2M1ZjM0ZjAyNzFjODg5ZmFkM2VkMjE5ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI1NTgzMDMyM2VmYTNlNGNkNTdjNzdjOGEwMTJjNmEzNzFmMDBlOTRjZTA4YWYxMzkyYjkxMGUzZWQyOWI1ZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_585a3043e5db4de8b1e6db256aefe32f",
+      "statement": "AudioPlayer::open keeps the sink variable set for the entire open — default and supported config queries, stream build and start — and restores it before the open lock is released, because the lock guard is declared before the SinkGuard.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L369-L403",
+          "version": "repo-lines-v1:sha256:cdf6b7f4090bc37dbb2706e81537011a938868af806a44afab74ab57ded9b7fa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNThlZWYyNWZhYzBiZTQ1ZDU5ZTQyNjUwMzc0NmE1OTFhMGRmYmQ5MGE0ZmYxZDEwNWFhYzg1ZDEwZWMxMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM0MTgzMWZkZTdjMzhhNjZmMmIxZDYyNTNlMmNiOTE3NDQwYzRkNWE5MjI4OGQwN2Y3Nzk1NzA0Y2ExMWUzZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNzc1MWYxNDZiMGQ1ZDRlZjhhNGVlOTIwMDkwOWJhOTc2NGUzNjQxMDg4MzVmYzc3OTVlMjZlN2Y2MzYxOWEifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L419-L442",
+          "version": "repo-lines-v1:sha256:0ec1493b168aa789a9ddf655d6d081f6c59a9be1433a67f24ccdccfe30eab28b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMDlmNWVmMTdjNWY2OWIzYTYyZDEyOGRkZGY3YTBkOTEyNTk1NzMyY2ZjYjNlMzM2NTI2NTEwMGY5MGZkZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhNDkzMDViZDYyZGVkZWJkOGQ1YzA3NzFhYjE5ZWU2MWRjYTM0ZDBkYTcyMWE1MDZlNTE4YjQ1NmIwMmVkOTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2NDdiYTYwOGU2NTk4NmJjMWNiMzEzODg1ZDc0MjI5YzhjZTczMjZjN2NkMzhlN2VmNDEzZjYwOTJiZTFmMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3MDYyYWRmZThmMmZmMzdkNTE0MTA5YWQyY2NlOGZmYmFjY2ZhZTBhMjk3ZTE0YzNkMTFmN2Q4YmE2Nzk2ZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_00e289a23bbf4f959a47f591d5c967ea",
+      "statement": "SinkGuard restores the variable's previous value on drop, or removes it if it was unset, so the override does not leak into later opens while the opened stream keeps its sink because the plugin reads the variable when it connects.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L206-L235",
+          "version": "repo-lines-v1:sha256:9e688c90eba3c543e260b20e2684485f60034c5ccab40bf90dc483296eaa35af:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5MGE3ZjIxM2M4OGUyMzkyMDllZTBiZjkzODk5MzZmYjZjZmJlOTRkMjI3ZDA4NjRjNjFjZDBmMmE2YTA4NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwNjNjNGQxYWY4Y2Q4OWJiMGJkZDc2NTdmZmNiZjY4MDZhNjEwZDc5ZDZjOGQ0YzMwN2MyNDFkZjM5MDA1MjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYzk4ZDZiMGRjNDkyYzUwMTZkZjEwODA1YTNhNTRlYjljMTg0YTVhNjEzN2U3ZjRiZWNmYTBjMjIwNTUwZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_77a556a4bbfb49db95e2ec4835e96f8e",
+      "statement": "The unsafe environment mutation is justified by the plugins taking the sink only from the environment, pyaudiocast's own lookups and opens being serialized by open_lock, and the GIL keeping Python code out; concurrent reads by other native threads are explicitly acknowledged as not ruled out.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L214-L224",
+          "version": "repo-lines-v1:sha256:85f888a24b237fe29405126448573c89c215786c86bfa5d0f45dde63220b3d7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZjMzZDVkOWQ0MmVmYjY2Zjk2YzFhMWNkOTkwNzAxZWMzM2Y1NjZjOWVlZjE0MmM5MTUwZDYxYzgwM2NiMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmMjM5OTIxYjg2ZDhhZDkxZjNiMzU5N2JjMDgyNzc5Y2U4NDRjNzc4MWUzODI0ZGNlYTY5MGY3ZjAwMjlkM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYTE2Yzk0MzM0M2Y0MTRjNDRiMWRhZTMxMGFjZGQ1NTBlNGExMzNkYWYyM2IzN2MxMjY2MGIyN2NjYzg5MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6acbc2357c324c68a00981b9f1e458c3",
+      "statement": "For a sink target the AudioPlayer constructor opens the stream with the GIL held, whereas direct devices are opened with the GIL released.",
+      "evidence": [
+        {
+          "resource": "repo://src/player.rs#L242-L248",
+          "version": "repo-lines-v1:sha256:4b9601df4e9eb1934fa38d67adaf3073b35c4828a7c34150c5fc4562408251c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTczZDFmOTYzYjBlMzAwYWIxNjY3NzgyMWViOWEwZTU2NzcxMjVlNmIxNWUxZTU4MGJkNDZjOGE1OTVjMWM5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRjNjkxYjMyYzhjMTY1OGMwN2NkOTBiOWNmM2MwZDY0NDk4MTEyYWE2OTk2YmE2OWNiMTNhYzI1OTdjYTcwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc2ZmJjODdmYTU1MzJhMGE0Y2ZkYzRiNjFmZjM1ODRiYTBkNmZhZWMzOTI3NjBjN2EzZDIxODVmZTYzYWYxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFkMGUwYjNkNGQyNWM0OTIxM2VlNDY4OTJkZGJkMWExODMwZGIyOTFkYTY1YThiYmRiNzNmNTMzMTA5MzE0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f129c32d20949938d6f3cbaf0531b5c",
+      "statement": "One process-wide mutex is held for the full duration of device listing, device lookup and stream opening, because alsa-lib and libpulse read the environment that SinkGuard changes.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L121-L123",
+          "version": "repo-lines-v1:sha256:87dbc19e42f624b672602d0a9fb9c5eb4424ae52f8f98fd17072160b34a16b36:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM5M2Q5M2I2OGQyNmU0NDE2MTFhOWU0ZWI2NTEzOTBjNWNkOTYwZjc3ODcwMzY2ODQ4NjQyZDNhNGZmYWQ5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYxNmQyMzEwNGVmMGQxNzM0ZjAxOTgwMDZjNjlmMjkyNjYzMDNhNjMxM2YxNTZiZWJlNjFhMjIyMTkyM2I0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGE4MzA2NDdiZDM1MWQ0NTE4ODE3OGUyNTk0ZDRlNDhkOWY3NGI3YTRmZGI0ZjljZmJiOTY3YTc1YTRjNWM1MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODcyODFjYjFlM2JmNmM3OTI3MGI3NGYyYmIxMmRjY2FjNTQxY2Q5OTM2MTU1NzkxZjQ3YzM5NDBiYWY2OTVkMSJ9"
+        },
+        {
+          "resource": "repo://src/device.rs#L33-L39",
+          "version": "repo-lines-v1:sha256:c4bf8e60f0537cd46f67ab22388df81e92aebe7c633b3972c592f296efc528a8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTRmNTljNDkyYWU1ODBmNTAwZGYzYjk3YWEzNmQ3MDlmZjA3YjFmZDZlZDNmNjk1MzlkNzU2MzEzZjA1ZjIyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBjOGM5MmM1NjZkNDhkZWE0ZjhlNzBlMzhlZTkxNmMxNDc0ZDQ2YjZiOWI1ZGY0MTFiNjkzOGE5NTZlNjU1NyJ9"
+        },
+        {
+          "resource": "repo://src/device.rs#L80-L82",
+          "version": "repo-lines-v1:sha256:164e7f6347a089f2528d2cc75e1d0aafbe232d5b2775afdd7603168abdb0d040:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFiZGI1ZDZlNmNiZGJmNjJkZmYxOTUzZTVjNzBkNjEzOTJiMDNiMDFlZmZmODE5Mzk0MTQ0MjZmNTlmNzFkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTYxNmQyMzEwNGVmMGQxNzM0ZjAxOTgwMDZjNjlmMjkyNjYzMDNhNjMxM2YxNTZiZWJlNjFhMjIyMTkyM2I0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZkZDgzYTkzN2ZlNWE2ZDJjYThhMGEwYjkwMzliYjcwMGNiZTUxNGE3NjBiMTE0M2E0YTc1OTExOWYzMGU3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWIwOWJlNzBhMDFmYTcyOTdjMzFjY2Q1YjA4MzRhOGE2MTE0NTE2NTgwOWEyMmEyNmEzMDYyNTMwYWE0YTI2YiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L374-L375",
+          "version": "repo-lines-v1:sha256:14af2580e4c4bcc167882145cdc8e586c30b0ff68d9d5cdd4d189e7687e777d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3NTM1NmYwYzQwNjBmZDkzNWUwNzliZDI2OWFmYWFkN2IyMjM2MTM4NDNkZDJkOTFkYTcxMTdkOGE1YmRmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWEzNGIxMzZkMTM1YjgzNWQ5YmE1YjNjZWUyNTQxNjMyNTJkZjEwYjA5MDE5YjNjN2Q1ODZiMmQ1MWEzYzczYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWExYTQ4NWQ0NDZjMTVhZGI3OTcwYjFhNjgxODM1Y2IxMTM5NDNhNDljNzYzYjAzMmU5NDVhY2RkMDU3MWIyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2IzYTYzMTYxMjU3ZTQ0ZGJjNzkwYmRiYTU3NTczMDU3Y2Y0MzIyYjFjNTdhNDQzNDI1NGU2OWJlYWMwMWZmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e2619bea1e9d43fa9f1d1edc014bc2e5",
+      "statement": "Locks are always taken in the order GIL then open lock: listing, lookup and direct opens hold the open lock with the GIL released and never attach to Python, and only a sink open holds the GIL while acquiring the lock.",
+      "evidence": [
+        {
+          "resource": "repo://src/device.rs#L121-L184",
+          "version": "repo-lines-v1:sha256:03c005a25ff02d9343673b949e1fb19a444acbc2493120f12ed1a7f2a3d33346:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzOTNkOTNiNjhkMjZlNDQxNjExYTllNGViNjUxMzkwYzVjZDk2MGY3Nzg3MDM2Njg0ODY0MmQzYTRmZmFkOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhODMwNjQ3YmQzNTFkNDUxODgxNzhlMjU5NGQ0ZTQ4ZDlmNzRiN2E0ZmRiNGY5Y2ZiYjk2N2E3NWE0YzVjNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmMzAzMGY3MzlmZWVmNDFlOWM5NjM0N2Q2ODQzZDk3Y2I5ZDhhNTlkZWIxMWU3OGQ4NzUzZjc1ZTNjOWVjMDgifQ"
+        },
+        {
+          "resource": "repo://src/device.rs#L79-L101",
+          "version": "repo-lines-v1:sha256:e869e0669e213c7e98577e467bbbed9c144230019e5692e339854aab612a3bae:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOGY3NDBkOGE2ZWRkODMyYTQ2MDIxOGFkYTU4ZGNmNDIzZWE5Yjg5YTZhNzRlZDdhYmVhYWE2YTIzZDRhYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MzlmZjlhOTY3MTZkNWIyNjRkNTU5NDQzZDQ5YTM4Y2EyYTA5MzE0NjgwZDc2YmIyZTEzNjRjY2I2OWUzYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljM2RjOWNkZDBiN2RhYjYzMTk5NzdiNTI2NDVhNGY5MTM1MjU0MDcyODAwMTAwZjQwYTQxMmU2YTEwODQ2ODAifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L33-L33",
+          "version": "repo-lines-v1:sha256:b54c83e6b4056027ab45c0f2bc2b754ec2848a589f736107e8cd95eb3b2ebd5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU0YzgzZTZiNDA1NjAyN2FiNDVjMGYyYmMyYjc1NGVjMjg0OGE1ODlmNzM2MTA3ZThjZDk1ZWIzYjJlYmQ1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU0YzgzZTZiNDA1NjAyN2FiNDVjMGYyYmMyYjc1NGVjMjg0OGE1ODlmNzM2MTA3ZThjZDk1ZWIzYjJlYmQ1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzYyYjhkMWM2ZTliNDc4NzdjMzMyZDZlYTMyZTQzOTUzNWJmMjlmNmMyNGZlOWVlYWM5NmU1MjU3NzIwYmI3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDNhMWU4NzdiYTI3MmYzZmVlNDFjOWEyMjZmNGE3NzRmZWIzNWEwMmJkODhlMTVmZTZlZTJjZjhhZGIzYWYzYyJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L242-L248",
+          "version": "repo-lines-v1:sha256:4b9601df4e9eb1934fa38d67adaf3073b35c4828a7c34150c5fc4562408251c8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTczZDFmOTYzYjBlMzAwYWIxNjY3NzgyMWViOWEwZTU2NzcxMjVlNmIxNWUxZTU4MGJkNDZjOGE1OTVjMWM5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRjNjkxYjMyYzhjMTY1OGMwN2NkOTBiOWNmM2MwZDY0NDk4MTEyYWE2OTk2YmE2OWNiMTNhYzI1OTdjYTcwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzc2ZmJjODdmYTU1MzJhMGE0Y2ZkYzRiNjFmZjM1ODRiYTBkNmZhZWMzOTI3NjBjN2EzZDIxODVmZTYzYWYxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFkMGUwYjNkNGQyNWM0OTIxM2VlNDY4OTJkZGJkMWExODMwZGIyOTFkYTY1YThiYmRiNzNmNTMzMTA5MzE0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c3e65ed00b2e4451a2b58294f7c39c1d",
+      "statement": "Sink routing is exercised by a Linux test that opens the first sink by its 'pipewire:' id, and CI's Linux jobs install pulseaudio and libasound2-plugins, start a headless PulseAudio server and point ALSA's default PCM at pulse so a routing device and a sink exist.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L63-L80",
+          "version": "repo-lines-v1:sha256:63b12befb771e8fd48faea54633f7620555b37dd6dbe719b5ee258978b66cc91:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBiZTc1MjIwYTc3OWE2MDc4Y2NlNDg0YWU1YmM1OTlhMTUzODc2YjU3MDc3Yzk3ODA3ZWJiN2M0MGJhYjM0NjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNTU5NzljZTczMDIwMzNlNmIyZmQ3ZDg4ZjUzN2EzYjhlMDkxZWEzMDVjODExZmZhMTI3NGJmNTc2NGVhNWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjZjYWNlZmFjMzJiYzhjMzk3MjNhOGI2ZmQ0YTM0MzM3MGQ4ZWZkNDAzZGE1N2UxZGFhMWMzOTdhNmQ1MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3NGRkZjRhODc5ZWY1Nzk3NWFiYmNhYzBlMjIzY2Y4ZDE5NDExZWE3N2RjYWIyMThkZjdjMWNlMjljYWIyZWUifQ"
+        },
+        {
+          "resource": "repo://tests/test_devices.py#L40-L49",
+          "version": "repo-lines-v1:sha256:6691bd9fc5376eb649b78834566c5050b8fc211c95f3716d8d84c6f73e12a2d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMjEyMjJlN2U5MjNmYTA2ZWRlYjY3NTI5OTc4MzI5MTkxYzlmYzk4YjQ0ZTQxYjY4ZmEyZWFlNWQ5MmJjOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNDFmYjQ0ZjgxNDRiYjBlY2ZkMTU1ODhjYzcwOWI1ZWQ3MThkY2FjMzdmYWVhNDA3Y2FmMDhiMDU0YTRhZjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxOTE3YWNjNTNkODEyZDc5ZDI5M2I3ZTRiZDBjZmFmZmM1OWI5MGY5ZTAyOWI0YmM2MGFkZjQ1M2I4NzYwZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a43ce22aab706f28e88bce8d1ac2ff8f1c2e389720976f5a7f9244cae4a269de",
+  "claims": [
+    {
+      "id": "claim_1d59baa8564a4bbf957904c7e29a5632",
+      "statement": "play_file opens the WAV file with hound while the GIL is released, because opening a FIFO blocks until its writer appears, and raises open failures as RuntimeError 'IO error: …' before any device is opened.",
+      "evidence": [
+        {
+          "resource": "repo://src/error.rs#L54-L58",
+          "version": "repo-lines-v1:sha256:c9bd1a0d5198674f7a15a06f640fb912022ddc1335be29cca93d861c6ddabf35:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjVlZTI1NGFmM2FhOGI4Y2FiZDQ0ZDc5ZjczM2YxNWEwZWQyNmQ2MzI3YjJkNzc0NmU4ZGU2ODk0YTJmOTNjNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L56-L59",
+          "version": "repo-lines-v1:sha256:02980e756232541b18b715fbb3a3feda6e5f1c6f96e0dd5912496f1708052e70:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIxMmVmOGJiNjUxZTY1OTExMjBmYmY0NmNiZWE1MzI4MGI4OWRiZDg4MzhlYjg1MDUyODcyZTEwN2I1NmFlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJiYTQ5ZjMxZjEzNzVjZWQwOTg5Nzc1YjE0NzljZDllZDkyNDUwNWQzNGVmYTIzZjJhMjZjODExYWViMjlmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWMwMDhlNjhjMTFhYzJhYmVlZDE4MDg0MGYzMzQ5ZGJhYzI0NjEyNjNmODk3NmE0ODAwMTQzMmZmM2ZiOGI5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQ0NzZjYzIwNWQwZmE1Y2M4MWI0OGU0MWU2OGQyNjBjNTYxZTRiYTAwZGFkZjJmMGUzOGNlNTczMjU3NTg1ZiJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L374-L377",
+          "version": "repo-lines-v1:sha256:075537a5972887ceff9a145029fa0d9b5e2603d3ecf38b6cc837989eeff3cd09:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg4ZDE2YWVjZmY5MTcyNDY3YTM1MjFkMTNjNjE4YmJkY2VhNzA2OGZjZDM3MjZmMmYwMzNlODE2ZjczYzVlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDA0NjIxNmVhODQ1Yjg3MjlkZTkwZmY4NTY0OTAwYzVkN2UzYjJiYWMzODkxOWNkZmY2YzVlYWQyMzRkMGU1NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUxMGIyYmNkNjRkZDU5NTg3MDY4YzVhMDgzODIwNDBhMDRkZjA5MjI0YmZmZmU4ZDBmNzgwN2I3MGRiZDA5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQ1NzY0YTg2M2M1Mzk3MjAyOWI4ZWNlNWI5ZWZhYmU1ZTllYTc1NmVlMDM3MTkzMTI1YWU2NzM0ZGFhOWFmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c9e1ae0b803d4a48940cb2af25504768",
+      "statement": "play_file accepts a str or any path-like object for the WAV path.",
+      "evidence": [
+        {
+          "resource": "repo://pyaudiocast/_pyaudiocast.pyi#L24-L31",
+          "version": "repo-lines-v1:sha256:669c071a46285508789719c195ac8147ec11bb8f8d3c8f3b1c57e3bc5e749607:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdhZTNmZjBjMDg3NGU2NTAzMDgwNmMxMDVlODI4ODQxY2M3MzZjY2RhMTRjY2YwZWE4NmQ4MjljODZiMWI4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ4MWJjMWVhODFiNmQ1MDViMzMwYjY4MDMzYWU0ODZiZWZmYjA5MjljMGI2ZmVlMDY1ZGM5NTI0MDNjODhlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGY2Yjc1MGZjNDQ0ZDZmY2U0Nzc5YzdjYjM0YzRlOWFiMDBhNmIzNTIxYTY3NzEyMjM0YjMyZmY5YmY5MzM0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjc3MDViZmRiOTZiODIwYjJiYzU2MGI0YjM2YWQ2Y2UwZjYyNzg2OTU2YmIwN2U4ZTk5YjQ3MWZiMTBmZWVlOCJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L50-L52",
+          "version": "repo-lines-v1:sha256:13d3c947d4626daed77e82502625bb3accb958f2958d9457684b6e71f055ddac:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjk5NzhmZmI4YzZlNjE5NTcyODU4OWE0ODdjYjlmMTM2OTYyNzI4MTI5NjAyYjI3MmJmZWI2NmExMGE1MjVlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRkZjhkMDdiNjE2Y2RiMDc5NDUyN2M2NmUzMTI4YjIzY2IyMTI4MTc0NzIyZjM5YzYyYWUyZDYxNjA2YzcyMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGRiYWU1Y2I3ZjhiN2NlODAxMzU2NmViYjRjOWY3MGM0YmJkNTliODU0MGYyOTMyY2I1M2FiMjAyYWE1MzIxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWMwMDhlNjhjMTFhYzJhYmVlZDE4MDg0MGYzMzQ5ZGJhYzI0NjEyNjNmODk3NmE0ODAwMTQzMmZmM2ZiOGI5ZiJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L379-L387",
+          "version": "repo-lines-v1:sha256:2e258de387c93b95f2d5d1078a8e7714bf812ce29d551c420f97bbe784880a1e:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTYxNThhZDE3YWNiOWY0YTRmYjcyZWQ2NWZlMjk4ZTgwMjYwYTAzYWMwNjI4NTJmNDM5NzNlODAxNGI2ZDZlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFlNDJhNGE2ZDU0ODUwZDZkYmFlYWRjNjFiMjI4NDQ0Y2E0NTE1YWVjOWI1MzE5YjNlYjlmNGUwODFkZTQxOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDRlYTBmNjg3ODAzYTUxYWJmNWU1YTg2ZGU0Yjk0NjdmZTBmOGY5MGU2MjZjOTllYmJjNjQwNTZjNWJlMTMxYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzVjNzQ2NWMyNDZhNWZhOGZkZjM1NWU2NGRhNjk4ZjVhZTliMmEzNmVlM2FlYWMzY2M1NjhhY2E5ODdlY2FmZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aeac38766cc1449db5fd697c375eca90",
+      "statement": "play_file creates its player through the regular AudioPlayer constructor at the file's sample rate and channel count, so header values outside the supported ranges raise ValueError and device selection and negotiation behave as for AudioPlayer.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L60-L65",
+          "version": "repo-lines-v1:sha256:3686b208442a33138f1d556f9ddb988ca2bc483194db3a21917ebefc5050a2ac:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE2Nzg5ZmZmNDA4YzhhZGE2N2U3NDdkNWI3NTY1NTBmNzBhOTRmMTRkZDc4MTg0ZDhlMjgwOGI4MWQ0MjM3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMxMzc1N2JmMTRlNDNhYTcwNzYwMzQ3MjVkZDRjMjRmNjc5OWI5YTUzMDVmYTI5MTFlOWU5MzA5MTEwNjhhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzlkOWE1NTg0MmYxNjEwMDJiZTk4MDMyZWQ5NmExZTU5YmM2NTA3NjliZmE5ZGE1NzUzYzM1ODVhYzViMzMzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGVlYTljM2EyYTA4NDU1ZGMxZTcwYWM1ZTFlMjFhZmRkNDMxMGNlOWFhMGIyZDU1NzI5MzI3ZWI2MmY0NjA1NiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L215-L237",
+          "version": "repo-lines-v1:sha256:6c49c5b951d104ad934c0cfbd7bbd66c35dc22e8cf3f83133e707684683ae940:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkZWViMTcwNzRlNjBlMmJmMDE0NDY1M2RiZDIzMzRkODNiYzRmYjAxMDAwN2YzY2UyODI3OWQ4YTE5ZjY0MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiZTA3MDVmYzk1YzkzOWZhMjM1MDY5ZDIwMjg0YzVjNDQzMWY1ZTZiMDBkYTI0YWZkY2Y1ZTcwYmRjMDEzMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0Y2FjZGYxMmUyNmM3Y2VhZjlhZWZkMmFkMTZmOTNjZGMxNTNhZmIwZDgyMzc5ODk3YzI5NmEyMDY4MzAxMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4705b600f118443b8518bc661b93ea04",
+      "statement": "play_file decodes samples into 4096-frame buffers and pushes each full buffer with the GIL released, instead of decoding the whole file up front.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L67-L91",
+          "version": "repo-lines-v1:sha256:2a48faef123bb5b9bef1ccc942c5e6c54f3a38c46349977f2a413eca733ba3f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNTJlYzVkNTg5MmQ3Yzk1ZmZkMWVlYTY0ZWI4ZDk2OGUxMmViMzA2MDNhOWM0YTY1OWI3OWNjNTIyNmY4YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkYzBjODlhNmRjNmU5Yjc1NjQ3NjI4NjllMDk1MjQ4NDZmMTIzNjAyMWNkMTAxZGU1ZDA1ZjkxOTE4N2E5MDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzODYxOGQ0YTk0NDA1YjdjNTcxMTU5YmJlYWE1NjgwMjJlZDBlZGRiODljMDQxMmVjZGI3ZThjOGI2YTYyZWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2a435a0121b49b2be955440db02e588",
+      "statement": "Integer WAV samples are scaled by 2^-(bits-1) and capped at MAX_SAMPLE, while float samples are sanitized (clamped and non-finite values silenced).",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L92-L109",
+          "version": "repo-lines-v1:sha256:9d30bc49a69c9352cd72bde1a563e3b549b6b6d8d356b11c5b651e02e3997464:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMTY4NzY1MTFmOTU0YWY3OWU4YjRmNWM0ODdkNjgxNjkwODMzOTIzNjFjODBhOTllYjFiY2EyMGNiYWU2MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkYzJiMGY3M2QxOWJjZGYwMzRjMGY2YTRkOGVlMTg0NTU4MjY3YWIxMmM0ZjAwOWY3MjA0MDUxMmFhNTliNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhNmIwZDBmYzM0ZWU2OTQwZTQxNWJiMGM1ZmVkNWFiNzUyYjg1N2ExZTBiMWQ2MGZlYzBhYzBjY2I4ZDZmOTcifQ"
+        },
+        {
+          "resource": "repo://src/player.rs#L860-L868",
+          "version": "repo-lines-v1:sha256:374f72e0d8d4bf2b790d5bd8fe8fdcf0afcda9d913883d8b71f69ec45adf0ac3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzhmYjEzNjgzNDBhNTk0YmY5ZThiNmE4Nzk1ZmE0MWIwYWYxODFhZTIyZTEyOTcwMTJmOWZiZGU0YTIzNmY1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2NjNDg5MWU4MjRkY2U0YzFkZDZiYTY1NWQxZGZhMmI2M2Y0MzMyMzQ2ODgyOGZlMDNhZmI0ZmYxZDYyZTVkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTU4MjcyMmZlYjgyMDI5Zjc1Y2E2YjRiMzdiNTgyZTM0ZDNjNWQ4Mjc3ZjJjNjkyZjVkNmViZGNiZWQzYTAwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a97f77f1dc646289b33344a8e43219a",
+      "statement": "A read past the end of the data, which hound reports as an I/O error of kind Other or UnexpectedEof, ends playback normally with a warning, so truncated and pipe-written files that declare more data than they contain play what is present.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L124-L129",
+          "version": "repo-lines-v1:sha256:daf96e436e30f21eaa9c8def190d2402d578369246ce6e46fb15abead9390ec6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzQxNzAxZDgwNTIzODIwZTc1N2QwNzhkZDkyM2YxODdkNGZhNDc4MDhhNDA3ZGYyYmJkMDQzOGNlZTk2NTIwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzVmNmY0NjZlNTljZmMzMDcwM2M0NWY3MmFmNjVkZTU0YWMzNjNkMzU0Y2MxYTMzMzAzNTBhY2Q0NTI0MzRjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTIxMGNmMDE2OGVlMzNjODA0N2EwMTk2NzRjYmUxOGE4ZTU4YzMzYTQ0N2IxNzI5MTU4ZjNhYTNkNDY5Y2ZmNiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L145-L163",
+          "version": "repo-lines-v1:sha256:ecf9ad0befc9fe62a1a4ad8ff88086a103f1e8d58d054bec06936b6c1287950d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyYjVlZGY1OTQ5Y2ZlYTY3ODIyY2Y2OTExMzIzNjNkNjhkNmYxZTE2OWY1ZTBkNGY3YzE0ZTVmYTFlNmQ0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5ZWMzYjNmYzljZWRmMDgyMDRiY2M0YWUwYTVmMTMwYzhkODEzYjgxNTQ0ZWQ0NGVhYWJjYTA4ODEzOTg2MzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L72-L80",
+          "version": "repo-lines-v1:sha256:6f389f55574a49537eba536b886c0f190836b40dc27d2257b347df504c48fe7a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFkYjNhODg1M2MzOWE3NDFjNjc3ZDVmNjY0NTVhYjc1ZjRiZTIwYzAzYTBlNjY2NDRhM2M1Njg1YTcyMmI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWIwYzgxZTBjODhiZWM1OTk2NDZkN2FkNDkwZmVkMzQ2M2IwYzFkNTBjYzNhNWY2MDg1MzdkMTYwODFiZjRiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWUwNjE3MjRjODNmNjU5YzljODQ3NjE4MzFmYzhlYjQ5NzM5MmEwZWFjMTZkMmMyODIyM2YxYTAzNTU1NTNmNSJ9"
+        },
+        {
+          "resource": "repo://tests/test_player.py#L389-L406",
+          "version": "repo-lines-v1:sha256:dd18986e4902af54257bac8a3c7a07f2b261aad4e1484ba9776254aeb8475617:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2MTU4YWQxN2FjYjlmNGE0ZmI3MmVkNjVmZTI5OGU4MDI2MGEwM2FjMDYyODUyZjQzOTczZTgwMTRiNmQ2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2MzgxOTY3NjFkYzc3Y2Q3YzRkOTI2MGIzNzg4NTE2YTM5ODUxMWRlZWUxNjRkODA2NTY5ZjY3ZWRjMDNkNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViNDM0OWIyMGUxYWZmM2UyNDUwMDAxNzE4OTc4YWNhMjA1NWY2YzJiMjg0ZGM2MjNlN2U1MmNmMmQzZWQ1YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZTdmMGRhYmQxMDYzZjQxOTBiMTc3MDVmOGVhYmEzMGJjOTU1NGYyMjY5NGUyNGJiNjU0ZTRiZjgxYmM4ZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef32edbab1e348ee924e90a9be555fc9",
+      "statement": "Any other decode error stops reading, but the samples decoded before it are still pushed and drained, and the error is raised as 'IO error: …' only after playback has finished and the player has been stopped.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L110-L119",
+          "version": "repo-lines-v1:sha256:06f0dd579ad811f3f712bb5b755b23f58595b8d1f3f58b374bdea46a9208e52e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExOWEwMGI3YjM5ZTA4NzRiODAyMmExOTBmYzk5NDgyZTNiMTBiZmRiMTBmMzM1NGNiMGM3OGE2Nzg5NzY2ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjZThkMTM3ZmE0NGFjNjY0OGIzYTRhNmY1NmY1MGJhYmE2NzczNDE0NWQwNDc0YTRlNTU1Njk3ZmQyNmJlYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzMTZjYjE4YjUxZDYwNzJkMDhlZTljNDYwMzQ3OTgwMzc1ZTc0NjBhODM3MmE3NDQ2NzEwNzVmNWY4Yjg2MTEifQ"
+        },
+        {
+          "resource": "repo://src/lib.rs#L81-L84",
+          "version": "repo-lines-v1:sha256:1feba773aff346abede14e3c8692a635cdb453553ad010fb8478445374271fdb:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjU4NTcwNmJlMWYwMmUyODE5NDdlYzk0YWU1ZTIyYWFhMDhjMTBhYzRhMGUxZDk2NmUwYTA3M2FjOWViNjM3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM2NDc5Y2MyMzA0NDBmZDQxZTgyMjQyMTg2Nzk2OTg1NTlkMjg5M2JkNjdiNDM4MGFmYWI4MTFiMzhhNTVhYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2E5NmNlMjgxMjI5OWIyOTY4MmYyY2Q2YTIxNTQ4MjNiOTdlMTFkYjcwYjZlOGExY2Q3MzJlZWM2YjFiOWViNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODJjMzlkM2U4N2MxNDVhNjE4OTA1MGYxM2ZjZWY3YjgxZGYyMGZlNThkY2YxNWRmNGI5Nzk0MGI2MzhiOTQxYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_11eb2caf717645a1aa1da90c3765ddca",
+      "statement": "play_file always stops its player before returning or raising, and drains only when decoding and pushing succeeded.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L113-L116",
+          "version": "repo-lines-v1:sha256:b8c954fd75219feff46a82ac4995fac5a48e918a620c57830deeea7dd9e5801e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZjOWEwMTllNGUwMjFhOGE4MTE0MTA5MmQ2ZjM2ZmJiMjg3N2JmNjgzZTAxZDk4NDkxNGQ3YWJmZjQ3NWI3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmVlMTk4Njg4OWVjOTc2ODNlYThhNDZmNmYyYmZhYTEyNTBjOGFiODZjMGQzZTdkM2QwZmM4OGU2NDExNDMxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2E2YjBkMGZjMzRlZTY5NDBlNDE1YmIwYzVmZWQ1YWI3NTJiODU3YTFlMGIxZDYwZmVjMGFjMGNjYjhkNmY5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTkzZTQ2MThjZTQ0OGY2MGViZDk0MGI2Y2QwOGM4YWM3OTg2YTYwYmE4ODAzNmE3ZGE1NDYzNGFlZDRiOTZhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_94b88114621d4bf9bcdc4c67d9d7c2b8",
+      "statement": "An error from pushing or draining, such as KeyboardInterrupt from the periodic signal check or a stream failure, skips the drain, stops the player, and is raised in preference to a pending decode error.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L113-L119",
+          "version": "repo-lines-v1:sha256:2d8fd0f4e0ba7670f5aa147fe6e687b3aee884c63bba8a032b7f17c07eb8eddf:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZjOWEwMTllNGUwMjFhOGE4MTE0MTA5MmQ2ZjM2ZmJiMjg3N2JmNjgzZTAxZDk4NDkxNGQ3YWJmZjQ3NWI3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2E2YjBkMGZjMzRlZTY5NDBlNDE1YmIwYzVmZWQ1YWI3NTJiODU3YTFlMGIxZDYwZmVjMGFjMGNjYjhkNmY5NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMxNmNiMThiNTFkNjA3MmQwOGVlOWM0NjAzNDc5ODAzNzVlNzQ2MGE4MzcyYTc0NDY3MTA3NWY1ZjhiODYxMSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L498-L503",
+          "version": "repo-lines-v1:sha256:19ec2128e490e0d12c813e14ae4e7a6865b48d68065607fc075c7737ac0a222b:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjBjODJhM2E2ODhkYjRlNTk2MjRkNDFjZTA5MTAzMThhODI5NTZiOTJjOTI0Y2Q5ZTNkMWJhODU3YzU2MWZjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc3ZGI1NzNkMGIyMDEzMjQ2Y2RjOGE4NWU3MGRiOTU1NmFhMDgyNzc3OWVhNThiZjNjYzY0MWY3YzcxYTIwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTllNzYzNTVjZjExOTk0ODBjM2Y5OTgzNmIxNDg2Yzg0MWQ4OTFmYWFkOTA0YzYwOGUwOTMwMjJkMzc1N2FlZSJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L539-L543",
+          "version": "repo-lines-v1:sha256:44a0be8776cdb55e37516f7a28df303e316aa76616df77d9a42e8d67c04d2cac:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2U1ZDliZGE0ZmZkZGUyMjhiYzA0MmRmNzVkZTE5YjMxMTgxZWFmODY2YWIwYjBjY2RkMmZmYjhiNDM5YmY4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTZiMDQ0OTE0Njk3MjJlODM2M2E5NGU0MDQ0NTM4ZTAxM2EyYTIxN2UzNmIxZTU2OGJhNjBhY2I3YjRjOGYyZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzBmM2VmYWM0OWVmZjljNjAwNjE2ZWE3MjBlNWRlYThkMTJkMDBiZGEzZDU5NThhYWMxYTkzMjRkYWY1MzFjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzA5NTlmZTM4ZTgzZDcwNzUxNGVlZGUyZTZhODg5ZDVhNTgyZjZlZTMzMGQ2NmMxMTZhZTdkNWEzYmFlZmUwNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae617b108ef4403f820c2613c863eeb6",
+      "statement": "A trailing partial frame at the end of a truncated file is left in the writer and never played.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L110-L111",
+          "version": "repo-lines-v1:sha256:de0e1bcc84b7ed2b673b8b3e570feaedc69ecacb72377262b65a6715507a44d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE5YTAwYjdiMzllMDg3NGI4MDIyYTE5MGZjOTk0ODJlM2IxMGJmZGIxMGYzMzU0Y2IwYzc4YTY3ODk3NjZmNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY4M2I1ZjYzYjllYzQzNGU0M2NjMjQwMjBhYWUxMGI4ZTg1N2RlZDdiY2QyMjU4YjUzYjNjNjFjOGYyZjY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNlOGQxMzdmYTQ0YWM2NjQ4YjNhNGE2ZjU2ZjUwYmFiYTY3NzM0MTQ1ZDA0NzRhNGU1NTU2OTdmZDI2YmVjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNkODY5ZmQ3ZWJkMWNiMTQzNTA3MjZjM2Q4MWFiMTE5NGU0Y2JmY2VkZWE5Y2JkNmE0OTc1OGZlYzVhNjY3ZiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L170-L176",
+          "version": "repo-lines-v1:sha256:ae094562295200ae38390cf8246add909eb1bea9d418a1fc6db94bcea52e0b55:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYyYzcwNTM0NmVlYzhjMDE5ZDI3MjdiMzZkNGUwYzNhM2QzNTYxYzZjYzQzMmJjYTVjZmZhMjczYWFmNDk0OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM0N2VmYWYwNDJiYzQ1NDAxYjFmYTUxOGNmZDgwYTdhMzBjMzBmN2U1YTZkM2U0ZGNkNjc4MWU0OThmMWU1NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQ3MmQwYjIzY2UzOTc3MjZhMWMwYmQwOTcxOGYxNWRjMTg5MTQyMjRiM2FlNDExOTFhNDQ2ZmI4YmNlNThhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWZlZDJmZGE0NWE3ZDFhNDdiNzFlYzJkYzc2ZDk3ZjFiZjJhZGY1YTYwY2YyMjIwODZhODZhNTU4MWJhZmJmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4dd1b37bcd04b22837ccb9fc4ea8e6d",
+      "statement": "play_file pushes with a fixed epoch of 0 into a private player whose epoch starts at 0 and which no Python code can clear.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib.rs#L110-L111",
+          "version": "repo-lines-v1:sha256:de0e1bcc84b7ed2b673b8b3e570feaedc69ecacb72377262b65a6715507a44d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE5YTAwYjdiMzllMDg3NGI4MDIyYTE5MGZjOTk0ODJlM2IxMGJmZGIxMGYzMzU0Y2IwYzc4YTY3ODk3NjZmNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmY4M2I1ZjYzYjllYzQzNGU0M2NjMjQwMjBhYWUxMGI4ZTg1N2RlZDdiY2QyMjU4YjUzYjNjNjFjOGYyZjY4ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNlOGQxMzdmYTQ0YWM2NjQ4YjNhNGE2ZjU2ZjUwYmFiYTY3NzM0MTQ1ZDA0NzRhNGU1NTU2OTdmZDI2YmVjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGNkODY5ZmQ3ZWJkMWNiMTQzNTA3MjZjM2Q4MWFiMTE5NGU0Y2JmY2VkZWE5Y2JkNmE0OTc1OGZlYzVhNjY3ZiJ9"
+        },
+        {
+          "resource": "repo://src/lib.rs#L86-L89",
+          "version": "repo-lines-v1:sha256:76ea0129b4abfd8fb160eda7cd5bdbd194ba75f5dd066e1ced8e389242759c2f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY3ZmU5YzQ4NTU3ZGYxMDg2ZjkyNzE1YmI3MTdkMmU4MzZhMzY0NGQ4NGM0M2E2MmYzYTkyYTA2OGUwOTc1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyMmM0MmNkMTljNmQwM2Q4MDhjNDUyNzIwNTUyODI1YjdlYTFjNWI0OTFiMjE4NTExY2FjNzQxNWNmOWQ5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWY5YmQyNTY1NzIzZjgyNmM2NGYzMjgxZTcxM2NjMjZjNmM4ZjQ5MjcxNzYxMTI1NTc4OTVlNTMyZGRhYjJmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg2ZjM5NjljYmEyMzljYmMyYzU4OTczMDAwZjIxNWEyNGRmZjZiODllZWM3NzRjYWZlNDVjZmViYmFlNmQzMiJ9"
+        },
+        {
+          "resource": "repo://src/player.rs#L76-L93",
+          "version": "repo-lines-v1:sha256:8b8dd0abb5dffaea32305996f3acfe425d81640a7cf209ad3a5d81ce65624287:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZGRhYmE4ZGVlODdmN2MyMzE5ODAyYmU4ZjFhZWE3YjQ3OGVmOTI4ZDdjYTI3N2Y1YTIyYjkxNjJkOTBhMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhOTlmNDJhNjg4MTJiYmE4NjI0ZDgxMGE1NGQ3YjhkN2EyZDcwY2JhNjEyYjljNDY3Njg0MTY5OWE1MjdiZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmYTZlYzc5YWMwZmM2YjQxZmUwOTU3NmRiZTYxYThlN2Q1NDhhNzQyZDg2OWRmYTcwMDkzYjg2ZTUwYjVhZTQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-10-16T04:21:31.514Z"
+  }
+}
