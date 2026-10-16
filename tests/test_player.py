@@ -28,14 +28,9 @@ def timed(fn, *args):
 
 def warmed_up(player):
     """Wait until the device is actually playing: a cold sound server can take a second
-    to start a new stream, which would skew the timing assertions. Then skip the test if
-    the device doesn't keep time (GitHub's macOS VMs sometimes play ~60x too slowly)."""
+    to start a new stream, which would skew the timing assertions."""
     player.write(silence(player, 0.05))
     player.drain()
-    player.write(silence(player, 0.05))
-    if timed(player.drain) > 0.5:
-        player.stop()
-        pytest.skip("the audio device isn't playing in real time")
     return player
 
 
@@ -348,7 +343,6 @@ class TestAudioPlayerClear:
     @pytest.mark.parametrize("call", ["stop()", "write([0.0] * 10)"])
     def test_signal_handler_can_use_a_blocked_player(self, call):
         """A handler run during a blocked write() used to deadlock on the writer lock."""
-        warmed_up(pyspeaker.AudioPlayer()).stop()
         code = (
             "import os, signal, threading, pyaudiocast\n"
             "p = pyaudiocast.AudioPlayer(channels=1)\n"
@@ -390,7 +384,6 @@ class TestPlayFile:
             w.setsampwidth(2)
             w.setframerate(22050)
             w.writeframes(b"\x00\x00" * 4410)  # 0.2 s
-        warmed_up(pyspeaker.AudioPlayer()).stop()
         assert 0.15 < timed(pyspeaker.play_file, path) < 5.0
 
     @requires_audio
@@ -410,7 +403,6 @@ class TestPlayFile:
         else:
             data[40:44] = (0x7FFFF000).to_bytes(4, "little")  # the data chunk's size
         path.write_bytes(data)
-        warmed_up(pyspeaker.AudioPlayer()).stop()
         assert timed(pyspeaker.play_file, path) < 5.0
 
 

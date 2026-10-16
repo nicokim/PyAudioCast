@@ -116,42 +116,15 @@ jobs:
         shell: cmd
         if: runner.os == 'Windows'
 
-      # TEMPORARY: does the default macOS device keep time, with this branch (cpal 0.18) and
-      # with PyPI 0.1.10 (cpal 0.17)?
-      - uses: actions/setup-python@v7
+      # The VM's own sound device sometimes plays a stream ~60x too slowly, which breaks the
+      # timing tests; its null device keeps time.
+      - name: Use the null audio device (macOS)
         if: runner.os == 'macOS'
-        id: py312
-        with:
-          python-version: "3.12"
-          update-environment: false
-      - name: Audio pace probe (macOS)
-        if: runner.os == 'macOS'
-        continue-on-error: true
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
         run: |
-          cat > /tmp/pace.py <<'EOF'
-          import sys, time, numpy as np, pyaudiocast as pc
-          def pace():
-              with pc.AudioPlayer() as p:
-                  z = np.zeros(int(p.sample_rate * 0.05) * p.channels, np.float32)
-                  p.write(z)
-                  p.drain()
-                  p.write(z)
-                  t = time.monotonic()
-                  p.drain()
-                  return time.monotonic() - t
-          times = []
-          end = time.monotonic() + 60
-          while time.monotonic() < end:
-              times.append(pace())
-              time.sleep(0.5)
-          slow = [round(t, 2) for t in times if t > 0.5]
-          print(sys.argv[1], f"{len(times)} streams, {len(slow)} slow: {slow}", flush=True)
-          EOF
-          ${{ steps.py312.outputs.python-path }} -m venv /tmp/old
-          /tmp/old/bin/pip install -q pyaudiocast==0.1.10 numpy
-          (cd /tmp && /tmp/old/bin/python pace.py "0.1.10 (cpal 0.17):")
-          .venv/bin/python /tmp/pace.py "this branch (cpal 0.18):"
-          (cd /tmp && /tmp/old/bin/python pace.py "0.1.10 (cpal 0.17):")
+          brew install switchaudio-osx
+          SwitchAudioSource -t output -s "Null Audio Device" || echo "::warning::No null audio device"
 
       - name: Run tests with coverage
         run: |
