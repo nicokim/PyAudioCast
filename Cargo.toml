@@ -1,20 +1,24 @@
 [package]
 name = "pyaudiocast"
 version = "0.1.10"
-edition = "2021"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT"
 
 [lib]
 name = "_pyaudiocast"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.28", features = ["extension-module"] }
-numpy = "0.28"
-cpal = "0.17"
-ringbuf = "0.4"
+pyo3 = { version = "0.30", features = ["abi3-py39"] }
+numpy = "0.30"
+cpal = "0.18"
+ringbuf = "0.5"
 hound = "3.5"
 log = "0.4"
-env_logger = "0.11"
+env_logger = { version = "0.11", default-features = false, features = ["auto-color", "humantime"] }
 
-[build-dependencies]
-cc = "1"
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

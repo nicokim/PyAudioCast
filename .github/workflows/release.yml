@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   build-linux:
@@ -17,13 +16,13 @@ jobs:
       matrix:
         target: [x86_64]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Build wheels (skip bundled auditwheel)
         uses: PyO3/maturin-action@v1
         with:
           target: ${{ matrix.target }}
-          args: --release --out dist-pre --auditwheel skip -i python3.9 -i python3.10 -i python3.11 -i python3.12 -i python3.13 -i python3.14
+          args: --release --out dist-pre --auditwheel skip -i python3.12
           manylinux: auto
           before-script-linux: |
             yum install -y alsa-lib-devel
@@ -36,7 +35,7 @@ jobs:
             auditwheel repair --exclude libasound.so.2 -w dist "$whl"
           done
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: wheels-linux-${{ matrix.target }}
           path: dist
@@ -48,9 +47,9 @@ jobs:
       matrix:
         target: [x86_64, aarch64]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -60,7 +59,7 @@ jobs:
           target: ${{ matrix.target }}-apple-darwin
           args: --release --out dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: wheels-macos-${{ matrix.target }}
           path: dist
@@ -69,9 +68,9 @@ jobs:
     name: Build Windows (x86_64)
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -81,7 +80,7 @@ jobs:
           target: x86_64
           args: --release --out dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: wheels-windows-x86_64
           path: dist
@@ -90,7 +89,7 @@ jobs:
     name: Build sdist
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Build sdist
         uses: PyO3/maturin-action@v1
@@ -98,7 +97,7 @@ jobs:
           command: sdist
           args: --out dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: wheels-sdist
           path: dist
@@ -111,7 +110,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           pattern: wheels-*
           merge-multiple: true

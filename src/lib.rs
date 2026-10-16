@@ -2,158 +2,163 @@ mod device;
 mod error;
 mod player;
 
+use std::path::PathBuf;
 use std::sync::Once;
 
-use log::{debug, info};
+use log::{debug, info, warn};
 use pyo3::prelude::*;
+use pyo3::types::PyDict;
 
-use crate::device::list_output_devices_impl;
 use crate::error::SpeakerError;
-use crate::player::AudioPlayer;
+use crate::player::{AudioPlayer, MAX_SAMPLE, Samples, sanitize};
 
 static INIT: Once = Once::new();
 
-/// Initialize logging from PYAUDIOCAST_LOG env var and suppress ALSA/JACK noise.
+/// Initialize logging from the PYAUDIOCAST_LOG env var (env_logger filter syntax).
 pub(crate) fn init_logging() {
     INIT.call_once(|| {
-        let log_enabled = std::env::var("PYAUDIOCAST_LOG").is_ok();
-
-        env_logger::Builder::new()
+        // try_init: another extension in the process may already own the global logger.
+        let _ = env_logger::Builder::new()
             .filter_level(log::LevelFilter::Warn)
             .parse_env("PYAUDIOCAST_LOG")
-            .init();
-
-        if !log_enabled {
-            suppress_backend_noise();
-        }
+            .try_init();
     });
 }
-
-/// Suppress noisy ALSA/JACK error messages without affecting Python's stderr.
-/// ALSA: set a no-op error handler (persistent, does not touch stderr).
-/// JACK: set JACK_NO_START_SERVER=1 to prevent JACK from trying to start a server.
-#[cfg(target_os = "linux")]
-fn suppress_backend_noise() {
-    extern "C" {
-        fn snd_lib_error_set_handler(handler: *const std::ffi::c_void) -> std::ffi::c_int;
-        fn pyspeaker_silent_alsa_handler();
-    }
-
-    // Suppress ALSA error handler
-    unsafe {
-        snd_lib_error_set_handler(pyspeaker_silent_alsa_handler as *const std::ffi::c_void);
-    }
-
-    // Prevent JACK from trying to start a server (suppresses connection messages)
-    if std::env::var("JACK_NO_START_SERVER").is_err() {
-        std::env::set_var("JACK_NO_START_SERVER", "1");
-    }
-}
-
-#[cfg(not(target_os = "linux"))]
-fn suppress_backend_noise() {}
 
 /// List all available audio output devices.
 #[pyfunction]
-fn list_output_devices(py: Python<'_>) -> PyResult<Vec<Py<pyo3::types::PyDict>>> {
+fn list_output_devices(py: Python<'_>) -> PyResult<Vec<Bound<'_, PyDict>>> {
     init_logging();
     debug!("Listing output devices");
-    let devices = list_output_devices_impl(py)?;
+    let devices = py.detach(device::list_output_devices)?;
     info!("Found {} output device(s)", devices.len());
-    Ok(devices)
+    devices
+        .into_iter()
+        .enumerate()
+        .map(|(index, d)| {
+            let dict = PyDict::new(py);
+            dict.set_item("name", d.name)?;
+            dict.set_item("id", d.id)?;
+            dict.set_item("index", index)?;
+            dict.set_item("type", d.kind)?;
+            Ok(dict)
+        })
+        .collect()
 }
 
-/// Play a WAV file to an output device.
+/// Play a WAV file to an output device. Blocks until playback is done.
 #[pyfunction]
 #[pyo3(signature = (path, device=None))]
-fn play_file(py: Python<'_>, path: &str, device: Option<&str>) -> PyResult<()> {
+fn play_file(py: Python<'_>, path: PathBuf, device: Option<&str>) -> PyResult<()> {
     init_logging();
-    info!("play_file: path={}, device={:?}", path, device);
+    info!("play_file: path={}, device={:?}", path.display(), device);
 
-    let cpal_device = device::find_device(device)?;
-
-    let reader = hound::WavReader::open(path).map_err(SpeakerError::from)?;
+    // Off the GIL: opening a FIFO blocks until its writer shows up.
+    let reader = py
+        .detach(|| hound::WavReader::open(&path))
+        .map_err(SpeakerError::from)?;
     let spec = reader.spec();
-    let sample_rate = spec.sample_rate;
-    let channels = spec.channels;
-
     debug!(
         "WAV: {}Hz, {}ch, {:?}, {}bps",
-        sample_rate, channels, spec.sample_format, spec.bits_per_sample
+        spec.sample_rate, spec.channels, spec.sample_format, spec.bits_per_sample
     );
+    let player = AudioPlayer::new(py, device, Some(spec.sample_rate), Some(spec.channels))?;
 
-    let samples: Vec<f32> = match spec.sample_format {
-        hound::SampleFormat::Int => reader
-            .into_samples::<i32>()
-            .filter_map(|s| s.ok())
-            .map(|s| {
-                let max_val = (1i64 << (spec.bits_per_sample - 1)) as f32;
-                s as f32 / max_val
-            })
-            .collect(),
-        hound::SampleFormat::Float => reader
-            .into_samples::<f32>()
-            .filter_map(|s| s.ok())
-            .collect(),
-    };
-
-    debug!("Loaded {} samples", samples.len());
-
-    let config = cpal::StreamConfig {
-        channels,
-        sample_rate,
-        buffer_size: cpal::BufferSize::Default,
-    };
-
-    let samples = std::sync::Arc::new(samples);
-    let position = std::sync::Arc::new(std::sync::atomic::AtomicUsize::new(0));
-    let finished = std::sync::Arc::new(std::sync::atomic::AtomicBool::new(false));
-
-    let samples_clone = samples.clone();
-    let position_clone = position.clone();
-    let finished_clone = finished.clone();
-
-    use cpal::traits::{DeviceTrait, StreamTrait};
-
-    let stream = cpal_device
-        .build_output_stream(
-            &config,
-            move |data: &mut [f32], _: &cpal::OutputCallbackInfo| {
-                for sample in data.iter_mut() {
-                    let pos = position_clone.load(std::sync::atomic::Ordering::Relaxed);
-                    if pos < samples_clone.len() {
-                        *sample = samples_clone[pos];
-                        position_clone.store(pos + 1, std::sync::atomic::Ordering::Relaxed);
-                    } else {
-                        *sample = 0.0;
-                        finished_clone.store(true, std::sync::atomic::Ordering::Relaxed);
+    // Stream the file in chunks instead of decoding it all up front.
+    let chunk = 4096 * spec.channels as usize;
+    let mut decode_error = None;
+    let result = py.detach(|| {
+        let mut buf = Vec::with_capacity(chunk);
+        let mut push = |s: Result<f32, hound::Error>| -> PyResult<bool> {
+            match s {
+                Ok(s) => buf.push(s),
+                // A truncated file, or one written through a pipe (sox), declares more data
+                // than it has: that's the end.
+                Err(e) if is_short_read(&e) => {
+                    warn!("play_file: file ends before its declared length");
+                    return Ok(false);
+                }
+                Err(e) => {
+                    decode_error = Some(e);
+                    return Ok(false);
+                }
+            }
+            if buf.len() == chunk {
+                let full = std::mem::replace(&mut buf, Vec::with_capacity(chunk));
+                player.push(Samples::Float(full), 0)?;
+            }
+            Ok(true)
+        };
+        match spec.sample_format {
+            hound::SampleFormat::Int => {
+                let scale = 1.0 / (1i64 << (spec.bits_per_sample - 1)) as f32;
+                for s in reader.into_samples::<i32>() {
+                    // 32-bit: i32::MAX * 2^-31 rounds to 1.0 in f32.
+                    if !push(s.map(|s| (s as f32 * scale).min(MAX_SAMPLE)))? {
+                        break;
                     }
                 }
-            },
-            |err| log::error!("Stream error: {}", err),
-            None,
-        )
-        .map_err(SpeakerError::from)?;
-
-    stream.play().map_err(SpeakerError::from)?;
-    info!("Playback started");
-
-    py.detach(|| {
-        while !finished.load(std::sync::atomic::Ordering::Relaxed) {
-            std::thread::sleep(std::time::Duration::from_millis(10));
+            }
+            hound::SampleFormat::Float => {
+                for s in reader.into_samples::<f32>() {
+                    if !push(s.map(sanitize))? {
+                        break;
+                    }
+                }
+            }
         }
-        std::thread::sleep(std::time::Duration::from_millis(50));
+        // A trailing partial frame (truncated file) stays behind in the writer.
+        player.push(Samples::Float(buf), 0)
     });
-
+    // Play everything that decoded, even when the file is corrupt further on.
+    let result = result.and_then(|()| player.drain(py));
+    player.stop(py);
+    result?;
+    if let Some(e) = decode_error {
+        return Err(SpeakerError::from(e).into());
+    }
     info!("Playback finished");
     Ok(())
 }
 
-/// PySpeaker: Cross-platform audio output for Python.
+/// hound reports reading past the end of the file as ErrorKind::Other ("Failed to read
+/// enough bytes"), which the OS never produces.
+fn is_short_read(e: &hound::Error) -> bool {
+    use std::io::ErrorKind::{Other, UnexpectedEof};
+    matches!(e, hound::Error::IoError(e) if matches!(e.kind(), Other | UnexpectedEof))
+}
+
+/// PyAudioCast: Cross-platform audio output for Python.
 #[pymodule]
 fn _pyaudiocast(m: &Bound<'_, PyModule>) -> PyResult<()> {
+    m.add("__version__", env!("CARGO_PKG_VERSION"))?;
     m.add_function(wrap_pyfunction!(list_output_devices, m)?)?;
     m.add_function(wrap_pyfunction!(play_file, m)?)?;
     m.add_class::<AudioPlayer>()?;
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn a_truncated_wav_reads_as_short() {
+        let mut wav = Vec::new();
+        let spec = hound::WavSpec {
+            channels: 1,
+            sample_rate: 8000,
+            bits_per_sample: 16,
+            sample_format: hound::SampleFormat::Int,
+        };
+        let mut w = hound::WavWriter::new(std::io::Cursor::new(&mut wav), spec).unwrap();
+        for _ in 0..100 {
+            w.write_sample(0i16).unwrap();
+        }
+        w.finalize().unwrap();
+        wav.truncate(wav.len() - 51);
+        let reader = hound::WavReader::new(std::io::Cursor::new(wav)).unwrap();
+        let err = reader.into_samples::<i32>().find_map(Result::err).unwrap();
+        assert!(is_short_read(&err), "{err:?}");
+    }
 }
