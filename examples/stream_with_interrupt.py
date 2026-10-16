@@ -1,8 +1,7 @@
-"""Demonstrate streaming audio with interruption (clear)."""
+"""Demonstrate streaming audio with interruption (barge-in) from another thread."""
 
 import math
 import threading
-import time
 
 import pyaudiocast
 
@@ -27,25 +26,25 @@ with pyaudiocast.AudioPlayer(sample_rate=SAMPLE_RATE, channels=1) as player:
     print(f"  Source: {player.sample_rate}Hz, {player.channels}ch")
     print(f"  Device: {player.device_sample_rate}Hz, {player.device_channels}ch")
 
-    # Simulate interruption after 2 seconds
-    def interrupt_later():
-        time.sleep(2.0)
-        print("\n  [!] Interrupting playback with clear()...")
-        player.clear()
+    interrupted = threading.Event()
 
-    t = threading.Thread(target=interrupt_later)
-    t.start()
+    # Simulate the user interrupting after 2 seconds
+    def interrupt():
+        print("\n  [!] Interrupting playback with clear()...")
+        interrupted.set()  # stop producing...
+        player.clear()  # ...and silence what's already buffered
+
+    timer = threading.Timer(2.0, interrupt)
+    timer.start()
 
     for i in range(TOTAL_CHUNKS):
-        chunk = generate_chunk(FREQUENCY)
-        try:
-            player.write(chunk)
-            print(f"  Wrote chunk {i + 1}/{TOTAL_CHUNKS}")
-        except RuntimeError:
-            print("  Player stopped.")
+        if interrupted.is_set():
+            print("  Producer stopped.")
             break
+        player.write(generate_chunk(FREQUENCY))  # blocks while the buffer is full
+        print(f"  Wrote chunk {i + 1}/{TOTAL_CHUNKS}")
 
     player.drain()
-    t.join()
+    timer.join()
 
 print("Done.")

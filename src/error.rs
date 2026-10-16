@@ -1,5 +1,5 @@
-use pyo3::exceptions::PyRuntimeError;
 use pyo3::PyErr;
+use pyo3::exceptions::PyRuntimeError;
 use std::fmt;
 
 #[derive(Debug)]
@@ -9,7 +9,6 @@ pub enum SpeakerError {
     StreamError(String),
     ConfigError(String),
     IoError(String),
-    BufferFull,
 }
 
 impl fmt::Display for SpeakerError {
@@ -20,7 +19,17 @@ impl fmt::Display for SpeakerError {
             SpeakerError::StreamError(msg) => write!(f, "Stream error: {}", msg),
             SpeakerError::ConfigError(msg) => write!(f, "Config error: {}", msg),
             SpeakerError::IoError(msg) => write!(f, "IO error: {}", msg),
-            SpeakerError::BufferFull => write!(f, "Audio buffer is full"),
+        }
+    }
+}
+
+impl SpeakerError {
+    /// Prefix the message with what failed, e.g. the device id.
+    pub fn context(self, what: &str) -> Self {
+        match self {
+            SpeakerError::StreamError(msg) => SpeakerError::StreamError(format!("{what}: {msg}")),
+            SpeakerError::ConfigError(msg) => SpeakerError::ConfigError(format!("{what}: {msg}")),
+            other => other,
         }
     }
 }
@@ -31,45 +40,14 @@ impl From<SpeakerError> for PyErr {
     }
 }
 
-impl From<cpal::DevicesError> for SpeakerError {
-    fn from(err: cpal::DevicesError) -> Self {
-        SpeakerError::StreamError(err.to_string())
-    }
-}
-
-impl From<cpal::DeviceNameError> for SpeakerError {
-    fn from(err: cpal::DeviceNameError) -> Self {
-        SpeakerError::StreamError(err.to_string())
-    }
-}
-
-impl From<cpal::DefaultStreamConfigError> for SpeakerError {
-    fn from(err: cpal::DefaultStreamConfigError) -> Self {
-        SpeakerError::ConfigError(err.to_string())
-    }
-}
-
-impl From<cpal::BuildStreamError> for SpeakerError {
-    fn from(err: cpal::BuildStreamError) -> Self {
-        SpeakerError::StreamError(err.to_string())
-    }
-}
-
-impl From<cpal::PlayStreamError> for SpeakerError {
-    fn from(err: cpal::PlayStreamError) -> Self {
-        SpeakerError::StreamError(err.to_string())
-    }
-}
-
-impl From<cpal::SupportedStreamConfigsError> for SpeakerError {
-    fn from(err: cpal::SupportedStreamConfigsError) -> Self {
-        SpeakerError::ConfigError(err.to_string())
-    }
-}
-
-impl From<std::io::Error> for SpeakerError {
-    fn from(err: std::io::Error) -> Self {
-        SpeakerError::IoError(err.to_string())
+impl From<cpal::Error> for SpeakerError {
+    fn from(err: cpal::Error) -> Self {
+        match err.kind() {
+            cpal::ErrorKind::UnsupportedConfig | cpal::ErrorKind::InvalidInput => {
+                SpeakerError::ConfigError(err.to_string())
+            }
+            _ => SpeakerError::StreamError(err.to_string()),
+        }
     }
 }
 

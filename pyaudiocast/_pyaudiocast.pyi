@@ -1,30 +1,42 @@
 """Type stubs for the native _pyaudiocast module."""
 
-from typing import Optional, Union
+import os
+from typing import Optional, TypedDict, Union, final
 
 import numpy as np
 import numpy.typing as npt
 
-def list_output_devices() -> list[dict[str, str | int]]:
-    """List all available audio output devices.
+__version__: str
 
-    Returns a list of dicts with "name" (str), "index" (int), and "type" (str).
-    """
+class DeviceInfo(TypedDict):
+    name: str
+    """Human-readable name (not unique)."""
+    id: str
+    """Unique id, e.g. "pulse" or "hw:CARD=Generic,DEV=0" (ALSA), "pipewire:<sink>" (a sink)."""
+    index: int
+    type: str
+    """"pipewire" for PipeWire/PulseAudio sinks, else the host: "alsa", "wasapi", "coreaudio"."""
+
+def list_output_devices() -> list[DeviceInfo]:
+    """List all available audio output devices."""
     ...
 
-def play_file(path: str, device: Optional[str] = None) -> None:
-    """Play a WAV file to an output device.
+def play_file(path: Union[str, os.PathLike[str]], device: Optional[str] = None) -> None:
+    """Play a WAV file to an output device. Blocks until playback is done.
 
     Args:
         path: Path to a .wav file.
-        device: Device name (substring match) or None for default.
+        device: Device id or name, PipeWire sink name, or None for default.
     """
     ...
 
+@final
 class AudioPlayer:
     """Cross-platform audio player with streaming support.
 
-    Supports context manager protocol (with statement).
+    Thread-safe: `clear()`, `stop()` and `drain()` may be called from other threads, or
+    from signal handlers, while a `write()` is in progress. Supports the context manager
+    protocol.
     """
 
     def __init__(
@@ -37,6 +49,7 @@ class AudioPlayer:
         self,
         data: Union[
             bytes,
+            bytearray,
             npt.NDArray[np.int16],
             npt.NDArray[np.int32],
             npt.NDArray[np.float32],
@@ -44,20 +57,25 @@ class AudioPlayer:
             list[float],
         ],
     ) -> None:
-        """Write audio data to the player.
+        """Write audio data to the player. Blocks while the buffer is full.
 
-        Accepts bytes (int16 LE), numpy arrays (int16/int32/float32/float64),
-        or list[float]. Format is auto-detected.
+        Accepts bytes/bytearray (int16 LE), numpy arrays (int16/int32/float32/float64,
+        1-D interleaved or 2-D shaped (frames, channels)), or list[float]. A chunk may end
+        mid-sample or mid-frame; the remainder is completed by the next write, unless
+        `drain()` or `clear()` ends the stream first.
         """
         ...
     def drain(self) -> None:
-        """Block until all buffered audio has been played."""
+        """Block until all audio written so far has been played. Ends the stream.
+
+        Returns early if `clear()` or `stop()` is called.
+        """
         ...
     def clear(self) -> None:
         """Discard buffered audio and unblock drain() immediately."""
         ...
     def stop(self) -> None:
-        """Stop the player and release resources."""
+        """Stop the player and release the device. Safe to call more than once."""
         ...
     @property
     def sample_rate(self) -> int: ...
@@ -70,4 +88,4 @@ class AudioPlayer:
     @property
     def is_active(self) -> bool: ...
     def __enter__(self) -> "AudioPlayer": ...
-    def __exit__(self, exc_type: object, exc_val: object, exc_tb: object) -> bool: ...
+    def __exit__(self, exc_type: object, exc_val: object, exc_tb: object) -> None: ...

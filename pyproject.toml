@@ -1,5 +1,5 @@
 [build-system]
-requires = ["maturin>=1.0,<2.0"]
+requires = ["maturin>=1.9.4,<2.0"]
 build-backend = "maturin"
 
 [project]
@@ -8,12 +8,12 @@ dynamic = ["version"]
 description = "Cross-platform audio output for Python, powered by Rust and CPAL"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["audio", "speaker", "cpal", "pipewire", "pulseaudio", "tts", "streaming"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -21,10 +21,19 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Programming Language :: Rust",
     "Topic :: Multimedia :: Sound/Audio",
-    "Operating System :: OS Independent",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Typing :: Typed",
 ]
+
+[project.urls]
+Repository = "https://github.com/nicokim/PyAudioCast"
+Issues = "https://github.com/nicokim/PyAudioCast/issues"
+Changelog = "https://github.com/nicokim/PyAudioCast/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 numpy = ["numpy"]
@@ -32,4 +41,3 @@ dev = ["pytest", "numpy"]
 
 [tool.maturin]
 module-name = "pyaudiocast._pyaudiocast"
-features = ["pyo3/extension-module"]
