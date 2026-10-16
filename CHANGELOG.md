@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.0](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.10...pyaudiocast-v0.2.0) (2026-10-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* list_output_devices() reports the real host in "type" ("wasapi", "coreaudio") instead of "alsa" everywhere, and sink ids are "pipewire:<sink>". write() accepts chunks that end mid-sample or mid-frame instead of raising ValueError, and drain()/clear() end the stream. play_file raises decode errors after playing what decoded. On macOS streams keep the device's sample rate and channel count. Building from source needs Rust 1.88+.
+
+### Features
+
+* fix barge-in, drain and device bugs; upgrade to cpal 0.18 and pyo3 0.30 ([#25](https://github.com/nicokim/PyAudioCast/issues/25)) ([e3286df](https://github.com/nicokim/PyAudioCast/commit/e3286dfe18b5c97a09b03b7484612f6b0430d747))
+
 ## [0.1.10](https://github.com/nicokim/PyAudioCast/compare/pyaudiocast-v0.1.9...pyaudiocast-v0.1.10) (2026-03-01)
 
 
